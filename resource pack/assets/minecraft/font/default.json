@@ -1,0 +1,17 @@
+{
+    "providers": [
+        {
+            "type": "bitmap",
+            "file": "item/black.png",
+            "ascent": 500,
+            "height": 1000,
+            "chars": [
+                "\uFF00"
+            ],
+            "shift": [
+                0,
+                0
+            ]
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "replace": false,
+    "values": [
+        {
+            "required": false,
+            "id": "minecraft:snow"
+        },
+        {
+            "required": false,
+            "id": "minecraft:moss_block"
+        },
+        {
+            "required": false,
+            "id": "minecraft:big_dripleaf"
+        },
+        {
+            "required": false,
+            "id": "minecraft:big_dripleaf_stem"
+        },
+        {
+            "required": false,
+            "id": "minecraft:sculk"
+        },
+        {
+            "required": false,
+            "id": "minecraft:mushroom_stem"
+        },
+        {
+            "required": false,
+            "id": "minecraft:red_mushroom_block"
+        },
+        {
+            "required": false,
+            "id": "minecraft:brown_mushroom_block"
+        },
+        {
+            "required": false,
+            "id": "#minecraft:leaves"
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "animated_java:item/wander/default/hugeasssword",
+	"textures": {
+		"0": "animated_java:item/wander/wandering_murderer",
+		"2": "animated_java:item/wander/blank"
+	}
+}

@@ -1,0 +1,101 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "minecraft:item/ender_pearl"
+	},
+	"overrides": [
+		{
+			"predicate": {
+				"custom_model_data": 1
+			},
+			"model": "animated_java:empty"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 2
+			},
+			"model": "animated_java:item/trader_dimension/default/knob"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 3
+			},
+			"model": "animated_java:item/trader_dimension/default/lid"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 4
+			},
+			"model": "animated_java:item/trader_dimension/default/lid2"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 5
+			},
+			"model": "animated_java:item/trader_dimension/default/lid3"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 6
+			},
+			"model": "animated_java:item/trader_dimension/default/lid4"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 7
+			},
+			"model": "animated_java:item/trader_dimension/default/lid5"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 8
+			},
+			"model": "animated_java:item/trader_dimension/default/base"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 9
+			},
+			"model": "animated_java:item/trader_dimension/default/base2"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 10
+			},
+			"model": "animated_java:item/trader_dimension/default/base3"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 11
+			},
+			"model": "animated_java:item/trader_dimension/default/base4"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 12
+			},
+			"model": "animated_java:item/trader_dimension/default/base5"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 13
+			},
+			"model": "animated_java:item/trader_dimension/default/tree1"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 14
+			},
+			"model": "animated_java:item/trader_dimension/default/tree2"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 15
+			},
+			"model": "animated_java:item/trader_dimension/default/tree3"
+		}
+	],
+	"animated_java": {
+		"trader_dimension": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+	}
+}
