@@ -1,0 +1,10 @@
+{
+    "music_disc.paramnesia": {
+        "sounds": [
+            {
+                "name": "minecraft:records/paramnesia",
+                "preload": true
+            }
+        ]
+    }
+}

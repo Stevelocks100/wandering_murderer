@@ -1,0 +1,1 @@
+$execute at @n[tag=wander.ai] facing entity @n[tag=wander.sword_proj_display_landed] feet positioned 0.0 0.0 0.0 rotated ~ 0 positioned ^ ^ ^$(final_distance) summon area_effect_cloud run data modify entity @n[tag=wander.ai] Motion set from entity @s Pos

@@ -1,0 +1,20 @@
+{
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:entity_killed_player",
+            "conditions": {
+                "entity": {
+                    "nbt": "{Tags:[\"wander.damage\"]}"
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ],
+    "rewards": {
+        "function": "wander:killed_by_trader"
+    }
+}

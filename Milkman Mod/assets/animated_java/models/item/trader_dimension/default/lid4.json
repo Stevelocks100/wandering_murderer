@@ -1,0 +1,47 @@
+{
+	"textures": {
+		"1": "animated_java:item/trader_dimension/chest_remade"
+	},
+	"display": {
+		"head": {
+			"rotation": [0, 180, 0]
+		}
+	},
+	"elements": [
+		{
+			"from": [1.98007, -2.00664, 7.96013],
+			"to": [6.04651, 8.03987, 31.96013],
+			"rotation": {
+				"angle": 0,
+				"axis": "y",
+				"origin": [-7.94684, 6.40532, -5.95349]
+			},
+			"faces": {
+				"north": {
+					"uv": [12, 6.25, 12.5, 7.5],
+					"texture": "#1"
+				},
+				"east": {
+					"uv": [9, 0, 12, 1.25],
+					"texture": "#1"
+				},
+				"south": {
+					"uv": [12, 7.5, 12.5, 8.75],
+					"texture": "#1"
+				},
+				"west": {
+					"uv": [9, 1.25, 12, 2.5],
+					"texture": "#1"
+				},
+				"up": {
+					"uv": [6.5, 14.25, 6, 11.25],
+					"texture": "#1"
+				},
+				"down": {
+					"uv": [7, 11.25, 6.5, 14.25],
+					"texture": "#1"
+				}
+			}
+		}
+	]
+}

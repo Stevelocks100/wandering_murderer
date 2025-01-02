@@ -1,0 +1,10 @@
+{
+	"parent": "animated_java:item/wander/default/log",
+	"textures": {
+		"0": "animated_java:item/wander/wandering_murderer",
+		"2": "animated_java:item/wander/blank",
+		"3": "animated_java:item/wander/blank",
+		"4": "animated_java:item/wander/blank",
+		"9": "animated_java:item/wander/blank"
+	}
+}

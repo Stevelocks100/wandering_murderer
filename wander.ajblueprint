@@ -7736,7 +7736,7 @@
 			"uuid": "c350612d-8ff4-7ad9-522f-2ec543521bb2",
 			"export": true,
 			"mirror_uv": false,
-			"isOpen": true,
+			"isOpen": false,
 			"locked": false,
 			"visibility": true,
 			"autouv": 0,
@@ -7843,7 +7843,7 @@
 													"uuid": "3288cd7e-3718-bd49-c45d-5177819ebe83",
 													"export": true,
 													"mirror_uv": false,
-													"isOpen": false,
+													"isOpen": true,
 													"locked": false,
 													"visibility": true,
 													"autouv": 0,
@@ -9157,7 +9157,7 @@
 		"default": {
 			"name": "default",
 			"display_name": "Default",
-			"uuid": "29c5b3a7-c325-5bbe-1e35-9e883b2a021f",
+			"uuid": "9eff1b96-4cee-9f50-6b6b-236a17856f28",
 			"texture_map": {},
 			"excluded_nodes": [],
 			"is_default": true
@@ -9753,7 +9753,7 @@
 			"override": false,
 			"length": 3.6,
 			"snapping": 20,
-			"selected": false,
+			"selected": true,
 			"saved": false,
 			"path": "",
 			"anim_time_update": "",
@@ -86326,7 +86326,7 @@
 							"channel": "variant",
 							"data_points": [
 								{
-									"variant": "b6a38244-9324-a510-ada8-3d359a288b2c",
+									"variant": "af576eae-72da-8c18-5f78-d4a1c77603fc",
 									"execute_condition": "",
 									"repeat": false,
 									"repeat_frequency": 1
@@ -118812,7 +118812,7 @@
 			"override": false,
 			"length": 2.15,
 			"snapping": 20,
-			"selected": true,
+			"selected": false,
 			"saved": false,
 			"path": "",
 			"anim_time_update": "",
