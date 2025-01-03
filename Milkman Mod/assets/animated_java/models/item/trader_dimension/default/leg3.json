@@ -1,0 +1,42 @@
+{
+	"textures": {
+		"10": "animated_java:item/trader_dimension/trader_llama"
+	},
+	"display": {
+		"head": {
+			"rotation": [0, 180, 0]
+		}
+	},
+	"elements": [
+		{
+			"from": [6, -6, 6],
+			"to": [10, 8, 10],
+			"faces": {
+				"north": {
+					"uv": [4.125, 8.25, 4.625, 11.75],
+					"texture": "#10"
+				},
+				"east": {
+					"uv": [3.625, 8.25, 4.125, 11.75],
+					"texture": "#10"
+				},
+				"south": {
+					"uv": [5.125, 8.25, 5.625, 11.75],
+					"texture": "#10"
+				},
+				"west": {
+					"uv": [4.625, 8.25, 5.125, 11.75],
+					"texture": "#10"
+				},
+				"up": {
+					"uv": [4.625, 8.25, 4.125, 7.25],
+					"texture": "#10"
+				},
+				"down": {
+					"uv": [5.125, 7.25, 4.625, 8.25],
+					"texture": "#10"
+				}
+			}
+		}
+	]
+}

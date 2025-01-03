@@ -15,8 +15,10 @@ execute in trader_dimension:pocket run tp @e[tag=trader_dimension.chest_mob,scor
 kill @e[tag=trader_dimension.chest_mob,scores={trader_dimension.temp=300..}]
 
 execute in trader_dimension:pocket positioned 8 0 8 if entity @p[distance=0..40] unless block 8 11 4 barrier run scoreboard players add timer trader_dimension.temp 1
-execute in trader_dimension:pocket if score timer trader_dimension.temp matches 60.. run function trader_dimension:spawn/init
-execute in trader_dimension:pocket if score timer trader_dimension.temp matches 60.. run scoreboard players set timer trader_dimension.temp 0
+execute unless score hard_mode wander.data matches 1 in trader_dimension:pocket if score timer trader_dimension.temp matches 60.. run function trader_dimension:spawn/init
+execute unless score hard_mode wander.data matches 1 in trader_dimension:pocket if score timer trader_dimension.temp matches 60.. run scoreboard players set timer trader_dimension.temp 0
+execute if score hard_mode wander.data matches 1 in trader_dimension:pocket if score timer trader_dimension.temp matches 12.. run function trader_dimension:spawn/init
+execute if score hard_mode wander.data matches 1 in trader_dimension:pocket if score timer trader_dimension.temp matches 12.. run scoreboard players set timer trader_dimension.temp 0
 
 
 execute in trader_dimension:pocket positioned 8 0 8 as @a[distance=0..100] store result score @s trader_dimension.temp run data get entity @s Pos[1]

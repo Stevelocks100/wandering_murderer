@@ -1,4 +1,4 @@
-scoreboard players set attack_ai wander.data 5
+scoreboard players set attack_ai wander.data 1
 execute as @n[tag=aj.wander.root] run function animated_java:wander/variants/item_off/apply
 execute as @n[tag=aj.wander.root] run function animated_java:wander/variants/sack/apply
 execute as @n[tag=aj.wander.root] run function animated_java:wander/animations/pause_all

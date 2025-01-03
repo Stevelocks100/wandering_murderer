@@ -141,6 +141,12 @@
 				"custom_model_data": 760
 			},
 			"model": "item/whey"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 761
+			},
+			"model": "item/cursor"
 		}
 	]
 }

@@ -1,3 +1,5 @@
+execute if entity @n[tag=wander.ai] run return 0
+
 scoreboard players set health wander.data 500
 scoreboard players set attack_cd wander.data 20
 scoreboard players set 0.existance wander.data 0

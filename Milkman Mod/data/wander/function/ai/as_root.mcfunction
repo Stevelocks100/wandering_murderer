@@ -54,7 +54,7 @@ execute if score ai wander.data matches 0..28 if entity @s[nbt={OnGround:0b}] if
 execute if score ai wander.data matches 0..28 unless entity @p[tag=wander.potential_target] if entity @s[nbt={OnGround:1b}] run function wander:ai/despawn
 
 
-execute unless entity @n[tag=wander.sword_proj_display] if entity @s[tag=wander.threw_sword] run tag @s remove wander.threw_sword
+#execute unless entity @n[tag=wander.sword_proj_display] if entity @s[tag=wander.threw_sword] run tag @s remove wander.threw_sword
 
 
 
@@ -63,3 +63,6 @@ execute store result score trader_height wander.temp run data get entity @s Pos[
 
 scoreboard players operation player_height wander.temp -= trader_height wander.temp
 execute if score attack_ai wander.data matches 4 if score player_height wander.temp matches -2..2 if score ai wander.data matches 21 run scoreboard players set attack_ai wander.data 0
+
+
+execute if score attack_ai wander.data matches 0 if score ai wander.data matches 0..28 run data modify entity @s NoAI set value 0b

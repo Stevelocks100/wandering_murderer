@@ -17,5 +17,7 @@ execute if score attack_cd wander.data matches 30 run return 1
 
 
 execute store result score abduct_random wander.data run random value 1..20
+execute if score hard_mode wander.data matches 1 store result score abduct_random wander.data run random value 1..8
+
 execute if score abduct_random wander.data matches 4 run function wander:ai/attacks/quick_abduct_init
 scoreboard players set attack_cd wander.data 30

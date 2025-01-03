@@ -23,9 +23,43 @@ execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.base4
 data modify entity @s data.bones.bone_base4 set from storage aj:uuid main.out
 execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.base5] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
 data modify entity @s data.bones.bone_base5 set from storage aj:uuid main.out
-execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.tree1] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
-data modify entity @s data.bones.bone_tree1 set from storage aj:uuid main.out
-execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.tree2] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
-data modify entity @s data.bones.bone_tree2 set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.line1] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
+data modify entity @s data.bones.bone_line1 set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.line2] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
+data modify entity @s data.bones.bone_line2 set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.line3] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
+data modify entity @s data.bones.bone_line3 set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.line4] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
+data modify entity @s data.bones.bone_line4 set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.line5] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
+data modify entity @s data.bones.bone_line5 set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.line6] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
+data modify entity @s data.bones.bone_line6 set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.line7] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
+data modify entity @s data.bones.bone_line7 set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.line8] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
+data modify entity @s data.bones.bone_line8 set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.line9] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
+data modify entity @s data.bones.bone_line9 set from storage aj:uuid main.out
 execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.tree3] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
 data modify entity @s data.bones.bone_tree3 set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.tree2] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
+data modify entity @s data.bones.bone_tree2 set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.tree1] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
+data modify entity @s data.bones.bone_tree1 set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.head2] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
+data modify entity @s data.bones.bone_head2 set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.head] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
+data modify entity @s data.bones.bone_head set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.body2] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
+data modify entity @s data.bones.bone_body2 set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.body] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
+data modify entity @s data.bones.bone_body set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.leg1] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
+data modify entity @s data.bones.bone_leg1 set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.leg2] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
+data modify entity @s data.bones.bone_leg2 set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.leg3] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
+data modify entity @s data.bones.bone_leg3 set from storage aj:uuid main.out
+execute on vehicle on passengers if entity @s[tag=aj.trader_dimension.bone.leg4] run function animated_java:global/internal/gu/convert_uuid_array_to_string with entity @s
+data modify entity @s data.bones.bone_leg4 set from storage aj:uuid main.out

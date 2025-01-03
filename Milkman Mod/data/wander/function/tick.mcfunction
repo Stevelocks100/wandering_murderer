@@ -71,3 +71,11 @@ scoreboard players remove @a[scores={wander.attack_cooldown=1..}] wander.attack_
 function wander:dimension_players_check
 execute if score daytime wander.data matches 0 run title @a times 0 40 20
 execute if score daytime wander.data matches 0 run title @a actionbar "You feel the threatening presense vanish..."
+
+execute if score dimension wander.temp matches 1.. if score daytime wander.data matches -501 run function wander:existance/summon_29 with storage wander:temp kidnap_pos
+
+
+scoreboard players add @e[tag=wander.jenga_checked] wander.temp 1
+kill @e[tag=wander.jenga_checked,scores={wander.temp=3..}]
+scoreboard players add @e[tag=wander.tower_collapse] wander.temp 1
+kill @e[tag=wander.tower_collapse,scores={wander.temp=3..}]

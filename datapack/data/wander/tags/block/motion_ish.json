@@ -71,14 +71,6 @@
         },
         {
             "required": false,
-            "id": "minecraft:iron_bars"
-        },
-        {
-            "required": false,
-            "id": "minecraft:chain"
-        },
-        {
-            "required": false,
             "id": "minecraft:pointed_dripstone"
         },
         {
@@ -208,34 +200,6 @@
         {
             "required": false,
             "id": "#minecraft:fire"
-        },
-        {
-            "required": false,
-            "id": "#minecraft:trapdoors"
-        },
-        {
-            "required": false,
-            "id": "#minecraft:doors"
-        },
-        {
-            "required": false,
-            "id": "#minecraft:fences"
-        },
-        {
-            "required": false,
-            "id": "#minecraft:fence_gates"
-        },
-        {
-            "required": false,
-            "id": "#minecraft:slabs"
-        },
-        {
-            "required": false,
-            "id": "#minecraft:stairs"
-        },
-        {
-            "required": false,
-            "id": "#minecraft:walls"
         },
         {
             "required": false,
@@ -455,74 +419,6 @@
         },
         {
             "required": false,
-            "id": "minecraft:glass"
-        },
-        {
-            "required": false,
-            "id": "minecraft:red_stained_glass"
-        },
-        {
-            "required": false,
-            "id": "minecraft:blue_stained_glass"
-        },
-        {
-            "required": false,
-            "id": "minecraft:cyan_stained_glass"
-        },
-        {
-            "required": false,
-            "id": "minecraft:lime_stained_glass"
-        },
-        {
-            "required": false,
-            "id": "minecraft:pink_stained_glass"
-        },
-        {
-            "required": false,
-            "id": "minecraft:gray_stained_glass"
-        },
-        {
-            "required": false,
-            "id": "minecraft:black_stained_glass"
-        },
-        {
-            "required": false,
-            "id": "minecraft:brown_stained_glass"
-        },
-        {
-            "required": false,
-            "id": "minecraft:white_stained_glass"
-        },
-        {
-            "required": false,
-            "id": "minecraft:green_stained_glass"
-        },
-        {
-            "required": false,
-            "id": "minecraft:orange_stained_glass"
-        },
-        {
-            "required": false,
-            "id": "minecraft:purple_stained_glass"
-        },
-        {
-            "required": false,
-            "id": "minecraft:yellow_stained_glass"
-        },
-        {
-            "required": false,
-            "id": "minecraft:magenta_stained_glass"
-        },
-        {
-            "required": false,
-            "id": "minecraft:light_gray_stained_glass"
-        },
-        {
-            "required": false,
-            "id": "minecraft:light_blue_stained_glass"
-        },
-        {
-            "required": false,
             "id": "minecraft:glass_pane"
         },
         {
@@ -623,18 +519,6 @@
         },
         {
             "required": false,
-            "id": "minecraft:trapped_chest"
-        },
-        {
-            "required": false,
-            "id": "minecraft:chest"
-        },
-        {
-            "required": false,
-            "id": "minecraft:ender_chest"
-        },
-        {
-            "required": false,
             "id": "minecraft:player_head"
         },
         {
@@ -660,6 +544,10 @@
         {
             "required": false,
             "id": "minecraft:dragon_head"
+        },
+        {
+            "required": false,
+            "id":"minecraft:snow"
         }
     ]
 }
