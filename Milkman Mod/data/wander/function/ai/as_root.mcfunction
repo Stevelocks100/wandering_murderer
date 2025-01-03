@@ -66,3 +66,5 @@ execute if score attack_ai wander.data matches 4 if score player_height wander.t
 
 
 execute if score attack_ai wander.data matches 0 if score ai wander.data matches 0..28 run data modify entity @s NoAI set value 0b
+
+execute if score ai wander.data matches 0..28 unless entity @p[tag=wander.potential_target,distance=0..100] run function wander:ai/drink_potion
