@@ -7,7 +7,7 @@ playsound item.trident.throw hostile @a[distance=0..16] ~ ~ ~ 1.0 0.25 0.0
 kill @e[tag=wander.damage]
 
 execute if score ai wander.data matches 21 at @n[tag=wander.tower_bottom] run function wander:tower_collapse/jenga
-execute if score ai wander.data matches 21 at @p[tag=wander.target] positioned ~ ~-1.5 ~ run function wander:tower_collapse/get_tower_bottom
+execute if score ai wander.data matches 21 at @p[tag=wander.target] positioned ~ ~-1 ~ run function wander:tower_collapse/get_tower_bottom
 
 
 execute if score ai wander.data matches 21 run scoreboard players operation player_height_old wander.temp = player_height wander.temp

@@ -40,8 +40,8 @@ execute if score daytime wander.data matches -500.. run scoreboard players remov
 execute if score daytime wander.data matches -500 as @r[scores={wander.deaths=0}] run tag @s add wander.target
 
 execute if score daytime wander.data matches -500 run scoreboard players set lowest_deaths wander.deaths 999
-execute if score daytime wander.data matches -500 as @a[tag=wander.potential_target] run scoreboard players operation lowest_deaths wander.deaths < @s wander.deaths
-execute if score daytime wander.data matches -500 as @a[tag=wander.potential_target] if score @s wander.deaths = lowest_deaths wander.deaths run tag @s add wander.survived
+execute if score daytime wander.data matches -500 as @a[tag=wander.potential_target,sort=random] run scoreboard players operation lowest_deaths wander.deaths < @s wander.deaths
+execute if score daytime wander.data matches -500 as @a[tag=wander.potential_target,sort=random] if score @s wander.deaths = lowest_deaths wander.deaths run tag @s add wander.survived
 execute if score daytime wander.data matches -500 run tag @r[tag=wander.survived] add wander.target
 execute if score daytime wander.data matches -500 as @p[tag=wander.target] at @s rotated as @s rotated ~ 0 positioned ^ ^ ^-20 positioned over motion_blocking_no_leaves run function wander:existance/summon_30
 tag @a remove wander.survived
