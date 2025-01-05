@@ -29,8 +29,8 @@ execute as @n[tag=wander.sword_proj_display_landed,tag=!wander.exploded_tower] a
 
 execute unless entity @n[tag=wander.ai] run tag @a remove tower.player
 execute unless entity @n[tag=wander.ai] unless score ai wander.data matches -500.. run tag @a remove wander.target
-execute unless entity @n[tag=wander.ai] run kill @e[tag=wander.tower_bottom]
-execute unless entity @n[tag=wander.ai] run kill @e[tag=wander.tower_bottom_target]
+#execute unless entity @n[tag=wander.ai] run kill @e[tag=wander.tower_bottom]
+#execute unless entity @n[tag=wander.ai] run kill @e[tag=wander.tower_bottom_target]
 execute unless entity @n[tag=wander.ai] run kill @e[tag=wander.sword_proj_display_landed]
 execute unless entity @n[tag=wander.threw_sword] run kill @e[tag=wander.sword_proj_display_landed]
 

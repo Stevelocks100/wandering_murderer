@@ -1,22 +1,24 @@
-execute if entity @n[tag=wander.tower_checked,distance=0..0.2] run kill @s
-execute if entity @n[tag=wander.tower_checked,distance=0..0.2] run return 0
-execute positioned ~1 ~ ~ unless block ~ ~ ~ #wander:motion_ish run summon marker ~ ~ ~ {Tags:["wander.tower_detection"]}
-execute positioned ~-1 ~ ~ unless block ~ ~ ~ #wander:motion_ish run summon marker ~ ~ ~ {Tags:["wander.tower_detection"]}
-execute positioned ~ ~ ~1 unless block ~ ~ ~ #wander:motion_ish run summon marker ~ ~ ~ {Tags:["wander.tower_detection"]}
-execute positioned ~ ~ ~-1 unless block ~ ~ ~ #wander:motion_ish run summon marker ~ ~ ~ {Tags:["wander.tower_detection"]}
-execute positioned ~ ~-1 ~ unless block ~ ~ ~ #wander:motion_ish unless predicate wander:lone_tower run summon marker ~ ~ ~ {Tags:["wander.tower_detection"]}
+tag @s add new
+execute if entity @n[tag=wander.tower_bottom2,distance=0..0.1,tag=!new] run kill
+execute if entity @n[tag=wander.tower_bottom2,distance=0..0.1,tag=!new] run return 0
 
-scoreboard players set tower_top wander.temp 0
-execute positioned ~1 ~ ~ unless block ~ ~ ~ #wander:motion_ish run scoreboard players add tower_top wander.temp 1
-execute positioned ~-1 ~ ~ unless block ~ ~ ~ #wander:motion_ish run scoreboard players add tower_top wander.temp 1
-execute positioned ~ ~ ~1 unless block ~ ~ ~ #wander:motion_ish run scoreboard players add tower_top wander.temp 1
-execute positioned ~ ~ ~-1 unless block ~ ~ ~ #wander:motion_ish run scoreboard players add tower_top wander.temp 1
-execute positioned ~ ~-1 ~ unless block ~ ~ ~ #wander:motion_ish unless predicate wander:lone_tower run scoreboard players add tower_top wander.temp 1
+execute if entity @n[tag=wander.tower_detection,distance=0..0.1,tag=!new] run kill
+execute if entity @n[tag=wander.tower_detection,distance=0..0.1,tag=!new] run return 0
+tag @s remove new
 
-execute positioned ~ ~-1 ~ if predicate wander:lone_tower run tag @s remove wander.tower_detection
-execute positioned ~ ~-1 ~ if predicate wander:lone_tower run tag @s add wander.tower_bottom2
 
-execute if score tower_top wander.temp matches 0 run tag @s remove wander.tower_detection
-execute if score tower_top wander.temp matches 0 run tag @s add wander.tower_bottom2
-execute unless score tower_top wander.temp matches 0 run tag @s remove wander.tower_detection
-execute unless score tower_top wander.temp matches 0 run tag @s add wander.tower_checked
+execute positioned ~ ~-1 ~ if predicate wander:lone_tower positioned ~ ~-1 ~ if predicate wander:lone_tower run tag @s add wander.tower_bottom2
+execute positioned ~ ~-1 ~ if predicate wander:lone_tower positioned ~ ~-1 ~ if predicate wander:lone_tower run tag @s remove wander.tower_detection
+execute positioned ~ ~-1 ~ if predicate wander:lone_tower positioned ~ ~-1 ~ if predicate wander:lone_tower run return 0
+
+scoreboard players add lowest_checks wander.temp 1
+
+execute positioned ~1 ~ ~ unless block ~ ~ ~ #wander:motion_ish unless entity @n[tag=wander.tower_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.tower_detection","new"]}
+execute positioned ~-1 ~ ~ unless block ~ ~ ~ #wander:motion_ish unless entity @n[tag=wander.tower_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.tower_detection","new"]}
+execute positioned ~ ~ ~1 unless block ~ ~ ~ #wander:motion_ish unless entity @n[tag=wander.tower_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.tower_detection","new"]}
+execute positioned ~ ~ ~-1 unless block ~ ~ ~ #wander:motion_ish unless entity @n[tag=wander.tower_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.tower_detection","new"]}
+execute positioned ~ ~-1 ~ unless block ~ ~ ~ #wander:motion_ish unless entity @n[tag=wander.tower_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.tower_detection","new"]}
+
+
+tag @s remove wander.tower_detection
+tag @s add wander.tower_checked

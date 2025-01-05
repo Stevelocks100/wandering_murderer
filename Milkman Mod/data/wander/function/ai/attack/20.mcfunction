@@ -5,7 +5,7 @@ execute if entity @s[tag=wander.threw_sword] as @n[tag=aj.wander.root] run funct
 
 scoreboard players remove punch wander.attack_cooldown 1
 scoreboard players remove sword wander.attack_cooldown 1
-execute if entity @s[tag=wander.threw_sword] run scoreboard players set sword wander.attack_cooldown 10
+execute if entity @s[tag=wander.threw_sword] run scoreboard players set sword wander.attack_cooldown 20
 scoreboard players remove stew wander.attack_cooldown 1
 scoreboard players remove ice wander.attack_cooldown 1
 

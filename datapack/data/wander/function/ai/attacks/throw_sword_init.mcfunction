@@ -5,3 +5,5 @@ execute as @n[tag=aj.wander.root] run function animated_java:wander/animations/s
 scoreboard players set attack_duration wander.data 62
 data modify entity @s NoAI set value 1b
 tag @s add wander.threw_sword
+scoreboard players set throw_sword wander.attack_cooldown 200
+scoreboard players set failed_sword_swipes wander.data 0

@@ -17,8 +17,8 @@ execute as @e[tag=milk.droplet,nbt={OnGround:1b}] run tag @s add milk.splash
 
 
 execute as @e[tag=milk.puddle] at @s run function milk:puddle_tick
-execute as @n[tag=milk.puddle,scores={milk.puddle=300..}] on passengers run kill @s
-execute as @n[tag=milk.puddle,scores={milk.puddle=300..}] run kill @s
+
+execute as @e[tag=milk.puddle,scores={milk.puddle=300..},limit=10,sort=random] run function milk:remove
 
 
 

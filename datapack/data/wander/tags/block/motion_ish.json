@@ -211,10 +211,6 @@
         },
         {
             "required": false,
-            "id": "#minecraft:leaves"
-        },
-        {
-            "required": false,
             "id": "#minecraft:anvil"
         },
         {

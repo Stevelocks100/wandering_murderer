@@ -2,16 +2,21 @@ execute if entity @s[tag=wander.threw_sword] run function wander:ai/animation_ma
 execute unless entity @s[tag=wander.threw_sword] run function wander:ai/animation_macro {move:'angry_run_sword',idle:'angry_idle'}
 
 scoreboard players remove sword wander.attack_cooldown 1
+scoreboard players remove throw_sword wander.attack_cooldown 1
 
 scoreboard players remove attack_cd wander.data 1
 
 attribute @s generic.movement_speed base set 1.3
 
 
-
 execute as @n[tag=wander.tower_bottom] at @s facing entity @n[tag=wander.ai] feet rotated ~ 0 positioned ^ ^ ^2 run tp @n[tag=wander.tower_bottom_target] ~ ~ ~
 
-function wander:ai/pathfind_macro {target:'@n[tag=wander.tower_bottom_target]'}
+execute unless entity @n[tag=wander.tower_bottom_target] at @p[tag=wander.target] run function wander:tower_collapse/get_tower_bottom
+execute if entity @n[tag=wander.tower_bottom_target] run function wander:ai/pathfind_macro {target:'@n[tag=wander.tower_bottom_target]'}
+execute unless entity @n[tag=wander.tower_bottom_target] if entity @s[tag=!wander.threw_sword] if score throw_sword wander.attack_cooldown matches ..0 run function wander:ai/attacks/throw_sword_init
+
+execute if entity @s[tag=wander.threw_sword] run function wander:ai/pathfind_macro {target:'@n[tag=wander.sword_proj_display_landed]'}
+
 #execute unless entity @n[tag=wander.tower_bottom_target,distance=0..2.7] at @p[tag=wander.target] positioned ~ ~-2 ~ run function wander:tower_collapse/get_tower_bottom
 execute if entity @n[tag=wander.tower_bottom_target,distance=0..2.7] if score sword wander.attack_cooldown matches ..0 run tp @s ~ ~ ~ facing entity @n[tag=wander.tower_bottom]
 execute if entity @n[tag=wander.tower_bottom_target,distance=0..2.7] if score sword wander.attack_cooldown matches ..0 run function wander:ai/attacks/sword_swipe_init
@@ -24,4 +29,4 @@ scoreboard players operation player_height wander.temp -= trader_height wander.t
 execute if score player_height wander.temp matches -10..3 run scoreboard players set ai wander.data 20
 
 
-execute unless entity @s[tag=wander.threw_sword] if score failed_sword_swipes wander.data matches 3.. run function wander:ai/attacks/throw_sword_init
+execute unless entity @s[tag=wander.threw_sword] if score failed_sword_swipes wander.data matches 3.. if score throw_sword wander.attack_cooldown matches ..0 run function wander:ai/attacks/throw_sword_init

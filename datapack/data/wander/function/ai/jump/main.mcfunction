@@ -1,3 +1,4 @@
+
 execute if score jump_tick wander.data matches -12 as @n[tag=aj.wander.root] run function animated_java:wander/animations/pause_all
 execute if score jump_tick wander.data matches -12 as @n[tag=aj.wander.root] run function animated_java:wander/animations/jump_to_sword/tween {to_frame:0,duration:2}
 execute if score jump_tick wander.data matches -12 run scoreboard players set ai wander.data -2
@@ -52,9 +53,12 @@ execute if score jump_tick wander.data matches 40 run data modify entity @s Moti
 execute if score jump_tick wander.data matches 41 run data modify entity @s Motion[1] set value -1.00d
 
 execute if score jump_tick wander.data matches 41.. if entity @s[nbt={OnGround:1b}] run function wander:ai/animation_macro {idle:'angry_idle',move:'angry_run'}
+execute as @n[tag=aj.wander.root] run function animated_java:wander/variants/sword_none/apply
 execute if score jump_tick wander.data matches 41.. if entity @n[tag=wander.sword_proj_display_landed] run function wander:ai/pathfind_macro {target:'@n[tag=wander.sword_proj_display_landed]'}
+execute if score jump_tick wander.data matches 41.. unless entity @n[tag=wander.sword_proj_display_landed] run function wander:ai/jump/pick_up
+
 execute if score jump_tick wander.data matches 41.. run attribute @s generic.movement_speed base set 1.2
 execute if score jump_tick wander.data matches ..40 run attribute @s generic.movement_speed base set 0.0
 
 execute if entity @s[nbt={OnGround:1b}] if score jump_tick wander.data matches 42.. if entity @n[tag=wander.sword_proj_display_landed,distance=0..3] run function wander:ai/jump/pick_up
-execute if score jump_tick wander.data matches 300.. run function wander:ai/jump/pick_up
+execute if score jump_tick wander.data matches 150.. run function wander:ai/jump/pick_up

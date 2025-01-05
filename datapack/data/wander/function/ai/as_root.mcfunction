@@ -15,6 +15,9 @@ execute unless score attack_ai wander.data matches 1.. if score ai wander.data m
 #follow = 5
 execute unless score attack_ai wander.data matches 1.. if score ai wander.data matches 5 unless entity @s[tag=wander.follow_success] run function wander:ai/follow/5
 
+
+execute if entity @s[tag=wander.threw_sword] unless score attack_ai wander.data matches 1.. unless score jump_tick wander.data matches -11.. run scoreboard players set jump_tick wander.data 42
+
 execute unless score attack_ai wander.data matches 1.. if score ai wander.data matches 20 unless score jump_tick wander.data matches -11.. run function wander:ai/attack/20
 execute unless score attack_ai wander.data matches 1.. if score ai wander.data matches 21 unless score jump_tick wander.data matches -11.. run function wander:ai/attack/21
 
@@ -22,7 +25,6 @@ execute unless score attack_ai wander.data matches 1.. if score ai wander.data m
 execute unless score attack_ai wander.data matches 1.. if score ai wander.data matches 30 run function wander:ai/give_sword/30
 execute unless score attack_ai wander.data matches 1.. if score ai wander.data matches 31 run function wander:ai/give_sword/31
 execute unless score attack_ai wander.data matches 1.. if score ai wander.data matches 32 run function wander:ai/give_sword/32
-
 
 execute if score jump_tick wander.data matches -11.. run function wander:ai/jump/main
 execute if score attack_ai wander.data matches 1.. run function wander:ai/attacks/tick

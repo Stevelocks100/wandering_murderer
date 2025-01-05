@@ -1,8 +1,18 @@
-execute if entity @n[tag=wander.tower_detection] as @e[tag=wander.tower_detection] at @s run function wander:tower_collapse/tree/downwards/as_entity
-execute as @e[tag=wander.tower_checked] run scoreboard players add @s wander.temp 1
-kill @e[tag=wander.tower_checked,scores={wander.temp=3..}]
+kill @e[tag=wander.tower_checked2]
+tag @e[tag=wander.tower_checked] add wander.tower_checked2
+
+execute store result score tower_detection_count wander.temp if entity @e[tag=wander.tower_detection]
+execute if score tower_detection_count wander.temp matches 150.. run kill @e[tag=wander.tower_checked,tag=!wander.tower_bottom2]
+execute if score tower_detection_count wander.temp matches 150.. run kill @e[tag=wander.tower_detection,tag=!wander.tower_bottom2]
+
+execute if score lowest_checks wander.temp matches 500.. run kill @e[tag=wander.tower_detection]
+execute if score lowest_checks wander.temp matches 500.. run kill @e[tag=wander.tower_checked]
+
+execute as @e[tag=wander.tower_detection,tag=!new] at @s run function wander:tower_collapse/tree/downwards/as_entity
+tag @e[tag=wander.tower_detection,tag=new] remove new
 
 execute unless entity @n[tag=wander.tower_detection] run function wander:tower_collapse/tree/downwards/find_lowest
 
-execute if entity @n[tag=wander.tower_bottom] as @n[tag=wander.tower_bottom] at @s run summon marker ~ ~ ~ {Tags:["wander.tower_bottom_target"]}
-execute unless entity @n[tag=wander.tower_bottom] run function wander:tower_collapse/tree/downwards/recursive
+execute unless entity @n[tag=wander.tower_detection] run kill @e[tag=wander.tower_checked]
+execute unless entity @n[tag=wander.tower_detection] run scoreboard players set active_downwards_check wander.data 0
+execute if entity @n[tag=wander.tower_detection] run function wander:tower_collapse/tree/downwards/recursive

@@ -8,7 +8,7 @@
                 "offsetX": 1,
                 "predicate": {
                     "block": {
-                        "blocks": "#wander:air_ish"
+                        "blocks": "#wander:motion_ish2"
                     }
                 }
             }
@@ -20,7 +20,7 @@
                 "offsetX": -1,
                 "predicate": {
                     "block": {
-                        "blocks": "#wander:air_ish"
+                        "blocks": "#wander:motion_ish2"
                     }
                 }
             }
@@ -32,7 +32,7 @@
                 "offsetZ": 1,
                 "predicate": {
                     "block": {
-                        "blocks": "#wander:air_ish"
+                        "blocks": "#wander:motion_ish2"
                     }
                 }
             }
@@ -44,7 +44,7 @@
                 "offsetZ": -1,
                 "predicate": {
                     "block": {
-                        "blocks": "#wander:air_ish"
+                        "blocks": "#wander:motion_ish2"
                     }
                 }
             }
