@@ -6,7 +6,6 @@
         "wander:tick",
         "trader_dimension:tick",
         "tower_api:tick",
-        "hard_mode:tick",
-        "backdoor:tick"
+        "hard_mode:tick"
     ]
 }

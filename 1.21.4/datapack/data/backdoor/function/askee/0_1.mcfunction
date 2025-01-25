@@ -1,1 +1,0 @@
-$data modify storage backdoor:temp askee_char set from storage backdoor:temp askee_lookup[$(askee_char)]
