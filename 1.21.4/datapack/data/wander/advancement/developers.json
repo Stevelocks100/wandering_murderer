@@ -1,0 +1,24 @@
+{   "parent":"wander:credits",
+    "display": {
+        "icon": {
+            "id": "minecraft:beetroot_soup",
+            "components": {
+                "minecraft:item_model": "wander:molotov_milktail"
+            }
+        },
+        "title": "Developers",
+        "description": "",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:tick"
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:beetroot_soup",
+                    "weight": 1,
+                    "quality": 1,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_components",
+                            "components": {
+                                "minecraft:food": {
+                                    "nutrition": 0,
+                                    "saturation": 0,
+                                    "can_always_eat": true
+                                },
+                                "minecraft:item_model": "wander:milk_crate",
+                                "minecraft:custom_data": {
+                                    "crate": true,
+                                    "bottles": 0
+                                },
+                                "minecraft:custom_name": "{\"text\":\"Milktail Crate\",\"italic\":false}",
+                                "minecraft:rarity": "rare",
+                                "minecraft:hide_additional_tooltip": {},
+                                "minecraft:max_stack_size": 1,
+                                "minecraft:lore": [
+                                    "{\"text\":\"Drop Molotov with crate in offhand\",\"italic\":false}",
+                                    "{\"text\":\"Shift right click to throw entire crate\",\"italic\":false}"
+                                ],
+                                "consumable": {
+                                    "consume_seconds": 99999999
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

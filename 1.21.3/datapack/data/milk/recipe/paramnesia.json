@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "equipment",
+    "pattern": [
+        " p ",
+        "prp",
+        " p "
+    ],
+    "key": {
+        "p": "minecraft:phantom_membrane",
+        "r": "minecraft:redstone"
+    },
+    "result": {
+        "id": "minecraft:music_disc_cat",
+        "components": {
+            "minecraft:item_model": "wander:music_disc_paramnesia",
+            "minecraft:jukebox_playable": {
+                "song": "milk:paramnesia"
+            }
+        },
+        "count": 1
+    }
+}

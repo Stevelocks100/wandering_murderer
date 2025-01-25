@@ -1,0 +1,21 @@
+{
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "entity": {
+                    "type": "minecraft:wandering_trader",
+                    "nbt": "{Tags:[\"wander.hitbox\"]}"
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ],
+    "rewards": {
+        "function": "wander:hit_trader"
+    }
+}

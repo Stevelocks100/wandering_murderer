@@ -1,0 +1,10 @@
+{
+    "music_disc.paramnesia": {
+        "sounds": [
+            {
+                "name": "wander:records/paramnesia",
+                "preload": true
+            }
+        ]
+    }
+}

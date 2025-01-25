@@ -1,0 +1,39 @@
+{
+	"model": {
+		"type": "minecraft:select",
+		"property": "minecraft:custom_model_data",
+		"cases": [
+			{
+				"when": "sword_hand",
+				"model": {
+					"type": "minecraft:model",
+					"model": "animated_java:blueprint/wander/sword_hand/hugeasssword2"
+				}
+			},
+			{
+				"when": "sword_back",
+				"model": {
+					"type": "minecraft:model",
+					"model": "animated_java:blueprint/wander/sword_back/hugeasssword2"
+				}
+			},
+			{
+				"when": "sword_none",
+				"model": {
+					"type": "minecraft:model",
+					"model": "animated_java:blueprint/wander/sword_none/hugeasssword2"
+				}
+			}
+		],
+		"fallback": {
+			"type": "minecraft:model",
+			"model": "animated_java:blueprint/wander/hugeasssword2"
+		},
+		"tints": [
+			{
+				"type": "minecraft:dye",
+				"default": [1, 1, 1]
+			}
+		]
+	}
+}

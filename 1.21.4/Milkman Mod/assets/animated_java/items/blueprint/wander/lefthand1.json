@@ -1,0 +1,32 @@
+{
+	"model": {
+		"type": "minecraft:select",
+		"property": "minecraft:custom_model_data",
+		"cases": [
+			{
+				"when": "pufferfish",
+				"model": {
+					"type": "minecraft:model",
+					"model": "animated_java:blueprint/wander/pufferfish/lefthand1"
+				}
+			},
+			{
+				"when": "item_off",
+				"model": {
+					"type": "minecraft:model",
+					"model": "animated_java:blueprint/wander/item_off/lefthand1"
+				}
+			}
+		],
+		"fallback": {
+			"type": "minecraft:model",
+			"model": "animated_java:blueprint/wander/lefthand1"
+		},
+		"tints": [
+			{
+				"type": "minecraft:dye",
+				"default": [1, 1, 1]
+			}
+		]
+	}
+}

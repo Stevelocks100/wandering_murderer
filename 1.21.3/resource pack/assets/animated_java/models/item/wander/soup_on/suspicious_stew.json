@@ -1,0 +1,6 @@
+{
+	"parent": "animated_java:item/wander/suspicious_stew",
+	"textures": {
+		"2": "minecraft:item/suspicious_stew"
+	}
+}

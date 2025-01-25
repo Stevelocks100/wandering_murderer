@@ -1,0 +1,1 @@
+tellraw @a[gamemode=!survival,gamemode=!adventure] {"text":"<The Milkman> Click this to toggle the digging mechanics (default is disabled)\nOr use /function wander:toggle_digging","color":"gold","clickEvent":{"action":"suggest_command","value":"/function wander:toggle_digging"}}

@@ -1,0 +1,48 @@
+{
+	"textures": {
+		"1": "animated_java:blueprint/trader_dimension/chest_remade",
+		"particle": "minecraft:item/pufferfish"
+	},
+	"display": {
+		"head": {
+			"rotation": [0, 180, 0]
+		}
+	},
+	"elements": [
+		{
+			"from": [2.46154, -10.46154, 9.84615],
+			"to": [6.15385, 8, 32],
+			"rotation": {
+				"angle": 0,
+				"axis": "y",
+				"origin": [-6.76923, 8, -6.76923]
+			},
+			"faces": {
+				"north": {
+					"uv": [3, 11.75, 3.5, 14.25],
+					"texture": "#1"
+				},
+				"east": {
+					"uv": [0, 5, 3, 7.5],
+					"texture": "#1"
+				},
+				"south": {
+					"uv": [3.5, 11.75, 4, 14.25],
+					"texture": "#1"
+				},
+				"west": {
+					"uv": [3, 5, 6, 7.5],
+					"texture": "#1"
+				},
+				"up": {
+					"uv": [12, 9.25, 11.5, 6.25],
+					"texture": "#1"
+				},
+				"down": {
+					"uv": [12, 9.25, 11.5, 12.25],
+					"texture": "#1"
+				}
+			}
+		}
+	]
+}

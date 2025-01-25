@@ -1,0 +1,28 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:beetroot_soup",
+            "components": {
+                "minecraft:item_model": "wander:credits/rose"
+            }
+        },
+        "title": "RoseRocket",
+        "description": {
+            "text": "Main Modeller\nCoder"
+        },
+        "frame": "goal",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "parent": "wander:developers",
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:tick"
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ]
+}

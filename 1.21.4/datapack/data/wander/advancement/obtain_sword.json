@@ -1,0 +1,42 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:netherite_sword",
+            "components": {
+                "minecraft:item_model": "wander:hugeasssword"
+            },
+            "count": 1
+        },
+        "title": "The New Wanderer",
+        "description": "Gain the respect of the Wandering Trader",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "parent": "minecraft:adventure/kill_a_mob",
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:netherite_sword",
+                        "components": {
+                            "minecraft:custom_data": {
+                                "emerald_cleaver": true
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ],
+    "rewards": {
+        "experience": 50
+    }
+}

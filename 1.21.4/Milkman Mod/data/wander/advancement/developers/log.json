@@ -1,0 +1,28 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:beetroot_soup",
+            "components": {
+                "minecraft:item_model": "wander:credits/log"
+            }
+        },
+        "title": "Log on a Couch",
+        "description": {
+            "text": "Main Artist\nMilktail Assets Creator"
+        },
+        "frame": "goal",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "parent": "wander:developers",
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:tick"
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ]
+}
