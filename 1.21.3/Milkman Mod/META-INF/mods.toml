@@ -3,7 +3,7 @@ loaderVersion="[1,)"
 license="All rights reserved"
 [[mods]]
     modId="milkman"
-    version="1.7"
+    version="1.8"
     displayName="Milkman's Weapon Reborn"
     description="Made by Stevelocks"
     authors="Stevelocks, Roserocket, Log on a couch, Barbarian Pickle"
