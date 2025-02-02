@@ -5,7 +5,7 @@ execute in trader_dimension:pocket run forceload add 0 0 1 0
 #execute as @a[gamemode=survival] if dimension minecraft:overworld in trader_dimension:pocket run tp @a
 execute in trader_dimension:pocket positioned 6 10 6 as @e[type=!player,distance=0..20,type=!item_display,type=!marker,type=!item] at @s unless entity @p[distance=0..40] run tp @s ~ ~-1000 ~
 execute in trader_dimension:pocket positioned 6 10 6 as @e[type=!player,distance=0..20,type=!item_display,type=!marker,type=!item] at @s unless entity @p[distance=0..40] run kill @s
-execute in trader_dimension:pocket positioned 6 10 6 unless entity @p[distance=0..40] as @e[type=item] at @s run function trader_dimension:throw_items
+execute in trader_dimension:pocket positioned 6 10 6 unless entity @p[distance=0..40] as @e[type=item,distance=0..100] at @s run function trader_dimension:throw_items
 
 
 execute in trader_dimension:pocket positioned 6 10 6 unless entity @p[distance=0..50] unless blocks 3 0 3 12 10 12 3 90 3 all run fill 3 0 3 12 10 12 air

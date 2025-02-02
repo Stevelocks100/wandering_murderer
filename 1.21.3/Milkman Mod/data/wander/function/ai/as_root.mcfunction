@@ -58,6 +58,7 @@ execute if score ai wander.data matches 0..28 if entity @s[nbt={OnGround:1b}] if
 execute if score ai wander.data matches 0..28 if entity @s[nbt={OnGround:0b}] if score daytime wander.data matches -400..-301 run function wander:ai/despawn
 
 execute if score ai wander.data matches 0..28 unless entity @p[tag=wander.potential_target] if entity @s[nbt={OnGround:1b}] run function wander:ai/despawn
+execute if score ai wander.data matches 0..28 run fill ~-5 ~-5 ~-5 ~5 ~5 ~5 air replace nether_portal
 
 
 #execute unless entity @n[tag=wander.sword_proj_display] if entity @s[tag=wander.threw_sword] run tag @s remove wander.threw_sword
