@@ -1,16 +1,9 @@
 {
     "display": {
         "icon": {
-            "id": "minecraft:player_head",
+            "id": "minecraft:beetroot_soup",
             "components": {
-                "minecraft:profile": {
-                    "id": [
-                        98115521,
-                        149638775,
-                        -1370594070,
-                        383472167
-                    ]
-                }
+                "minecraft:item_model": "wander:credits/ryanskull"
             }
         },
         "title": "Ryanskull",

@@ -9,7 +9,6 @@ execute if score @p[tag=wander.target] wander.encounters matches 3..5 store resu
 execute if score @p[tag=wander.target] wander.encounters matches 6.. store result score random_action wander.temp run random value 2..3
 
 tag @s add wander.follow_success
-execute if score random_action wander.temp matches 3 if score do_kidnapping milk.settings matches -1 store result score random_action wander.temp run random value 1..2
 execute if score random_action wander.temp matches 1 run function wander:ai/attacks/stew_init
 execute if score random_action wander.temp matches 2 run function wander:ai/attacks/punch_init
 execute if score random_action wander.temp matches 3 run effect give @p[tag=wander.target] slowness 6 90 true

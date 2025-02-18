@@ -1,1 +1,0 @@
-execute if predicate wander:95chance if block ~ ~ ~ #minecraft:ice run setblock ~ ~ ~ air destroy

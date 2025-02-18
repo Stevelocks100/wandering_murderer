@@ -1,16 +1,9 @@
 {
     "display": {
         "icon": {
-            "id": "minecraft:player_head",
+            "id": "minecraft:beetroot_soup",
             "components": {
-                "minecraft:profile": {
-                    "id": [
-                        183634243,
-                        593186638,
-                        -1350782361,
-                        583041568
-                    ]
-                }
+                "minecraft:item_model": "wander:credits/mattholio"
             }
         },
         "title": "Mattholio",

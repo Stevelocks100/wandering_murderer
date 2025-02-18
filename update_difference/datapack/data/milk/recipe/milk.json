@@ -1,18 +1,10 @@
 {
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
-        {
-            "tag": "minecraft:wool_carpets"
-        },
-        {
-            "item": "minecraft:glass_bottle"
-        },
-        {
-            "item": "minecraft:milk_bucket"
-        },
-        {
-            "item": "minecraft:tnt"
-        }
+        "minecraft:glass_bottle",
+        "#minecraft:wool_carpets",
+        "minecraft:tnt",
+        "minecraft:milk_bucket"
     ],
     "result": {
         "id": "minecraft:beetroot_soup",
@@ -20,17 +12,19 @@
             "minecraft:food": {
                 "nutrition": 0,
                 "saturation": 0,
-                "can_always_eat": true,
-                "eat_seconds": 1000000
+                "can_always_eat": true
             },
-            "minecraft:custom_model_data": 731,
+            "minecraft:item_model": "wander:molotov_milktail",
             "minecraft:custom_data": {
                 "milk": true
             },
             "minecraft:custom_name": "{\"text\":\"Molotov Milktail\",\"italic\":false}",
             "minecraft:rarity": "rare",
             "minecraft:hide_additional_tooltip": {},
-            "minecraft:max_stack_size": 16
+            "minecraft:max_stack_size": 16,
+            "minecraft:consumable": {
+                "consume_seconds": 1000000
+            }
         },
         "count": 1
     }

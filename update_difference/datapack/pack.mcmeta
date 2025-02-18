@@ -1,6 +1,6 @@
 {
 	"pack": {
-		"pack_format": 48,
+		"pack_format": 57,
 		"description": [
 			"",
 			{
@@ -20,8 +20,8 @@
 			{
 				"directory": "animated_java",
 				"formats": {
-					"min_inclusive": 48,
-					"max_inclusive": 56
+					"min_inclusive": 57,
+					"max_inclusive": 60
 				}
 			}
 		]

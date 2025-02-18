@@ -6,7 +6,10 @@
         }
     },
     {
-        "function": "minecraft:set_custom_model_data",
-        "value": 741
+        "function": "minecraft:set_components",
+        "components": {
+            "minecraft:item_model": "wander:crates/milk_crate3"
+        },
+        "conditions": []
     }
 ]

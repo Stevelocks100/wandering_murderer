@@ -4,7 +4,6 @@ function #animated_java:wander/as_root/pre_tick
 execute if entity @s[tag=aj.wander.animation.sneak_idle.playing] run function animated_java:wander/animations/sneak_idle/zzz/on_tick
 execute if entity @s[tag=aj.wander.animation.sneak_walk.playing] run function animated_java:wander/animations/sneak_walk/zzz/on_tick
 execute if entity @s[tag=aj.wander.animation.swim.playing] run function animated_java:wander/animations/swim/zzz/on_tick
-execute if entity @s[tag=aj.wander.animation.swim_idle.playing] run function animated_java:wander/animations/swim_idle/zzz/on_tick
 execute if entity @s[tag=aj.wander.animation.angry_run.playing] run function animated_java:wander/animations/angry_run/zzz/on_tick
 execute if entity @s[tag=aj.wander.animation.sword_throw.playing] run function animated_java:wander/animations/sword_throw/zzz/on_tick
 execute if entity @s[tag=aj.wander.animation.ice_throw.playing] run function animated_java:wander/animations/ice_throw/zzz/on_tick
@@ -22,5 +21,5 @@ execute if entity @s[tag=aj.wander.animation.drink_potion_quick.playing] run fun
 execute if entity @s[tag=aj.wander.animation.jump_to_sword.playing] run function animated_java:wander/animations/jump_to_sword/zzz/on_tick
 execute if entity @s[tag=aj.wander.animation.angry_idle.playing] run function animated_java:wander/animations/angry_idle/zzz/on_tick
 execute on passengers if entity @s[tag=aj.wander.data] run function animated_java:wander/root/zzz/0
-execute at @s on passengers run tp @s ~ ~ ~ ~ ~
+execute at @s on passengers run rotate @s ~ ~
 function #animated_java:wander/as_root/post_tick

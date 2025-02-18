@@ -9,12 +9,12 @@ ride @n[tag=wander.hitbox] dismount
 
 effect give @s invisibility infinite 200 true
 effect give @n[tag=wander.hitbox] invisibility infinite 200 true
-item replace entity @s weapon with milk_bucket[custom_model_data=1]
-item replace entity @s weapon.mainhand with milk_bucket[custom_model_data=1]
-item replace entity @s weapon.offhand with milk_bucket[custom_model_data=1]
-item replace entity @n[tag=wander.hitbox] weapon with milk_bucket[custom_model_data=1]
-item replace entity @n[tag=wander.hitbox] weapon.mainhand with milk_bucket[custom_model_data=1]
-item replace entity @n[tag=wander.hitbox] weapon.offhand with milk_bucket[custom_model_data=1]
+item replace entity @s weapon with milk_bucket[item_model="wander:empty"]
+item replace entity @s weapon.mainhand with milk_bucket[item_model="wander:empty"]
+item replace entity @s weapon.offhand with milk_bucket[item_model="wander:empty"]
+item replace entity @n[tag=wander.hitbox] weapon with milk_bucket[item_model="wander:empty"]
+item replace entity @n[tag=wander.hitbox] weapon.mainhand with milk_bucket[item_model="wander:empty"]
+item replace entity @n[tag=wander.hitbox] weapon.offhand with milk_bucket[item_model="wander:empty"]
 
 scoreboard players set @s wander.motion1 0
 

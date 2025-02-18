@@ -1,16 +1,9 @@
 {
     "display": {
         "icon": {
-            "id": "minecraft:player_head",
+            "id": "minecraft:beetroot_soup",
             "components": {
-                "minecraft:profile": {
-                    "id": [
-                        1795633674,
-                        -1724235389,
-                        -1093771919,
-                        -432256067
-                    ]
-                }
+                "minecraft:item_model": "wander:credits/drapie"
             }
         },
         "title": "Drapie",

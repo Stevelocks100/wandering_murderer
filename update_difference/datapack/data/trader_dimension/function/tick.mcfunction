@@ -22,14 +22,15 @@ execute if score hard_mode wander.data matches 1 in trader_dimension:pocket if s
 execute if score hard_mode wander.data matches 1 in trader_dimension:pocket if score timer trader_dimension.temp matches 12.. run scoreboard players set timer trader_dimension.temp 0
 
 
-execute in trader_dimension:pocket positioned 8 0 8 as @a[distance=0..100] store result score @s trader_dimension.temp run data get entity @s Pos[1]
-execute in trader_dimension:pocket positioned 8 0 8 as @a[distance=0..100] at @s if score @s trader_dimension.temp matches ..-10 unless block 8 11 4 barrier run function trader_dimension:leave
-execute in trader_dimension:pocket positioned 8 0 8 as @a[distance=0..100] at @s if score @s trader_dimension.temp matches ..-10 if block 8 11 4 barrier run effect give @s slow_falling 1 2 true
-execute in trader_dimension:pocket positioned 8 0 8 as @a[distance=0..100] at @s if score @s trader_dimension.temp matches ..-10 if block 8 11 4 barrier run tp @s 5 10 5
+execute in trader_dimension:pocket positioned 8 0 8 as @a[distance=0..300] store result score @s trader_dimension.temp run data get entity @s Pos[1]
+execute as @n[tag=aj.wander.root] on passengers if entity @s[type=marker] run data modify storage trader_dimension:temp bruh.chest_uuid set from entity @s data.locators.chest.uuid
+execute in trader_dimension:pocket positioned 8 0 8 as @a[distance=0..300] at @s if score @s trader_dimension.temp matches ..-10 unless block 8 11 4 barrier run function trader_dimension:leave with storage trader_dimension:temp bruh
+execute in trader_dimension:pocket positioned 8 0 8 as @a[distance=0..300] at @s if score @s trader_dimension.temp matches ..-10 if block 8 11 4 barrier run effect give @s slow_falling 1 2 true
+execute in trader_dimension:pocket positioned 8 0 8 as @a[distance=0..300] at @s if score @s trader_dimension.temp matches ..-10 if block 8 11 4 barrier run tp @s 5 10 5
 
 
-execute if entity @n[tag=aj.wander.locator.chest] in trader_dimension:pocket if block 8 11 4 barrier as @n[tag=aj.trader_dimension.root,tag=!aj.trader_dimension.animation.open_chest.playing] run function animated_java:trader_dimension/animations/open_chest/play
-execute unless entity @n[tag=aj.wander.locator.chest] in trader_dimension:pocket unless block 8 11 4 barrier as @n[tag=aj.trader_dimension.root,tag=!aj.trader_dimension.animation.close_chest.playing] run function animated_java:trader_dimension/animations/close_chest/play
+execute if entity @n[tag=wander.ai] in trader_dimension:pocket if block 8 11 4 barrier as @n[tag=aj.trader_dimension.root,tag=!aj.trader_dimension.animation.open_chest.playing] run function animated_java:trader_dimension/animations/open_chest/play
+execute unless entity @n[tag=wander.ai] in trader_dimension:pocket unless block 8 11 4 barrier as @n[tag=aj.trader_dimension.root,tag=!aj.trader_dimension.animation.close_chest.playing] run function animated_java:trader_dimension/animations/close_chest/play
 
 execute store result score chest_count trader_dimension.temp if entity @e[tag=aj.trader_dimension.root]
 execute if score chest_count trader_dimension.temp matches 2.. run function trader_dimension:remove

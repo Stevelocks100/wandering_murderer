@@ -1,10 +1,10 @@
 execute unless block ~ ~ ~ #wander:water_ish run function wander:ai/animation_macro {move:'sneak_walk',idle:'sneak_idle'}
-execute if block ~ ~ ~ #wander:water_ish run function wander:ai/animation_macro {move:'swim',idle:'swim_idle'}
+execute if block ~ ~ ~ #wander:water_ish run function wander:ai/animation_macro {move:'swim',idle:'angry_idle'}
 
-execute if data entity @s wander_target run attribute @s generic.movement_speed base set 1.0
-execute unless data entity @s wander_target run attribute @s generic.movement_speed base set 0.0
-execute if function wander:ai/stalk/is_target_looking run attribute @s generic.movement_speed base set 0.0
-#execute if function wander:ai/stalk/are_nearby_players_looking run attribute @s generic.movement_speed base set 0.0
+execute if data entity @s wander_target run attribute @s movement_speed base set 1.0
+execute unless data entity @s wander_target run attribute @s movement_speed base set 0.0
+execute if function wander:ai/stalk/is_target_looking run attribute @s movement_speed base set 0.0
+#execute if function wander:ai/stalk/are_nearby_players_looking run attribute @s movement_speed base set 0.0
 
 
 execute unless entity @p[tag=wander.target,distance=0..30] unless function wander:ai/stalk/is_target_looking run scoreboard players set spawn_search_method wander.data 2

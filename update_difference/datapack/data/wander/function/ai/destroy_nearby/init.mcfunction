@@ -1,9 +1,0 @@
-execute positioned ~0.5 ~ ~0.5 run function wander:ai/destroy_nearby/columns
-execute positioned ~ ~ ~0.5 run function wander:ai/destroy_nearby/columns
-execute positioned ~-0.5 ~ ~0.5 run function wander:ai/destroy_nearby/columns
-execute positioned ~0.5 ~ ~ run function wander:ai/destroy_nearby/columns
-execute positioned ~ ~ ~ run function wander:ai/destroy_nearby/columns
-execute positioned ~-0.5 ~ ~ run function wander:ai/destroy_nearby/columns
-execute positioned ~0.5 ~ ~-0.5 run function wander:ai/destroy_nearby/columns
-execute positioned ~ ~ ~-0.5 run function wander:ai/destroy_nearby/columns
-execute positioned ~-0.5 ~ ~-0.5 run function wander:ai/destroy_nearby/columns

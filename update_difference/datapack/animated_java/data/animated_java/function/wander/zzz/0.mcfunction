@@ -6,7 +6,7 @@ execute if data storage aj:temp args.variant run function animated_java:wander/z
 execute unless data storage aj:temp args.animation run function animated_java:wander/set_default_pose
 execute if data storage aj:temp args.animation run function animated_java:wander/zzz/10 with storage aj:temp args
 tp @s ~ ~ ~ ~ ~
-execute at @s on passengers run tp @s ~ ~ ~ ~ ~
+execute at @s on passengers run rotate @s ~ ~
 data modify entity @s teleport_duration set value 1
 execute on passengers run data modify entity @s teleport_duration set value 1
 function #animated_java:wander/as_root/on_summon

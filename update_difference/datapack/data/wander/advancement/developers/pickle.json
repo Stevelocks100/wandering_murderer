@@ -1,21 +1,14 @@
 {
     "display": {
         "icon": {
-            "id": "minecraft:player_head",
+            "id": "minecraft:beetroot_soup",
             "components": {
-                "minecraft:profile": {
-                    "id": [
-                        -326053030,
-                        53297595,
-                        -1998696826,
-                        342949516
-                    ]
-                }
+                "minecraft:item_model": "wander:credits/pickle"
             }
         },
         "title": "Barbarian Pickle",
         "description": {
-            "text": "Main Animator\nMacarena Man\nSFX Man"
+            "text": "Main Animator\nMacarena Man"
         },
         "frame": "goal",
         "show_toast": false,

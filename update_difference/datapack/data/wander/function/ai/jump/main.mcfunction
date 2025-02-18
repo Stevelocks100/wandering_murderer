@@ -15,8 +15,8 @@ execute if score break_out wander.data matches 1 run data modify storage wander:
 execute if score jump_tick wander.data matches 1..41 run function wander:ai/jump/main2 with storage wander:temp
 execute if score break_out wander.data matches 1 if score jump_tick wander.data matches 21.. run scoreboard players set jump_tick wander.data 300
 
-execute if score break_out wander.data matches 1 rotated as @n[tag=aj.wander.root] positioned ^ ^-1 ^2 run function wander:ai/destroy_nearby/init
-execute if score break_out wander.data matches 1 run function wander:ai/destroy_nearby/init
+execute if score break_out wander.data matches 1 rotated as @n[tag=aj.wander.root] positioned ^ ^-1 ^2 run function wander:ai/destory_nearby/init
+execute if score break_out wander.data matches 1 run function wander:ai/destory_nearby/init
 
 
 execute if score jump_tick wander.data matches 1 run data modify entity @s Motion[1] set value 1.00d
@@ -70,8 +70,8 @@ execute if score jump_tick wander.data matches 41.. if entity @s[nbt={OnGround:1
 execute if score jump_tick wander.data matches 41.. if entity @n[tag=wander.sword_proj_display_landed] run function wander:ai/pathfind_macro {target:'@n[tag=wander.sword_proj_display_landed]'}
 execute if score jump_tick wander.data matches 41.. unless entity @n[tag=wander.sword_proj_display_landed] run function wander:ai/jump/pick_up
 
-execute if score jump_tick wander.data matches 41.. run attribute @s generic.movement_speed base set 1.2
-execute if score jump_tick wander.data matches ..40 run attribute @s generic.movement_speed base set 0.0
+execute if score jump_tick wander.data matches 41.. run attribute @s movement_speed base set 1.2
+execute if score jump_tick wander.data matches ..40 run attribute @s movement_speed base set 0.0
 
 execute if entity @s[nbt={OnGround:1b}] if score jump_tick wander.data matches 42.. if entity @n[tag=wander.sword_proj_display_landed,distance=0..3] run function wander:ai/jump/pick_up
 execute if entity @s[nbt={OnGround:1b}] if score jump_tick wander.data matches 42.. positioned ~ ~3 ~ if entity @n[tag=wander.sword_proj_display_landed,distance=0..3] run function wander:ai/jump/pick_up

@@ -3,7 +3,7 @@
         "icon": {
             "id": "minecraft:beetroot_soup",
             "components": {
-                "minecraft:custom_model_data": 731
+                "minecraft:item_model": "wander:molotov_milktail"
             }
         },
         "title": "Developers",

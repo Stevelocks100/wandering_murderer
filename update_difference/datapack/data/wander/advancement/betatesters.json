@@ -3,7 +3,7 @@
         "icon": {
             "id": "minecraft:beetroot_soup",
             "components": {
-                "minecraft:custom_model_data": 732
+                "minecraft:item_model": "wander:milk_crate"
             }
         },
         "title": "Beta Testers",

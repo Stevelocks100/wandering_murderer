@@ -2,7 +2,6 @@
 scoreboard objectives add aj.sneak_idle.frame dummy
 scoreboard objectives add aj.sneak_walk.frame dummy
 scoreboard objectives add aj.swim.frame dummy
-scoreboard objectives add aj.swim_idle.frame dummy
 scoreboard objectives add aj.angry_run.frame dummy
 scoreboard objectives add aj.sword_throw.frame dummy
 scoreboard objectives add aj.ice_throw.frame dummy

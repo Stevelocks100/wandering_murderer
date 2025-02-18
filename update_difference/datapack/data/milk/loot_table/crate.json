@@ -15,10 +15,9 @@
                                 "minecraft:food": {
                                     "nutrition": 0,
                                     "saturation": 0,
-                                    "can_always_eat": true,
-                                    "eat_seconds": 1000000
+                                    "can_always_eat": true
                                 },
-                                "minecraft:custom_model_data": 732,
+                                "minecraft:item_model": "wander:milk_crate",
                                 "minecraft:custom_data": {
                                     "crate": true,
                                     "bottles": 0
@@ -30,7 +29,10 @@
                                 "minecraft:lore": [
                                     "{\"text\":\"Drop Molotov with crate in offhand\",\"italic\":false}",
                                     "{\"text\":\"Shift right click to throw entire crate\",\"italic\":false}"
-                                ]
+                                ],
+                                "consumable": {
+                                    "consume_seconds": 99999999
+                                }
                             }
                         }
                     ]

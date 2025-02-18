@@ -3,7 +3,7 @@
         "icon": {
             "id": "minecraft:netherite_sword",
             "components": {
-                "minecraft:custom_model_data": 1
+                "minecraft:item_model": "wander:hugeasssword"
             },
             "count": 1
         },

@@ -11,14 +11,6 @@ scoreboard objectives remove wander.temp
 scoreboard objectives add wander.temp dummy
 scoreboard players add defeated wander.data 0
 
-bossbar remove wander:health
-bossbar add wander:health "\uFFF1"
-bossbar set wander:health players @s
-bossbar set wander:health visible false
-bossbar set wander:health color green
-bossbar set wander:health max 700
-bossbar set wander:health style notched_12
-
 team add wander.nocol
 team modify wander.nocol collisionRule never
 
@@ -27,4 +19,4 @@ scoreboard objectives add wander.deaths dummy
 
 scoreboard objectives add wander.actual_deaths deathCount
 scoreboard players add dig_config wander.data 0
-schedule function wander:settings_message 2s
+schedule function wander:dig_message 2s

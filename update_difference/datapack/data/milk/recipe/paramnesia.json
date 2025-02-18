@@ -7,17 +7,13 @@
         " p "
     ],
     "key": {
-        "p": {
-            "item": "minecraft:phantom_membrane"
-        },
-        "r": {
-            "item": "minecraft:redstone"
-        }
+        "p": "minecraft:phantom_membrane",
+        "r": "minecraft:redstone"
     },
     "result": {
         "id": "minecraft:music_disc_cat",
         "components": {
-            "minecraft:custom_model_data": 1,
+            "minecraft:item_model": "wander:music_disc_paramnesia",
             "minecraft:jukebox_playable": {
                 "song": "milk:paramnesia"
             }

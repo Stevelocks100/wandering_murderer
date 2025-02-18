@@ -1,16 +1,10 @@
-execute if score do_griefing milk.settings matches -1 run scoreboard players set $strength player_motion.api.launch -8000
-execute if score do_griefing milk.settings matches -1 as @a[distance=0..6] at @s rotated as @s rotated ~ 20 run function player_motion:api/launch_looking
-playsound entity.zombie.break_wooden_door block @a[distance=0..16] ~ ~-2 ~ 1.0 0.8 0.0
-
-execute if score do_griefing milk.settings matches -1 run return 0
-
 execute summon area_effect_cloud store result score current_y wander.temp run data get entity @s Pos[1]
 scoreboard players set desired_y wander.temp -999
 execute as @p[tag=wander.target] store result score desired_y wander.temp run data get entity @s Pos[1]
 scoreboard players operation desired_y wander.temp -= current_y wander.temp
 scoreboard players remove desired_y wander.data 1
 execute unless score ai wander.data matches 22..25 run scoreboard players set desired_y wander.temp -99
-
+playsound entity.zombie.break_wooden_door block @a[distance=0..16] ~ ~-2 ~ 1.0 0.8 0.0
 tag @n[tag=wander.sword_proj_display_landed] add wander.exploded_tower
 #execute po
 scoreboard players set tower_explosion wander.data 1

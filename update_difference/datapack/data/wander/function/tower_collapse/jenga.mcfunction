@@ -4,4 +4,4 @@ scoreboard players set tower_explosion wander.data 0
 
 #execute positioned ~ ~2 ~ run function wander:tower_collapse/recursive_jenga
 function wander:tower_collapse/tree/upwards/init
-execute if score do_griefing milk.settings matches 1 positioned ~ ~1 ~ run setblock ~ ~ ~ air destroy
+execute positioned ~ ~1 ~ run setblock ~ ~ ~ air destroy

@@ -1,16 +1,9 @@
 {
     "display": {
         "icon": {
-            "id": "minecraft:player_head",
+            "id": "minecraft:beetroot_soup",
             "components": {
-                "minecraft:profile": {
-                    "id": [
-                        -1436533639,
-                        -1306768108,
-                        -2062012634,
-                        -1998369853
-                    ]
-                }
+                "minecraft:item_model": "wander:credits/log"
             }
         },
         "title": "Log on a Couch",
