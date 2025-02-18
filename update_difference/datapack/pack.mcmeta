@@ -1,0 +1,29 @@
+{
+	"pack": {
+		"pack_format": 48,
+		"description": [
+			"",
+			{
+				"text": "Milkman's",
+				"bold": true,
+				"color": "gold"
+			},
+			{
+				"text": " Weapon",
+				"bold": true,
+				"color": "blue"
+			}
+		]
+	},
+	"overlays": {
+		"entries": [
+			{
+				"directory": "animated_java",
+				"formats": {
+					"min_inclusive": 48,
+					"max_inclusive": 56
+				}
+			}
+		]
+	}
+}

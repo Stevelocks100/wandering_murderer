@@ -1,0 +1,29 @@
+{
+    "values":[
+        "#minecraft:leaves",
+        "minecraft:bamboo",
+        "minecraft:dirt",
+        "minecraft:coarse_dirt",
+        "minecraft:grass_block",
+        "minecraft:podzol",
+        "minecraft:sand",
+        "minecraft:red_sand",
+        "minecraft:gravel",
+        "#minecraft:concrete_powder",
+        "minecraft:clay",
+        "#minecraft:logs",
+        "#minecraft:planks",
+        "minecraft:crafting_table",
+        "minecraft:ladder",
+        "minecraft:scaffolding",
+        "#minecraft:wool",
+        "minecraft:snow_block",
+        "minecraft:ice",
+        "minecraft:sponge",
+        "minecraft:wet_sponge",
+        "minecraft:cobblestone",
+        "diorite",
+        "granite",
+        "andesite"
+    ]
+}
