@@ -22,7 +22,7 @@ item replace entity @s weapon.offhand from entity @s weapon.mainhand
 
 scoreboard players add @s milk.crate_progress 2
 
-item replace entity @s weapon.mainhand with beetroot_soup[item_model="wander:molotov_milktail",max_stack_size=16,food={saturation: 0.0f, nutrition: 0, can_always_eat: 1b, eat_seconds: 1000000.0f},custom_name='{"italic":false,"text":"Molotov Milktail"}',rarity="rare",custom_data={milk:1b},hide_additional_tooltip={}]
+item replace entity @s weapon.mainhand with beetroot_soup[item_model="wander:molotov_milktail",max_stack_size=16,food={saturation: 0.0f, nutrition: 0, can_always_eat: 1b},consumable={consume_seconds:999999999},custom_name='{"italic":false,"text":"Molotov Milktail"}',rarity="rare",custom_data={milk:1b},hide_additional_tooltip={}]
 
 execute if score @s milk.dropped matches 4 run item modify entity @s weapon.offhand milk:crates/3
 execute if score @s milk.dropped matches 3 run item modify entity @s weapon.offhand milk:crates/2

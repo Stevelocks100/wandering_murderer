@@ -1,4 +1,5 @@
 advancement revoke @s only wander:hit_trader
+execute if score ai wander.data matches 29 run return 0
 scoreboard players set random_target wander.temp 0
 execute unless score ai wander.data matches 20..28 if score ai wander.data matches 0.. run scoreboard players set ai wander.data 20
 execute if entity @s[tag=wander.target] run return 0

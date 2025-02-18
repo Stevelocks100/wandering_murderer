@@ -1,4 +1,5 @@
-{   "parent":"wander:credits",
+{
+    "parent": "wander:credits",
     "display": {
         "icon": {
             "id": "minecraft:beetroot_soup",

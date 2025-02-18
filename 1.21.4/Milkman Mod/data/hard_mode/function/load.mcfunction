@@ -1,1 +1,0 @@
-scoreboard players set 6000 wander.data 6000

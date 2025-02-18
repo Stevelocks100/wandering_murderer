@@ -1,5 +1,5 @@
-execute store result score dimension_players trader_dimension.temp if entity @a[nbt={Dimension:"trader_dimension:pocket"}]
-execute if score dimension_players wander.data matches 0 run return 0
+
+
 
 execute store result score random trader_dimension.temp run random value 1..4
 execute if score hard_mode wander.data matches 1 store result score random trader_dimension.temp run random value 1..6

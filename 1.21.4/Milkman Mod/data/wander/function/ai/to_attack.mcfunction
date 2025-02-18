@@ -1,1 +1,0 @@
-scoreboard players set ai wander.data 20

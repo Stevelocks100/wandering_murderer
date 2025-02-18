@@ -9,6 +9,7 @@ execute if score do_interactive_crafting milk.settings matches 1 as @e[tag=craft
 
 execute if score do_interactive_crafting milk.settings matches 1 as @e[tag=crafting.countdown,scores={crafting.temp=9..}] run kill @s
 
+execute if score do_interactive_crafting milk.settings matches -1 as @e[tag=crafting.int] at @s run function crafting:remove_this
 
 execute as @e[tag=crafting.int,limit=10,sort=random] at @s unless block ~ ~ ~ crafting_table run function crafting:remove_this
 execute if score do_interactive_crafting milk.settings matches 1 as @a[scores={crafting.placed=1..}] at @s run function crafting:table_scan

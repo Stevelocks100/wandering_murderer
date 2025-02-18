@@ -1,5 +1,5 @@
 {
-	"parent": "minecraft:item/handheld",
+	"parent": "wander:item/handheld",
 	"textures": {
 		"layer0": "wander:item/music_disc_paramnesia"
 	}

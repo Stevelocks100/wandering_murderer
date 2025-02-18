@@ -1,6 +1,6 @@
 execute unless block ~ ~-0.1 ~ #wander:water_ish if entity @s[tag=wander.threw_sword] run function wander:ai/animation_macro {move:'angry_run',idle:'angry_idle'}
 execute unless block ~ ~-0.1 ~ #wander:water_ish unless entity @s[tag=wander.threw_sword] run function wander:ai/animation_macro {move:'angry_run_sword',idle:'angry_idle'}
-execute if block ~ ~-0.3 ~ #wander:water_ish run function wander:ai/animation_macro {move:'swim',idle:'angry_idle'}
+execute if block ~ ~-0.3 ~ #wander:water_ish run function wander:ai/animation_macro {move:'swim',idle:'swim_idle'}
 
 scoreboard players remove sword wander.attack_cooldown 1
 
@@ -30,5 +30,5 @@ execute if score player_height wander.temp matches 0.. run scoreboard players se
 
 
 
-execute unless block ~ ~ ~ #wander:motion_ish run function wander:ai/destory_nearby/init
+execute if block ~ ~ ~ #minecraft:ice run function wander:ai/destroy_nearby/init
 

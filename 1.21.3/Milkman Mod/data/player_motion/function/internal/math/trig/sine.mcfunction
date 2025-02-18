@@ -1,2 +1,0 @@
-$execute store result score $sine player_motion.internal.math run data get storage player_motion:sine arr[$(angle)]
-$execute store result score $cosine player_motion.internal.math run data get storage player_motion:cosine arr[$(angle)]

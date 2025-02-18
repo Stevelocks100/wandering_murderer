@@ -3,6 +3,7 @@ execute unless entity @s[type=item_display,tag=aj.wander.root] run return run fu
 tag @s remove aj.wander.animation.sneak_idle.playing
 tag @s remove aj.wander.animation.sneak_walk.playing
 tag @s remove aj.wander.animation.swim.playing
+tag @s remove aj.wander.animation.swim_idle.playing
 tag @s remove aj.wander.animation.angry_run.playing
 tag @s remove aj.wander.animation.sword_throw.playing
 tag @s remove aj.wander.animation.ice_throw.playing

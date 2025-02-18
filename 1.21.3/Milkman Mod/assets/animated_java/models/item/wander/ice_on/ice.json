@@ -1,6 +1,0 @@
-{
-	"parent": "animated_java:item/wander/ice",
-	"textures": {
-		"2": "minecraft:block/blue_ice"
-	}
-}
