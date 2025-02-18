@@ -14,187 +14,187 @@
 			"predicate": {
 				"custom_model_data": 2
 			},
-			"model": "animated_java:item/trader_dimension/default/knob"
+			"model": "animated_java:blueprint/trader_dimension/knob"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 3
 			},
-			"model": "animated_java:item/trader_dimension/default/lid"
+			"model": "animated_java:blueprint/trader_dimension/lid"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 4
 			},
-			"model": "animated_java:item/trader_dimension/default/lid2"
+			"model": "animated_java:blueprint/trader_dimension/lid2"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 5
 			},
-			"model": "animated_java:item/trader_dimension/default/lid3"
+			"model": "animated_java:blueprint/trader_dimension/lid3"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 6
 			},
-			"model": "animated_java:item/trader_dimension/default/lid4"
+			"model": "animated_java:blueprint/trader_dimension/lid4"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 7
 			},
-			"model": "animated_java:item/trader_dimension/default/lid5"
+			"model": "animated_java:blueprint/trader_dimension/lid5"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 8
 			},
-			"model": "animated_java:item/trader_dimension/default/base"
+			"model": "animated_java:blueprint/trader_dimension/base"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 9
 			},
-			"model": "animated_java:item/trader_dimension/default/base2"
+			"model": "animated_java:blueprint/trader_dimension/base2"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 10
 			},
-			"model": "animated_java:item/trader_dimension/default/base3"
+			"model": "animated_java:blueprint/trader_dimension/base3"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 11
 			},
-			"model": "animated_java:item/trader_dimension/default/base4"
+			"model": "animated_java:blueprint/trader_dimension/base4"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 12
 			},
-			"model": "animated_java:item/trader_dimension/default/base5"
+			"model": "animated_java:blueprint/trader_dimension/base5"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 13
 			},
-			"model": "animated_java:item/trader_dimension/default/line1"
+			"model": "animated_java:blueprint/trader_dimension/line1"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 14
 			},
-			"model": "animated_java:item/trader_dimension/default/line2"
+			"model": "animated_java:blueprint/trader_dimension/line2"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 15
 			},
-			"model": "animated_java:item/trader_dimension/default/line3"
+			"model": "animated_java:blueprint/trader_dimension/line3"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 16
 			},
-			"model": "animated_java:item/trader_dimension/default/line4"
+			"model": "animated_java:blueprint/trader_dimension/line4"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 17
 			},
-			"model": "animated_java:item/trader_dimension/default/line5"
+			"model": "animated_java:blueprint/trader_dimension/line5"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 18
 			},
-			"model": "animated_java:item/trader_dimension/default/line6"
+			"model": "animated_java:blueprint/trader_dimension/line6"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 19
 			},
-			"model": "animated_java:item/trader_dimension/default/line7"
+			"model": "animated_java:blueprint/trader_dimension/line7"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 20
 			},
-			"model": "animated_java:item/trader_dimension/default/line8"
+			"model": "animated_java:blueprint/trader_dimension/line8"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 21
 			},
-			"model": "animated_java:item/trader_dimension/default/line9"
+			"model": "animated_java:blueprint/trader_dimension/line9"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 22
 			},
-			"model": "animated_java:item/trader_dimension/default/tree3"
+			"model": "animated_java:blueprint/trader_dimension/tree3"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 23
 			},
-			"model": "animated_java:item/trader_dimension/default/tree2"
+			"model": "animated_java:blueprint/trader_dimension/tree2"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 24
 			},
-			"model": "animated_java:item/trader_dimension/default/tree1"
+			"model": "animated_java:blueprint/trader_dimension/tree1"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 25
 			},
-			"model": "animated_java:item/trader_dimension/default/head"
+			"model": "animated_java:blueprint/trader_dimension/head"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 26
 			},
-			"model": "animated_java:item/trader_dimension/default/head2"
+			"model": "animated_java:blueprint/trader_dimension/head2"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 27
 			},
-			"model": "animated_java:item/trader_dimension/default/body"
+			"model": "animated_java:blueprint/trader_dimension/body"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 28
 			},
-			"model": "animated_java:item/trader_dimension/default/body2"
+			"model": "animated_java:blueprint/trader_dimension/body2"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 29
 			},
-			"model": "animated_java:item/trader_dimension/default/leg1"
+			"model": "animated_java:blueprint/trader_dimension/leg1"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 30
 			},
-			"model": "animated_java:item/trader_dimension/default/leg2"
+			"model": "animated_java:blueprint/trader_dimension/leg2"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 31
 			},
-			"model": "animated_java:item/trader_dimension/default/leg3"
+			"model": "animated_java:blueprint/trader_dimension/leg3"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 32
 			},
-			"model": "animated_java:item/trader_dimension/default/leg4"
+			"model": "animated_java:blueprint/trader_dimension/leg4"
 		}
 	],
 	"animated_java": {

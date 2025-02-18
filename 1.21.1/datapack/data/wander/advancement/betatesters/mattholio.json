@@ -1,9 +1,16 @@
 {
     "display": {
         "icon": {
-            "id": "minecraft:beetroot_soup",
+            "id": "minecraft:player_head",
             "components": {
-                "minecraft:custom_model_data": 756
+                "minecraft:profile": {
+                    "id": [
+                        183634243,
+                        593186638,
+                        -1350782361,
+                        583041568
+                    ]
+                }
             }
         },
         "title": "Mattholio",

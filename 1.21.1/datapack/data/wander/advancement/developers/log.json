@@ -1,9 +1,16 @@
 {
     "display": {
         "icon": {
-            "id": "minecraft:beetroot_soup",
+            "id": "minecraft:player_head",
             "components": {
-                "minecraft:custom_model_data": 752
+                "minecraft:profile": {
+                    "id": [
+                        -1436533639,
+                        -1306768108,
+                        -2062012634,
+                        -1998369853
+                    ]
+                }
             }
         },
         "title": "Log on a Couch",

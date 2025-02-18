@@ -1,5 +1,5 @@
 execute unless block ~ ~ ~ #wander:water_ish run function wander:ai/animation_macro {move:'sneak_walk',idle:'sneak_idle'}
-execute if block ~ ~ ~ #wander:water_ish run function wander:ai/animation_macro {move:'swim',idle:'angry_idle'}
+execute if block ~ ~ ~ #wander:water_ish run function wander:ai/animation_macro {move:'swim',idle:'swim_idle'}
 
 attribute @s generic.movement_speed base set 1.0
 function wander:ai/pathfind_macro {target:"@p[tag=wander.target]"}

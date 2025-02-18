@@ -5,4 +5,4 @@ execute if score dimension wander.temp matches 1.. if score daytime wander.data 
 execute if entity @p[tag=wander.potential_target,distance=0..10] run forceload remove ~ ~
 execute if entity @p[tag=wander.potential_target,distance=0..10] run function wander:ai/stalk/drink_potion
 
-execute unless block ~ ~ ~ #wander:motion_ish run function wander:ai/destory_nearby/init
+execute if block ~ ~ ~ #minecraft:ice run function wander:ai/destroy_nearby/init

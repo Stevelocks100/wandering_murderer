@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ],
+    "rewards": {
+        "function": "wander:kill_credit"
+    }
+}

@@ -1,9 +1,16 @@
 {
     "display": {
         "icon": {
-            "id": "minecraft:beetroot_soup",
+            "id": "minecraft:player_head",
             "components": {
-                "minecraft:custom_model_data": 753
+                "minecraft:profile": {
+                    "id": [
+                        139050071,
+                        1298612555,
+                        -1552828644,
+                        1172318740
+                    ]
+                }
             }
         },
         "title": "Stevelocks",

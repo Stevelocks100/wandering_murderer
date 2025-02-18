@@ -12,6 +12,15 @@
                 0,
                 0
             ]
+        },
+        {
+            "type": "bitmap",
+            "file": "minecraft:gui/sprites/boss_bar/wandering_murderer.png",
+            "ascent": 10,
+            "height": 50,
+            "chars": [
+                "\uFFF1"
+            ]
         }
     ]
 }

@@ -1,5 +1,5 @@
 execute unless block ~ ~ ~ #wander:water_ish run function wander:ai/animation_macro {move:'sneak_walk',idle:'sneak_idle'}
-execute if block ~ ~ ~ #wander:water_ish run function wander:ai/animation_macro {move:'swim',idle:'angry_idle'}
+execute if block ~ ~ ~ #wander:water_ish run function wander:ai/animation_macro {move:'swim',idle:'swim_idle'}
 
 execute if data entity @s wander_target run attribute @s generic.movement_speed base set 1.0
 execute unless data entity @s wander_target run attribute @s generic.movement_speed base set 0.0

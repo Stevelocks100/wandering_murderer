@@ -1,0 +1,35 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:player_head",
+            "components": {
+                "minecraft:profile": {
+                    "id": [
+                        -1196591244,
+                        -2122101347,
+                        -1147658406,
+                        127503679
+                    ]
+                }
+            }
+        },
+        "title": "The Bread Giver",
+        "description": {
+            "text": "Bossbar Designer"
+        },
+        "frame": "goal",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "parent": "wander:betatesters",
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:tick"
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ]
+}

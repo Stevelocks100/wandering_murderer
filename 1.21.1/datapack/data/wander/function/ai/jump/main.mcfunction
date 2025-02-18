@@ -15,8 +15,8 @@ execute if score break_out wander.data matches 1 run data modify storage wander:
 execute if score jump_tick wander.data matches 1..41 run function wander:ai/jump/main2 with storage wander:temp
 execute if score break_out wander.data matches 1 if score jump_tick wander.data matches 21.. run scoreboard players set jump_tick wander.data 300
 
-execute if score break_out wander.data matches 1 rotated as @n[tag=aj.wander.root] positioned ^ ^-1 ^2 run function wander:ai/destory_nearby/init
-execute if score break_out wander.data matches 1 run function wander:ai/destory_nearby/init
+execute if score break_out wander.data matches 1 rotated as @n[tag=aj.wander.root] positioned ^ ^-1 ^2 run function wander:ai/destroy_nearby/init
+execute if score break_out wander.data matches 1 run function wander:ai/destroy_nearby/init
 
 
 execute if score jump_tick wander.data matches 1 run data modify entity @s Motion[1] set value 1.00d

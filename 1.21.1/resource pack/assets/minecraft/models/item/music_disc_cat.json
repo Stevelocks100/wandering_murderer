@@ -9,6 +9,12 @@
 				"custom_model_data": 1
 			},
 			"model": "minecraft:item/music_disc_paramnesia"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 2
+			},
+			"model": "minecraft:item/music_disc_emerald_ultimatum"
 		}
 	]
 }

@@ -1,9 +1,16 @@
 {
     "display": {
         "icon": {
-            "id": "minecraft:beetroot_soup",
+            "id": "minecraft:player_head",
             "components": {
-                "minecraft:custom_model_data": 758
+                "minecraft:profile": {
+                    "id": [
+                        967239217,
+                        2003190090,
+                        -1294903534,
+                        -283811068
+                    ]
+                }
             }
         },
         "title": "Shadikyui",

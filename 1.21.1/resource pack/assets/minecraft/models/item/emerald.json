@@ -14,475 +14,475 @@
 			"predicate": {
 				"custom_model_data": 2
 			},
-			"model": "animated_java:item/wander/default/lowerbody"
+			"model": "animated_java:blueprint/wander/lowerbody"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 3
 			},
-			"model": "animated_java:item/wander/default/head"
+			"model": "animated_java:blueprint/wander/head"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 4
 			},
-			"model": "animated_java:item/wander/default/nose"
+			"model": "animated_java:blueprint/wander/nose"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 5
 			},
-			"model": "animated_java:item/wander/default/glowing_eye"
+			"model": "animated_java:blueprint/wander/glowing_eye"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 6
 			},
-			"model": "animated_java:item/wander/default/leftarm"
+			"model": "animated_java:blueprint/wander/leftarm"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 7
 			},
-			"model": "animated_java:item/wander/default/leftelbow"
+			"model": "animated_java:blueprint/wander/leftelbow"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 8
 			},
-			"model": "animated_java:item/wander/default/leftforearm"
+			"model": "animated_java:blueprint/wander/leftforearm"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 9
 			},
-			"model": "animated_java:item/wander/default/lefthand"
+			"model": "animated_java:blueprint/wander/lefthand1"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 10
 			},
-			"model": "animated_java:item/wander/default/leftthumb"
+			"model": "animated_java:blueprint/wander/leftthumb"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 11
 			},
-			"model": "animated_java:item/wander/default/leftthumb2"
+			"model": "animated_java:blueprint/wander/leftthumb2"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 12
 			},
-			"model": "animated_java:item/wander/default/leftpointerfinger"
+			"model": "animated_java:blueprint/wander/leftpointerfinger"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 13
 			},
-			"model": "animated_java:item/wander/default/leftmidfinger"
+			"model": "animated_java:blueprint/wander/leftmidfinger"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 14
 			},
-			"model": "animated_java:item/wander/default/leftringfinger"
+			"model": "animated_java:blueprint/wander/leftringfinger"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 15
 			},
-			"model": "animated_java:item/wander/default/invisibility"
+			"model": "animated_java:blueprint/wander/invisibility"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 16
 			},
-			"model": "animated_java:item/wander/default/swiftness"
+			"model": "animated_java:blueprint/wander/swiftness"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 17
 			},
-			"model": "animated_java:item/wander/default/suspicious_stew"
+			"model": "animated_java:blueprint/wander/suspicious_stew"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 18
 			},
-			"model": "animated_java:item/wander/default/log"
+			"model": "animated_java:blueprint/wander/log"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 19
 			},
-			"model": "animated_java:item/wander/default/planks"
+			"model": "animated_java:blueprint/wander/planks"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 20
 			},
-			"model": "animated_java:item/wander/default/rightarm"
+			"model": "animated_java:blueprint/wander/rightarm"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 21
 			},
-			"model": "animated_java:item/wander/default/rightelbow"
+			"model": "animated_java:blueprint/wander/rightelbow"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 22
 			},
-			"model": "animated_java:item/wander/default/rightforearm"
+			"model": "animated_java:blueprint/wander/rightforearm"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 23
 			},
-			"model": "animated_java:item/wander/default/righthand"
+			"model": "animated_java:blueprint/wander/righthand1"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 24
 			},
-			"model": "animated_java:item/wander/default/rightthumb"
+			"model": "animated_java:blueprint/wander/rightthumb"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 25
 			},
-			"model": "animated_java:item/wander/default/rightthumb2"
+			"model": "animated_java:blueprint/wander/rightthumb2"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 26
 			},
-			"model": "animated_java:item/wander/default/rightpointerfinger"
+			"model": "animated_java:blueprint/wander/rightpointerfinger"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 27
 			},
-			"model": "animated_java:item/wander/default/rightmidfinger"
+			"model": "animated_java:blueprint/wander/rightmidfinger"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 28
 			},
-			"model": "animated_java:item/wander/default/rightringfinger"
+			"model": "animated_java:blueprint/wander/rightringfinger"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 29
 			},
-			"model": "animated_java:item/wander/default/hugeasssword"
+			"model": "animated_java:blueprint/wander/hugeasssword"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 30
 			},
-			"model": "animated_java:item/wander/default/ice"
+			"model": "animated_java:blueprint/wander/ice"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 31
 			},
-			"model": "animated_java:item/wander/default/chest"
+			"model": "animated_java:blueprint/wander/chest1"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 32
 			},
-			"model": "animated_java:item/wander/default/belt"
+			"model": "animated_java:blueprint/wander/belt"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 33
 			},
-			"model": "animated_java:item/wander/default/chest1"
+			"model": "animated_java:blueprint/wander/chest2"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 34
 			},
-			"model": "animated_java:item/wander/default/chest1lid"
+			"model": "animated_java:blueprint/wander/chest1lid"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 35
 			},
-			"model": "animated_java:item/wander/default/chest3"
+			"model": "animated_java:blueprint/wander/chest3"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 36
 			},
-			"model": "animated_java:item/wander/default/chest1lid3"
+			"model": "animated_java:blueprint/wander/chest1lid3"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 37
 			},
-			"model": "animated_java:item/wander/default/hugeasssword2"
+			"model": "animated_java:blueprint/wander/hugeasssword2"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 38
 			},
-			"model": "animated_java:item/wander/default/torn_part"
+			"model": "animated_java:blueprint/wander/torn_part"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 39
 			},
-			"model": "animated_java:item/wander/default/leftleg"
+			"model": "animated_java:blueprint/wander/leftleg"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 40
 			},
-			"model": "animated_java:item/wander/default/leftlowerleg"
+			"model": "animated_java:blueprint/wander/leftlowerleg"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 41
 			},
-			"model": "animated_java:item/wander/default/leftfoot"
+			"model": "animated_java:blueprint/wander/leftfoot"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 42
 			},
-			"model": "animated_java:item/wander/default/rightleg"
+			"model": "animated_java:blueprint/wander/rightleg"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 43
 			},
-			"model": "animated_java:item/wander/default/rightlowerleg"
+			"model": "animated_java:blueprint/wander/rightlowerleg"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 44
 			},
-			"model": "animated_java:item/wander/default/rightfoot"
+			"model": "animated_java:blueprint/wander/rightfoot"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 45
 			},
-			"model": "animated_java:item/wander/default/sack_top"
+			"model": "animated_java:blueprint/wander/sack_top"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 46
 			},
-			"model": "animated_java:item/wander/default/sack_main"
+			"model": "animated_java:blueprint/wander/sack_main"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 47
 			},
-			"model": "animated_java:item/wander/pufferfish/leftthumb2"
+			"model": "animated_java:blueprint/wander/pufferfish/leftthumb2"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 48
 			},
-			"model": "animated_java:item/wander/pufferfish/leftthumb"
+			"model": "animated_java:blueprint/wander/pufferfish/leftthumb"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 49
 			},
-			"model": "animated_java:item/wander/pufferfish/leftpointerfinger"
+			"model": "animated_java:blueprint/wander/pufferfish/leftpointerfinger"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 50
 			},
-			"model": "animated_java:item/wander/pufferfish/leftmidfinger"
+			"model": "animated_java:blueprint/wander/pufferfish/leftmidfinger"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 51
 			},
-			"model": "animated_java:item/wander/pufferfish/leftringfinger"
+			"model": "animated_java:blueprint/wander/pufferfish/leftringfinger"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 52
 			},
-			"model": "animated_java:item/wander/pufferfish/lefthand"
+			"model": "animated_java:blueprint/wander/pufferfish/lefthand1"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 53
 			},
-			"model": "animated_java:item/wander/sack/sack_top"
+			"model": "animated_java:blueprint/wander/sack/sack_top"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 54
 			},
-			"model": "animated_java:item/wander/sack/sack_main"
+			"model": "animated_java:blueprint/wander/sack/sack_main"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 55
 			},
-			"model": "animated_java:item/wander/sword_hand/hugeasssword"
+			"model": "animated_java:blueprint/wander/sword_hand/hugeasssword"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 56
 			},
-			"model": "animated_java:item/wander/sword_hand/hugeasssword2"
+			"model": "animated_java:blueprint/wander/sword_hand/hugeasssword2"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 57
 			},
-			"model": "animated_java:item/wander/sword_back/hugeasssword"
+			"model": "animated_java:blueprint/wander/sword_back/hugeasssword"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 58
 			},
-			"model": "animated_java:item/wander/sword_back/hugeasssword2"
+			"model": "animated_java:blueprint/wander/sword_back/hugeasssword2"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 59
 			},
-			"model": "animated_java:item/wander/sword_none/hugeasssword"
+			"model": "animated_java:blueprint/wander/sword_none/hugeasssword"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 60
 			},
-			"model": "animated_java:item/wander/sword_none/hugeasssword2"
+			"model": "animated_java:blueprint/wander/sword_none/hugeasssword2"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 61
 			},
-			"model": "animated_java:item/wander/soup_on/suspicious_stew"
+			"model": "animated_java:blueprint/wander/soup_on/suspicious_stew"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 62
 			},
-			"model": "animated_java:item/wander/ice_on/ice"
+			"model": "animated_java:blueprint/wander/ice_on/ice"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 63
 			},
-			"model": "animated_java:item/wander/speed_on/swiftness"
+			"model": "animated_java:blueprint/wander/speed_on/swiftness"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 64
 			},
-			"model": "animated_java:item/wander/crafting_on/log"
+			"model": "animated_java:blueprint/wander/crafting_on/log"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 65
 			},
-			"model": "animated_java:item/wander/crafting_on/planks"
+			"model": "animated_java:blueprint/wander/crafting_on/planks"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 66
 			},
-			"model": "animated_java:item/wander/invis_on/invisibility"
+			"model": "animated_java:blueprint/wander/invis_on/invisibility"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 67
 			},
-			"model": "animated_java:item/wander/item_off/leftthumb2"
+			"model": "animated_java:blueprint/wander/item_off/leftthumb2"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 68
 			},
-			"model": "animated_java:item/wander/item_off/leftthumb"
+			"model": "animated_java:blueprint/wander/item_off/leftthumb"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 69
 			},
-			"model": "animated_java:item/wander/item_off/leftpointerfinger"
+			"model": "animated_java:blueprint/wander/item_off/leftpointerfinger"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 70
 			},
-			"model": "animated_java:item/wander/item_off/leftmidfinger"
+			"model": "animated_java:blueprint/wander/item_off/leftmidfinger"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 71
 			},
-			"model": "animated_java:item/wander/item_off/leftringfinger"
+			"model": "animated_java:blueprint/wander/item_off/leftringfinger"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 72
 			},
-			"model": "animated_java:item/wander/item_off/invisibility"
+			"model": "animated_java:blueprint/wander/item_off/invisibility"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 73
 			},
-			"model": "animated_java:item/wander/item_off/swiftness"
+			"model": "animated_java:blueprint/wander/item_off/swiftness"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 74
 			},
-			"model": "animated_java:item/wander/item_off/suspicious_stew"
+			"model": "animated_java:blueprint/wander/item_off/suspicious_stew"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 75
 			},
-			"model": "animated_java:item/wander/item_off/log"
+			"model": "animated_java:blueprint/wander/item_off/log"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 76
 			},
-			"model": "animated_java:item/wander/item_off/planks"
+			"model": "animated_java:blueprint/wander/item_off/planks"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 77
 			},
-			"model": "animated_java:item/wander/item_off/lefthand"
+			"model": "animated_java:blueprint/wander/item_off/lefthand1"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 78
 			},
-			"model": "animated_java:item/wander/item_off/ice"
+			"model": "animated_java:blueprint/wander/item_off/ice"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 79
 			},
-			"model": "animated_java:item/wander/item_off/sack_top"
+			"model": "animated_java:blueprint/wander/item_off/sack_top"
 		},
 		{
 			"predicate": {
 				"custom_model_data": 80
 			},
-			"model": "animated_java:item/wander/item_off/sack_main"
+			"model": "animated_java:blueprint/wander/item_off/sack_main"
 		}
 	],
 	"animated_java": {

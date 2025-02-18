@@ -3,6 +3,54 @@
         "sounds": [
             {
                 "name": "minecraft:records/paramnesia",
+                "preload": false
+            }
+        ]
+    },
+    "music_disc.emerald_ultimatum": {
+        "sounds": [
+            {
+                "name": "minecraft:records/emerald_ultimatum",
+                "preload": false
+            }
+        ]
+    },
+    "wandering_murderer.fullsong": {
+        "sounds": [
+            {
+                "name": "minecraft:wandering_murderer/fullsong",
+                "preload": false
+            }
+        ]
+    },
+    "wandering_murderer.phase1": {
+        "sounds": [
+            {
+                "name": "minecraft:wandering_murderer/phase1",
+                "preload": true
+            }
+        ]
+    },
+    "wandering_murderer.phase2": {
+        "sounds": [
+            {
+                "name": "minecraft:wandering_murderer/phase2",
+                "preload": true
+            }
+        ]
+    },
+    "wandering_murderer.phase3": {
+        "sounds": [
+            {
+                "name": "minecraft:wandering_murderer/phase3",
+                "preload": true
+            }
+        ]
+    },
+    "wandering_murderer.ending": {
+        "sounds": [
+            {
+                "name": "minecraft:wandering_murderer/ending",
                 "preload": true
             }
         ]

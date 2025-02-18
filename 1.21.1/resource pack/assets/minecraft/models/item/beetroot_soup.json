@@ -78,75 +78,9 @@
 		},
 		{
 			"predicate": {
-				"custom_model_data": 750
-			},
-			"model": "item/credits/rose"
-		},
-		{
-			"predicate": {
-				"custom_model_data": 751
-			},
-			"model": "item/credits/pickle"
-		},
-		{
-			"predicate": {
-				"custom_model_data": 752
-			},
-			"model": "item/credits/log"
-		},
-		{
-			"predicate": {
-				"custom_model_data": 753
-			},
-			"model": "item/credits/stevelocks"
-		},
-		{
-			"predicate": {
-				"custom_model_data": 754
-			},
-			"model": "item/credits/drapie"
-		},
-		{
-			"predicate": {
-				"custom_model_data": 755
-			},
-			"model": "item/credits/jfrostie"
-		},
-		{
-			"predicate": {
-				"custom_model_data": 756
-			},
-			"model": "item/credits/mattholio"
-		},
-		{
-			"predicate": {
-				"custom_model_data": 757
-			},
-			"model": "item/credits/ryanskull"
-		},
-		{
-			"predicate": {
-				"custom_model_data": 758
-			},
-			"model": "item/credits/shadikyui"
-		},
-		{
-			"predicate": {
-				"custom_model_data": 759
-			},
-			"model": "item/credits/bread"
-		},
-		{
-			"predicate": {
 				"custom_model_data": 760
 			},
 			"model": "item/whey"
-		},
-		{
-			"predicate": {
-				"custom_model_data": 761
-			},
-			"model": "item/cursor"
 		}
 	]
 }

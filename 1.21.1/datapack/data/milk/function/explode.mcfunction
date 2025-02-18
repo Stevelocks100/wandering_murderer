@@ -1,4 +1,4 @@
-execute as @e[type=!#milk:command_entities,distance=0..2] at @s run setblock ~ ~ ~ fire keep
+execute if score do_fire_spawning milk.settings matches 1 as @e[type=!#milk:command_entities,distance=0..2] at @s run setblock ~ ~ ~ fire keep
 function milk:summon_drop
 function milk:summon_drop
 function milk:summon_drop

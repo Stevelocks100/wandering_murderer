@@ -1,9 +1,16 @@
 {
     "display": {
         "icon": {
-            "id": "minecraft:beetroot_soup",
+            "id": "minecraft:player_head",
             "components": {
-                "minecraft:custom_model_data": 755
+                "minecraft:profile": {
+                    "id": [
+                        -1440403007,
+                        -1459011102,
+                        -1685070041,
+                        -1703686494
+                    ]
+                }
             }
         },
         "title": "JFrostie",
