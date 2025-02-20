@@ -15,6 +15,8 @@ scoreboard objectives add aj.give_sword2.frame dummy
 scoreboard objectives add aj.punch.frame dummy
 scoreboard objectives add aj.abduct.frame dummy
 scoreboard objectives add aj.macarena.frame dummy
+scoreboard objectives add aj.twirl.frame dummy
+scoreboard objectives add aj.gangnamstyle.frame dummy
 scoreboard objectives add aj.drink_potion_slow.frame dummy
 scoreboard objectives add aj.drink_potion_quick.frame dummy
 scoreboard objectives add aj.jump_to_sword.frame dummy

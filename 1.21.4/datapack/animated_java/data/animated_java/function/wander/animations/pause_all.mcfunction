@@ -16,6 +16,8 @@ tag @s remove aj.wander.animation.give_sword2.playing
 tag @s remove aj.wander.animation.punch.playing
 tag @s remove aj.wander.animation.abduct.playing
 tag @s remove aj.wander.animation.macarena.playing
+tag @s remove aj.wander.animation.twirl.playing
+tag @s remove aj.wander.animation.gangnamstyle.playing
 tag @s remove aj.wander.animation.drink_potion_slow.playing
 tag @s remove aj.wander.animation.drink_potion_quick.playing
 tag @s remove aj.wander.animation.jump_to_sword.playing

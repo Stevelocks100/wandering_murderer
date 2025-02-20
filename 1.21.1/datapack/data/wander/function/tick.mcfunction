@@ -20,6 +20,7 @@ function wander:projectiles/tick
 
 tag @e[tag=wander.ice_spread,tag=new] remove new
 execute as @e[tag=wander.ice_spread,tag=!new,limit=15,sort=random] at @s run function wander:ice_spread
+execute as @n[tag=wander.sword_proj_display,tag=!wander.sword_proj_display_landed] unless predicate wander:riding_arrow run tag @s add wander.sword_proj_display_landed
 execute as @n[tag=wander.sword_proj_display_landed] at @s rotated as @s if block ^ ^ ^1 #wander:air_ish run function wander:projectiles/sword/resummon_arrow
 execute as @e[tag=wander.ice_proj_display] at @s unless entity @n[tag=wander.ice_proj,distance=0..1] run function wander:projectiles/ice/convert_nearby_water
 execute as @e[tag=wander.ice_proj_display] at @s unless entity @n[tag=wander.ice_proj,distance=0..1] run kill @s
