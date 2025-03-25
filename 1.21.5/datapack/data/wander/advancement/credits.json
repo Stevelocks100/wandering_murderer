@@ -1,0 +1,25 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:netherite_sword",
+            "components": {
+                "minecraft:item_model": "wander:hugeasssword"
+            }
+        },
+        "title": "The Wandering Murderer",
+        "description": "Credits",
+        "background": "minecraft:textures/block/hay_block_side.png",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:tick"
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ]
+}

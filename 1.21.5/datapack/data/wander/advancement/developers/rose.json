@@ -1,0 +1,35 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:player_head",
+            "components": {
+                "minecraft:profile": {
+                    "id": [
+                        534766903,
+                        -1035385449,
+                        -1193066280,
+                        -275394455
+                    ]
+                }
+            }
+        },
+        "title": "RoseRocket",
+        "description": {
+            "text": "Main Modeller\nCoder"
+        },
+        "frame": "goal",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "parent": "wander:developers",
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:tick"
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ]
+}

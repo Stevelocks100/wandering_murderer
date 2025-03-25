@@ -1,0 +1,2 @@
+$execute at @n[tag=wander.ai] unless entity @n[tag=wander.sword_proj_display] facing entity @p[tag=wander.target] feet positioned 0.0 0.0 0.0 rotated ~ 0 positioned ^ ^ ^$(final_distance) summon area_effect_cloud run function wander:ai/jump/zzz/cloud5
+$execute at @n[tag=wander.ai] if entity @n[tag=wander.sword_proj_display] facing entity @n[tag=wander.sword_proj_display_landed] feet positioned 0.0 0.0 0.0 rotated ~ 0 positioned ^ ^ ^$(final_distance) summon area_effect_cloud run function wander:ai/jump/zzz/cloud6

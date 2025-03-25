@@ -1,0 +1,35 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:player_head",
+            "components": {
+                "minecraft:profile": {
+                    "id": [
+                        -326053030,
+                        53297595,
+                        -1998696826,
+                        342949516
+                    ]
+                }
+            }
+        },
+        "title": "Barbarian Pickle",
+        "description": {
+            "text": "Main Animator\nMacarena Man\nSFX Man"
+        },
+        "frame": "goal",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "parent": "wander:developers",
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:tick"
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ]
+}

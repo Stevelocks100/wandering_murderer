@@ -1,0 +1,6 @@
+{
+	"parent": "wander:item/handheld",
+	"textures": {
+		"layer0": "wander:item/music_disc_emerald_ultimatum"
+	}
+}

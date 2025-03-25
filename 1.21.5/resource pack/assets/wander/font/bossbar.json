@@ -1,0 +1,22 @@
+{
+    "providers": [
+        {
+            "type": "bitmap",
+            "file": "wander:gui/sprites/boss_bar/stevelocked.png",
+            "ascent": 10,
+            "height": 50,
+            "chars": [
+                "\uFFF1"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "wander:gui/sprites/boss_bar/stevelocked2.png",
+            "ascent": 10,
+            "height": 50,
+            "chars": [
+                "\uFFF2"
+            ]
+        }
+    ]
+}
