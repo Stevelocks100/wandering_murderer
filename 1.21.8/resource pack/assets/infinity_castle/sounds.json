@@ -1,0 +1,20 @@
+{
+  "door.slide": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "infinity_castle:door/slide"
+      }
+    ],
+    "preload": true
+  },
+  "door.open": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "infinity_castle:door/open"
+      }
+    ],
+    "preload": true
+  }
+}

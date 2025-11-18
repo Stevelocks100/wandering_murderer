@@ -1,0 +1,11 @@
+{
+  "records.better_call_phil": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "better_call_phil:records/better_call_phil"
+      }
+    ],
+    "preload": true
+  }
+}

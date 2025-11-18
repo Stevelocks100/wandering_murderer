@@ -1,0 +1,174 @@
+{
+  "ending.eschaton": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "devesto:ending/eschaton"
+      }
+    ],
+    "preload": true
+  },
+  "ending.boom": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "devesto:ending/boom"
+      }
+    ],
+    "preload": true
+  },
+  "ending.phase1": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "devesto:ending/phase1"
+      }
+    ],
+    "preload": true
+  },
+  "ending.phase5": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "devesto:ending/phase5"
+      }
+    ],
+    "preload": true
+  },
+  "ending.chunk_vanishing.1": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "devesto:ending/chunk_vanishing/1"
+      }
+    ]
+  },
+  "ending.chunk_vanishing.2": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "devesto:ending/chunk_vanishing/2"
+      }
+    ]
+  },
+  "ending.chunk_vanishing.3": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "devesto:ending/chunk_vanishing/3"
+      }
+    ]
+  },
+  "ending.chunk_vanishing.4": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "devesto:ending/chunk_vanishing/4"
+      }
+    ]
+  },
+  "ending.chunk_vanishing.5": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "devesto:ending/chunk_vanishing/5"
+      }
+    ]
+  },
+  "ending.chunk_vanishing.6": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "devesto:ending/chunk_vanishing/6"
+      }
+    ]
+  },
+  "ending.chunk_vanishing.7": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "devesto:ending/chunk_vanishing/7"
+      }
+    ]
+  },
+  "ending.chunk_vanishing": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "devesto:ending/chunk_vanishing/1"
+      },
+      {
+        "name": "devesto:ending/chunk_vanishing/2"
+      },
+      {
+        "name": "devesto:ending/chunk_vanishing/3"
+      },
+      {
+        "name": "devesto:ending/chunk_vanishing/4"
+      },
+      {
+        "name": "devesto:ending/chunk_vanishing/5"
+      },
+      {
+        "name": "devesto:ending/chunk_vanishing/6"
+      },
+      {
+        "name": "devesto:ending/chunk_vanishing/7"
+      }
+    ]
+  },
+  "pickle.wind": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "devesto:pickle/wind"
+      }
+    ],
+    "preload": true
+  },
+  "pickle.prepare": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "devesto:pickle/prepare"
+      }
+    ],
+    "preload": true
+  },
+  "pickle.take_the_moon": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "devesto:pickle/take_the_moon"
+      }
+    ],
+    "preload": true
+  },
+  "pickle.moon_launch_backup": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "devesto:pickle/moon_launch_backup"
+      }
+    ],
+    "preload": true
+  },
+  "pickle.moon_launch": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "devesto:pickle/moon_launch"
+      }
+    ],
+    "preload": true
+  },
+  "figura.rambunctious": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "devesto:figura/rambunctious"
+      }
+    ],
+    "preload": true
+  }
+}

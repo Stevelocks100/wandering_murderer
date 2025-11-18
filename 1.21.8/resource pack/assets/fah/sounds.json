@@ -1,0 +1,38 @@
+{
+  "item.bonk": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "fah:item/bonk"
+      }
+    ],
+    "preload": true
+  },
+  "item.fah": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "fah:item/fah"
+      }
+    ],
+    "preload": true
+  },
+  "item.crit": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "fah:item/crit"
+      }
+    ],
+    "preload": true
+  },
+  "item.bread_sound": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "fah:item/bread_sound"
+      }
+    ],
+    "preload": true
+  }
+}

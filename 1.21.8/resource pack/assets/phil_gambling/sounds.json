@@ -1,0 +1,126 @@
+{
+  "slot_machine.activate": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "phil_gambling:slot_machine/activate"
+      }
+    ],
+    "preload": true
+  },
+  "slot_machine.attack.0": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "phil_gambling:slot_machine/attack/0"
+      }
+    ]
+  },
+  "slot_machine.attack.1": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "phil_gambling:slot_machine/attack/1"
+      }
+    ]
+  },
+  "slot_machine.attack.2": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "phil_gambling:slot_machine/attack/2"
+      }
+    ]
+  },
+  "slot_machine.attack.3": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "phil_gambling:slot_machine/attack/3"
+      }
+    ]
+  },
+  "slot_machine.attack.4": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "phil_gambling:slot_machine/attack/4"
+      }
+    ]
+  },
+  "slot_machine.attack.5": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "phil_gambling:slot_machine/attack/5"
+      }
+    ]
+  },
+  "slot_machine.attack.6": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "phil_gambling:slot_machine/attack/6"
+      }
+    ]
+  },
+  "slot_machine.attack.7": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "phil_gambling:slot_machine/attack/7"
+      }
+    ]
+  },
+  "slot_machine.attack.8": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "phil_gambling:slot_machine/attack/8"
+      }
+    ]
+  },
+  "slot_machine.attack.9": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "phil_gambling:slot_machine/attack/9"
+      }
+    ]
+  },
+  "slot_machine.attack": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "phil_gambling:slot_machine/attack/0"
+      },
+      {
+        "name": "phil_gambling:slot_machine/attack/1"
+      },
+      {
+        "name": "phil_gambling:slot_machine/attack/2"
+      },
+      {
+        "name": "phil_gambling:slot_machine/attack/3"
+      },
+      {
+        "name": "phil_gambling:slot_machine/attack/4"
+      },
+      {
+        "name": "phil_gambling:slot_machine/attack/5"
+      },
+      {
+        "name": "phil_gambling:slot_machine/attack/6"
+      },
+      {
+        "name": "phil_gambling:slot_machine/attack/7"
+      },
+      {
+        "name": "phil_gambling:slot_machine/attack/8"
+      },
+      {
+        "name": "phil_gambling:slot_machine/attack/9"
+      }
+    ]
+  }
+}

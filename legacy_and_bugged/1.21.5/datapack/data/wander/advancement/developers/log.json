@@ -1,0 +1,35 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:player_head",
+            "components": {
+                "minecraft:profile": {
+                    "id": [
+                        -1436533639,
+                        -1306768108,
+                        -2062012634,
+                        -1998369853
+                    ]
+                }
+            }
+        },
+        "title": "Log on a Couch",
+        "description": {
+            "text": "Main Artist\nMilktail Assets Creator"
+        },
+        "frame": "goal",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "parent": "wander:developers",
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:tick"
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ]
+}

@@ -1,0 +1,1 @@
+$particle dust_pillar{block_state:{Name:"$(Name)"}} ~ ~ ~ 1.5 0 1.5 0.6 200 normal @a

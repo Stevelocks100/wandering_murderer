@@ -1,0 +1,4 @@
+item.bonk: 10 ticks
+item.bread_sound: 19 ticks
+item.crit: 27 ticks
+item.fah: 26 ticks

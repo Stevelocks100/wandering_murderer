@@ -1,0 +1,14 @@
+{
+    "providers": [
+        {
+            "type": "ttf",
+            "file": "devesto:fancy.ttf",
+            "shift": [
+                0,
+                0
+            ],
+            "size": 11,
+            "oversample": 16
+        }   
+    ]
+}

@@ -1,0 +1,11 @@
+{
+  "spoon_spoon.hit": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "spoon:spoon_spoon/hit"
+      }
+    ],
+    "preload": true
+  }
+}

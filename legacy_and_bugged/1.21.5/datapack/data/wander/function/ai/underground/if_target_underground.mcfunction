@@ -1,0 +1,1 @@
+execute unless function wander:ai/underground/underground_check at @p[tag=wander.target] if function wander:ai/underground/underground_check run return 1

@@ -1,0 +1,12 @@
+slot_machine.activate: 61 ticks
+slot_machine.attack: 10 ticks
+slot_machine.attack.0: 9 ticks
+slot_machine.attack.1: 14 ticks
+slot_machine.attack.2: 10 ticks
+slot_machine.attack.3: 14 ticks
+slot_machine.attack.4: 6 ticks
+slot_machine.attack.5: 13 ticks
+slot_machine.attack.6: 11 ticks
+slot_machine.attack.7: 7 ticks
+slot_machine.attack.8: 9 ticks
+slot_machine.attack.9: 11 ticks

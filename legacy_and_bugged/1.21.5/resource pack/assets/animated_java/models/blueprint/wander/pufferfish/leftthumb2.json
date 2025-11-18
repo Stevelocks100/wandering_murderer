@@ -1,0 +1,6 @@
+{
+	"parent": "animated_java:blueprint/wander/leftthumb2",
+	"textures": {
+		"0": "animated_java:blueprint/wander/wandering_murderer_variant"
+	}
+}

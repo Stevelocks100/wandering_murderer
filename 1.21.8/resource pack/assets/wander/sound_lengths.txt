@@ -1,0 +1,8 @@
+records.emerald_ultimatum: 1818 ticks
+records.paramnesia: 3966 ticks
+wandering_murderer.ending: 172 ticks
+wandering_murderer.fullsong: 1818 ticks
+wandering_murderer.phase1: 549 ticks
+wandering_murderer.phase2: 549 ticks
+wandering_murderer.phase3: 411 ticks
+wandering_murderer.twinkle: 33 ticks
