@@ -1,4 +1,7 @@
 advancement revoke @s only wander:hit_trader
+
+execute if score hard_mode wander.data matches 1 run tag @s add wander.whey_target
+
 execute if score ai wander.data matches 29 run return 0
 tag @a remove wander.kill_credit
 tag @s add wander.kill_credit

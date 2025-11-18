@@ -11,13 +11,16 @@ execute as @n[tag=wander.ai] at @s rotated as @s run function wander:ai/as_root
 execute store result score target_count wander.data if entity @a[tag=wander.target]
 execute if score target_count wander.data matches 2.. run tag @r[tag=wander.target] remove wander.target
 tag @a remove wander.potential_target
-tag @a[gamemode=!creative,gamemode=!spectator] add wander.potential_target
+execute unless score hard_mode wander.data matches 1 run tag @a[gamemode=!creative,gamemode=!spectator] add wander.potential_target
+execute if score hard_mode wander.data matches 1 run tag @a[gamemode=!creative,gamemode=!spectator,tag=wander.whey_target] add wander.potential_target
 execute as @a at @s if dimension trader_dimension:pocket run tag @s remove wander.potential_target
 tag @a[tag=wander.target,tag=!wander.potential_target] remove wander.target
 tag @a[scores={wander.attack_cooldown=1..}] remove wander.target
 execute as @a at @s unless dimension minecraft:overworld run tag @s remove wander.potential_target
 scoreboard players add @a wander.encounters 0
 execute as @a[tag=wander.grow] run function wander:grow_tick
+
+execute if score daytime wander.data matches -501 run tag @a remove wander.whey_target
 
 execute as @a[tag=wander.kill_check.regular,tag=!wander.kill_check.internal] at @s run function wander:killed_normal_trader
 tag @a remove wander.kill_check.internal
