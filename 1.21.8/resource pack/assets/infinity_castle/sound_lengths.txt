@@ -1,2 +1,0 @@
-door.open: 30 ticks
-door.slide: 10 ticks

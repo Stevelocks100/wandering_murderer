@@ -1,6 +1,0 @@
-{
-	"parent": "animated_java:blueprint/phil_machine/handle",
-	"textures": {
-		"1": "phil_gambling:item/blank"
-	}
-}
