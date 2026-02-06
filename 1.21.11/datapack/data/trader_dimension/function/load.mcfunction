@@ -7,3 +7,6 @@
 scoreboard objectives remove trader_dimension.temp
 
 scoreboard objectives add trader_dimension.temp dummy
+execute in trader_dimension:pocket run worldborder center 0 0
+execute in trader_dimension:pocket run worldborder set 1000 0
+execute in trader_dimension:pocket run worldborder warning distance 0

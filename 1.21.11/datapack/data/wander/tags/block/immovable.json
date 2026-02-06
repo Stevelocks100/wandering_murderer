@@ -128,6 +128,8 @@
         {
             "required": false,
             "id": "minecraft:crying_obsidian"
-        }
+        },
+        "test_block",
+        "test_instance_block"
     ]
 }

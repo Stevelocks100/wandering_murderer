@@ -123,7 +123,7 @@
         },
         {
             "required": false,
-            "id": "minecraft:lightning_rod"
+            "id": "#lightning_rods"
         },
         {
             "required": false,
@@ -507,12 +507,9 @@
         },
         {
             "required": false,
-            "id": "minecraft:lantern"
+            "id": "#lanterns"
         },
-        {
-            "required": false,
-            "id": "minecraft:soul_lantern"
-        },
+        "#wooden_shelves",
         {
             "required": false,
             "id": "minecraft:player_head"

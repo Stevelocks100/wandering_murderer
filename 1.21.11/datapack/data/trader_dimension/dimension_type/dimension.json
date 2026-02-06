@@ -1,12 +1,25 @@
 {
+	"attributes": {
+		"minecraft:gameplay/bed_rule": {
+			"can_sleep": "never",
+			"can_set_spawn": "never",
+			"explodes": false,
+			"error_message": "no."
+		},
+		"minecraft:gameplay/can_start_raid": false,
+		"minecraft:gameplay/piglins_zombify": false,
+		"minecraft:gameplay/respawn_anchor_works": false,
+		"minecraft:gameplay/water_evaporates": false,
+		"minecraft:visual/sun_angle": -20,
+		"minecraft:visual/fog_end_distance": 60,
+		"minecraft:visual/fog_start_distance": 20,
+		"minecraft:gameplay/sky_light_level": 15
+	},
 	"ambient_light": 1,
-	"bed_works": false,
 	"coordinate_scale": 1,
-	"fixed_time": 3000,
-	"effects": "minecraft:the_nether",
 	"has_ceiling": true,
-	"has_raids": false,
 	"has_skylight": false,
+	"has_fixed_time": true,
 	"height": 384,
 	"infiniburn": "#minecraft:infiniburn_overworld",
 	"logical_height": 384,
@@ -16,9 +29,5 @@
 		"type": "minecraft:uniform",
 		"max_inclusive": 7,
 		"min_inclusive": 0
-	},
-	"natural": true,
-	"piglin_safe": false,
-	"respawn_anchor_works": false,
-	"ultrawarm": false
+	}
 }

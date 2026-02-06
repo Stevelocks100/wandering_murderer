@@ -1,5 +1,7 @@
 
 {
     "death.attack.molotov_milktail": "%1$s was reduced to ash and dairy",
-    "death.attack.molotov_milktail.player": "%1$s couldn’t survive the lactose inferno of %2$s"
+    "death.attack.molotov_milktail.player": "%1$s couldn’t survive the lactose inferno of %2$s",
+    "death.attack.gilded_emerald_cleaver": "%1$s was crushed beneath a massive blade",
+    "death.attack.gilded_emerald_cleaver.player": "%1$s was crushed beneath %2$s's massive blade"
 }

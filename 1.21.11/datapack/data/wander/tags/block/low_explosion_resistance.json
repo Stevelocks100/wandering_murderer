@@ -110,6 +110,7 @@
         "minecraft:cobblestone",
         "diorite",
         "granite",
-        "andesite"
+        "andesite",
+        "#candles"
     ]
 }

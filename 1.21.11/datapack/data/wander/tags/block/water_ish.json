@@ -13,6 +13,8 @@
             "required": false,
             "id": "minecraft:tall_seagrass"
         },
-        "bubble_column"
+        "bubble_column",
+        "kelp_plant",
+        "kelp"
     ]
 }
