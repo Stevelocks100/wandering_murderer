@@ -1,0 +1,74 @@
+{
+  "records.emerald_ultimatum": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "wander:records/emerald_ultimatum"
+      }
+    ],
+    "preload": true
+  },
+  "records.paramnesia": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "wander:records/paramnesia"
+      }
+    ],
+    "preload": true
+  },
+  "wandering_murderer.fullsong": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "wander:wandering_murderer/fullsong"
+      }
+    ],
+    "preload": true
+  },
+  "wandering_murderer.twinkle": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "wander:wandering_murderer/twinkle"
+      }
+    ],
+    "preload": true
+  },
+  "wandering_murderer.phase2": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "wander:wandering_murderer/phase2"
+      }
+    ],
+    "preload": true
+  },
+  "wandering_murderer.phase3": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "wander:wandering_murderer/phase3"
+      }
+    ],
+    "preload": true
+  },
+  "wandering_murderer.phase1": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "wander:wandering_murderer/phase1"
+      }
+    ],
+    "preload": true
+  },
+  "wandering_murderer.ending": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "wander:wandering_murderer/ending"
+      }
+    ],
+    "preload": true
+  }
+}

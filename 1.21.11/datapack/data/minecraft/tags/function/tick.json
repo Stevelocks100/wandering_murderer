@@ -1,0 +1,11 @@
+{
+	"values": [
+		"animated_java:global/on_tick",
+		"hard_mode:tick",
+		"milk:tick",
+		"murderer_music:tick",
+		"tower_api:tick",
+		"trader_dimension:tick",
+		"wander:tick"
+	]
+}

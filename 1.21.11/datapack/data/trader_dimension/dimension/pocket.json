@@ -1,0 +1,18 @@
+{
+	"type": "trader_dimension:dimension",
+	"generator": {
+		"type": "minecraft:flat",
+		"settings": {
+			"biome": "trader_dimension:void",
+			"lakes": false,
+			"features": false,
+			"layers": [
+				{
+					"height": 0,
+					"block": "minecraft:barrier"
+				}
+			],
+			"structure_overrides": "minecraft:ancient_cities"
+		}
+	}
+}

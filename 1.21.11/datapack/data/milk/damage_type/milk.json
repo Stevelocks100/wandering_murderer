@@ -1,0 +1,7 @@
+{
+    "message_id": "molotov_milktail",
+    "exhaustion": 0.1,
+    "scaling": "always",
+    "effects": "burning",
+    "death_message_type": "default"
+}

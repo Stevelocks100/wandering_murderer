@@ -1,0 +1,48 @@
+{
+	"textures": {
+		"12": "animated_java:blueprint/wander/blasting_off1",
+		"particle": "minecraft:item/pufferfish"
+	},
+	"display": {
+		"head": {
+			"rotation": [0, 180, 0]
+		}
+	},
+	"elements": [
+		{
+			"from": [-4, -4, 8],
+			"to": [20, 20, 8],
+			"rotation": {
+				"angle": 0,
+				"axis": "y",
+				"origin": [4.5, 4, 8.5]
+			},
+			"faces": {
+				"north": {
+					"uv": [0, 0, 16, 16],
+					"texture": "#12"
+				},
+				"east": {
+					"uv": [0, 0, 16, 16],
+					"texture": "#12"
+				},
+				"south": {
+					"uv": [16, 0, 0, 16],
+					"texture": "#12"
+				},
+				"west": {
+					"uv": [0, 0, 16, 16],
+					"texture": "#12"
+				},
+				"up": {
+					"uv": [0, 0, 16, 16],
+					"texture": "#12"
+				},
+				"down": {
+					"uv": [0, 0, 16, 16],
+					"texture": "#12"
+				}
+			}
+		}
+	]
+}

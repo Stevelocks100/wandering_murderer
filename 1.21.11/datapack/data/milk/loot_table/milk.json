@@ -1,0 +1,38 @@
+{
+    "pools": [
+        {
+            "rolls": 3,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:beetroot_soup",
+                    "weight": 1,
+                    "quality": 1,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_components",
+                            "components": {
+                                "!minecraft:food": {},
+                                "minecraft:item_model": "wander:molotov_milktail",
+                                "minecraft:custom_data": {
+                                    "milk": true
+                                },
+                                "minecraft:item_name": {
+                                    "text": "Molotov Milktail",
+                                    "italic": false
+                                },
+                                "minecraft:rarity": "rare",
+                                "minecraft:max_stack_size": 16,
+                                "consumable": {
+                                    "consume_seconds": 99999999,
+                                    "has_consume_particles": false,
+                                    "sound": "intentionally_empty"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:using_item",
+            "conditions": {
+                "player": {
+                    "slots": {
+                        "weapon.mainhand": {
+                            "components": {
+                                "minecraft:custom_data": {
+                                    "milk": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "item": {
+                    "components": {
+                        "minecraft:custom_data": {
+                            "milk": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ],
+    "rewards": {
+        "function": "milk:throw_milk"
+    }
+}

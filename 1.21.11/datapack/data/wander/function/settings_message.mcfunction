@@ -1,0 +1,1 @@
+tellraw @a[gamemode=creative] [{text:""},{text:"[The Milkman Reborn]"},{text:" Run /function milk:settings for settings about the mod",click_event:{action:"suggest_command",command:"/function milk:settings"}}]

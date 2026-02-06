@@ -1,0 +1,7 @@
+{
+	"parent": "animated_java:blueprint/wander/blast_off1",
+	"textures": {
+		"0": "animated_java:blueprint/wander/blank",
+		"2": "animated_java:blueprint/wander/blank"
+	}
+}
