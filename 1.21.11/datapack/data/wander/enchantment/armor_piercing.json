@@ -1,0 +1,29 @@
+{
+    "anvil_cost": 9999,
+    "description": "Trader Armor Piercing",
+    "exclusive_set": "#minecraft:in_enchanting_table",
+    "max_cost": {
+        "base": 9999,
+        "per_level_above_first": 9999
+    },
+    "max_level": 2,
+    "min_cost": {
+        "base": 9999,
+        "per_level_above_first": 9999
+    },
+    "slots": [
+        "head"
+    ],
+    "supported_items": "minecraft:iron_ingot",
+    "weight": 1,
+    "effects": {
+        "minecraft:armor_effectiveness": [
+            {
+                "effect": {
+                    "type": "minecraft:add",
+                    "value": -0.5
+                }
+            }
+        ]
+    }
+}

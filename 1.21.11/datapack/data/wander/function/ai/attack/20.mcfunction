@@ -37,7 +37,7 @@ execute if entity @p[tag=wander.target,distance=0..2] run scoreboard players rem
 
 
 execute if entity @p[tag=wander.target,distance=0..3] if score attack_cd wander.data matches ..0 run function wander:ai/attack/attack
-execute positioned ~ ~2 ~ if entity @p[tag=wander.target,distance=0..2] if score attack_cd wander.data matches ..0 run function wander:ai/attack/attack
+execute positioned ~ ~1 ~ if entity @p[tag=wander.target,distance=0..2.8] if score attack_cd wander.data matches ..0 run function wander:ai/attack/attack
 
 tag @s remove wander.follow_success
 

@@ -4,7 +4,7 @@
             "trigger": "minecraft:entity_killed_player",
             "conditions": {
                 "entity": {
-                    "nbt": "{Tags:[\"wander.damage\"]}"
+                    "nbt": "{Tags:[\"wander.ai\"]}"
                 }
             }
         }

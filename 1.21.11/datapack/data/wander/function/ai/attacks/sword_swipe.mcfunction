@@ -1,17 +1,17 @@
-execute at @s run summon marker ~ ~ ~ {CustomName:{text:"Wandering Trader"},Tags:["wander.damage"]}
+
 particle sweep_attack
 execute positioned ~ ~1 ~ as @a[distance=0..2.5] run tag @s add wander.do_damage
 execute as @a[distance=0..2.5] run tag @s add wander.do_damage
 execute positioned ~ ~1.5 ~ as @a[distance=0..1.5] run tag @s add wander.do_damage
 
 execute at @n[tag=wander.ai] as @a[distance=0..3] run tag @s add wander.do_damage
-execute as @a[tag=wander.do_damage] unless score hard_mode wander.data matches 1 run damage @s 11 mob_attack by @n[tag=wander.damage]
-execute as @a[tag=wander.do_damage] if score hard_mode wander.data matches 1 run damage @s 16 mob_attack by @n[tag=wander.damage]
+execute as @a[tag=wander.do_damage] unless score hard_mode wander.data matches 1 run damage @s 11 mob_attack by @n[tag=wander.ai]
+execute as @a[tag=wander.do_damage] if score hard_mode wander.data matches 1 run damage @s 16 mob_attack by @n[tag=wander.ai]
 
 tag @a[tag=wander.do_damage] remove wander.do_damage
 
 playsound item.trident.throw hostile @a[distance=0..16] ~ ~ ~ 1.0 0.25 0.0
-kill @e[tag=wander.damage]
+
 
 execute if score ai wander.data matches 21 at @p[tag=wander.target] run function wander:tower_collapse/get_tower_bottom
 execute if score ai wander.data matches 21 at @n[tag=wander.tower_bottom] run function wander:tower_collapse/jenga

@@ -16,6 +16,15 @@ item replace entity @n[tag=wander.hitbox] weapon with milk_bucket[item_model="wa
 item replace entity @n[tag=wander.hitbox] weapon.mainhand with milk_bucket[item_model="wander:empty",use_remainder={id:"bucket",count:1,components:{item_model:"wander:empty"}}]
 item replace entity @n[tag=wander.hitbox] weapon.offhand with milk_bucket[item_model="wander:empty",use_remainder={id:"bucket",count:1,components:{item_model:"wander:empty"}}]
 
+item replace entity @s armor.head with iron_ingot[enchantments={"wander:armor_piercing":1},equippable={slot:"head",asset_id:"saddle",can_be_sheared:false,equip_sound:"intentionally_empty"},unbreakable={}]
+execute unless score hard_mode wander.data matches 1 run item replace entity @s armor.chest with iron_ingot[enchantments={"wander:trader_resistance":1},equippable={slot:"chest",asset_id:"saddle",can_be_sheared:false,equip_sound:"intentionally_empty"},unbreakable={}]
+execute unless score hard_mode wander.data matches 1 run item replace entity @s armor.legs with iron_ingot[enchantments={"wander:trader_resistance":1},equippable={slot:"legs",asset_id:"saddle",can_be_sheared:false,equip_sound:"intentionally_empty"},unbreakable={}]
+execute unless score hard_mode wander.data matches 1 run item replace entity @s armor.feet with iron_ingot[enchantments={"wander:trader_resistance":1},equippable={slot:"feet",asset_id:"saddle",can_be_sheared:false,equip_sound:"intentionally_empty"},unbreakable={}]
+
+execute if score hard_mode wander.data matches 1 run item replace entity @s armor.chest with iron_ingot[enchantments={"wander:trader_resistance":2},equippable={slot:"chest",asset_id:"saddle",can_be_sheared:false,equip_sound:"intentionally_empty"},unbreakable={}]
+execute if score hard_mode wander.data matches 1 run item replace entity @s armor.legs with iron_ingot[enchantments={"wander:trader_resistance":2},equippable={slot:"legs",asset_id:"saddle",can_be_sheared:false,equip_sound:"intentionally_empty"},unbreakable={}]
+execute if score hard_mode wander.data matches 1 run item replace entity @s armor.feet with iron_ingot[enchantments={"wander:trader_resistance":2},equippable={slot:"feet",asset_id:"saddle",can_be_sheared:false,equip_sound:"intentionally_empty"},unbreakable={}]
+
 effect clear @n[tag=wander.hitbox] glowing
 effect clear @s glowing
 
