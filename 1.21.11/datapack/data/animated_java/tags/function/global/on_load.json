@@ -1,3 +1,4 @@
 {
-	"values": ["animated_java:trader_dimension/on_load", "animated_java:wander/on_load"]
+	"replace": false,
+	"values": ["animated_java:fine_print/on_load", "animated_java:trader_dimension/on_load", "animated_java:wander/on_load"]
 }

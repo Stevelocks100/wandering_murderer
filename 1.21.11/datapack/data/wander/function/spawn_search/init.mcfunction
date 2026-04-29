@@ -8,6 +8,7 @@ tag @s add wander.spawn_checking
 tag @s[type=player] add wander.target
 execute store result score @s wander.temp run data get entity @s Rotation[0]
 execute if score spawn_search_method wander.data matches 1 at @s positioned over motion_blocking_no_leaves unless entity @s[distance=0..2] run return 0
+
 scoreboard players set rotation wander.data 72
 
 execute at @s rotated as @s rotated ~ 0 run function wander:spawn_search/rotate

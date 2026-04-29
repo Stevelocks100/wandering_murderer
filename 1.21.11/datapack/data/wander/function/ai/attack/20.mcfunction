@@ -1,8 +1,10 @@
+
 execute if entity @s[nbt={OnGround:1b}] run tag @s remove wander.jump_for_sword
 execute if block ~ ~ ~ #wander:water_ish run tag @s remove wander.jump_for_sword
 execute if block ~ ~-1 ~ #wander:water_ish run tag @s remove wander.jump_for_sword
 
 execute if entity @s[tag=wander.jump_for_sword] run return 0
+execute if entity @s[tag=wander.jump_landing] run function wander:ai/land
 tag @s remove wander.jump_for_target
 
 execute unless block ~ ~-0.1 ~ #wander:water_ish if entity @s[tag=wander.threw_sword] if block ~ ~2.5 ~ #wander:motion_ish if block ~ ~3.5 ~ #wander:motion_ish run function wander:ai/animation_macro {move:'angry_run',idle:'angry_idle'}
@@ -15,10 +17,15 @@ execute if entity @s[tag=wander.threw_sword] as @n[tag=aj.wander.root] run funct
 
 scoreboard players remove punch wander.attack_cooldown 1
 scoreboard players remove sword wander.attack_cooldown 1
+scoreboard players remove throw_sword wander.attack_cooldown 1
+scoreboard players remove throw_whey wander.attack_cooldown 1
+
 execute if entity @s[tag=wander.threw_sword] run scoreboard players set sword wander.attack_cooldown 20
 scoreboard players remove stew wander.attack_cooldown 1
 scoreboard players remove ice wander.attack_cooldown 1
+scoreboard players remove gunpowder wander.attack_cooldown 1
 
+execute if predicate {"condition":"minecraft:random_chance","chance":0.08} unless score whey_count wander.data matches 10.. run scoreboard players add whey_count wander.data 1
 
 scoreboard players remove attack_cd wander.data 1
 
@@ -49,29 +56,28 @@ scoreboard players remove ice_cooldown wander.data 1
 execute if score ice_cooldown wander.data matches ..0 run scoreboard players set .x_size scan_config 10
 execute if score ice_cooldown wander.data matches ..0 run scoreboard players set .y_size scan_config 5
 execute if score ice_cooldown wander.data matches ..0 run scoreboard players set .z_size scan_config 10
-execute if score ice_cooldown wander.data matches ..0 at @p[tag=wander.target] rotated as @p[tag=wander.target] rotated ~ 0 positioned ^ ^ ^5 positioned ~-5 ~-1 ~-5 run function scan:scan
+execute if score ice_cooldown wander.data matches ..0 at @p[tag=wander.target] rotated as @p[tag=wander.target] rotated ~ 0 positioned ^ ^ ^5 positioned ~-5 ~-1 ~-5 run function wander:scan/scan
 execute if score water_check wander.temp matches 1 run function wander:ai/attacks/throw_ice_init
 
 execute if score ice_cooldown wander.data matches ..0 run scoreboard players set ice_cooldown wander.data 20
 
-
-
+execute if entity @p[tag=wander.target,distance=10..] if score attack_cd wander.data matches ..0 run function wander:ai/attacks/gunpowder_throw_init
+execute store result score gunpowder_count wander.data if entity @e[tag=wander.gunpowder,distance=0..40]
+execute if score throw_sword wander.attack_cooldown matches ..0 if score attack_cd wander.data matches ..0 if score gunpowder_count wander.data matches 100.. at @p[tag=wander.target] if entity @n[tag=wander.gunpowder,distance=0..4] at @s run function wander:ai/attacks/throw_sword_init
 execute store result score player_height wander.temp run data get entity @p[tag=wander.target] Pos[1]
 execute store result score trader_height wander.temp run data get entity @s Pos[1]
 
 scoreboard players operation player_height wander.temp -= trader_height wander.temp
 execute if score player_height wander.temp matches 4.. unless function wander:ai/underground/underground_check if score do_griefing milk.settings matches 1 run scoreboard players set ai wander.data 21
-execute if score do_digging milk.settings matches 1 if score player_height wander.temp matches ..-1 at @p[tag=wander.target] if function wander:ai/underground/underground_check run scoreboard players set ai wander.data 22
 
 execute if block ~ ~ ~ #minecraft:ice run function wander:ai/destroy_nearby/init
 
 scoreboard players set failed_sword_swipes wander.data 0
 
-
+execute if entity @n[type=#wander:scares_traders,distance=0..10] run function wander:ai/attacks/throw_whey_init
 
 #data modify entity @s NoAI set value 0b
-execute if function wander:ai/underground/underground_check unless score player_height wander.temp matches -5..5 if entity @s[nbt={OnGround:1b}] run scoreboard players remove timer wander.data 200
-execute if function wander:ai/underground/underground_check if score player_height wander.temp matches -5..5 if score do_digging milk.settings matches 1 run scoreboard players set ai wander.data 23
+execute if function wander:ai/underground/underground_check unless score player_height wander.temp matches -5..5 if entity @s[nbt={OnGround:1b}] run scoreboard players remove timer wander.data 50
 
 execute if entity @p[tag=wander.target,distance=100..] run tag @p[tag=wander.target] remove wander.target
 execute if entity @p[tag=wander.target,distance=30..] run scoreboard players set ai wander.data 25
@@ -81,5 +87,7 @@ execute unless score @s wander.motion1 matches 0 if score not_moving wander.data
 execute if score not_moving wander.data matches 13.. run scoreboard players remove timer wander.data 100
 execute if score not_moving wander.data matches 13.. run tag @s add wander.jump_despawn_anim
 execute unless score not_moving wander.data matches 13.. run tag @s remove wander.jump_despawn_anim
+execute if score not_moving wander.data matches 200.. run function wander:ai/despawn
 
 
+scoreboard players set pick_up_sword_timer wander.data 0

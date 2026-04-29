@@ -1,0 +1,6 @@
+{
+	"parent": "animated_java:blueprint/fine_print/left_arm",
+	"textures": {
+		"1": "animated_java:blueprint/fine_print/sadmask"
+	}
+}

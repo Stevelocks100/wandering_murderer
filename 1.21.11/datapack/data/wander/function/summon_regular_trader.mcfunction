@@ -1,6 +1,7 @@
 summon wandering_trader ~ ~ ~ {Tags:["wander.new","wander.regular_trader"],DespawnDelay:12000}
 summon trader_llama ~ ~ ~ {Tags:["wander.new","wander.regular_llama"]}
 summon trader_llama ~ ~ ~ {Tags:["wander.new","wander.regular_llama"]}
+execute if score daytime wander.data matches 100.. run tag @n[tag=wander.new,tag=wander.regular_trader] add wander.increased_spawn
 execute as @e[tag=wander.new,tag=wander.regular_llama] run data modify entity @s leash.UUID set from entity @n[tag=wander.new,tag=wander.regular_trader] UUID
 data modify entity @n[tag=wander.new,tag=wander.regular_trader] wander_target set value [I;0,0,0]
 execute at @p[gamemode=!spectator] positioned over motion_blocking_no_leaves run summon marker ~ ~ ~ {Tags:["wander.find_ground"]}

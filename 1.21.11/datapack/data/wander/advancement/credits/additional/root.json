@@ -1,0 +1,35 @@
+{
+    "parent": "wander:credits/root",
+    "display": {
+        "icon": {
+            "id": "minecraft:beetroot_soup",
+            "components": {
+                "minecraft:item_model": "wander:whey"
+            }
+        },
+        "title": "Additional Credits",
+        "description": "",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:tick",
+            "conditions": {
+                "player": {
+                    "type_specific": {
+                        "type": "player",
+                        "advancements": {
+                            "wander:story/kill_murderer": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ]
+}

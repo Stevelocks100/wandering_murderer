@@ -1,5 +1,7 @@
 
-execute rotated as @s facing entity @p[tag=wander.target] feet run function wander:projectiles/sword/summon
+execute if entity @n[tag=wander.gunpowder,distance=8..60] rotated as @s facing entity @n[tag=wander.gunpowder,distance=8..60] feet run function wander:projectiles/sword/summon
+
+execute unless entity @n[tag=wander.gunpowder,distance=8..60] rotated as @s facing entity @p[tag=wander.target] feet run function wander:projectiles/sword/summon
 
 
 scoreboard players set tick tower.temp 0

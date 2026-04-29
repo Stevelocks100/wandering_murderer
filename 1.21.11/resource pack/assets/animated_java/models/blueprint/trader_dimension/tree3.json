@@ -2,7 +2,7 @@
 	"textures": {
 		"4": "minecraft:block/oak_log",
 		"5": "minecraft:block/oak_log_top",
-		"6": "animated_java:blueprint/trader_dimension/2024_12_13_18.20.38",
+		"6": "animated_java:blueprint/trader_dimension/2024_12_13_18_20_38",
 		"particle": "minecraft:item/pufferfish"
 	},
 	"display": {

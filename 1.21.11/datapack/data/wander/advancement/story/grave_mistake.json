@@ -1,0 +1,73 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:white_banner",
+            "count": 1,
+            "components": {
+                "banner_patterns": [
+                    {
+                        "color": "cyan",
+                        "pattern": "minecraft:rhombus"
+                    },
+                    {
+                        "color": "light_gray",
+                        "pattern": "minecraft:stripe_bottom"
+                    },
+                    {
+                        "color": "gray",
+                        "pattern": "minecraft:stripe_center"
+                    },
+                    {
+                        "color": "light_gray",
+                        "pattern": "minecraft:border"
+                    },
+                    {
+                        "color": "black",
+                        "pattern": "minecraft:stripe_middle"
+                    },
+                    {
+                        "color": "light_gray",
+                        "pattern": "minecraft:half_horizontal"
+                    },
+                    {
+                        "color": "light_gray",
+                        "pattern": "minecraft:circle"
+                    },
+                    {
+                        "color": "black",
+                        "pattern": "minecraft:border"
+                    }
+                ]
+            }
+        },
+        "title": "A Grave Mistake",
+        "description": "Kill a wandering trader with bad omen 5....",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "parent": "wander:story/dio_reference",
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:player_killed_entity",
+            "conditions": {
+                "player": {
+                    "effects": {
+                        "minecraft:bad_omen": {
+                            "amplifier": 4
+                        }
+                    }
+                },
+                "entity": {
+                    "type": "minecraft:wandering_trader"
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ]
+}

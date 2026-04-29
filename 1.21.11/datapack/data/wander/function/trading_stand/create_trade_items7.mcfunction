@@ -1,0 +1,1 @@
+$execute unless data storage wander:trades main_offers[{uuid:$(uuid)}] run data modify storage wander:trades main_offers append from storage wander:trades weighted_offers[$(random_index)]

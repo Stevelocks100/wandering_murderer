@@ -1,0 +1,23 @@
+{
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+                "item": {
+                    "items": "minecraft:netherite_sword",
+                    "components": {
+                        "minecraft:item_model": "wander:hugeasssword"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ],
+    "rewards": {
+        "function": "wander:sword/leap"
+    }
+}

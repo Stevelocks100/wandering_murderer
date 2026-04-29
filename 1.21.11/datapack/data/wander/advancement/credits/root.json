@@ -1,0 +1,32 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:filled_map"
+        },
+        "title": "Credits",
+        "description": "",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "parent": "wander:credits/root2",
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:tick",
+            "conditions": {
+                "player": {
+                    "type_specific": {
+                        "type": "minecraft:player",
+                        "advancements": {
+                            "wander:story/kill_murderer": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ]
+}

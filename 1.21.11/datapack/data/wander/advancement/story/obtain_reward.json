@@ -1,0 +1,68 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:netherite_sword",
+            "components": {
+                "minecraft:item_model": "wander:hugeasssword"
+            },
+            "count": 1
+        },
+        "title": "The New Wanderer",
+        "description": "Gain the respect of the Wandering Trader",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "parent": "wander:story/kill_murderer",
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:netherite_sword",
+                        "components": {
+                            "minecraft:item_model": "wander:hugeasssword"
+                        }
+                    }
+                ]
+            }
+        },
+        "b": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:beetroot_soup",
+                        "components": {
+                            "minecraft:item_model": "wander:bag"
+                        }
+                    }
+                ]
+            }
+        },
+        "c": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:netherite_sword",
+                        "components": {
+                            "minecraft:item_model": "wander:amethyst_cleaver"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "a",
+            "b",
+            "c"
+        ]
+    ],
+    "rewards": {
+        "experience": 150
+    }
+}

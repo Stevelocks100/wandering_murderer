@@ -1,0 +1,41 @@
+{
+    "anvil_cost": 4,
+    "description": "Resonance",
+    "effects": {
+        "minecraft:post_attack": [
+            {
+                "requirements": {
+                    "condition": "minecraft:random_chance",
+                    "chance": {
+                        "type": "minecraft:enchantment_level",
+                        "amount": {
+                            "type": "minecraft:linear",
+                            "base": 0.1,
+                            "per_level_above_first": 0.07
+                        }
+                    }
+                },
+                "effect": {
+                    "type": "minecraft:run_function",
+                    "function": "wander:sword/amethyst_sword_effect"
+                },
+                "enchanted": "attacker",
+                "affected": "victim"
+            }
+        ]
+    },
+    "max_cost": {
+        "base": 15,
+        "per_level_above_first": 11
+    },
+    "max_level": 3,
+    "min_cost": {
+        "base": 1,
+        "per_level_above_first": 11
+    },
+    "slots": [
+        "mainhand"
+    ],
+    "supported_items": "#minecraft:enchantable/melee_weapon",
+    "weight": 1
+}

@@ -1,6 +1,6 @@
 {
 	"textures": {
-		"13": "animated_java:blueprint/wander/blasting_off2",
+		"10": "animated_java:blueprint/wander/blank2",
 		"particle": "minecraft:item/pufferfish"
 	},
 	"display": {
@@ -20,27 +20,27 @@
 			"faces": {
 				"north": {
 					"uv": [0, 0, 16, 16],
-					"texture": "#13"
+					"texture": "#10"
 				},
 				"east": {
 					"uv": [0, 0, 16, 16],
-					"texture": "#13"
+					"texture": "#10"
 				},
 				"south": {
 					"uv": [16, 0, 0, 16],
-					"texture": "#13"
+					"texture": "#10"
 				},
 				"west": {
 					"uv": [0, 0, 16, 16],
-					"texture": "#13"
+					"texture": "#10"
 				},
 				"up": {
 					"uv": [0, 0, 16, 16],
-					"texture": "#13"
+					"texture": "#10"
 				},
 				"down": {
 					"uv": [0, 0, 16, 16],
-					"texture": "#13"
+					"texture": "#10"
 				}
 			}
 		}

@@ -1,0 +1,2 @@
+
+function wander:add_new_trade {offer:{weight:-1,offer_item:{id: "minecraft:dragon_egg", count: 1},cost:1,cost_type:"netherite",item_name:"Dragon Egg",max_amount:1,global_limit:"true",costs_blocks:true}}

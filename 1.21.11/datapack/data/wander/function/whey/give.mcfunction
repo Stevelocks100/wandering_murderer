@@ -1,0 +1,1 @@
+give @s beetroot_soup[item_model="wander:whey",item_name={text:"Whey Protein Powder",italic:false},!minecraft:food,consumable={consume_seconds:3},custom_data={whey:1b},lore=[{text:"Power comes without consequence.",italic:true}],!use_remainder]

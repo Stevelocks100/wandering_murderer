@@ -22,6 +22,9 @@ execute if entity @s[nbt={inGround:1b}] unless entity @s[tag=wander.sword_proj_d
 #execute if entity @s[nbt={inGround:1b}] on passengers run data modify entity @s transformation.translation set value [0.0d,0.0d,0.0d]
 execute if entity @s[nbt={inGround:1b}] run stopsound @a[distance=0..32] * entity.arrow.hit
 execute if entity @s[nbt={inGround:1b}] run kill @n[tag=wander.sword_proj_direction]
+execute if entity @s[nbt={inGround:1b}] as @e[type=!#milk:command_entities,type=!wandering_trader,type=!player,distance=0..3] run damage @s 8 wander:gilded_emerald_cleaver_wander by @n[tag=wander.ai]
+execute if entity @s[nbt={inGround:1b}] as @a[tag=wander.potential_target,distance=0..3] run damage @s 8 wander:gilded_emerald_cleaver_wander by @n[tag=wander.ai]
+
 execute if entity @s[nbt={inGround:1b}] run kill @s
 
 #execute on passengers rotated as @s positioned ^ ^ ^1 unless block ~ ~ ~ #wander:air_ish align xyz positioned ~0.5 ~ ~0.5 run function wander:projectiles/sword/recursive_player_check

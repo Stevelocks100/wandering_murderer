@@ -1,0 +1,1 @@
+execute as @n[tag=wander.gunpowder] at @s run function wander:gunpowder/explode2

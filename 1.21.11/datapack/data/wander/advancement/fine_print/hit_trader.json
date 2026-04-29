@@ -1,0 +1,1 @@
+{"criteria":{"a":{"trigger": "minecraft:player_hurt_entity","conditions":{"player":{"nbt": "{Tags:[\"wander.target\"]}"},"damage":{"type":{"is_direct": true}},"entity":{"nbt": "{Tags:[\"wander.hitbox\"]}"}}}},"requirements": [["a"]],"rewards":{"function": "wander:fine_print/hit_stand"}}

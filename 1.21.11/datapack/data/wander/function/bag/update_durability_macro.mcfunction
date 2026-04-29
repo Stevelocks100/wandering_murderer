@@ -1,0 +1,2 @@
+$execute if items entity @s weapon.mainhand *[item_model="wander:bag"] run item modify entity @s weapon.mainhand {"function": "minecraft:set_lore","lore": $(bag_content_text),"mode": "replace_section","offset": 3,"size":7}
+$execute if items entity @s weapon.offhand *[item_model="wander:bag"] run item modify entity @s weapon.offhand {"function": "minecraft:set_lore","lore": $(bag_content_text),"mode": "replace_section","offset": 3,"size":7}

@@ -1,0 +1,48 @@
+{
+	"textures": {
+		"3": "animated_java:blueprint/fine_print/fine_print",
+		"particle": "minecraft:item/pufferfish"
+	},
+	"display": {
+		"head": {
+			"rotation": [0, 180, 0]
+		}
+	},
+	"elements": [
+		{
+			"from": [5.9, -3, 10],
+			"to": [9.9, 9, 14],
+			"rotation": {
+				"angle": -20,
+				"axis": "x",
+				"origin": [7.9, -4, 10]
+			},
+			"faces": {
+				"north": {
+					"uv": [4, 5.5, 5, 8.5],
+					"texture": "#3"
+				},
+				"east": {
+					"uv": [5, 5.5, 6, 8.5],
+					"texture": "#3"
+				},
+				"south": {
+					"uv": [6, 5.5, 7, 8.5],
+					"texture": "#3"
+				},
+				"west": {
+					"uv": [6.25, 0, 7.25, 3],
+					"texture": "#3"
+				},
+				"up": {
+					"uv": [13.25, 11.25, 12.25, 10.25],
+					"texture": "#3"
+				},
+				"down": {
+					"uv": [13.25, 11.25, 12.25, 12.25],
+					"texture": "#3"
+				}
+			}
+		}
+	]
+}

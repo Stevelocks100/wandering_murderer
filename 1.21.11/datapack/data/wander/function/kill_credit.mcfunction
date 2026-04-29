@@ -1,1 +1,1 @@
-tag @s add wander.kill_credit
+tag @s add wander.last_hit

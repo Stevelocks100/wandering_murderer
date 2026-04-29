@@ -1,0 +1,457 @@
+<%%
+    prefix = "wander.fine_print"
+    positions = [
+        "^2 ^1 ^-2",
+        "^-2 ^1 ^-2",
+        "^ ^1 ^1",
+        "^-2 ^1 ^2",
+        "^ ^ ^"
+    ]
+%%>
+function load {
+    scoreboard objectives add <%prefix%> dummy
+    execute unless data storage wander:fine_print per_player run data modify storage wander:fine_print per_player set value []
+    schedule function give_back_schedule 5s
+}
+
+function give_back_schedule {
+    schedule function give_back_schedule 5s
+    execute unless score daytime wander.data matches -501 run return 0
+    execute if entity @n[tag=aj.fine_print.root] run return 0
+    execute if entity @n[tag=wander.ai] run return 0
+    execute unless data storage wander:fine_print per_player[0] run return 0
+    execute unless data storage wander:fine_print per_player[0].stolen_items[0] run return run function cycle_per_player
+
+    block { with storage wander:fine_print per_player[0]
+        $execute as @p[nbt={UUID:$(UUID)}] at @s run return run function give_item_back
+        $execute unless entity @p[nbt={UUID:$(UUID)}] run function cycle_per_player
+
+    }
+}
+
+function cycle_per_player {
+    data modify storage wander:fine_print per_player append from storage wander:fine_print per_player[0]
+    data remove storage wander:fine_print per_player[0]
+}
+
+
+function tick {
+
+    execute as @n[tag=aj.fine_print.root,type=item_display,distance=0..] run {
+        execute unless score ai <%prefix%> matches 3 run function teleport/main
+        function ai/main
+    }
+    execute if score ai <%prefix%> matches 3 if entity @n[tag=aj.fine_print.root,type=item_display,distance=0..] run schedule function tick 1t
+}
+
+function remove {
+    tag @n[tag=aj.fine_print.root,type=item_display,distance=0..] add <%prefix%>.despawn
+    function to_bag
+}
+
+function give_item_back {
+    function animated_java:fine_print/summon {args:{animation:'give_back_item',start_animation:true}}
+    function compile_bundle
+    scoreboard players set ai <%prefix%> 3
+    tag @s add <%prefix%>.target
+    function tick
+}
+
+function spawn {
+    execute if entity @n[tag=aj.fine_print.root,type=item_display,distance=0..] run return 0
+    scoreboard players set ai <%prefix%> 0
+    
+    execute at @n[tag=aj.wander.root] run function animated_java:fine_print/summon {args:{animation:'spawn',start_animation:false}}
+    function appear
+    execute store result score timer <%prefix%> run random value 200..400
+
+    schedule 3s replace {
+        scoreboard players set desired_pos <%prefix%> 1
+    }
+}
+
+function to_bag {
+    execute as @n[tag=aj.fine_print.root,type=item_display,distance=0..,tag=!aj.fine_print.animation.vanish.playing] run function animated_java:fine_print/animations/vanish/play
+    scoreboard players set desired_pos <%prefix%> -1
+
+}
+
+function appear {
+    execute as @n[tag=aj.fine_print.root,type=item_display,distance=0..,tag=!aj.fine_print.animation.spawn.playing] run function animated_java:fine_print/animations/spawn/play
+    scoreboard players set desired_pos <%prefix%> 4
+}
+
+function compile_bundle {
+    function per_player/read
+    execute as @n[tag=aj.fine_print.node.item_display,type=item_display,distance=0..] run {
+        data modify entity @s item set value {id:"blue_bundle",count:1,components:{"minecraft:item_name":"Wanderer's Bundle","minecraft:item_model":"wander:wander_bundle","minecraft:rarity":"rare"}}
+        data modify entity @s item.components."minecraft:bundle_contents" set from storage wander:fine_print current.stolen_items
+    }
+
+    data modify storage wander:fine_print current.stolen_items set value []
+    function per_player/write
+}
+
+function spawn_bundle {
+    summon item ~ ~ ~ {Tags:["<%prefix%>.give_back"],Item:{id:"stick",count:1}}
+    execute as @n[tag=<%prefix%>.give_back] run {
+
+        tag @s remove <%prefix%>.give_back
+        data modify entity @s Item set from entity @n[tag=aj.fine_print.node.item_display,type=item_display,distance=0..] item
+        data modify entity @s Owner set from entity @p[tag=<%prefix%>.target] UUID
+    }
+}
+
+function offer {
+    execute as @n[tag=aj.fine_print.root,type=item_display,distance=0..] run function animated_java:fine_print/animations/bring_item/play
+    
+    scoreboard players set index <%prefix%> -1
+    loot replace entity @n[tag=aj.fine_print.node.item_display,type=item_display,distance=0..] contents loot wander:fine_print/trade_item
+    execute if predicate {"condition":"minecraft:random_chance","chance":0.40} as @n[tag=aj.fine_print.node.item_display,type=item_display,distance=0..] run {
+        execute if entity @p[tag=wander.target] as @p[tag=wander.target] run function per_player/read
+        execute unless entity @p[tag=wander.target] as @p run function per_player/read
+
+        execute store result score random_index <%prefix%> run data get storage wander:fine_print current.stolen_items
+        execute if score random_index <%prefix%> matches 0 run return 0
+        
+        execute store result storage wander:fine_print macro.random_index int 1 run scoreboard players remove random_index <%prefix%> 1
+
+        data modify storage wander:fine_print macro.index set value 0
+        execute if score random_index <%prefix%> matches 1.. run { with storage wander:fine_print macro
+            $execute store result storage wander:fine_print macro.index int 1 run random value 0..$(random_index)
+        }
+
+        # execute if score index <%prefix%> matches -1 run return 0
+        execute if data storage wander:fine_print current.stolen_items[0] run { with storage wander:fine_print macro
+            $data modify entity @s item set from storage wander:fine_print current.stolen_items[$(index)]
+            $scoreboard players set index <%prefix%> $(index)
+        }
+
+
+
+        execute if entity @p[tag=wander.target] as @p[tag=wander.target] run function per_player/write
+        execute unless entity @p[tag=wander.target] as @p run function per_player/write
+    }
+}
+
+dir teleport {
+    function main {
+
+        execute at @s unless entity @n[tag=aj.wander.root,distance=0..15,type=item_display] run scoreboard players operation current_pos <%prefix%> = desired_pos <%prefix%>
+
+        execute at @n[tag=aj.fine_print.node.hitbox,distance=0..,type=interaction] if entity @s[tag=aj.fine_print.animation.loop.playing] run particle minecraft:happy_villager ~ ~1 ~ 0.3 0.6 0.3 0 1 normal @a
+        execute at @n[tag=aj.fine_print.node.hitbox,distance=0..,type=interaction] if entity @s[tag=aj.fine_print.animation.bring_item.playing] run particle minecraft:happy_villager ~ ~1 ~ 0.3 0.6 0.3 0 1 normal @a
+
+        execute rotated as @n[tag=aj.wander.root] run rotate @s ~ 0
+
+        REPEAT (0,positions.length - 1) as i {
+            execute if score desired_pos <%prefix%> matches <%i+1%> rotated as @s run function <%i+1%>
+        }
+        execute if score desired_pos <%prefix%> matches -1 rotated as @s run function to_chest
+        execute if score desired_pos <%prefix%> matches -2 rotated as @s run function in_front
+
+        kill @e[tag=<%prefix%>.stand_location,distance=0..,type=marker]
+    }
+
+    REPEAT (0,positions.length - 1) as i {
+        function <%i+1%> {
+
+            execute unless score current_pos <%prefix%> = desired_pos <%prefix%> positioned <%positions[i]%> run summon marker ~ ~ ~ {Tags:["<%prefix%>.stand_location"]}
+            execute at @n[tag=<%prefix%>.stand_location,distance=0..,type=marker] if entity @s[distance=0..0.4] run scoreboard players set current_pos <%prefix%> <%i+1%>
+            execute unless score current_pos <%prefix%> = desired_pos <%prefix%> at @s facing entity @n[tag=<%prefix%>.stand_location,distance=0..,type=marker] feet positioned ^ ^ ^0.35 run return run tp @s ~ ~ ~
+
+            tp @s <%positions[i]%> ~ 0
+        }
+    }
+
+    function to_chest {
+
+        execute at @n[tag=aj.wander.locator.chest,distance=0..,type=item_display] if entity @s[distance=0..0.4] run scoreboard players set current_pos <%prefix%> -1
+        execute unless score current_pos <%prefix%> = desired_pos <%prefix%> at @s facing entity @n[tag=aj.wander.locator.chest,distance=0..,type=item_display] feet positioned ^ ^ ^0.35 run return run tp @s ~ ~ ~ ~ 0
+
+        execute at @n[tag=aj.wander.locator.chest,distance=0..,type=item_display] facing entity @n[tag=aj.wander.locator.chest,distance=0..,type=item_display] feet run tp @s ~ ~-0.15 ~ ~ 0
+        execute if entity @s[tag=aj.fine_print.animation.bring_item.playing] run rotate @s ~ 0
+    }
+
+        function in_front {
+
+        scoreboard players set current_pos <%prefix%> -2
+
+
+        execute if score bad_omen wander.data matches 1 if entity @p[tag=wander.target] facing entity @p[tag=wander.target] eyes positioned ^ ^ ^1.9 run return run tp @s ~ ~ ~ ~ 0
+        execute if score bad_omen wander.data matches 1 unless entity @p[tag=wander.target] facing entity @p eyes positioned ^ ^ ^1.9 run return run tp @s ~ ~ ~ ~ 0
+
+        execute if entity @p[tag=wander.target] facing entity @p[tag=wander.target] eyes positioned ^ ^ ^1.4 run return run tp @s ~ ~ ~ ~ 0
+        execute unless entity @p[tag=wander.target] facing entity @p eyes positioned ^ ^ ^1.4 run return run tp @s ~ ~ ~ ~ 0
+    }
+
+}
+
+
+dir ai {
+
+    function main {
+        REPEAT (0,3) as i {
+            execute if score ai <%prefix%> matches <%i%> run function <%i%>
+        }
+        
+    }
+    function 0 {
+        scoreboard players remove timer <%prefix%> 1
+        tag @a[tag=<%prefix%>.target] remove <%prefix%>.target
+        execute if score timer <%prefix%> matches 0 run {
+            function ../to_bag
+            scoreboard players set ai <%prefix%> 1
+            execute store result score timer <%prefix%> run random value 200..400
+            execute if score bad_omen wander.data matches 1 store result score timer <%prefix%> run random value 50..250
+        }
+    }
+    function 1 {
+        execute if entity @s[tag=aj.fine_print.animation.loop.playing] run function ../to_bag
+        scoreboard players remove timer <%prefix%> 1
+        execute if score timer <%prefix%> matches ..0 if entity @p[tag=wander.target,distance=0..15] run return run {
+            tag @p[tag=wander.target] add <%prefix%>.target
+            function ../offer
+            scoreboard players set timer <%prefix%> 300
+            scoreboard players set ai <%prefix%> 2
+        }
+    }
+    function 2 {
+        scoreboard players remove timer <%prefix%> 1
+
+        execute if entity @p[tag=<%prefix%>.target,tag=!wander.target] run {
+            function ../to_bag
+            tag @a[tag=<%prefix%>.target] remove <%prefix%>.target
+            scoreboard players set timer <%prefix%> 0
+        }
+
+        execute if score timer <%prefix%> matches 0 run {
+            execute store result score timer <%prefix%> run random value 100..350
+            execute if score bad_omen wander.data matches 1 store result score timer <%prefix%> run random value 50..250
+            execute if score bad_omen wander.data matches 1 if predicate {"condition":"minecraft:random_chance","chance":0.66} store result score timer <%prefix%> run return run scoreboard players set ai <%prefix%> 1
+            execute if predicate {"condition":"minecraft:random_chance","chance":0.33} store result score timer <%prefix%> run return run scoreboard players set ai <%prefix%> 1
+            function ../appear
+            execute store result score timer <%prefix%> run random value 200..500
+            scoreboard players set ai <%prefix%> 0
+            
+        }
+    }
+
+    function 3 {
+        execute at @p[tag=<%prefix%>.target] rotated as @p[tag=<%prefix%>.target] rotated ~ 0 positioned ^ ^0.2 ^3.5 facing entity @p[tag=<%prefix%>.target] feet run tp @s ~ ~ ~ ~ 0
+    }
+}
+
+loot_table trade_item {
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:ink_sac"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:leather"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:clay_ball"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "stick"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:cobblestone"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:brown_egg"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:coarse_dirt"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:resin_clump"
+				},
+				{
+					"type": "minecraft:item",
+					"name": "wooden_sword"
+				}
+			],
+			"functions": [
+				{
+					"function": "minecraft:set_custom_data",
+					"tag": {
+						"wander": {
+							"stolen": true
+						}
+					}
+				}
+			]
+		}
+	]
+}
+
+advancement hit_stand {
+	"criteria": {
+		"a": {
+			"trigger": "minecraft:player_hurt_entity",
+			"conditions": {
+				"player": {
+					"nbt": "{Tags:[\"wander.target\"]}"
+				},
+				"damage": {
+					"type": {
+						"is_direct": true
+					}
+				},
+				"entity": {
+					"nbt": "{Tags:[\"aj.fine_print.node.hitbox\"]}"
+				}
+			}
+		}
+	},
+	"requirements": [
+		[
+			"a"
+		]
+	],
+	"rewards": {
+		"function": "wander:fine_print/hit_stand"
+	}
+}
+
+advancement hit_trader {
+	"criteria": {
+		"a": {
+			"trigger": "minecraft:player_hurt_entity",
+			"conditions": {
+				"player": {
+					"nbt": "{Tags:[\"wander.target\"]}"
+				},
+				"damage": {
+					"type": {
+						"is_direct": true
+					}
+				},
+				"entity": {
+					"nbt": "{Tags:[\"wander.hitbox\"]}"
+				}
+			}
+		}
+	},
+	"requirements": [
+		[
+			"a"
+		]
+	],
+	"rewards": {
+		"function": "wander:fine_print/hit_stand"
+	}
+}
+
+
+
+function hit_stand {
+    advancement revoke @s only wander:fine_print/hit_stand
+    advancement revoke @s only wander:fine_print/hit_trader
+    execute unless entity @n[tag=aj.fine_print.node.hitbox,distance=0..,type=interaction] run return 0
+    execute if data entity @n[tag=aj.fine_print.node.hitbox,distance=0..,type=interaction] {width:0.0f} run return 0
+    advancement grant @s only wander:story/scammed
+    execute if function wander:fine_print/trade as @n[tag=aj.fine_print.root] run function animated_java:fine_print/animations/trade_item/play
+}
+
+function trade {
+    execute if items entity @s weapon.mainhand * run return run {
+        function per_player/read
+        
+        execute if score index <%prefix%> matches 0.. run {
+            execute store result storage wander:fine_print macro.index int 1 run scoreboard players get index <%prefix%>
+            block { with storage wander:fine_print macro
+                $data remove storage wander:fine_print current.stolen_items[$(index)]
+            }
+        }
+
+        execute unless data entity @s SelectedItem.components."minecraft:custom_data".wander.stolen run data modify storage wander:fine_print current.stolen_items append from entity @s SelectedItem
+        summon item_display ~ ~ ~ {Tags:["<%prefix%>.temp_trade"]}
+        item replace entity @n[tag=<%prefix%>.temp_trade,distance=0..,type=item_display] contents from entity @n[tag=aj.fine_print.node.item_display,type=item_display,distance=0..] contents
+        item replace entity @n[tag=aj.fine_print.node.item_display,type=item_display,distance=0..] contents from entity @s weapon.mainhand
+        item replace entity @s weapon.mainhand from entity @n[tag=<%prefix%>.temp_trade,distance=0..,type=item_display] contents
+        kill @n[tag=<%prefix%>.temp_trade,distance=0..,type=item_display]
+
+
+        function per_player/write
+        return 1
+    }
+
+    execute if items entity @s weapon.offhand * run return run {
+        function per_player/read
+
+        execute if score index <%prefix%> matches 0.. run {
+            execute store result storage wander:fine_print macro.index int 1 run scoreboard players get index <%prefix%>
+            block { with storage wander:fine_print macro
+                $data remove storage wander:fine_print current.stolen_items[$(index)]
+            }
+        }
+
+        execute unless data entity @s equipment.offhand.components."minecraft:custom_data".wander.stolen run data modify storage wander:fine_print current.stolen_items append from entity @s equipment.offhand
+        summon item_display ~ ~ ~ {Tags:["<%prefix%>.temp_trade"]}
+        item replace entity @n[tag=<%prefix%>.temp_trade,distance=0..,type=item_display] contents from entity @n[tag=aj.fine_print.node.item_display,type=item_display,distance=0..] contents
+        item replace entity @n[tag=aj.fine_print.node.item_display,type=item_display,distance=0..] contents from entity @s weapon.offhand
+        item replace entity @s weapon.offhand from entity @n[tag=<%prefix%>.temp_trade,distance=0..,type=item_display] contents
+        kill @n[tag=<%prefix%>.temp_trade,distance=0..,type=item_display]
+
+        function per_player/write
+        return 1
+    }
+    return 0
+}
+
+dir per_player {
+    function create {
+        block { with entity @s
+            $data modify storage wander:fine_print per_player append value {UUID:$(UUID),stolen_items:[]}
+        }
+    }
+    function read {
+        block { with entity @s
+            $execute unless data storage wander:fine_print per_player[{UUID:$(UUID)}] run function create
+            $data modify storage wander:fine_print current set from storage wander:fine_print per_player[{UUID:$(UUID)}]
+        }
+    }
+
+    function write {
+        block { with entity @s
+
+            $data modify storage wander:fine_print per_player[{UUID:$(UUID)}] set from storage wander:fine_print current
+            $execute unless data storage wander:fine_print current.stolen_items[0] run data remove storage wander:fine_print per_player[{UUID:$(UUID)}]
+        }
+    }
+}
+
+
+
+function set_teleport_duration {
+    
+    execute on passengers run data modify storage wander:fine_print macro.teleport set from entity @s data.uuids_by_name
+    $data modify storage wander:fine_print macro.teleport.duration set value $(duration)
+
+    block { with storage wander:fine_print macro.teleport
+        $function animated_java:fine_print/as_node {name:"item_display",command:"data modify entity @s teleport_duration set value $(duration)"}
+        $execute as $(mas) run data modify entity @s teleport_duration set value $(duration)
+        $execute as $(head) run data modify entity @s teleport_duration set value $(duration)
+        $execute as $(right_arm) run data modify entity @s teleport_duration set value $(duration)
+        $execute as $(left_arm) run data modify entity @s teleport_duration set value $(duration)
+        $execute as $(green_right_arm) run data modify entity @s teleport_duration set value $(duration)
+        $execute as $(green_left_arm) run data modify entity @s teleport_duration set value $(duration)
+        $execute as $(torso) run data modify entity @s teleport_duration set value $(duration)
+        $execute as $(right_leg) run data modify entity @s teleport_duration set value $(duration)
+        $execute as $(left_leg) run data modify entity @s teleport_duration set value $(duration)
+    }
+}

@@ -3,5 +3,5 @@ execute unless entity @s[tag=aj.trader_dimension.root] run return 0
 execute if entity @s[tag=aj.trader_dimension.animation.trees.playing] run function animated_java:trader_dimension/animations/trees/zzz/on_tick
 execute if entity @s[tag=aj.trader_dimension.animation.open_chest.playing] run function animated_java:trader_dimension/animations/open_chest/zzz/on_tick
 execute if entity @s[tag=aj.trader_dimension.animation.close_chest.playing] run function animated_java:trader_dimension/animations/close_chest/zzz/on_tick
-execute on passengers if entity @s[tag=aj.trader_dimension.data] run function animated_java:trader_dimension/root/zzz/on_tick/locators_and_cameras
-execute at @s on passengers run rotate @s ~ ~
+execute on passengers run function animated_java:trader_dimension/root/on_tick/transform_floating_entities
+execute on passengers run function animated_java:trader_dimension/root/zzz/0 with entity @s data.uuids_by_name

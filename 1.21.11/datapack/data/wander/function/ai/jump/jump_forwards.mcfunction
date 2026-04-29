@@ -1,10 +1,11 @@
+execute unless score jump_tick wander.data = jump_tick wander.data run scoreboard players set jump_tick wander.data -12
 execute if score jump_tick wander.data matches ..41 run scoreboard players add jump_tick wander.data 1
 execute if entity @n[tag=wander.jump_target] run data modify storage wander:temp jump.target set value "@n[tag=wander.jump_target]"
 execute if score jump_tick wander.data matches 1..41 run function wander:ai/jump/move_forward with storage wander:temp jump
 data remove entity @s wander_target
 execute if score jump_tick wander.data matches -11 as @n[tag=aj.wander.root] run function animated_java:wander/animations/jump_to_sword/tween {to_frame:0,duration:2}
 
-
+execute if score jump_tick wander.data matches 1 run function wander:ai/jump_vanish_particles
 execute if score jump_tick wander.data matches 2 run tag @s add wander.jump_for_target
 
 execute if score jump_tick wander.data matches 1 run data modify entity @s Motion[1] set value 1.00d
@@ -53,3 +54,5 @@ execute if score jump_tick wander.data matches ..40 run attribute @s movement_sp
 execute if score jump_tick wander.data matches 41.. run kill @e[tag=wander.jump_target]
 execute if score jump_tick wander.data matches 42.. run scoreboard players set jump_tick wander.data -12
 #execute if score jump_tick wander.data matches 150.. run function wander:ai/jump/pick_up
+
+scoreboard players add pick_up_sword_timer wander.data 1

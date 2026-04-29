@@ -1,0 +1,45 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:player_head",
+            "components": {
+                "minecraft:profile": {
+                    "id": [
+                        139050071,
+                        1298612555,
+                        -1552828644,
+                        1172318740
+                    ]
+                }
+            }
+        },
+        "title": "Stevelocks",
+        "description": {
+            "text": "Main Coder\nModeller\nAnimator"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "parent": "wander:credits/developers/root",
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:tick",
+            "conditions": {
+                "player": {
+                    "type_specific": {
+                        "type": "player",
+                        "advancements": {
+                            "wander:story/kill_murderer": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ]
+}

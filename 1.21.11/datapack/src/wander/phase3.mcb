@@ -1,0 +1,424 @@
+<%%
+    prefix = "wander.phase3"
+%%>
+function load {
+    scoreboard objectives add <%prefix%>.wall_spawn dummy
+    scoreboard objectives add <%prefix%>.launched dummy
+    scoreboard objectives add <%prefix%>.health_old dummy
+}
+
+function tick {
+
+    execute if score sneak wander.temp matches 1.. run scoreboard players remove sneak wander.temp 1
+    execute as 0849bc57-4d67-414b-a371-b71c45e02a14 if entity @s[advancements={wander:phase3/sneaking=true}] if predicate {"condition":"minecraft:entity_properties","entity":"this","predicate":{"flags":{"is_sneaking":false}}} run advancement revoke @s only wander:phase3/sneaking
+
+
+    execute if score walls_enabled <%prefix%>.wall_spawn matches 1 run function walls/tick
+    execute as @e[tag=<%prefix%>.broken_wall] at @s run {
+        scoreboard players add @s <%prefix%>.wall_spawn 1
+
+        execute if score @s <%prefix%>.wall_spawn matches 7 run {
+            execute store result score random wander.temp run random value 1..10
+            execute if score random wander.temp matches 1 run return run data merge entity @s {start_interpolation:0,transformation:{left_rotation:[0,0,0.174,0.985],scale:[0,0,0],translation:[0,-24,-0.1]}}
+            execute if score random wander.temp matches 2 run return run data merge entity @s {start_interpolation:0,transformation:{left_rotation:[0,0,-0.317,0.948],scale:[0,0,0],translation:[0,-15,0]}}
+            execute if score random wander.temp matches 3 run return run data merge entity @s {start_interpolation:0,transformation:{left_rotation:[0,0,-0.044,0.999],scale:[0,0,0],translation:[0,-30,0.1]}}
+            execute if score random wander.temp matches 4 run return run data merge entity @s {start_interpolation:0,transformation:{left_rotation:[0,0,0.258,0.966],scale:[0,0,0],translation:[-0.42,-31.7,-0.6]}}
+            execute if score random wander.temp matches 5 run return run data merge entity @s {start_interpolation:0,transformation:{left_rotation:[0,0,-0.382,0.924],scale:[0,0,0],translation:[-1.2,-29.4,-0.3]}}
+            execute if score random wander.temp matches 6 run return run data merge entity @s {start_interpolation:0,transformation:{left_rotation:[0,0,0.707,0.707],scale:[0,0,0],translation:[-0.8,-32.1,-1.1]}}
+            execute if score random wander.temp matches 7 run return run data merge entity @s {start_interpolation:0,transformation:{left_rotation:[0,0,-0.156,0.988],scale:[0,0,0],translation:[-0.25,-30.6,-0.9]}}
+            execute if score random wander.temp matches 8 run return run data merge entity @s {start_interpolation:0,transformation:{left_rotation:[0,0,0.499,0.867],scale:[0,0,0],translation:[-1.6,-33.2,-0.2]}}
+            execute if score random wander.temp matches 9 run return run data merge entity @s {start_interpolation:0,transformation:{left_rotation:[0,0,-0.615,0.788],scale:[0,0,0],translation:[-0.9,-31.3,-1.4]}}
+            execute if score random wander.temp matches 10 run return run data merge entity @s {start_interpolation:0,transformation:{left_rotation:[0,0,0.342,0.940],scale:[0,0,0],translation:[-0.55,-29.9,-0.7]}}
+        }
+        
+        execute if score @s <%prefix%>.wall_spawn matches 135.. run kill
+    }
+    function prison/tick
+
+}
+
+dir walls {
+    function summon {
+        scoreboard players set walls_enabled <%prefix%>.wall_spawn 1
+        execute positioned ~ ~-30 ~ summon item_display run {
+            data merge entity @s {item:{id:"emerald",count:1},transformation:{translation:[0,0,0],scale:[30,30,30],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},Tags:["<%prefix%>.wall","<%prefix%>.wall_spawning"],teleport_duration:10,interpolation_duration:5,brightness:{sky:15,block:15}}
+            execute facing entity @n[tag=<%prefix%>.wall_center] feet run rotate @s ~ 0
+            
+        }
+    }
+    function summon_higher {
+        scoreboard players set walls_enabled <%prefix%>.wall_spawn 1
+        execute positioned ~ ~-30 ~ summon item_display run {
+            data merge entity @s {item:{id:"emerald",count:1},transformation:{translation:[0,0,0],scale:[30,30,30],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},Tags:["<%prefix%>.wall","<%prefix%>.wall_spawning2","<%prefix%>.wall2"],teleport_duration:10,interpolation_duration:5,brightness:{sky:15,block:15}}
+            execute facing entity @n[tag=<%prefix%>.wall_center] feet run rotate @s ~ 0
+            
+        }
+    }
+
+    function summon_higher2 {
+        scoreboard players set walls_enabled <%prefix%>.wall_spawn 1
+        execute positioned ~ ~-30 ~ summon item_display run {
+            data merge entity @s {item:{id:"emerald",count:1},transformation:{translation:[0,0,0],scale:[30,30,30],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},Tags:["<%prefix%>.wall","<%prefix%>.wall_spawning3","<%prefix%>.wall3"],teleport_duration:4,interpolation_duration:5,brightness:{sky:15,block:15}}
+            execute facing entity @n[tag=<%prefix%>.wall_center] feet run rotate @s ~ 0
+            
+        }
+    }
+    function summon_all {
+        function center
+        execute at @n[tag=<%prefix%>.wall_center] run {
+            REPEAT (0,9) as i {
+                execute rotated <%36*i%> 0 positioned ^ ^ ^40 positioned over motion_blocking positioned ~ ~<%i*-6.1%> ~ run function summon
+            }
+        }
+    }
+
+    function summon_all_higher {
+        execute at @n[tag=<%prefix%>.wall_center] run {
+            REPEAT (0,9) as i {
+                execute rotated <%36*i%> 0 positioned ^ ^ ^40 positioned over motion_blocking run function summon_higher
+            }
+        }
+    }
+
+    function summon_all_higher2 {
+        execute at @n[tag=<%prefix%>.wall_center] run {
+            REPEAT (0,9) as i {
+                execute rotated <%36*i%> 0 positioned ^ ^ ^40 positioned over motion_blocking run function summon_higher2
+            }
+        }
+    }
+
+    function remove_nearest {
+        execute unless entity @s[tag=<%prefix%>.wall,type=item_display] as @n[tag=<%prefix%>.wall,type=item_display,distance=0..] run return run function ^0
+        execute on passengers run kill @s
+        kill @s
+        execute unless entity @n[tag=<%prefix%>.wall,type=item_display,distance=0..] run scoreboard players set walls_enabled <%prefix%>.wall_spawn 0
+    }
+    function remove_all {
+        execute as @e[tag=<%prefix%>.wall,type=item_display,distance=0..] run {
+            execute on passengers run kill @s
+            kill @s
+        }
+        kill @n[tag=<%prefix%>.wall_center]
+        scoreboard players set walls_enabled <%prefix%>.wall_spawn 0
+    }
+    function center {
+        kill @n[tag=<%prefix%>.wall_center]
+        execute positioned over motion_blocking align xyz run summon marker ~0.5 ~ ~0.5 {Tags:["<%prefix%>.wall_center"]}
+    }
+
+    function tick {
+
+        execute at @n[tag=<%prefix%>.wall_center] unless loaded ~-40 60 ~-40 run return 0
+        execute at @n[tag=<%prefix%>.wall_center] unless loaded ~40 60 ~-40 run return 0
+        execute at @n[tag=<%prefix%>.wall_center] unless loaded ~40 60 ~40 run return 0
+        execute at @n[tag=<%prefix%>.wall_center] unless loaded ~-40 60 ~40 run return 0
+        execute unless entity @n[tag=<%prefix%>.wall_center] run return 0
+        execute as @e[tag=<%prefix%>.spawned_effect] at @s run {
+            scoreboard players add @s <%prefix%>.wall_spawn 1
+            execute if score @s <%prefix%>.wall_spawn matches 2 run data merge entity @s {transformation:{scale:[30,250,0.1],translation:[0,125,0]},start_interpolation:1}
+            execute if score @s <%prefix%>.wall_spawn matches 20 run data merge entity @s {transformation:{scale:[0,250,0],translation:[0,125,0]},start_interpolation:1,interpolation_duration:80}
+            execute if score @s <%prefix%>.wall_spawn matches 150.. run kill
+
+        }
+        
+        execute as @e[tag=<%prefix%>.wall] at @s rotated as @s run {
+            tag @s remove theworld.frozen
+
+            execute if entity @s[tag=<%prefix%>.wall_bounce] run {
+                tag @s remove <%prefix%>.wall_bounce
+                data merge entity @s {transformation:{scale:[30,30,30]},start_interpolation:0}
+            }
+
+            execute if entity @s[tag=<%prefix%>.wall_spawning] run return run {
+
+                execute at @s run tp @s ~ ~0.4 ~
+
+                execute positioned over motion_blocking if entity @s[distance=0..10] run {
+                    particle explosion ~ ~ ~ 2.5 0.1 2.5 0.1 10 force @a 
+                    execute if predicate {"condition":"minecraft:random_chance","chance":0.5} run playsound wander:phase3.emerald_rising hostile @a[distance=0..100] ~ ~ ~ 10.0 0.25 1.0
+                }
+                
+                execute positioned over motion_blocking positioned ~ ~20 ~ if entity @s[distance=0..2] run {
+                    playsound wander:phase3.emerald_stop hostile @a[distance=0..100] ~ ~ ~ 10.0 1.0 1.0
+                    playsound wander:phase3.emerald_stop hostile @a[distance=0..100] ~ ~ ~ 10.0 1.0 1.0
+                    playsound wander:phase3.emerald_stop hostile @a[distance=0..100] ~ ~ ~ 10.0 1.0 1.0
+                    function spawned_effect
+                    tag @s remove <%prefix%>.wall_spawning
+                }
+            }
+
+            execute if entity @s[tag=<%prefix%>.wall_spawning2] run return run {
+
+                execute at @s run tp @s ~ ~0.8 ~
+
+                execute positioned over motion_blocking if entity @s[distance=0..10] run {
+                    particle explosion ~ ~ ~ 2.5 0.1 2.5 0.1 10 force @a 
+                    execute if predicate {"condition":"minecraft:random_chance","chance":0.5} run playsound wander:phase3.emerald_rising hostile @a[distance=0..100] ~ ~ ~ 10.0 0.25 1.0
+                }
+                
+                execute positioned over motion_blocking positioned ~ ~50 ~ if entity @s[distance=0..2] run {
+                    playsound wander:phase3.emerald_stop hostile @a[distance=0..100] ~ ~ ~ 10.0 1.0 1.0
+                    function spawned_effect
+                    tag @s remove <%prefix%>.wall_spawning2
+                }
+            }
+
+            execute if entity @s[tag=<%prefix%>.wall_spawning3] run return run {
+
+                execute at @s run tp @s ~ ~1.2 ~
+
+                execute positioned over motion_blocking if entity @s[distance=0..10] run {
+                    particle explosion ~ ~ ~ 2.5 0.1 2.5 0.1 10 force @a 
+                    execute if predicate {"condition":"minecraft:random_chance","chance":0.5} run playsound wander:phase3.emerald_rising hostile @a[distance=0..100] ~ ~ ~ 10.0 0.25 1.0
+                }
+                
+                execute positioned over motion_blocking positioned ~ ~80 ~ if entity @s[distance=0..2] run {
+                    playsound wander:phase3.emerald_stop hostile @a[distance=0..100] ~ ~ ~ 10.0 1.0 1.0
+                    function spawned_effect
+                    tag @s remove <%prefix%>.wall_spawning3
+                }
+            }
+
+            execute if entity @n[tag=<%prefix%>.wall_spawning] run return 0
+            execute unless entity @s[tag=<%prefix%>.wall2] at @n[tag=<%prefix%>.wall_center] rotated as @s rotated ~1 ~ positioned ^ ^ ^-40 positioned over motion_blocking run tp @s ~ ~20 ~ ~ 0
+            execute if entity @s[tag=<%prefix%>.wall2] at @n[tag=<%prefix%>.wall_center] rotated as @s rotated ~-3 ~ positioned ^ ^ ^-40 positioned over motion_blocking run tp @s ~ ~50 ~ ~ 0
+            execute if entity @s[tag=<%prefix%>.wall3] at @n[tag=<%prefix%>.wall_center] rotated as @s rotated ~5 ~ positioned ^ ^ ^-40 positioned over motion_blocking run tp @s ~ ~80 ~ ~ 0
+            execute if entity @s[tag=!<%prefix%>.wall2,tag=!<%prefix%>.wall3] if predicate {"condition":"minecraft:random_chance","chance":0.005} run playsound wander:phase3.emerald_hum hostile @a[distance=0..100] ~ ~ ~ 2.0 1.0 0.1
+
+            
+            execute if predicate {"condition":"minecraft:random_chance","chance":0.002} run function random_gunpowder
+            execute if score gunpowder_count wander.data matches 200.. if predicate {"condition":"minecraft:random_chance","chance":0.0025} as @n[tag=wander.gunpowder,distance=0..40] if data entity @s {OnGround:1b} at @s run function wander:gunpowder/explode
+
+            scoreboard players remove @s[scores={<%prefix%>.launched=1..}] <%prefix%>.launched 1
+        }
+        execute at @n[tag=<%prefix%>.wall_center] run scoreboard players remove @e[distance=0..100,scores={<%prefix%>.launched=1..}] <%prefix%>.launched 1
+        execute at @n[tag=<%prefix%>.wall_center] as @a[distance=30..200] facing entity @s feet rotated ~ 0 positioned ^ ^ ^40 positioned over motion_blocking run {
+            REPEAT (0,10) as i {
+                particle minecraft:happy_villager ~ ~<%5+i*10%> ~ 0.1 3 0.1 1 15 normal @s
+            }
+        
+        }
+        execute at @n[tag=<%prefix%>.wall_center] as @e[type=!#milk:command_entities,distance=30..250,tag=!wander.gunpowder,type=!#wander:wall_cannot_push] at @s run function launch_back
+    }
+
+    function random_gunpowder {
+        execute if predicate {"condition":"minecraft:random_chance","chance":0.45} rotated ~45 ~ run return run function wander:gunpowder/summon
+        execute if predicate {"condition":"minecraft:random_chance","chance":0.45} rotated ~-45 ~ run return run function wander:gunpowder/summon
+        function wander:gunpowder/summon
+
+    }
+
+    function launch_back {
+        execute if score @s wander.launch_cd matches 1.. run return 0
+        #execute if entity @s[type=player] at @n[tag=<%prefix%>.wall_center] facing entity @s feet rotated ~ 0 positioned ^ ^ ^41 positioned ~-2 50 ~-2 unless entity @s[dx=3,dy=400,dz=3] run return 0
+        execute if entity @s[type=player] at @n[tag=<%prefix%>.wall_center] facing entity @s feet rotated ~ 0 positioned ^ ^ ^44 positioned ~-4 50 ~-4 unless entity @s[dx=7,dy=400,dz=7] run return 0
+        execute if entity @s[type=!player] at @n[tag=<%prefix%>.wall_center] facing entity @s feet rotated ~ 0 positioned ^ ^ ^40 positioned ~-4 50 ~-4 unless entity @s[dx=7,dy=400,dz=7] run return 0
+
+        execute if score @s[type=!player] <%prefix%>.launched matches 1.. run return 0
+        execute if function wander:bag/valid_entity run damage @s 5
+        playsound wander:phase3.hit_wall hostile @a[distance=0..100] ~ ~ ~ 3.0 1.0 0.0
+        playsound wander:phase3.hit_wall_far hostile @a[distance=50..100] ~ ~ ~ 6.0 1.0 0.0
+        function bounce
+        execute if entity @s[type=player] run return run {
+    
+            particle gust ~ ~ ~ 0 0 0 0 1 force @a[distance=0..100]
+            scoreboard players set $strength player_motion.api.launch -18000
+            
+            execute at @n[tag=<%prefix%>.wall_center] facing entity @s feet rotated ~ 0 positioned ^ ^ ^40 positioned over motion_blocking rotated ~ 30 run function player_motion:api/launch_looking
+            scoreboard players set @s wander.launch_cd 5
+        }
+        execute if entity @s[type=ender_pearl] run return run {
+            particle gust ~ ~ ~ 0 0 0 0 1 force @a[distance=0..100]
+            tag @s add <%prefix%>.current_entity
+            execute at @n[tag=<%prefix%>.wall_center] facing entity @s feet rotated ~ 0 positioned ^ ^ ^40 positioned over motion_blocking facing entity @s feet rotated ~ -4 positioned 0.0 0.0 0.0 positioned ^ ^ ^4 summon marker run {
+                data modify entity @n[tag=<%prefix%>.current_entity] Motion set from entity @s Pos
+                kill @s
+            }
+            tag @s remove <%prefix%>.current_entity
+        }
+        return run {
+
+            particle gust ~ ~ ~ 0 0 0 0 1 force @a[distance=0..100]
+            tag @s add <%prefix%>.current_entity
+            execute at @n[tag=<%prefix%>.wall_center] facing entity @s feet rotated ~ 0 positioned ^ ^ ^40 positioned over motion_blocking facing entity @s feet rotated ~ -5 positioned 0.0 0.0 0.0 positioned ^ ^ ^3 summon marker run {
+                data modify entity @n[tag=<%prefix%>.current_entity] Motion set from entity @s Pos
+                kill @s
+            }
+            tag @s remove <%prefix%>.current_entity
+        }
+    }
+
+    function bounce {
+
+        execute if score @s <%prefix%>.launched matches 1.. run return 0
+
+        scoreboard players set @s <%prefix%>.launched 20
+        scoreboard players set @s[type=player] <%prefix%>.launched 5
+        execute as @n[tag=<%prefix%>.wall] at @s run {
+            tag @s add <%prefix%>.wall_bounce
+            data merge entity @s {transformation:{scale:[40,40,40]}}
+        } 
+    }
+
+    function spawned_effect {
+        execute positioned over motion_blocking positioned ~ ~-10 ~ summon item_display run {
+            rotate @s ~ ~
+            data merge entity @s {brightness:{sky:15,block:15},item:{id:"lime_stained_glass",count:1},transformation:{scale:[0,0,0],translation:[0,0,0],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},interpolation_duration:4,Tags:["<%prefix%>.spawned_effect"]}
+
+        }
+    }
+
+    function destroy {
+        kill @e[tag=<%prefix%>.spawned_effect]
+        execute at @n[tag=<%prefix%>.wall_center] as @n[tag=<%prefix%>.wall,limit=10] at @s rotated as @s run {
+            playsound minecraft:block.beacon.deactivate hostile @a[distance=0..200] ~ ~ ~ 20.0 0.7 0.0
+            playsound wander:phase3.emerald_stop hostile @a[distance=0..200] ~ ~ ~ 20.0 1.0 1.0
+        }
+
+        execute at @n[tag=<%prefix%>.wall_center] as @n[tag=<%prefix%>.wall,limit=20] at @s rotated as @s run {
+
+            particle minecraft:explosion_emitter ~ ~ ~ 6 6 6 0 20 force @a
+            particle flash{color:[0.0,1.0,0.0,1.0]} ~ ~ ~ 6 6 6 0 20 force @a
+        }
+
+        execute as @e[tag=<%prefix%>.wall] at @s rotated as @s run function split
+
+        function remove_all
+    }
+
+    function split {
+        execute summon item_display run {
+            rotate @s ~ ~
+            data merge entity @s {item:{id:"emerald",count:1,components:{"minecraft:item_model":"wander:broken_emerald1"}},transformation:{translation:[0,0,0],scale:[30,30,30],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},Tags:["<%prefix%>.broken_wall"],teleport_duration:10,interpolation_duration:100,brightness:{sky:15,block:15}}
+            execute store result entity @s interpolation_duration int 1 run random value 80..120
+        }
+        execute summon item_display run {
+            rotate @s ~ ~
+            data merge entity @s {item:{id:"emerald",count:1,components:{"minecraft:item_model":"wander:broken_emerald2"}},transformation:{translation:[0,0,0],scale:[30,30,30],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1]},Tags:["<%prefix%>.broken_wall"],teleport_duration:10,interpolation_duration:100,brightness:{sky:15,block:15}}
+            execute store result entity @s interpolation_duration int 1 run random value 80..120
+        }
+
+    }
+    
+}
+
+
+
+dir prison {
+    function tick {
+
+        execute as @a[tag=<%prefix%>.trapped] at @s run {
+
+            execute unless predicate wander:is_mounted if entity @n[tag=<%prefix%>.prison,distance=0..10,type=item_display] run ride @s mount @n[tag=<%prefix%>.prison,distance=0..10,type=item_display]
+            execute unless predicate wander:is_mounted unless entity @n[tag=<%prefix%>.prison,distance=0..10,type=item_display] run function trap
+
+            effect give @s resistance 10 5 true
+            effect give @s saturation 10 5 true
+            effect give @s weakness 2 50 true
+        }
+        execute as @e[tag=<%prefix%>.prison] at @s run {
+
+            execute if predicate {"condition":"minecraft:random_chance","chance":0.005} run playsound wander:phase3.emerald_hum hostile @a[distance=0..48] ~ ~ ~ 2.0 1.0 0.0
+
+            execute unless predicate {"condition":"minecraft:entity_properties","entity":"this","predicate":{"passenger":{"type":"minecraft:player"}}} run return run {
+                execute on passengers if entity @s[type=slime] run {
+                    tp @s ~ ~-1000 ~
+                    kill
+                }
+                kill @s
+            }
+            execute on passengers if entity @s[type=slime] store result score prison_health wander.temp run data get entity @s Health
+            execute unless score @s <%prefix%>.health_old = prison_health wander.temp run playsound block.amethyst_block.break hostile @a[distance=0..64] ~ ~ ~ 3.0 0.7 0.0
+            execute unless score @s <%prefix%>.health_old = prison_health wander.temp run particle item{item:{id:"iron_ingot",components:{"minecraft:item_model":"wander:emerald_prison"}}} ~ ~ ~ 0.3 0.3 0.3 0.2 40 force @a[distance=0..64]
+
+            execute if score prison_health wander.temp matches ..950 on passengers if entity @s[type=player] run function destroy_nearest
+
+            scoreboard players operation @s <%prefix%>.health_old = prison_health wander.temp
+        }
+        
+    }
+
+    function trap {
+        execute unless entity @n[tag=<%prefix%>.wall_center] run return 0
+        execute if predicate wander:is_mounted run return 0
+        execute store result score playerhp wander.temp run data get entity @s Health
+        execute unless score playerhp wander.temp matches 1.. run return 0
+
+        scoreboard players set trapped_timer wander.data 100
+
+        tag @s add <%prefix%>.trapped
+        tag @s add wander.current_player
+
+        execute at @n[tag=<%prefix%>.wall_center] summon marker at @s run {
+
+            spreadplayers ~ ~ 1 30 false @s
+
+            execute at @s positioned over motion_blocking positioned ~ ~15 ~ run tp @p[tag=wander.current_player] ~ ~ ~
+            kill
+        }
+
+        tag @s remove wander.current_player
+
+        execute at @s run {
+            summon item_display ~ ~ ~ {Tags:["wander.phase3.prison","wander.new"],item:{id:"iron_ingot",count:1,components:{"minecraft:item_model":"wander:emerald_prison"}},transformation:{translation:[0,0.5,0],right_rotation:[0,0,0,1],left_rotation:[0,0,0,1],scale:[1,1,1]},Passengers:[{id:"slime",Size:3,NoAI:1b,Silent:1b,Team:"wander.nocol",Tags:["wander.phase3.prison_hitbox"],attributes:[{id:"max_health",base:1024}],Health:1024,active_effects:[{id:"invisibility",duration:-1,show_particles:false}]}],teleport_duration:80}
+
+            ride @s mount @n[tag=<%prefix%>.prison,tag=wander.new,distance=0..0.1,type=item_display]
+            tag @n[tag=<%prefix%>.prison,tag=wander.new,distance=0..0.1,type=item_display] remove wander.new
+        }
+    }
+
+    function destroy_nearest {
+        tag @s remove <%prefix%>.trapped
+        playsound minecraft:block.glass.break hostile @a[distance=0..32] ~ ~ ~ 2.0 0.5 0.0
+        playsound minecraft:block.beacon.deactivate hostile @a[distance=0..32] ~ ~ ~ 2.0 0.7 0.0
+        particle minecraft:item{item:{id:"emerald",count:1}} ~ ~ ~ 0.3 0.6 0.3 0.1 200 normal @a
+        kill @n[tag=<%prefix%>.prison,distance=0..2,type=item_display]
+        tp @e[tag=<%prefix%>.prison_hitbox] ~ ~-1000 ~
+        kill @e[tag=<%prefix%>.prison_hitbox]
+    }
+
+    function destroy_all {
+        execute as @a[tag=<%prefix%>.trapped] at @s run function destroy_nearest
+    }
+}
+
+advancement sneaking {
+	"criteria": {
+		"a": {
+			"trigger": "minecraft:tick",
+			"conditions": {
+				"player": {
+					"flags": {
+						"is_sneaking": true
+					}
+				}
+			}
+		}
+	},
+	"requirements": [
+		[
+			"a"
+		]
+	],
+    "rewards": {
+        "function": "wander:phase3/sneak"
+    }
+}
+
+function sneak {
+    execute unless score daytime wander.data matches -500..0 run return 0
+    execute at 0849bc57-4d67-414b-a371-b71c45e02a14 unless entity @s[distance=0..0.1] run return 0
+    scoreboard players add sneak wander.temp 8
+    playsound minecraft:block.note_block.snare master @s ~ ~300 ~ 0.01 1.0 0.01
+
+    execute if score sneak wander.temp matches 40.. run {
+        scoreboard players set sneak wander.temp 0
+        playsound minecraft:entity.villager.yes master @s ~ ~300 ~ 0.01 1.0 0.01
+        tag @s add wander.sneak
+        schedule 30s replace {
+            tag @a[tag=wander.sneak] add wander.sneak
+        }
+    }
+}
+

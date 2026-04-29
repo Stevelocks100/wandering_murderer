@@ -1,6 +1,0 @@
-{
-	"parent": "animated_java:blueprint/wander/blast_off2",
-	"textures": {
-		"2": "minecraft:block/blue_ice"
-	}
-}

@@ -1,0 +1,2 @@
+execute store result score y_motion wander.trader_dimension run data get entity @s Motion[1]
+execute if score y_motion wander.trader_dimension matches 0 run data modify entity @s Motion[0] set value -0.3

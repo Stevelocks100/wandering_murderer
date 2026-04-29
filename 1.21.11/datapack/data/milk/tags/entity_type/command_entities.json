@@ -32,6 +32,11 @@
         {
             "required": false,
             "id": "minecraft:item_display"
-        }
+        },
+        {
+            "required": false,
+            "id": "minecraft:item"
+        },
+        "experience_orb"
     ]
 }

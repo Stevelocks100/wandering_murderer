@@ -6,8 +6,7 @@
 			{
 				"when": "AJ_INTERNAL_EMPTY",
 				"model": {
-					"type": "minecraft:model",
-					"model": "animated_java:empty"
+					"type": "minecraft:empty"
 				}
 			},
 			{

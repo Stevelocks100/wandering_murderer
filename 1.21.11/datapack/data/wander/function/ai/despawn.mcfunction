@@ -2,8 +2,18 @@ scoreboard players set ai wander.data -2
 data modify entity @s NoAI set value 1b
 attribute @s movement_speed base set 0
 
+function wander:phase3/walls/destroy
+function wander:phase3/prison/destroy_all
+data modify entity @n[tag=wander.hitbox,type=wandering_trader,distance=0..] Invulnerable set value 1b
+kill @e[tag=wander.gunpowder]
+kill @e[tag=wander.gunpowder_proj]
+
+function wander:fine_print/remove
+
+execute if score health wander.data matches ..0 as @a[tag=wander.in_dimension] at @s rotated as @s run function wander:trader_dimension/leave
+
 execute at @s positioned over motion_blocking unless entity @s[distance=0..0.5] run tag @s remove wander.jump_despawn_anim
-execute if predicate {"condition":"minecraft:random_chance","chance":0.4} at @s positioned over motion_blocking if entity @s[distance=0..0.5] run tag @s add wander.jump_despawn_anim
+execute if predicate {"condition":"minecraft:random_chance","chance":0.7} at @s positioned over motion_blocking if entity @s[distance=0..0.5] run tag @s add wander.jump_despawn_anim
 
 execute as @n[tag=aj.wander.root] run function animated_java:wander/animations/pause_all
 execute unless entity @s[tag=wander.jump_despawn_anim] as @n[tag=aj.wander.root] run function animated_java:wander/animations/drink_potion_slow/tween {to_frame:0,duration:3}

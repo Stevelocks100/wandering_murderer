@@ -1,0 +1,5 @@
+execute facing entity @p[tag=wander.potential_target] feet run rotate @n[tag=wander.cutout,tag=new] ~ 0
+execute unless score bad_omen wander.data matches 1 rotated as @s run playsound wander:wandering_murderer.fake_mono hostile @a[distance=0..70] ^ ^ ^-1.2 999.0 1.0 1.0
+
+execute unless score bad_omen wander.data matches 1 rotated as @s positioned ^ ^ ^-1.2 align xyz run summon item_display ~0.5 ~ ~0.5 {item:{id:"jukebox",count:1},Tags:["wander.cutout_jukebox"],Passengers:[{id:"shulker",active_effects:[{id:"invisibility",duration:-1,show_particles:false}],DeathLootTable:"wander:empty",Invulnerable:1b,Silent:1b,NoAI:1b,Tags:["wander.cutout_jukebox_hitbox"]}],transformation:{left_rotation:[0,0,0,1],right_rotation:[0,0,0,1],scale:[1,1,1],translation:[0,.5,0]}}
+tag @n[tag=wander.cutout,tag=new] remove new

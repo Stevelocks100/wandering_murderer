@@ -15,7 +15,7 @@
             "offsetY": 1,
             "predicate": {
                 "block": {
-                    "blocks": "air"
+                    "blocks": "#wander:motion_ish"
                 }
             }
         },
@@ -24,7 +24,7 @@
             "offsetY": 2,
             "predicate": {
                 "block": {
-                    "blocks": "air"
+                    "blocks": "#wander:motion_ish"
                 }
             }
         }

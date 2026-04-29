@@ -1,0 +1,21 @@
+{
+    "placement": {
+        "type": "minecraft:concentric_rings",
+        "distance": 7,
+        "spread": 5,
+        "count": 20,
+        "preferred_biomes": [
+            "minecraft:plains",
+            "minecraft:sunflower_plains",
+            "minecraft:meadow",
+            "minecraft:savanna"
+        ],
+        "salt": 0
+    },
+    "structures": [
+        {
+            "structure": "wander:trading_stand",
+            "weight": 1
+        }
+    ]
+}

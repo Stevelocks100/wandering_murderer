@@ -6,6 +6,8 @@ tag @s remove aj.wander.animation.swim_idle.playing
 tag @s remove aj.wander.animation.angry_run.playing
 tag @s remove aj.wander.animation.sword_throw.playing
 tag @s remove aj.wander.animation.ice_throw.playing
+tag @s remove aj.wander.animation.whey_throw.playing
+tag @s remove aj.wander.animation.gunpowder_throw.playing
 tag @s remove aj.wander.animation.stew_throw.playing
 tag @s remove aj.wander.animation.sword_throw_backup.playing
 tag @s remove aj.wander.animation.angry_run_sword.playing
@@ -23,3 +25,10 @@ tag @s remove aj.wander.animation.jump_upward.playing
 tag @s remove aj.wander.animation.angry_idle.playing
 tag @s remove aj.wander.animation.twirl.playing
 tag @s remove aj.wander.animation.gangnamstyle.playing
+tag @s remove aj.wander.animation.invisible.playing
+tag @s remove aj.wander.animation.sit.playing
+tag @s remove aj.wander.animation.sit_yes.playing
+tag @s remove aj.wander.animation.sit_sleep.playing
+tag @s remove aj.wander.animation.sit_wake.playing
+tag @s remove aj.wander.animation.sit_no.playing
+tag @s remove aj.wander.animation.sit_eat.playing

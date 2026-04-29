@@ -1,0 +1,21 @@
+{
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "entity": {
+                    "type": "minecraft:interaction",
+                    "nbt": "{Tags:[\"wander.trading_stand_item_int\"]}"
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ],
+    "rewards": {
+        "function": "wander:trading_stand/item/hit"
+    }
+}

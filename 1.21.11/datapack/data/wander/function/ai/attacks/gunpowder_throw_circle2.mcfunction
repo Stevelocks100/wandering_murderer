@@ -1,0 +1,9 @@
+execute rotated ~ -20 run function wander:gunpowder/summon
+#execute rotated ~22.5 -20 run function wander:gunpowder/summon
+#execute rotated ~-22.5 -20 run function wander:gunpowder/summon
+execute rotated ~45 -20 run function wander:gunpowder/summon
+execute rotated ~-45 -20 run function wander:gunpowder/summon
+#execute rotated ~67.5 -20 run function wander:gunpowder/summon
+#execute rotated ~-67.5 -20 run function wander:gunpowder/summon
+execute rotated ~90 -20 run function wander:gunpowder/summon
+#execute rotated ~-90 -20 run function wander:gunpowder/summon

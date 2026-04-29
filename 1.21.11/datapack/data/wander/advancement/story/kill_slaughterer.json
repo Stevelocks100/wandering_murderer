@@ -1,0 +1,30 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:music_disc_cat",
+            "count": 1,
+            "components": {
+                "minecraft:item_model": "wander:music_disc_amethyst_altercation"
+            }
+        },
+        "title": "The Nightmare Vanquished",
+        "description": "Defeat the Wandering Slaughterer!",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "parent": "wander:story/dio_reference",
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ],
+    "rewards": {
+        "experience": 100
+    }
+}

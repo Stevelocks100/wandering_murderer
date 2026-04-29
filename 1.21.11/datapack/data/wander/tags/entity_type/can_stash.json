@@ -1,0 +1,26 @@
+{
+    "values": [
+        "sheep",
+        "pig",
+        "cow",
+        "chicken",
+        "rabbit",
+        "zombie",
+        "skeleton",
+        "spider",
+        "cave_spider",
+        "enderman",
+        "tnt",
+        "axolotl",
+        "squid",
+        "tropical_fish",
+        "pufferfish",
+        "cod",
+        "salmon",
+        "zombified_piglin",
+        "zombie_villager",
+        "glow_squid",
+        "creeper",
+        "wandering_trader"
+    ]
+}

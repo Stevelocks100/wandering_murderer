@@ -6,8 +6,17 @@
 			{
 				"when": "AJ_INTERNAL_EMPTY",
 				"model": {
+					"type": "minecraft:empty"
+				}
+			},
+			{
+				"when": "slaughterer",
+				"model": {
 					"type": "minecraft:model",
-					"model": "animated_java:empty"
+					"model": "animated_java:blueprint/wander/slaughterer/glowing_eye",
+					"tints": [
+						{"type": "minecraft:dye", "default": [1, 1, 1]}
+					]
 				}
 			}
 		],

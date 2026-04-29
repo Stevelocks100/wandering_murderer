@@ -1,14 +1,14 @@
 {
+	"replace": false,
 	"values": [
 		"animated_java:global/internal/gu/load",
 		"animated_java:global/on_load",
-		"hard_mode:load",
 		"milk:load",
-		"murderer_music:load",
 		"player_motion:internal/technical/load",
-		"scan:on_load",
-		"tower_api:load",
-		"trader_dimension:load",
-		"wander:load"
+		"wander:load",
+		"wander:murderer_music/load",
+		"wander:scan/on_load",
+		"wander:tower_api/load",
+		"wander:trader_dimension/load"
 	]
 }

@@ -1,0 +1,7 @@
+$execute if predicate {"condition":"minecraft:random_chance","chance":0.5} run return run item replace entity @s $(slot) with leather_$(armor)
+$execute if predicate {"condition":"minecraft:random_chance","chance":0.5} run return run item replace entity @s $(slot) with chainmail_$(armor)
+$execute if predicate {"condition":"minecraft:random_chance","chance":0.5} run return run item replace entity @s $(slot) with copper_$(armor)
+$execute if predicate {"condition":"minecraft:random_chance","chance":0.4} run return run item replace entity @s $(slot) with iron_$(armor)
+$execute if predicate {"condition":"minecraft:random_chance","chance":0.3} run return run item replace entity @s $(slot) with golden_$(armor)
+$execute if predicate {"condition":"minecraft:random_chance","chance":0.2} run return run item replace entity @s $(slot) with diamond_$(armor)
+$execute if predicate {"condition":"minecraft:random_chance","chance":0.05} run return run item replace entity @s $(slot) with netherite_$(armor)

@@ -1,0 +1,30 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:music_disc_cat",
+            "count": 1,
+            "components": {
+                "minecraft:item_model": "wander:music_disc_emerald_ultimatum"
+            }
+        },
+        "title": "The Terror Defeated",
+        "description": "Defeat the Wandering Murderer!",
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true
+    },
+    "parent": "wander:story/root",
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ],
+    "rewards": {
+        "experience": 50
+    }
+}

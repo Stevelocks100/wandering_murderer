@@ -1,45 +1,21 @@
 {
 	"meta": {
-		"format": "animated_java_blueprint",
-		"format_version": "1.7.3",
+		"format": "animated-java:format/blueprint",
+		"format_version": "1.9.0-beta.3",
 		"uuid": "04fb0f6f-aa1a-21d4-87b5-76ea1112f1b5",
-		"save_location": "/Users/School/Library/Application Support/minecraft/1.21.8/saves/devesto/datapacks/wandering_murderer/ajrigs/pocket dimension.ajblueprint",
+		"save_location": "/Users/School/Library/Application Support/minecraft/1.21.11/saves/week3 testing/datapacks/wanderingmurderer/ajrigs/pocket dimension.ajblueprint",
 		"last_used_export_namespace": "trader_dimension"
-	},
-	"blueprint_settings": {
-		"export_namespace": "trader_dimension",
-		"show_bounding_box": false,
-		"auto_bounding_box": true,
-		"bounding_box": [48, 48],
-		"enable_plugin_mode": false,
-		"resource_pack_export_mode": "raw",
-		"data_pack_export_mode": "raw",
-		"target_minecraft_versions": ["1.21.5"],
-		"display_item": "minecraft:ender_pearl",
-		"custom_model_data_offset": 0,
-		"enable_advanced_resource_pack_settings": false,
-		"resource_pack": "/Users/School/Library/Application Support/minecraft/1.21.8/resourcepacks/devesto",
-		"enable_advanced_data_pack_settings": false,
-		"data_pack": "/Users/School/Library/Application Support/minecraft/1.21.8/saves/devesto/datapacks/wandering_murderer",
-		"summon_commands": "",
-		"remove_commands": "",
-		"ticking_commands": "",
-		"interpolation_duration": 1,
-		"teleportation_duration": 1,
-		"use_storage_for_animation": false,
-		"show_function_errors": false,
-		"show_outdated_warning": false,
-		"baked_animations": true,
-		"json_file": "",
-		"target_minecraft_version": "1.21.4",
-		"enable_advanced_resource_pack_folders": false,
-		"display_item_path": "",
-		"model_folder": "",
-		"texture_folder": ""
 	},
 	"resolution": {
 		"width": 128,
 		"height": 128
+	},
+	"blueprint_settings": {
+		"export_namespace": "trader_dimension",
+		"render_box": [48, 48],
+		"display_item": "minecraft:ender_pearl",
+		"resource_pack": "/Users/School/Library/Application Support/minecraft/1.21.11/resourcepacks/wanderingmurderer",
+		"data_pack": "/Users/School/Library/Application Support/minecraft/1.21.11/saves/week3 testing/datapacks/wanderingmurderer"
 	},
 	"elements": [
 		{
@@ -13610,6 +13586,7 @@
 			"name": "root",
 			"origin": [-8, 0, 8],
 			"color": 0,
+			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
 			},
@@ -13626,6 +13603,7 @@
 					"name": "mainlids",
 					"origin": [72, 111.8, 40],
 					"color": 0,
+					"onSummonFunction": "",
 					"configs": {
 						"variants": {}
 					},
@@ -13643,6 +13621,7 @@
 							"origin": [200, 112, 40],
 							"rotation": [-180, 0, 0],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -13661,6 +13640,7 @@
 							"origin": [200, 112, 40],
 							"rotation": [-180, 0, 0],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -13679,6 +13659,7 @@
 							"origin": [200, 112, 40],
 							"rotation": [-180, 0, 0],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -13697,6 +13678,7 @@
 							"origin": [200, 112, 40],
 							"rotation": [-180, 0, 0],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -13715,6 +13697,7 @@
 							"origin": [200, 112, 40],
 							"rotation": [-180, 0, 0],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -13733,6 +13716,7 @@
 							"origin": [200, 112, 40],
 							"rotation": [-180, 0, 0],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -13752,6 +13736,7 @@
 					"name": "mainbase",
 					"origin": [72, -32, -72],
 					"color": 0,
+					"onSummonFunction": "",
 					"configs": {
 						"variants": {}
 					},
@@ -13769,6 +13754,7 @@
 							"origin": [200, -32, 56],
 							"rotation": [-180, 0, 0],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -13787,6 +13773,7 @@
 							"origin": [200, -32, 56],
 							"rotation": [-180, 0, 0],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -13805,6 +13792,7 @@
 							"origin": [200, -32, 56],
 							"rotation": [-180, 0, 0],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -13823,6 +13811,7 @@
 							"origin": [200, -32, 56],
 							"rotation": [-180, 0, 0],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -13841,6 +13830,7 @@
 							"origin": [200, -32, 56],
 							"rotation": [-180, 0, 0],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -13863,6 +13853,7 @@
 			"name": "scenery",
 			"origin": [0, 0, 0],
 			"color": 0,
+			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
 			},
@@ -13879,6 +13870,7 @@
 					"name": "ground",
 					"origin": [0, 0, 0],
 					"color": 0,
+					"onSummonFunction": "",
 					"configs": {
 						"variants": {}
 					},
@@ -13895,6 +13887,7 @@
 							"name": "line1",
 							"origin": [64, -8, 8],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -13923,6 +13916,7 @@
 							"name": "line2",
 							"origin": [48, -8, 8],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -13951,6 +13945,7 @@
 							"name": "line3",
 							"origin": [32, -8, 8],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -13979,6 +13974,7 @@
 							"name": "line4",
 							"origin": [16, -8, 8],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -14007,6 +14003,7 @@
 							"name": "line5",
 							"origin": [0, -8, 8],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -14035,6 +14032,7 @@
 							"name": "line6",
 							"origin": [-16, -8, 8],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -14063,6 +14061,7 @@
 							"name": "line7",
 							"origin": [-32, -8, 8],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -14091,6 +14090,7 @@
 							"name": "line8",
 							"origin": [-48, -8, 8],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -14119,6 +14119,7 @@
 							"name": "line9",
 							"origin": [-64, -8, 8],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -14149,6 +14150,7 @@
 					"name": "tree3",
 					"origin": [-941, 0, 0],
 					"color": 0,
+					"onSummonFunction": "",
 					"configs": {
 						"variants": {}
 					},
@@ -14242,6 +14244,7 @@
 					"name": "tree2",
 					"origin": [-1135, 0, 0],
 					"color": 0,
+					"onSummonFunction": "",
 					"configs": {
 						"variants": {}
 					},
@@ -14317,6 +14320,7 @@
 					"name": "tree1",
 					"origin": [-941, 0, 0],
 					"color": 0,
+					"onSummonFunction": "",
 					"configs": {
 						"variants": {}
 					},
@@ -14410,6 +14414,7 @@
 					"name": "llama",
 					"origin": [0, 0, 0],
 					"color": 0,
+					"onSummonFunction": "",
 					"configs": {
 						"variants": {}
 					},
@@ -14426,6 +14431,7 @@
 							"name": "head",
 							"origin": [0, 17, -6],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -14446,6 +14452,7 @@
 									"name": "head2",
 									"origin": [0, 17, -6],
 									"color": 0,
+									"onSummonFunction": "",
 									"configs": {
 										"variants": {}
 									},
@@ -14471,6 +14478,7 @@
 							"origin": [0, 19, 2],
 							"rotation": [-90, 0, 0],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -14488,6 +14496,7 @@
 									"name": "body2",
 									"origin": [0, 19, 2],
 									"color": 0,
+									"onSummonFunction": "",
 									"configs": {
 										"variants": {}
 									},
@@ -14507,6 +14516,7 @@
 							"name": "leg1",
 							"origin": [3.5, 14, 6],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -14524,6 +14534,7 @@
 							"name": "leg2",
 							"origin": [-3.5, 14, 6],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -14541,6 +14552,7 @@
 							"name": "leg3",
 							"origin": [3.5, 14, -5],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -14558,6 +14570,7 @@
 							"name": "leg4",
 							"origin": [-3.5, 14, -5],
 							"color": 0,
+							"onSummonFunction": "",
 							"configs": {
 								"variants": {}
 							},
@@ -14599,7 +14612,6 @@
 			"frame_order_type": "loop",
 			"frame_order": "",
 			"frame_interpolate": false,
-			"isSkinTexture": false,
 			"visible": true,
 			"internal": true,
 			"saved": false,
@@ -14628,7 +14640,6 @@
 			"frame_order_type": "loop",
 			"frame_order": "",
 			"frame_interpolate": false,
-			"isSkinTexture": false,
 			"visible": true,
 			"internal": true,
 			"saved": false,
@@ -14657,7 +14668,6 @@
 			"frame_order_type": "loop",
 			"frame_order": "",
 			"frame_interpolate": false,
-			"isSkinTexture": false,
 			"visible": true,
 			"internal": true,
 			"saved": true,
@@ -14687,7 +14697,6 @@
 			"frame_order_type": "loop",
 			"frame_order": "",
 			"frame_interpolate": false,
-			"isSkinTexture": false,
 			"visible": true,
 			"internal": true,
 			"saved": false,
@@ -14716,7 +14725,6 @@
 			"frame_order_type": "loop",
 			"frame_order": "",
 			"frame_interpolate": false,
-			"isSkinTexture": false,
 			"visible": true,
 			"internal": true,
 			"saved": true,
@@ -14746,7 +14754,6 @@
 			"frame_order_type": "loop",
 			"frame_order": "",
 			"frame_interpolate": false,
-			"isSkinTexture": false,
 			"visible": true,
 			"internal": true,
 			"saved": true,
@@ -14776,7 +14783,6 @@
 			"frame_order_type": "loop",
 			"frame_order": "",
 			"frame_interpolate": false,
-			"isSkinTexture": false,
 			"visible": true,
 			"internal": true,
 			"saved": false,
@@ -14806,7 +14812,6 @@
 			"frame_order_type": "loop",
 			"frame_order": "",
 			"frame_interpolate": false,
-			"isSkinTexture": false,
 			"visible": true,
 			"internal": true,
 			"saved": false,
@@ -14836,7 +14841,6 @@
 			"frame_order_type": "loop",
 			"frame_order": "",
 			"frame_interpolate": false,
-			"isSkinTexture": false,
 			"visible": true,
 			"internal": true,
 			"saved": false,
@@ -14866,7 +14870,6 @@
 			"frame_order_type": "loop",
 			"frame_order": "",
 			"frame_interpolate": false,
-			"isSkinTexture": false,
 			"visible": true,
 			"internal": true,
 			"saved": true,
@@ -14896,7 +14899,6 @@
 			"frame_order_type": "loop",
 			"frame_order": "",
 			"frame_interpolate": false,
-			"isSkinTexture": false,
 			"visible": true,
 			"internal": true,
 			"saved": false,
@@ -14925,7 +14927,6 @@
 			"frame_order_type": "loop",
 			"frame_order": "",
 			"frame_interpolate": false,
-			"isSkinTexture": false,
 			"visible": true,
 			"internal": true,
 			"saved": false,
@@ -14953,7 +14954,7 @@
 			"length": 9.25,
 			"snapping": 20,
 			"selected": false,
-			"saved": false,
+			"saved": true,
 			"path": "custom",
 			"anim_time_update": "",
 			"blend_weight": "",
@@ -18036,7 +18037,7 @@
 			"length": 6,
 			"snapping": 20,
 			"selected": false,
-			"saved": false,
+			"saved": true,
 			"path": "custom",
 			"anim_time_update": "",
 			"blend_weight": "",
@@ -18219,13 +18220,13 @@
 					"type": "locator",
 					"keyframes": [
 						{
-							"channel": "commands",
+							"channel": "function",
 							"data_points": [
 								{
 									"x": "0",
 									"y": "0",
 									"z": "0",
-									"commands": "function trader_dimension:openlid",
+									"function": "function wander:trader_dimension/openlid",
 									"execute_condition": "",
 									"repeat": false,
 									"repeat_frequency": 1
@@ -18250,7 +18251,7 @@
 			"length": 6,
 			"snapping": 20,
 			"selected": true,
-			"saved": false,
+			"saved": true,
 			"path": "custom",
 			"anim_time_update": "",
 			"blend_weight": "",
@@ -18433,13 +18434,13 @@
 					"type": "locator",
 					"keyframes": [
 						{
-							"channel": "commands",
+							"channel": "function",
 							"data_points": [
 								{
 									"x": "0",
 									"y": "0",
 									"z": "0",
-									"commands": "function trader_dimension:closelid",
+									"function": "function wander:trader_dimension/closelid",
 									"execute_condition": "",
 									"repeat": false,
 									"repeat_frequency": 1
@@ -18453,14 +18454,14 @@
 							"easingArgs": []
 						},
 						{
-							"channel": "commands",
+							"channel": "function",
 							"data_points": [
 								{
 									"x": "0",
 									"y": "0",
 									"z": "0",
-									"commands": "title @a[distance=0..40] times 0 0 10\ntitle @a[distance=0..40] title {text:\"\\uFF00\",font:\"wander:default\"}\nfunction trader_dimension:remove",
-									"execute_condition": "in trader_dimension:pocket",
+									"function": "title @a[distance=0..40] times 0 0 10\ntitle @a[distance=0..40] title {text:\"\\uFF00\",font:\"wander:default\"}\nfunction wander:trader_dimension/remove",
+									"execute_condition": "in wander:pocket",
 									"repeat": false,
 									"repeat_frequency": 1
 								}
@@ -18476,6 +18477,5 @@
 				}
 			}
 		}
-	],
-	"animation_controllers": []
+	]
 }

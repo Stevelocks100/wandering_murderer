@@ -1,0 +1,2 @@
+execute facing entity @n[tag=wander.trading_stand_spawn] feet positioned 0.0 1.0 0.0 positioned ^ ^ ^-4 summon marker run function wander:trading_stand/push_mob_away2
+data modify entity @s Motion set from storage wander:temp Motion

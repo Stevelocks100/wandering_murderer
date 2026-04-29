@@ -1,0 +1,33 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:emerald"
+        },
+        "title": "The Wandering Murderer",
+        "description": "",
+        "frame": "challenge",
+        "background": "minecraft:block/emerald_block",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:tick",
+            "conditions": {
+                "player": {
+                    "type_specific": {
+                        "type": "minecraft:player",
+                        "advancements": {
+                            "wander:story/kill_murderer": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ]
+}

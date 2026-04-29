@@ -1,0 +1,3 @@
+execute at @s run summon pig ~ ~-1 ~ {active_effects:[{id:"invisibility",duration:-1,show_particles:false}],Tags:["wander.sandbag","new"],Invulnerable:1b,Silent:1b,Passengers:[{id:"item_display",item:{id:"iron_ingot",count:1,components:{"minecraft:item_model":"wander:whey"}},transformation:{left_rotation:[0,0,0,1],right_rotation:[0,0,0,1],scale:[1,1,1],translation:[0,-0.4,0]},Tags:["wander.sandbag_display"]}],DeathLootTable:"wander:empty",attributes:[{id:"movement_speed",base:0},{id:"jump_strength",base:0}]}
+data modify entity @n[tag=wander.sandbag,tag=new] leash.UUID set from entity @s UUID
+tag @n[tag=wander.sandbag,tag=new] remove new
