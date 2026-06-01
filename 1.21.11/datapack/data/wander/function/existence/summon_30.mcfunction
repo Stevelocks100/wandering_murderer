@@ -1,5 +1,7 @@
+execute unless dimension overworld run return 0
 
 #scoreboard players set health wander.data 200
+scoreboard players set 30.no_player wander.data 0
 scoreboard players set attack_cd wander.data 20
 scoreboard players set 0.existence wander.data 0
 scoreboard players set 0.impatient wander.data 0

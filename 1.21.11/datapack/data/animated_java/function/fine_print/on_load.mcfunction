@@ -6,3 +6,5 @@ scoreboard objectives add aj.vanish.frame dummy
 scoreboard objectives add aj.bring_item.frame dummy
 scoreboard objectives add aj.give_back_item.frame dummy
 scoreboard objectives add aj.trade_item.frame dummy
+scoreboard objectives add aj.pocket_enter.frame dummy
+scoreboard objectives add aj.pocket_leave.frame dummy

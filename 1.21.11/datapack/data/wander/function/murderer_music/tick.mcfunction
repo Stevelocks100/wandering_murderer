@@ -8,12 +8,12 @@ execute if score ai wander.data matches -2 run scoreboard players set current_ph
 
 
 execute if score do_music milk.settings matches -1 run return 0
-execute if entity @n[tag=aj.wander.root] if score ai wander.data matches 20..30 unless score ai wander.data matches 29 as @a at @s if entity @n[tag=aj.wander.root,distance=0..150] run function wander:murderer_music/play_song
+execute if entity @n[tag=aj.wander.root] if score ai wander.data matches 20..30 unless score ai wander.data matches 29 as @a[distance=0..] at @s if entity @n[tag=aj.wander.root,distance=0..150] run function wander:murderer_music/play_song
 execute if score ai wander.data matches -2 as @a at @s if entity @n[tag=aj.wander.root,distance=0..150] if score @s wander.song matches 1.. run function wander:murderer_music/ending
 execute if score ai wander.data matches 31 as @a at @s if entity @n[tag=aj.wander.root,distance=0..150] if score @s wander.song matches 1.. run function wander:murderer_music/ending
 execute if score ai wander.data matches 33 as @a at @s if entity @n[tag=aj.wander.root,distance=0..150] if score @s wander.song matches 1.. run function wander:murderer_music/ending
 
-execute as @a at @s unless entity @n[tag=aj.wander.root,distance=0..200] run scoreboard players set @s wander.song -1
+execute as @a at @s unless entity @n[tag=aj.wander.root,distance=0..1000] run scoreboard players set @s wander.song -1
 
 stopsound @a ambient wander:wandering_murderer.slaughterer_intro
 stopsound @a ambient wander:wandering_murderer.phase1
@@ -25,3 +25,10 @@ stopsound @a ambient wander:wandering_murderer.phase3_slaughterer
 stopsound @a ambient wander:wandering_murderer.ending
 stopsound @a ambient wander:wandering_murderer.slaughterer_ending
 stopsound @a ambient wander:wandering_murderer.phase3_slaughterer_bridge
+
+execute if score spawned wander.data matches 0 run stopsound @a hostile wander:wandering_murderer.phase1
+execute if score spawned wander.data matches 0 run stopsound @a hostile wander:wandering_murderer.phase2
+execute if score spawned wander.data matches 0 run stopsound @a hostile wander:wandering_murderer.phase3
+execute if score spawned wander.data matches 0 run stopsound @a hostile wander:wandering_murderer.phase1_slaughterer
+execute if score spawned wander.data matches 0 run stopsound @a hostile wander:wandering_murderer.phase2_slaughterer
+execute if score spawned wander.data matches 0 run stopsound @a hostile wander:wandering_murderer.phase3_slaughterer

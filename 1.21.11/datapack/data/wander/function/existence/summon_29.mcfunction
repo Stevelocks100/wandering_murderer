@@ -1,3 +1,4 @@
+execute unless dimension overworld run return 0
 
 function wander:existence/remove
 execute if score spawned wander.data matches 1 run return 0

@@ -1,4 +1,4 @@
 {
 	"replace": false,
-	"values": ["animated_java:fine_print/root/on_tick", "animated_java:trader_dimension/root/on_tick", "animated_java:wander/root/on_tick"]
+	"values": ["animated_java:fine_print/root/on_tick", "animated_java:wander_chest/root/on_tick", "animated_java:wander/root/on_tick"]
 }

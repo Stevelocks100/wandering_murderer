@@ -2,8 +2,8 @@
 execute unless score jump_tick wander.data = jump_tick wander.data run scoreboard players set jump_tick wander.data -12
 execute if score jump_tick wander.data matches -11.. run return 0
 
-execute unless block ~ ~-0.1 ~ #wander:water_ish run function wander:ai/animation_macro {move:'angry_run_sword',idle:'angry_idle'}
-execute if block ~ ~-0.3 ~ #wander:water_ish run function wander:ai/animation_macro {move:'swim',idle:'swim_idle'}
+execute unless block ~ ~-0.1 ~ #wander:water_blocks run function wander:ai/animation_macro {move:'angry_run_sword',idle:'angry_idle'}
+execute if block ~ ~-0.3 ~ #wander:water_blocks run function wander:ai/animation_macro {move:'swim',idle:'swim_idle'}
 
 execute unless entity @p[tag=wander.target] run tag @p[tag=wander.potential_target,distance=0..80] add wander.target
 execute store result score player_distance wander.data run function wander:ai/jump/get_distance {target:"@p[tag=wander.target]"}

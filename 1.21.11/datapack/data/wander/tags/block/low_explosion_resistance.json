@@ -111,6 +111,8 @@
         "diorite",
         "granite",
         "andesite",
-        "#candles"
+        "#candles",
+        "#logs",
+        "grass_block"
     ]
 }

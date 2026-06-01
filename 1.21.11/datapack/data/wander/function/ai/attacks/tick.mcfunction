@@ -6,6 +6,8 @@
 
 
 execute if score attack_duration wander.data matches 15.. unless entity @s[tag=wander.attack_rotation_override] run rotate @s facing entity @p[tag=wander.target] eyes
+execute if score attack_duration wander.data matches 15.. unless entity @s[tag=wander.attack_rotation_override] if score ai wander.data matches 20 if score gunpowder_count wander.data matches 20.. if entity @n[tag=wander.gunpowder,distance=8..60] run rotate @s facing entity @p[tag=wander.gunpowder] eyes
+
 execute if score attack_duration wander.data matches 1.. run scoreboard players remove attack_duration wander.data 1
 execute if score attack_duration wander.data matches ..0 run tag @s remove wander.attack_rotation_override
 execute if score attack_duration wander.data matches ..0 run data modify entity @s NoAI set value 0b

@@ -1,4 +1,11 @@
-execute unless entity @n[tag=aj.wander.locator.chest] run return run function wander:trader_dimension/leave_macro with storage wander:temp kidnap_pos
+# Generated with MC-Build
+
+# runs as player, will cause them to leave.
+tag @s add wander.trader_dimension.leaving
+scoreboard players set kidnap wander.attack_cooldown 400
+execute if score ai wander.fine_print matches 1 run scoreboard players set timer wander.fine_print 200
+# old code
+execute unless entity @n[tag=aj.wander.locator.chest] run return run function wander:trader_dimension/zzz/7 with storage wander:temp kidnap_pos
 execute in minecraft:overworld at @n[tag=aj.wander.locator.chest] run tp @s ~ ~ ~
 attribute @s scale modifier add wander:escape -0.95 add_multiplied_total
 scoreboard players set $strength player_motion.api.launch 10000

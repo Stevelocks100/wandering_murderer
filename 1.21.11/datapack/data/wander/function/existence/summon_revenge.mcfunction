@@ -1,3 +1,4 @@
+execute unless dimension the_end unless dimension overworld run return 0
 
 #if a wandering trader was killed
 execute if score spawned wander.data matches 1 run return 0

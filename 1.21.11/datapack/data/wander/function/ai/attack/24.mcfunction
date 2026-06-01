@@ -1,12 +1,13 @@
 #execute if score spawned wander.data matches 1 run title stevelocks100 actionbar "go after sword"
 execute if score jump_tick wander.data matches -11.. run return 0
-execute unless block ~ ~-0.1 ~ #wander:water_ish if entity @s[tag=wander.threw_sword] run function wander:ai/animation_macro {move:'angry_run',idle:'angry_idle'}
-execute if block ~ ~-0.3 ~ #wander:water_ish run function wander:ai/animation_macro {move:'swim',idle:'swim_idle'}
+execute unless block ~ ~-0.1 ~ #wander:water_blocks if entity @s[tag=wander.threw_sword] run function wander:ai/animation_macro {move:'angry_run',idle:'angry_idle'}
+execute if block ~ ~-0.3 ~ #wander:water_blocks run function wander:ai/animation_macro {move:'swim',idle:'swim_idle'}
 
 execute store result score sword_distance wander.data run function wander:ai/jump/get_distance {target:"@n[tag=wander.sword_proj_display_landed]"}
 execute unless entity @n[tag=wander.sword_proj_display_landed] run function wander:ai/pathfind_macro {target:"@n[tag=wander.sword_proj_display]"}
 function wander:ai/pathfind_macro {target:"@n[tag=wander.sword_proj_display_landed]"}
 
+execute if entity @s[tag=wander.threw_sword] run function wander:ai/attack/set_variants
 
 scoreboard players add pick_up_sword_timer wander.data 1
 execute if score pick_up_sword_timer wander.data matches 300.. run function wander:ai/jump/pick_up

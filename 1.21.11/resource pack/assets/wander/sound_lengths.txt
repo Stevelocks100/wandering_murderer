@@ -12,6 +12,12 @@ phase3.emerald_rising: 5 ticks
 phase3.emerald_stop: 70 ticks
 phase3.hit_wall: 270 ticks
 phase3.hit_wall_far: 270 ticks
+pocket.ambience: 488 ticks
+pocket.ambience.1: 463 ticks
+pocket.ambience.2: 513 ticks
+pocket.coin_drop: 90 ticks
+pocket.coin_drop_echo: 180 ticks
+pocket.tick: 2 ticks
 records.amethyst_altercation: 2194 ticks
 records.emerald_ultimatum: 1818 ticks
 records.paramnesia: 3966 ticks

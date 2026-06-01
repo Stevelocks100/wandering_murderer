@@ -5,4 +5,6 @@ scoreboard objectives remove aj.vanish.frame
 scoreboard objectives remove aj.bring_item.frame
 scoreboard objectives remove aj.give_back_item.frame
 scoreboard objectives remove aj.trade_item.frame
+scoreboard objectives remove aj.pocket_enter.frame
+scoreboard objectives remove aj.pocket_leave.frame
 tellraw @a [{color:'gray',text:'\n '},{color:'#00aced',text:'ᴀɴɪᴍᴀᴛᴇᴅ ᴊᴀᴠᴀ'},{color:'dark_gray',italic:true,text:'\n (animated_java:fine_print)'},'\n → ',{color:'green',text:'Successfully uninstalled '},{color:'yellow',text:'fine_print'},{color:'green',text:'!'},{color:'gray',italic:true,text:'\n If you have exported multiple times, you may have to remove objectives from previous exports manually, as Animated Java only knows about the objectives from the most recent export.'},'\n']

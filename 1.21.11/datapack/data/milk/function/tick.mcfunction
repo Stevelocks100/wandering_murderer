@@ -18,7 +18,9 @@ execute as @e[tag=milk.droplet,nbt={OnGround:1b}] run tag @s add milk.splash
 
 execute as @e[tag=milk.puddle] at @s run function milk:puddle_tick
 execute store result score puddle_count milk.puddle if entity @e[tag=milk.puddle]
-execute if score puddle_count milk.puddle matches 40.. as @e[tag=milk.puddle,scores={milk.puddle=150..}] run function milk:remove
+execute if score puddle_count milk.puddle matches 150.. as @e[tag=milk.puddle,scores={milk.puddle=150..}] run function milk:remove
+execute if score puddle_count milk.puddle matches 200.. run scoreboard players add @e[tag=milk.puddle] milk.puddle 5
+
 execute as @e[tag=milk.puddle,scores={milk.puddle=300..},limit=15,sort=random] run function milk:remove
 
 

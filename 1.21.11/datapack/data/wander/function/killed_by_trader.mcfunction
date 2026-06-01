@@ -2,6 +2,8 @@ advancement revoke @s only wander:killed
 scoreboard players add @s wander.deaths 1
 scoreboard players add timer wander.data 400
 
+execute if score bad_omen wander.data matches 1 run scoreboard players remove @s wander.encounters 1
+
 execute if entity @s[tag=wander.target] if score desired_pos wander.fine_print matches -2 run function wander:fine_print/to_bag
 
 tag @s remove wander.target

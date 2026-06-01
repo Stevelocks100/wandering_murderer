@@ -1,5 +1,4 @@
 # Generated with MC-Build
 
-playsound wander:phase3.emerald_stop hostile @a[distance=0..100] ~ ~ ~ 10.0 1.0 1.0
-function wander:phase3/walls/spawned_effect
-tag @s remove wander.phase3.wall_spawning3
+particle explosion ~ ~ ~ 2.5 0.1 2.5 0.1 10 force @a
+execute if predicate {"condition":"minecraft:random_chance","chance":0.5} run playsound wander:phase3.emerald_rising hostile @a[distance=0..100] ~ ~ ~ 10.0 0.25 1.0

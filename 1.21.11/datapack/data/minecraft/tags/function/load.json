@@ -8,7 +8,6 @@
 		"wander:load",
 		"wander:murderer_music/load",
 		"wander:scan/on_load",
-		"wander:tower_api/load",
-		"wander:trader_dimension/load"
+		"wander:tower_api/load"
 	]
 }

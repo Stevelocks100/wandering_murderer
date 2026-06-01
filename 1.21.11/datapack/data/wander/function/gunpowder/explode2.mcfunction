@@ -2,7 +2,7 @@ particle explosion ~ ~ ~ 0.1 0.1 0.1 0 1 force @a
 execute if score bad_omen wander.data matches 1 if data entity @s {OnGround:1b} if block ~ ~ ~ air unless block ~ ~-1 ~ air run particle flame ~ ~0.1 ~ 0.3 0.3 0.3 0.3 70 normal @a
 execute if score bad_omen wander.data matches 1 if data entity @s {OnGround:1b} if block ~ ~ ~ air unless block ~ ~-1 ~ air run summon marker ~ ~ ~ {Tags:["wander.bad_omen_fire"]}
 execute if score bad_omen wander.data matches 1 if data entity @s {OnGround:1b} if block ~ ~ ~ air unless block ~ ~-1 ~ air run setblock ~ ~ ~ fire strict
-
+kill @n[tag=wander.gunpowder_proj,type=snowball,distance=0..2]
 playsound entity.generic.explode block @a[distance=0..48] ~ ~ ~ 0.4 1.4 0.0
 execute as @e[distance=0..3,type=!#milk:command_entities,nbt={HurtTime:0s}] run damage @s 15 wander:gunpowder
 execute as @e[distance=3..4.5,type=!#milk:command_entities,nbt={HurtTime:0s}] run damage @s 10 wander:gunpowder

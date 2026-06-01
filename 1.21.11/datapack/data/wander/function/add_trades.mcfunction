@@ -14,10 +14,9 @@ data modify storage wander:trades offers append value {weight:2,offer_item:\
 data modify storage wander:trades offers append value {weight:7,offer_item:\
 {id: "minecraft:potion", count: 1, components: {"minecraft:potion_contents": {custom_color: 15570839, custom_effects: [{show_icon: 1b, duration: 700, id: "minecraft:strength"}, {show_icon: 1b, duration: 1000, id: "minecraft:speed"}]}, "minecraft:custom_name": {italic: 0b, text: "wandy t's brew"}}}\
 ,cost:18,cost_type:"iron",item_name:"wandy t's brew",max_amount:5}
-
 data modify storage wander:trades offers append value {weight:3,offer_item:\
 {id: "minecraft:emerald", count: 1 }\
-,cost:2,cost_type:"emerald",item_name:"2 for 1 deal", max_amount:3}
+,cost:2,cost_type:"emerald",item_name:"2 for 1 deal", max_amount:30}
 
 data modify storage wander:trades offers append value {weight:2,offer_item:\
 {id: "minecraft:enchanted_book", count: 1, components: {"minecraft:stored_enchantments": {"minecraft:feather_falling": 3}}}\

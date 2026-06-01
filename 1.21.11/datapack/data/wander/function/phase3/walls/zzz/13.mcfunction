@@ -1,5 +1,7 @@
 # Generated with MC-Build
 
-execute at @s run tp @s ~ ~0.8 ~
-execute positioned over motion_blocking if entity @s[distance=0..10] run function wander:phase3/walls/zzz/14
-execute positioned over motion_blocking positioned ~ ~50 ~ if entity @s[distance=0..2] run function wander:phase3/walls/zzz/15
+playsound wander:phase3.emerald_stop hostile @a[distance=0..100] ~ ~ ~ 10.0 1.0 1.0
+playsound wander:phase3.emerald_stop hostile @a[distance=0..100] ~ ~ ~ 10.0 1.0 1.0
+playsound wander:phase3.emerald_stop hostile @a[distance=0..100] ~ ~ ~ 10.0 1.0 1.0
+function wander:phase3/walls/spawned_effect
+tag @s remove wander.phase3.wall_spawning

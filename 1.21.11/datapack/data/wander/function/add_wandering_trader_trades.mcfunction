@@ -16,3 +16,8 @@ execute unless score slaughterer_defeated wander.data matches 1 run return 0
 execute if predicate {"condition":"minecraft:random_chance","chance":0.85} run data modify entity @s Offers.Recipes append value {maxUses:1,sell:\
 {count:1,id:"minecraft:music_disc_cat",components: {"minecraft:item_model":"wander:music_disc_amethyst_altercation", "minecraft:jukebox_playable": "wander:amethyst_altercation"}}\
 ,buy:{count:20,id:"minecraft:emerald"},priceMultiplier:0.05f}
+
+execute if predicate {"condition":"minecraft:random_chance","chance":0.3} run data modify entity @s Offers.Recipes append value {maxUses:4,sell:\
+{id: "minecraft:enchanted_book", count: 1, components: {"minecraft:stored_enchantments": {"wander:resonance": 1}}}\
+,buy:{count:46,id:"minecraft:emerald"},buyB:{count:2,id:"book"},priceMultiplier:0.05f}
+

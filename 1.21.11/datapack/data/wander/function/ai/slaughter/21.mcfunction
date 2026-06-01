@@ -4,6 +4,10 @@ execute as @n[tag=aj.wander.root] run function animated_java:wander/animations/i
 
 attribute @s movement_speed base set 1.0
 function wander:ai/pathfind_macro {target:'@p[tag=wander.target]'}
+
+execute unless entity @n[tag=wander.jimmy,distance=0..60,type=marker] run function wander:ai/pathfind_macro {target:'@n[tag=wander.jimmy,distance=0..,type=marker]'}
+execute unless entity @n[tag=wander.jimmy,distance=0..60,type=marker] run tp @s @n[tag=wander.jimmy,distance=0..,type=marker]
+
 execute unless entity @n[tag=wander.phase3.wall_center,distance=0..50,type=marker] run function wander:ai/pathfind_macro {target:'@n[tag=wander.phase3.wall_center,distance=0..,type=marker]'}
 execute unless entity @n[tag=wander.phase3.wall_center,distance=0..50,type=marker] run tp @s @n[tag=wander.phase3.wall_center,distance=0..,type=marker]
 data modify entity @s Fire set value -20s

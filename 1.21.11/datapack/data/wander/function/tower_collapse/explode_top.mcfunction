@@ -16,13 +16,13 @@ execute unless score ai wander.data matches 22..25 run scoreboard players set de
 tag @n[tag=wander.sword_proj_display_landed] add wander.exploded_tower
 #execute po
 scoreboard players set tower_explosion wander.data 1
-execute if score desired_y wander.temp matches ..0 positioned ~ ~-0.5 ~ unless block ~ ~ ~ #wander:immovable unless block ~ ~ ~ #wander:air_ish run function wander:tower_collapse/replace
-execute if score desired_y wander.temp matches ..-1 positioned ~ ~-1 ~ unless block ~ ~ ~ #wander:immovable unless block ~ ~ ~ #wander:air_ish run function wander:tower_collapse/replace
-execute if score desired_y wander.temp matches ..-2 positioned ~ ~-2 ~ unless block ~ ~ ~ #wander:immovable unless block ~ ~ ~ #wander:air_ish run function wander:tower_collapse/replace
-execute if score desired_y wander.temp matches ..-3 positioned ~ ~-3 ~ unless block ~ ~ ~ #wander:immovable unless block ~ ~ ~ #wander:air_ish run function wander:tower_collapse/replace
-execute if score desired_y wander.temp matches ..-4 positioned ~ ~-4 ~ unless block ~ ~ ~ #wander:immovable unless block ~ ~ ~ #wander:air_ish run function wander:tower_collapse/replace
-execute if score desired_y wander.temp matches ..-5 positioned ~ ~-5 ~ unless block ~ ~ ~ #wander:immovable unless block ~ ~ ~ #wander:air_ish run function wander:tower_collapse/replace
-execute if score desired_y wander.temp matches ..-6 positioned ~ ~-6 ~ unless block ~ ~ ~ #wander:immovable unless block ~ ~ ~ #wander:air_ish run function wander:tower_collapse/replace
+execute if score desired_y wander.temp matches ..0 positioned ~ ~-0.5 ~ unless block ~ ~ ~ #wander:immovable unless block ~ ~ ~ #wander:air_blocks run function wander:tower_collapse/replace
+execute if score desired_y wander.temp matches ..-1 positioned ~ ~-1 ~ unless block ~ ~ ~ #wander:immovable unless block ~ ~ ~ #wander:air_blocks run function wander:tower_collapse/replace
+execute if score desired_y wander.temp matches ..-2 positioned ~ ~-2 ~ unless block ~ ~ ~ #wander:immovable unless block ~ ~ ~ #wander:air_blocks run function wander:tower_collapse/replace
+execute if score desired_y wander.temp matches ..-3 positioned ~ ~-3 ~ unless block ~ ~ ~ #wander:immovable unless block ~ ~ ~ #wander:air_blocks run function wander:tower_collapse/replace
+execute if score desired_y wander.temp matches ..-4 positioned ~ ~-4 ~ unless block ~ ~ ~ #wander:immovable unless block ~ ~ ~ #wander:air_blocks run function wander:tower_collapse/replace
+execute if score desired_y wander.temp matches ..-5 positioned ~ ~-5 ~ unless block ~ ~ ~ #wander:immovable unless block ~ ~ ~ #wander:air_blocks run function wander:tower_collapse/replace
+execute if score desired_y wander.temp matches ..-6 positioned ~ ~-6 ~ unless block ~ ~ ~ #wander:immovable unless block ~ ~ ~ #wander:air_blocks run function wander:tower_collapse/replace
 
 execute store result score $x player_motion.api.launch run random value -200..200
 execute store result score $y player_motion.api.launch run random value -200..200

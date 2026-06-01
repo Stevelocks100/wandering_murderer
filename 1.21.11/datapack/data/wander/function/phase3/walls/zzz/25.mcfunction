@@ -1,4 +1,4 @@
 # Generated with MC-Build
 
-tag @s add wander.phase3.wall_bounce
-data merge entity @s {transformation:{scale:[40,40,40]}}
+data modify entity @n[tag=wander.phase3.current_entity] Motion set from entity @s Pos
+kill @s

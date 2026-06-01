@@ -5,3 +5,5 @@ tag @s remove aj.fine_print.animation.vanish.playing
 tag @s remove aj.fine_print.animation.bring_item.playing
 tag @s remove aj.fine_print.animation.give_back_item.playing
 tag @s remove aj.fine_print.animation.trade_item.playing
+tag @s remove aj.fine_print.animation.pocket_enter.playing
+tag @s remove aj.fine_print.animation.pocket_leave.playing

@@ -1,0 +1,117 @@
+<%%
+    prefix = "wander.jukebox_animation"
+%%>
+
+function load {
+    return 0
+    scoreboard objectives add <%prefix%> dummy
+}
+
+function tick {
+    return 0
+    execute as @e[tag=<%prefix%>.jukebox,type=marker] at @s run {
+        execute if function wander:jukebox_animation/should_stop_music run return run function clean_up
+    }
+}
+
+advancement use_disc {
+	"criteria": {
+		"a": {
+			"trigger": "minecraft:item_used_on_block",
+			"conditions": {
+				"location": [
+					{
+						"condition": "minecraft:location_check",
+						"predicate": {
+							"block": {
+								"blocks": "minecraft:jukebox"
+							}
+						}
+					},
+					{
+						"condition": "minecraft:match_tool",
+						"predicate": {
+							"predicates": {
+								"minecraft:jukebox_playable": {
+									"song": "wander:amethyst_altercation"
+								}
+							}
+						}
+					}
+				]
+			}
+		}
+	},
+	"requirements": [
+		[
+			"a"
+		]
+	],
+	"rewards": {
+        "function": "wander:jukebox_animation/use_disc"
+    }
+}
+
+function use_disc {
+    advancement revoke @s only wander:jukebox_animation/use_disc
+    return 0
+    execute align xyz positioned ~0.5 ~0.5 ~0.5 run function jukebox_scan/init
+}
+
+dir jukebox_scan {
+    function init {
+        scoreboard players set found_jukebox <%prefix%> 0
+        return run function x
+    }
+    function x {
+        REPEAT (-6,6) as i {
+            execute positioned ~<%i%> ~ ~ run function y
+            execute if score found_jukebox <%prefix%> matches 1 run return 1
+        }
+    }
+    function y {
+        REPEAT (-6,6) as i {
+            execute positioned ~ ~<%i%> ~ run function z
+            execute if score found_jukebox <%prefix%> matches 1 run return 1
+        }
+    }
+
+    function z {
+        REPEAT (-6,6) as i {
+            execute positioned ~ ~ ~<%i%> run function on_block
+            execute if score found_jukebox <%prefix%> matches 1 run return 1
+        }
+    }
+
+    function on_block {
+        execute unless block ~ ~ ~ jukebox[has_record=true]{RecordItem:{components:{"minecraft:jukebox_playable":"wander:amethyst_altercation"}}} run return 0
+        execute if entity @n[tag=<%prefix%>.jukebox,type=marker,distance=0..0.2] run return 0
+        scoreboard players set found_jukebox <%prefix%> 1
+        execute summon marker run {
+            data merge entity @s {Tags:["<%prefix%>.jukebox"]}
+            block { with block ~ ~ ~
+                $stopwatch create wander:jukebox/$(x)..$(y)..$(z)
+                $data modify entity @s data.wander.stopwatch_name set value "wander:jukebox/$(x)..$(y)..$(z)"
+            }
+        }
+    }
+
+    
+}
+
+function clean_up {
+    block { with entity @s data.wander
+        $stopwatch remove $(stopwatch_name)
+    }
+    kill
+}
+
+function should_stop_music {
+    execute unless block ~ ~ ~ jukebox run return 1
+    execute unless data block ~ ~ ~ RecordItem.components{"minecraft:jukebox_playable":"wander:amethyst_altercation"} run return 1
+    return run { with entity @s data.wander
+        $execute store result score time <%prefix%> run stopwatch query $(stopwatch_name)
+        execute if score time <%prefix%> matches 110.. run return 1
+        return 0
+    }
+}

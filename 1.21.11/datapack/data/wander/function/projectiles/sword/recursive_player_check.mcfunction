@@ -4,7 +4,7 @@ execute as @p[tag=wander.potential_target,distance=0..5] at @s align y unless en
 execute if entity @p[tag=wander.potential_target,distance=0..5] run return run function wander:projectiles/sword/resummon_arrow
 execute if entity @s[tag=wander.sword_proj_hit_block] run function wander:projectiles/sword/resummon_arrow
 
-#execute if block ~ ~ ~ #wander:air_ish positioned ~ ~-1 ~ unless predicate wander:lone_tower positioned ~ ~-1 ~ unless predicate wander:lone_tower positioned ~ ~2 ~ run function wander:tower_collapse/explode_top
+#execute if block ~ ~ ~ #wander:air_blocks positioned ~ ~-1 ~ unless predicate wander:lone_tower positioned ~ ~-1 ~ unless predicate wander:lone_tower positioned ~ ~2 ~ run function wander:tower_collapse/explode_top
 
-#execute if block ~ ~ ~ #wander:air_ish run return 0
+#execute if block ~ ~ ~ #wander:air_blocks run return 0
 #execute positioned ~ ~1 ~ run function wander:projectiles/sword/recursive_player_check

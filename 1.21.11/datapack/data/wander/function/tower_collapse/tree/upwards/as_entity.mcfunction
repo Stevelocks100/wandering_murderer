@@ -5,16 +5,20 @@ execute if entity @n[tag=wander.collapse_detection,distance=0..0.1,tag=!new] run
 
 tag @s remove new
 
-execute if predicate wander:lone_tower run kill
-execute if predicate wander:lone_tower run return 0
+#execute if predicate wander:lone_tower run kill
+#execute if predicate wander:lone_tower run return 0
+
+
+execute if function wander:tower_collapse/tree/upwards/wall_check run kill
+execute if function wander:tower_collapse/tree/upwards/wall_check run return 0
 
 scoreboard players add highest_checks wander.temp 1
 
-execute positioned ~1 ~ ~ unless block ~ ~ ~ #wander:motion_ish unless entity @n[tag=wander.collapse_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.collapse_detection","new"]}
-execute positioned ~-1 ~ ~ unless block ~ ~ ~ #wander:motion_ish unless entity @n[tag=wander.collapse_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.collapse_detection","new"]}
-execute positioned ~ ~ ~1 unless block ~ ~ ~ #wander:motion_ish unless entity @n[tag=wander.collapse_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.collapse_detection","new"]}
-execute positioned ~ ~ ~-1 unless block ~ ~ ~ #wander:motion_ish unless entity @n[tag=wander.collapse_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.collapse_detection","new"]}
-execute positioned ~ ~1 ~ unless block ~ ~ ~ #wander:motion_ish unless entity @n[tag=wander.collapse_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.collapse_detection","new"]}
+execute positioned ~1 ~ ~ unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.collapse_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.collapse_detection","new"]}
+execute positioned ~-1 ~ ~ unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.collapse_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.collapse_detection","new"]}
+execute positioned ~ ~ ~1 unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.collapse_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.collapse_detection","new"]}
+execute positioned ~ ~ ~-1 unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.collapse_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.collapse_detection","new"]}
+execute positioned ~ ~1 ~ unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.collapse_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.collapse_detection","new"]}
 
 
 tag @s remove wander.collapse_detection
@@ -24,11 +28,13 @@ execute unless block ~ ~ ~ #wander:low_explosion_resistance run return run kill
 
 execute if block ~ ~ ~ #wander:immovable run return run kill
 
-execute if block ~ ~ ~ #wander:motion_ish run return run kill
+execute if block ~ ~ ~ #wander:can_pass run return run kill
 
-execute if predicate wander:lone_tower run return 0
+#execute if predicate wander:lone_tower run return 0
 
-#execute unless block ~ ~-1 ~ #wander:air_ish run return 0
+execute if function wander:tower_collapse/tree/upwards/wall_check run return 0
+
+#execute unless block ~ ~-1 ~ #wander:air_blocks run return 0
 
 execute if score do_griefing milk.settings matches 1 run function wander:tower_collapse/replace
 execute if score do_griefing milk.settings matches 1 run setblock ~ ~ ~ air

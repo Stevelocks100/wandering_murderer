@@ -1,9 +1,9 @@
 execute unless entity @n[tag=tower.tester] run summon marker ~ ~ ~ {Tags:["tower.tester"]}
 
 
-execute as @n[tag=tower.tester] at @s unless block ~ ~ ~ #wander:motion_ish at @p[tag=tower.player] if block ~ ~ ~ #wander:motion_ish run scoreboard players add tower_amount tower.temp 1
-execute as @n[tag=tower.tester] at @s unless block ~ ~ ~ #wander:motion_ish run scoreboard players set tick tower.temp 20
-execute as @n[tag=tower.tester] at @s unless block ~ ~ ~ #wander:motion_ish run tp @s @p[tag=tower.player]
+execute as @n[tag=tower.tester] at @s unless block ~ ~ ~ #wander:can_pass at @p[tag=tower.player] if block ~ ~ ~ #wander:can_pass run scoreboard players add tower_amount tower.temp 1
+execute as @n[tag=tower.tester] at @s unless block ~ ~ ~ #wander:can_pass run scoreboard players set tick tower.temp 20
+execute as @n[tag=tower.tester] at @s unless block ~ ~ ~ #wander:can_pass run tp @s @p[tag=tower.player]
 scoreboard players remove tick tower.temp 1
 execute if score tick tower.temp matches ..0 if score tower_amount tower.temp matches 1.. run scoreboard players remove tower_amount tower.temp 1
 execute if score tick tower.temp matches ..0 run scoreboard players set tick tower.temp 20

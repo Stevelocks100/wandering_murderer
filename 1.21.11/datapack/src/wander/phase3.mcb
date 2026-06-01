@@ -104,7 +104,17 @@ dir walls {
     }
     function center {
         kill @n[tag=<%prefix%>.wall_center]
+        execute if entity @n[tag=wander.jimmy] at @n[tag=wander.jimmy] run return run {
+            summon marker ~ ~ ~ {Tags:["<%prefix%>.wall_center"]}
+        }
         execute positioned over motion_blocking align xyz run summon marker ~0.5 ~ ~0.5 {Tags:["<%prefix%>.wall_center"]}
+    }
+    function jimmy {
+        kill @n[tag=wander.jimmy]
+        execute align xyz run summon marker ~0.5 ~ ~0.5 {Tags:["wander.jimmy"]}
+    }
+    function remove_jimmy {
+        kill @n[tag=wander.jimmy]
     }
 
     function tick {
@@ -226,7 +236,7 @@ dir walls {
             scoreboard players set $strength player_motion.api.launch -18000
             
             execute at @n[tag=<%prefix%>.wall_center] facing entity @s feet rotated ~ 0 positioned ^ ^ ^40 positioned over motion_blocking rotated ~ 30 run function player_motion:api/launch_looking
-            scoreboard players set @s wander.launch_cd 5
+            scoreboard players set @s wander.launch_cd 9
         }
         execute if entity @s[type=ender_pearl] run return run {
             particle gust ~ ~ ~ 0 0 0 0 1 force @a[distance=0..100]
@@ -254,7 +264,7 @@ dir walls {
         execute if score @s <%prefix%>.launched matches 1.. run return 0
 
         scoreboard players set @s <%prefix%>.launched 20
-        scoreboard players set @s[type=player] <%prefix%>.launched 5
+        scoreboard players set @s[type=player] <%prefix%>.launched 10
         execute as @n[tag=<%prefix%>.wall] at @s run {
             tag @s add <%prefix%>.wall_bounce
             data merge entity @s {transformation:{scale:[40,40,40]}}
@@ -332,7 +342,7 @@ dir prison {
             execute unless score @s <%prefix%>.health_old = prison_health wander.temp run playsound block.amethyst_block.break hostile @a[distance=0..64] ~ ~ ~ 3.0 0.7 0.0
             execute unless score @s <%prefix%>.health_old = prison_health wander.temp run particle item{item:{id:"iron_ingot",components:{"minecraft:item_model":"wander:emerald_prison"}}} ~ ~ ~ 0.3 0.3 0.3 0.2 40 force @a[distance=0..64]
 
-            execute if score prison_health wander.temp matches ..950 on passengers if entity @s[type=player] run function destroy_nearest
+            execute if score prison_health wander.temp matches ..970 on passengers if entity @s[type=player] run function destroy_nearest
 
             scoreboard players operation @s <%prefix%>.health_old = prison_health wander.temp
         }

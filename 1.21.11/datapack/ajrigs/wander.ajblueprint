@@ -185256,7 +185256,7 @@
 			"override": false,
 			"length": 9.15,
 			"snapping": 20,
-			"selected": false,
+			"selected": true,
 			"saved": true,
 			"path": "custom",
 			"anim_time_update": "",

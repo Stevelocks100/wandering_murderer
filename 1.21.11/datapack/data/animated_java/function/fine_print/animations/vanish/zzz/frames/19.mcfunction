@@ -9,5 +9,6 @@ $data merge entity $(green_left_arm) {transformation: [0f,0f,0f,0f,0f,0f,0f,0f,0
 $data merge entity $(torso) {transformation: [0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(right_leg) {transformation: [0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(left_leg) {transformation: [0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
+$execute on vehicle unless entity @s[tag=aj.transforms_only] as $(hitbox) positioned ^0 ^0 ^0 rotated ~92.6956568951 ~23.4849134022 run function animated_java:fine_print/animations/vanish/zzz/frames/19_locator_hitbox
 data modify entity @s data merge value {"cameras":{},"locators":{"locator":{"px":0.000004043920425137042,"py":-0.000012522140175825318,"pz":8.190470146096716e-7,"ry":92.69565689509986,"rx":23.484913402201546},"hitbox":{"px":0,"py":0,"pz":0,"ry":92.69565689509986,"rx":23.484913402201546}}}
 execute on vehicle unless entity @s[tag=aj.transforms_only] at @s if entity @s[tag=wander.fine_print.despawn] run function animated_java:fine_print/animations/vanish/zzz/frames/19_root_function

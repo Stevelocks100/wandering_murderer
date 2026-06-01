@@ -10,20 +10,10 @@
 				}
 			},
 			{
-				"when": "happy_mask",
+				"when": "invisible",
 				"model": {
 					"type": "minecraft:model",
-					"model": "animated_java:blueprint/fine_print/happy_mask/green_left_arm",
-					"tints": [
-						{"type": "minecraft:dye", "default": [1, 1, 1]}
-					]
-				}
-			},
-			{
-				"when": "sad_mask",
-				"model": {
-					"type": "minecraft:model",
-					"model": "animated_java:blueprint/fine_print/sad_mask/green_left_arm",
+					"model": "animated_java:blueprint/fine_print/invisible/green_left_arm",
 					"tints": [
 						{"type": "minecraft:dye", "default": [1, 1, 1]}
 					]

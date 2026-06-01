@@ -5,4 +5,4 @@ execute positioned ~ ~-1 ~ run loot replace entity @n[tag=wander.jump_particles]
 function wander:ai/jump_vanish_particles2 with entity @n[tag=wander.jump_particles] item.components."minecraft:custom_data"
 kill @n[tag=wander.jump_particles]
 
-execute as @e[type=!#milk:command_entities,distance=0.1..5] run damage @s 10 wander:gilded_emerald_cleaver by @p
+execute as @e[type=!#milk:command_entities,distance=0.1..5] run damage @s 10 wander:gilded_emerald_cleaver_land by @p

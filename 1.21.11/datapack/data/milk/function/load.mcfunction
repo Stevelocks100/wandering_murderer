@@ -16,5 +16,15 @@ scoreboard players add do_fire_spawning milk.settings 0
 execute if score do_fire_spawning milk.settings matches 0 run scoreboard players set do_fire_spawning milk.settings 1
 scoreboard players add do_spawning milk.settings 0
 execute if score do_spawning milk.settings matches 0 run scoreboard players set do_spawning milk.settings 1
+scoreboard players add do_head_drops milk.settings 0
+execute if score do_head_drops milk.settings matches 0 run scoreboard players set do_head_drops milk.settings -1
+scoreboard players add do_stand milk.settings 0
+execute if score do_stand milk.settings matches 0 run scoreboard players set do_stand milk.settings 1
+scoreboard players add do_slaughterer milk.settings 0
+execute if score do_slaughterer milk.settings matches 0 run scoreboard players set do_slaughterer milk.settings 1
+
+
+
+
 
 function milk:gu/zzz/load

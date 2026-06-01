@@ -6,5 +6,7 @@ execute if entity @s[tag=aj.fine_print.animation.vanish.playing] run function an
 execute if entity @s[tag=aj.fine_print.animation.bring_item.playing] run function animated_java:fine_print/animations/bring_item/zzz/on_tick
 execute if entity @s[tag=aj.fine_print.animation.give_back_item.playing] run function animated_java:fine_print/animations/give_back_item/zzz/on_tick
 execute if entity @s[tag=aj.fine_print.animation.trade_item.playing] run function animated_java:fine_print/animations/trade_item/zzz/on_tick
+execute if entity @s[tag=aj.fine_print.animation.pocket_enter.playing] run function animated_java:fine_print/animations/pocket_enter/zzz/on_tick
+execute if entity @s[tag=aj.fine_print.animation.pocket_leave.playing] run function animated_java:fine_print/animations/pocket_leave/zzz/on_tick
 execute on passengers run function animated_java:fine_print/root/on_tick/transform_floating_entities
 execute on passengers run function animated_java:fine_print/root/zzz/0 with entity @s data.uuids_by_name

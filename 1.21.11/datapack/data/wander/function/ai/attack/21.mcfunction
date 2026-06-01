@@ -1,15 +1,15 @@
 execute if entity @s[nbt={OnGround:1b}] run tag @s remove wander.jump_for_sword
-execute if block ~ ~ ~ #wander:water_ish run tag @s remove wander.jump_for_sword
-execute if block ~ ~-1 ~ #wander:water_ish run tag @s remove wander.jump_for_sword
+execute if block ~ ~ ~ #wander:water_blocks run tag @s remove wander.jump_for_sword
+execute if block ~ ~-1 ~ #wander:water_blocks run tag @s remove wander.jump_for_sword
 
 execute if entity @s[tag=wander.jump_for_sword] run return 0
 
-execute unless block ~ ~-0.1 ~ #wander:water_ish if entity @s[tag=wander.threw_sword] if block ~ ~2.5 ~ #wander:motion_ish if block ~ ~3.5 ~ #wander:motion_ish run function wander:ai/animation_macro {move:'angry_run',idle:'angry_idle'}
-execute unless block ~ ~-0.1 ~ #wander:water_ish unless entity @s[tag=wander.threw_sword] if block ~ ~2.5 ~ #wander:motion_ish if block ~ ~3.5 ~ #wander:motion_ish run function wander:ai/animation_macro {move:'angry_run_sword',idle:'angry_idle'}
-execute unless block ~ ~-0.1 ~ #wander:water_ish unless block ~ ~2.5 ~ #wander:motion_ish run function wander:ai/animation_macro {move:'sneak_walk',idle:'sneak_idle'}
-execute unless block ~ ~-0.1 ~ #wander:water_ish unless block ~ ~3.5 ~ #wander:motion_ish run function wander:ai/animation_macro {move:'sneak_walk',idle:'sneak_idle'}
+execute unless block ~ ~-0.1 ~ #wander:water_blocks if entity @s[tag=wander.threw_sword] if block ~ ~2.5 ~ #wander:can_pass if block ~ ~3.5 ~ #wander:can_pass run function wander:ai/animation_macro {move:'angry_run',idle:'angry_idle'}
+execute unless block ~ ~-0.1 ~ #wander:water_blocks unless entity @s[tag=wander.threw_sword] if block ~ ~2.5 ~ #wander:can_pass if block ~ ~3.5 ~ #wander:can_pass run function wander:ai/animation_macro {move:'angry_run_sword',idle:'angry_idle'}
+execute unless block ~ ~-0.1 ~ #wander:water_blocks unless block ~ ~2.5 ~ #wander:can_pass run function wander:ai/animation_macro {move:'sneak_walk',idle:'sneak_idle'}
+execute unless block ~ ~-0.1 ~ #wander:water_blocks unless block ~ ~3.5 ~ #wander:can_pass run function wander:ai/animation_macro {move:'sneak_walk',idle:'sneak_idle'}
 
-execute if block ~ ~-0.3 ~ #wander:water_ish run function wander:ai/animation_macro {move:'swim',idle:'swim_idle'}
+execute if block ~ ~-0.3 ~ #wander:water_blocks run function wander:ai/animation_macro {move:'swim',idle:'swim_idle'}
 
 scoreboard players remove sword wander.attack_cooldown 1
 scoreboard players remove throw_sword wander.attack_cooldown 1
@@ -34,9 +34,33 @@ execute if score water_check wander.temp matches 1 run function wander:ai/attack
 execute if score ice_cooldown wander.data matches ..0 run scoreboard players set ice_cooldown wander.data 20
 
 
-execute unless entity @n[tag=wander.tower_bottom_target] at @p[tag=wander.target] run function wander:tower_collapse/get_tower_bottom
+execute if predicate {"condition":"minecraft:entity_properties","entity":"this","predicate":{"periodic_tick":50}} at @p[tag=wander.target] run function wander:tower_collapse/get_tower_bottom
 execute if entity @n[tag=wander.tower_bottom_target] run function wander:ai/pathfind_macro {target:'@n[tag=wander.tower_bottom_target]'}
-execute unless entity @n[tag=wander.tower_bottom_target] if entity @s[tag=!wander.threw_sword] if score throw_sword wander.attack_cooldown matches ..0 unless score attack_ai wander.data matches 3 as @p[tag=wander.target] at @s unless function wander:on_happy_ghast as @n[tag=wander.ai] at @s run function wander:ai/attacks/throw_sword_init
+
+execute if predicate {"condition":"minecraft:entity_properties","entity":"this","predicate":{"periodic_tick":50}} \
+unless entity @n[tag=wander.tower_bottom_target] \
+if entity @s[tag=!wander.threw_sword] \
+if score throw_sword wander.attack_cooldown matches ..0 \
+unless score attack_ai wander.data matches 3 \
+as @p[tag=wander.target] at @s \
+unless function wander:on_happy_ghast \
+as @n[tag=wander.ai] at @s \
+if predicate {"condition":"minecraft:random_chance","chance":0.4} \
+run return run \
+scoreboard players set ai wander.data 22
+
+execute if predicate {"condition":"minecraft:entity_properties","entity":"this","predicate":{"periodic_tick":50}} \
+unless entity @n[tag=wander.tower_bottom_target] \
+if entity @s[tag=!wander.threw_sword] \
+if score throw_sword wander.attack_cooldown matches ..0 \
+unless score attack_ai wander.data matches 3 \
+as @p[tag=wander.target] at @s \
+unless function wander:on_happy_ghast \
+as @n[tag=wander.ai] at @s \
+run function wander:ai/attacks/throw_sword_init
+
+
+
 
 execute if entity @s[tag=wander.threw_sword] run function wander:ai/pathfind_macro {target:'@n[tag=wander.sword_proj_display_landed]'}
 
@@ -64,7 +88,9 @@ execute if entity @n[type=#wander:scares_traders,distance=0..17] run function wa
 
 execute if function wander:ai/underground/underground_check run scoreboard players set ai wander.data 20
 
+
 execute unless entity @s[tag=wander.threw_sword] if score failed_sword_swipes wander.data matches 3.. if score throw_sword wander.attack_cooldown matches ..0 unless score attack_ai wander.data matches 3 as @p[tag=wander.target] at @s unless function wander:on_happy_ghast as @n[tag=wander.ai] at @s run function wander:ai/attacks/throw_sword_init
+execute unless entity @s[tag=wander.threw_sword] if score failed_sword_swipes wander.data matches 3.. if score throw_sword wander.attack_cooldown matches ..0 unless score attack_ai wander.data matches 3 as @p[tag=wander.target] at @s unless function wander:on_happy_ghast as @n[tag=wander.ai] at @s if predicate {"condition":"minecraft:random_chance","chance":0.4} run scoreboard players set ai wander.data 22
 
 execute if block ~ ~ ~ #minecraft:ice run function wander:ai/destroy_nearby/init
 

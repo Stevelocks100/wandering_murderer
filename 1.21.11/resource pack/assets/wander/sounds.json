@@ -1,4 +1,58 @@
 {
+  "pocket.tick": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "wander:pocket/tick"
+      }
+    ],
+    "preload": true
+  },
+  "pocket.coin_drop_echo": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "wander:pocket/coin_drop_echo"
+      }
+    ],
+    "preload": true
+  },
+  "pocket.coin_drop": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "wander:pocket/coin_drop"
+      }
+    ],
+    "preload": true
+  },
+  "pocket.ambience.1": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "wander:pocket/ambience/1"
+      }
+    ]
+  },
+  "pocket.ambience.2": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "wander:pocket/ambience/2"
+      }
+    ]
+  },
+  "pocket.ambience": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "wander:pocket/ambience/1"
+      },
+      {
+        "name": "wander:pocket/ambience/2"
+      }
+    ]
+  },
   "records.emerald_ultimatum": {
     "replace": true,
     "sounds": [

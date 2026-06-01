@@ -1,4 +1,4 @@
 # Generated with MC-Build
 
-particle minecraft:explosion_emitter ~ ~ ~ 6 6 6 0 20 force @a
-particle flash{color:[0.0,1.0,0.0,1.0]} ~ ~ ~ 6 6 6 0 20 force @a
+playsound minecraft:block.beacon.deactivate hostile @a[distance=0..200] ~ ~ ~ 20.0 0.7 0.0
+playsound wander:phase3.emerald_stop hostile @a[distance=0..200] ~ ~ ~ 20.0 1.0 1.0

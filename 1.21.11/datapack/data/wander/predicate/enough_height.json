@@ -6,7 +6,7 @@
             "offsetY": 0,
             "predicate": {
                 "block": {
-                    "blocks": "#wander:motion_ish"
+                    "blocks": "#wander:can_pass"
                 }
             }
         },
@@ -15,7 +15,7 @@
             "offsetY": 1,
             "predicate": {
                 "block": {
-                    "blocks": "#wander:motion_ish"
+                    "blocks": "#wander:can_pass"
                 }
             }
         },
@@ -24,7 +24,7 @@
             "offsetY": 2,
             "predicate": {
                 "block": {
-                    "blocks": "#wander:motion_ish"
+                    "blocks": "#wander:can_pass"
                 }
             }
         }

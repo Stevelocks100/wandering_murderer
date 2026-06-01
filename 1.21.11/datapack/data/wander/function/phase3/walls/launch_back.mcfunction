@@ -9,6 +9,6 @@ execute if function wander:bag/valid_entity run damage @s 5
 playsound wander:phase3.hit_wall hostile @a[distance=0..100] ~ ~ ~ 3.0 1.0 0.0
 playsound wander:phase3.hit_wall_far hostile @a[distance=50..100] ~ ~ ~ 6.0 1.0 0.0
 function wander:phase3/walls/bounce
-execute if entity @s[type=player] run return run function wander:phase3/walls/zzz/20
-execute if entity @s[type=ender_pearl] run return run function wander:phase3/walls/zzz/21
-return run function wander:phase3/walls/zzz/23
+execute if entity @s[type=player] run return run function wander:phase3/walls/zzz/21
+execute if entity @s[type=ender_pearl] run return run function wander:phase3/walls/zzz/22
+return run function wander:phase3/walls/zzz/24

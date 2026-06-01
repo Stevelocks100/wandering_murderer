@@ -17,7 +17,7 @@ function load {
 function give_back_schedule {
     schedule function give_back_schedule 5s
     execute unless score daytime wander.data matches -501 run return 0
-    execute if entity @n[tag=aj.fine_print.root] run return 0
+    execute if entity @n[tag=aj.fine_print.root,distance=0..] run return 0
     execute if entity @n[tag=wander.ai] run return 0
     execute unless data storage wander:fine_print per_player[0] run return 0
     execute unless data storage wander:fine_print per_player[0].stolen_items[0] run return run function cycle_per_player
@@ -59,13 +59,14 @@ function give_item_back {
 
 function spawn {
     execute if entity @n[tag=aj.fine_print.root,type=item_display,distance=0..] run return 0
+    execute unless entity @n[tag=wander.ai] run return 0
     scoreboard players set ai <%prefix%> 0
     
     execute at @n[tag=aj.wander.root] run function animated_java:fine_print/summon {args:{animation:'spawn',start_animation:false}}
     function appear
     execute store result score timer <%prefix%> run random value 200..400
 
-    schedule 3s replace {
+    schedule 2s replace {
         scoreboard players set desired_pos <%prefix%> 1
     }
 }
@@ -79,11 +80,17 @@ function to_bag {
 function appear {
     execute as @n[tag=aj.fine_print.root,type=item_display,distance=0..,tag=!aj.fine_print.animation.spawn.playing] run function animated_java:fine_print/animations/spawn/play
     scoreboard players set desired_pos <%prefix%> 4
+
+    schedule 2s replace {
+        scoreboard players set desired_pos <%prefix%> 2
+        
+    }
 }
 
 function compile_bundle {
     function per_player/read
     execute as @n[tag=aj.fine_print.node.item_display,type=item_display,distance=0..] run {
+        data modify entity @s Invulnerable set value 1b
         data modify entity @s item set value {id:"blue_bundle",count:1,components:{"minecraft:item_name":"Wanderer's Bundle","minecraft:item_model":"wander:wander_bundle","minecraft:rarity":"rare"}}
         data modify entity @s item.components."minecraft:bundle_contents" set from storage wander:fine_print current.stolen_items
     }
@@ -207,7 +214,9 @@ dir ai {
         }
     }
     function 1 {
+        execute if entity @s[tag=aj.fine_print.animation.bring_item.playing] run function ../to_bag
         execute if entity @s[tag=aj.fine_print.animation.loop.playing] run function ../to_bag
+        execute if score ai wander.data matches 21 if score bad_omen wander.data matches 1 run scoreboard players add timer <%prefix%> 1
         scoreboard players remove timer <%prefix%> 1
         execute if score timer <%prefix%> matches ..0 if entity @p[tag=wander.target,distance=0..15] run return run {
             tag @p[tag=wander.target] add <%prefix%>.target
@@ -224,8 +233,9 @@ dir ai {
             tag @a[tag=<%prefix%>.target] remove <%prefix%>.target
             scoreboard players set timer <%prefix%> 0
         }
+        execute if score ai wander.data matches 21 if score bad_omen wander.data matches 1 run tag @p[tag=<%prefix%>.target] remove <%prefix%>.target
 
-        execute if score timer <%prefix%> matches 0 run {
+        execute if score timer <%prefix%> matches ..0 run {
             execute store result score timer <%prefix%> run random value 100..350
             execute if score bad_omen wander.data matches 1 store result score timer <%prefix%> run random value 50..250
             execute if score bad_omen wander.data matches 1 if predicate {"condition":"minecraft:random_chance","chance":0.66} store result score timer <%prefix%> run return run scoreboard players set ai <%prefix%> 1
@@ -336,7 +346,16 @@ advancement hit_trader {
 					"nbt": "{Tags:[\"wander.target\"]}"
 				},
 				"damage": {
+					"source_entity": {
+						"type": "minecraft:player"
+					},
 					"type": {
+						"tags": [
+							{
+								"id": "minecraft:is_player_attack",
+								"expected": true
+							}
+						],
 						"is_direct": true
 					}
 				},
@@ -364,7 +383,7 @@ function hit_stand {
     execute unless entity @n[tag=aj.fine_print.node.hitbox,distance=0..,type=interaction] run return 0
     execute if data entity @n[tag=aj.fine_print.node.hitbox,distance=0..,type=interaction] {width:0.0f} run return 0
     advancement grant @s only wander:story/scammed
-    execute if function wander:fine_print/trade as @n[tag=aj.fine_print.root] run function animated_java:fine_print/animations/trade_item/play
+    execute if function wander:fine_print/trade as @n[tag=aj.fine_print.root,distance=0..] run function animated_java:fine_print/animations/trade_item/play
 }
 
 function trade {

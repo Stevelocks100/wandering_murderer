@@ -1,0 +1,1 @@
+$execute positioned $(x) $(y) $(z) run particle minecraft:bubble ~ ~5 ~ 0.2 0.5 0.2 0 10 normal @s

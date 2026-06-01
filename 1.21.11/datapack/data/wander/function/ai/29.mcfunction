@@ -5,7 +5,7 @@ function wander:dimension_players_check
 
 execute if entity @n[tag=aj.wander.root] unless entity @n[tag=aj.wander.locator.chest] run function wander:ai/resummon_rig
 
-execute in wander:pocket positioned 8 0 8 as @a[distance=0..100] at @s if dimension wander:pocket run tag @s add wander.in_dimension
+execute in wander:pocket as @a[distance=0..] at @s if dimension wander:pocket run tag @s add wander.in_dimension
 execute store result score dimension_count wander.data if entity @a[tag=wander.in_dimension]
 tag @a remove wander.in_dimension
 execute unless score bad_omen wander.data matches 1 if score dimension_count wander.data matches 0 run function wander:ai/stalk/drink_potion

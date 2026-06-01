@@ -1,4 +1,4 @@
-execute if block ~ ~ ~ #wander:air_ish run return 0
+execute if block ~ ~ ~ #wander:air_blocks run return 0
 execute if block ~ ~ ~ #wander:immovable run return 0
 
 data remove storage wander:temp BlockState

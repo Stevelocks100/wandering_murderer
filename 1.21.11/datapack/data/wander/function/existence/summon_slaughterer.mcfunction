@@ -1,5 +1,5 @@
 execute as @a at @s run function wander:murderer_music/preload
-
+execute unless dimension overworld run return 0
 #if a wandering trader was killed
 function wander:reset_values
 #execute if entity @s[tag=wander.ai] run return run function wander:existence/summon_slaughterer_from_29
@@ -9,7 +9,7 @@ effect clear @s bad_omen
 execute if entity @s[type=player] run scoreboard players set timer wander.data 7000
 scoreboard players set daytime wander.data 1000
 scoreboard players set health wander.data 600
-
+scoreboard players set @a wander.encounters 0
 
 
 execute store result score health_mult wander.data if entity @a[tag=wander.potential_target]
@@ -25,10 +25,19 @@ scoreboard players operation health wander.data += bad_omen_health wander.temp
 
 scoreboard players set bad_omen wander.data 1
 scoreboard players set 33 wander.data 33
+scoreboard players set 50 wander.data 50
+
 scoreboard players set 100 wander.data 100
+scoreboard players set force_kidnap wander.data 0
+
 scoreboard players operation 33%health wander.data = health wander.data
 scoreboard players operation 33%health wander.data *= 33 wander.data
 scoreboard players operation 33%health wander.data /= 100 wander.data
+
+scoreboard players operation 50%health wander.data = health wander.data
+scoreboard players operation 50%health wander.data *= 50 wander.data
+scoreboard players operation 50%health wander.data /= 100 wander.data
+
 scoreboard players operation 66%health wander.data = 33%health wander.data
 scoreboard players operation 66%health wander.data += 33%health wander.data
 

@@ -1,4 +1,5 @@
 execute as @a at @s run function wander:murderer_music/preload
+execute unless dimension overworld run return 0
 
 execute if score bad_omen wander.data matches 1 run return 0
 

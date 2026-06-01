@@ -13,6 +13,20 @@
                         }
                     ]
                 }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:value_check",
+                    "value": {
+                        "type": "minecraft:score",
+                        "target": {
+                            "type": "minecraft:fixed",
+                            "name": "do_head_drops"
+                        },
+                        "score": "milk.settings"
+                    },
+                    "range": 1
+                }
             ]
         }
     ]

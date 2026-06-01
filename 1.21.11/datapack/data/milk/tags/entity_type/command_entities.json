@@ -37,6 +37,7 @@
             "required": false,
             "id": "minecraft:item"
         },
-        "experience_orb"
+        "experience_orb",
+        "painting"
     ]
 }

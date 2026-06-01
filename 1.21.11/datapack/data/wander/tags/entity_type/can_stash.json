@@ -21,6 +21,7 @@
         "zombie_villager",
         "glow_squid",
         "creeper",
-        "wandering_trader"
+        "wandering_trader",
+        "iron_golem"
     ]
 }

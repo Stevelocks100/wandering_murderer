@@ -9,9 +9,8 @@ execute unless score spawned wander.data matches 1 if entity @n[tag=wander.spawn
 execute unless score spawned wander.data matches 1 if entity @n[tag=wander.spawn_pos] as @a[distance=0..40,tag=!wander.target,tag=wander.potential_target] at @s facing entity @n[tag=wander.spawn_pos] feet run function wander:spawn_search/facing_check
 execute unless score spawned wander.data matches 1 if entity @n[tag=wander.spawn_pos] as @p[tag=wander.target] at @s facing entity @n[tag=wander.spawn_pos] feet run function wander:spawn_search/facing_check_target
 execute unless score spawned wander.data matches 1 if score spawn_check wander.temp matches 0 as @n[tag=wander.spawn_pos] at @s rotated as @s rotated ~180 0 run function wander:existence/summon
-execute if score daytime wander.data matches 1.. if predicate {"condition":"minecraft:random_chance","chance":0.0002} unless score spawned wander.data matches 1 unless entity @n[tag=wander.cutout] as @r[tag=wander.potential_target] at @s run function wander:cutout/random_summon
+execute if score daytime wander.data matches 1.. if predicate {"condition":"minecraft:random_chance","chance":0.000008} unless score spawned wander.data matches 1 unless entity @n[tag=wander.cutout] as @r[tag=wander.potential_target] at @s run function wander:cutout/random_summon
 
-execute if score spawned wander.data matches 1 at @n[tag=wander.ai] run particle happy_villager ~ ~10 ~ 0.5 2 0.5 0 10 normal @a[tag=wander.debug]
 execute as @n[tag=wander.ai] at @s rotated as @s run function wander:ai/as_root
 
 execute store result score target_count wander.data if entity @a[tag=wander.target]
@@ -83,8 +82,8 @@ execute if score spawned wander.data matches 1 if score ai wander.data matches 4
 execute unless score daytime wander.data matches 1.. run scoreboard players set timer wander.data 0
 
 
-execute if score timer wander.data > new_spawn_time wander.data unless score spawned wander.data matches 1 if score daytime wander.data matches 1.. if score timer wander.data matches 10000.. run function wander:select_spawn
-execute if score new_spawn_time wander.data matches 40000.. unless score spawned wander.data matches 1 if score daytime wander.data matches 1.. if score timer wander.data matches 10000.. run function wander:select_spawn
+execute if score timer wander.data > new_spawn_time wander.data unless score spawned wander.data matches 1 if score daytime wander.data matches 1.. if score timer wander.data matches 6000.. run function wander:select_spawn
+execute if score new_spawn_time wander.data matches 40000.. unless score spawned wander.data matches 1 if score daytime wander.data matches 1.. if score timer wander.data matches 6000.. run function wander:select_spawn
 execute if score new_spawn_time wander.data matches 40000.. unless score spawned wander.data matches 1 if score daytime wander.data matches 1.. run tag @a remove wander.new_target
 execute if score timer wander.data > new_spawn_time wander.data unless score spawned wander.data matches 1 if score daytime wander.data matches 1.. run tag @a remove wander.new_target
 execute store result score tower_players wander.temp if entity @a[tag=tower.player]
@@ -135,7 +134,7 @@ execute as @a[tag=wander.sword_jump] at @s run function wander:sword/tick
 execute as @e[tag=wander.from_bag] at @s rotated as @s run function wander:bag/as_entity_tick
 execute as @e[tag=wander.sandbag] at @s run function wander:sandbags/tick
 
-execute if score daytime wander.data matches 1.. unless score spawned wander.data matches 1 if predicate {"condition":"minecraft:random_chance","chance":0.0005} run function wander:random_sound
+execute if score daytime wander.data matches 1.. unless score spawned wander.data matches 1 if predicate {"condition":"minecraft:random_chance","chance":0.0001} run function wander:random_sound
 
 
 execute if score daytime wander.data matches -501 run scoreboard players set @a wander.trader_damage_dealt 0
@@ -156,7 +155,8 @@ execute if score trading_duration wander.data matches 0 if score defeated wander
 execute as @e[tag=wander.trading_stand_spawn] at @s rotated as @s run function wander:trading_stand/tick
 
 execute unless score steal_egg wander.data matches -1 in the_end if entity @n[type=ender_dragon,distance=0..] run scoreboard players set steal_egg wander.data 1
-execute if score steal_egg wander.data matches 1 in the_end unless entity @n[type=ender_dragon,distance=0..] if function wander:steal_dragon_egg/is_dragon_egg_spawned run function wander:steal_dragon_egg/main_loop
+execute if score steal_egg wander.data matches 1 if score trading_duration wander.data matches -100000.. run scoreboard players set trading_duration wander.data -1000000
+execute if score daytime wander.data matches -501 if score steal_egg wander.data matches 1 in the_end unless entity @n[type=ender_dragon,distance=0..] if function wander:steal_dragon_egg/is_dragon_egg_spawned run function wander:steal_dragon_egg/main_loop
 
 
 
@@ -169,3 +169,14 @@ scoreboard players remove @a[scores={wander.amethyst_sword_cd=1..}] wander.ameth
 execute as @a[tag=wander.whey] at @s run function wander:whey/tick
 
 execute as @e[type=wandering_trader,tag=!wander,tag=!wander.trade_checked,distance=0..] if data entity @s Offers.Recipes[0] run function wander:add_wandering_trader_trades
+
+execute in wander:pocket if block -80 -64 -80 spruce_planks run scoreboard players set placed_pocket wander.data 1
+execute if score placed_pocket wander.data matches 0 in wander:pocket if loaded -80 -64 -80 run place template wander:trader_pocket_dimension -80 -64 -80 none
+
+execute in wander:pocket run function wander:trader_dimension/tick
+function wander:jukebox_animation/tick
+
+execute as @a[tag=wander.debug] at @s run function wander:ai/debug_text
+
+
+execute as @e[tag=wander.placeable_cutout_stand,type=armor_stand] at @s rotated as @s run function wander:placeable_cutout/place

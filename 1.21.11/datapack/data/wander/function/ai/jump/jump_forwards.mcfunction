@@ -49,6 +49,9 @@ execute if score jump_tick wander.data matches 38 run data modify entity @s Moti
 execute if score jump_tick wander.data matches 39 run data modify entity @s Motion[1] set value -0.90d
 execute if score jump_tick wander.data matches 40 run data modify entity @s Motion[1] set value -0.95d
 execute if score jump_tick wander.data matches 41 run data modify entity @s Motion[1] set value -1.00d
+
+execute if score jump_tick wander.data matches 15..40 if data entity @s {OnGround:1b} run scoreboard players set jump_tick wander.data 41
+
 execute if score jump_tick wander.data matches 41.. run attribute @s movement_speed base set 1.2
 execute if score jump_tick wander.data matches ..40 run attribute @s movement_speed base set 0.0
 execute if score jump_tick wander.data matches 41.. run kill @e[tag=wander.jump_target]

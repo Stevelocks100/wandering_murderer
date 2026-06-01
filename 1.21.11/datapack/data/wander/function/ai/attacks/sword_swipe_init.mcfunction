@@ -1,4 +1,4 @@
-execute if predicate {"condition":"minecraft:random_chance","chance":0.2} run tag @s add wander.break_shield
+execute if predicate {"condition":"minecraft:random_chance","chance":0.7} run tag @s add wander.break_shield
 
 execute at @s facing entity @p eyes run tp @s ~ ~ ~ ~ 0
 execute at @s facing entity @p eyes run tp @n[tag=aj.wander.root] ~ ~ ~ ~ 0

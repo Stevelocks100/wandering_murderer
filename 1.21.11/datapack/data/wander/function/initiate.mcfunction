@@ -13,10 +13,18 @@ execute if score player_count wander.data matches 25.. run scoreboard players ad
 execute store result bossbar wander:health max run scoreboard players get health wander.data
 
 scoreboard players set 33 wander.data 33
+scoreboard players set 50 wander.data 50
 scoreboard players set 100 wander.data 100
+scoreboard players set force_kidnap wander.data 0
+
 scoreboard players operation 33%health wander.data = health wander.data
 scoreboard players operation 33%health wander.data *= 33 wander.data
 scoreboard players operation 33%health wander.data /= 100 wander.data
+
+scoreboard players operation 50%health wander.data = health wander.data
+scoreboard players operation 50%health wander.data *= 50 wander.data
+scoreboard players operation 50%health wander.data /= 100 wander.data
+
 scoreboard players operation 66%health wander.data = 33%health wander.data
 scoreboard players operation 66%health wander.data += 33%health wander.data
 

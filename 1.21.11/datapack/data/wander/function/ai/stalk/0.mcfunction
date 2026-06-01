@@ -1,5 +1,5 @@
-execute unless block ~ ~ ~ #wander:water_ish run function wander:ai/animation_macro {move:'sneak_walk',idle:'sneak_idle'}
-execute if block ~ ~ ~ #wander:water_ish run function wander:ai/animation_macro {move:'swim',idle:'swim_idle'}
+execute unless block ~ ~ ~ #wander:water_blocks run function wander:ai/animation_macro {move:'sneak_walk',idle:'sneak_idle'}
+execute if block ~ ~ ~ #wander:water_blocks run function wander:ai/animation_macro {move:'swim',idle:'swim_idle'}
 
 execute if data entity @s wander_target run attribute @s movement_speed base set 1.0
 execute unless data entity @s wander_target run attribute @s movement_speed base set 0.0
@@ -15,7 +15,7 @@ execute if entity @n[tag=wander.spawn_pos,distance=0..2] run kill @n[tag=wander.
 
 execute if data entity @s wander_target run scoreboard players set 0.impatient wander.data 0
 execute unless data entity @s wander_target if entity @p[tag=wander.target,distance=0..30] unless function wander:ai/stalk/is_target_looking run scoreboard players add 0.impatient wander.data 1
-execute unless data entity @s wander_target if entity @p[tag=wander.target,distance=0..15] unless function wander:ai/stalk/is_target_looking run scoreboard players add ai wander.data 5
+execute unless data entity @s wander_target if entity @p[tag=wander.target,distance=0..15] unless function wander:ai/stalk/is_target_looking run scoreboard players set ai wander.data 5
 
 execute if score 0.impatient wander.data matches 300.. if entity @p[tag=wander.target,distance=0..30] run scoreboard players set ai wander.data 5
 

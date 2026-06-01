@@ -27,5 +27,5 @@ execute if entity @s[nbt={inGround:1b}] as @a[tag=wander.potential_target,distan
 
 execute if entity @s[nbt={inGround:1b}] run kill @s
 
-#execute on passengers rotated as @s positioned ^ ^ ^1 unless block ~ ~ ~ #wander:air_ish align xyz positioned ~0.5 ~ ~0.5 run function wander:projectiles/sword/recursive_player_check
-#execute on passengers rotated as @s positioned ^ ^ ^2 unless block ~ ~ ~ #wander:air_ish align xyz positioned ~0.5 ~ ~0.5 run function wander:projectiles/sword/recursive_player_check
+#execute on passengers rotated as @s positioned ^ ^ ^1 unless block ~ ~ ~ #wander:air_blocks align xyz positioned ~0.5 ~ ~0.5 run function wander:projectiles/sword/recursive_player_check
+#execute on passengers rotated as @s positioned ^ ^ ^2 unless block ~ ~ ~ #wander:air_blocks align xyz positioned ~0.5 ~ ~0.5 run function wander:projectiles/sword/recursive_player_check

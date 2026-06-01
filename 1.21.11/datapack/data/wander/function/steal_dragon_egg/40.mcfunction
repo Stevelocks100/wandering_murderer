@@ -1,6 +1,6 @@
 execute if entity @s[nbt={OnGround:1b}] run tag @s remove wander.jump_for_sword
-execute if block ~ ~ ~ #wander:water_ish run tag @s remove wander.jump_for_sword
-execute if block ~ ~-1 ~ #wander:water_ish run tag @s remove wander.jump_for_sword
+execute if block ~ ~ ~ #wander:water_blocks run tag @s remove wander.jump_for_sword
+execute if block ~ ~-1 ~ #wander:water_blocks run tag @s remove wander.jump_for_sword
 
 execute if entity @s[tag=wander.jump_for_sword] run return 0
 execute if entity @s[tag=wander.jump_landing] run function wander:ai/land

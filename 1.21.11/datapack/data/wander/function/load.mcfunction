@@ -32,6 +32,10 @@ bossbar set wander:health color green
 #bossbar set wander:health max 700
 bossbar set wander:health style notched_12
 
+execute unless score daytime wander.data = daytime wander.data run scoreboard players set daytime wander.data -501
+
+scoreboard players set placed_pocket wander.data 0
+
 team add wander.nocol
 team modify wander.nocol collisionRule never
 
@@ -54,3 +58,8 @@ function wander:phase3/load
 function wander:fine_print/load
 
 function wander:murderer_music/preload_schedule
+execute in wander:pocket run forceload add -80 -80 80 80
+
+function wander:trader_dimension/load
+
+function wander:jukebox_animation/load

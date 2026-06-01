@@ -14,8 +14,6 @@ ride @n[tag=wander.hitbox,type=wandering_trader,distance=0..] dismount
 effect give @s invisibility infinite 200 true
 effect give @n[tag=wander.hitbox,type=wandering_trader,distance=0..] invisibility infinite 200 true
 
-function wander:ai/shield_break_setup
-
 item replace entity @s weapon with milk_bucket[item_model="wander:empty",use_remainder={id:"bucket",count:1,components:{item_model:"wander:empty"}}]
 item replace entity @s weapon.mainhand with milk_bucket[item_model="wander:empty",use_remainder={id:"bucket",count:1,components:{item_model:"wander:empty"}}]
 item replace entity @s weapon.offhand with milk_bucket[item_model="wander:empty",use_remainder={id:"bucket",count:1,components:{item_model:"wander:empty"}}]
@@ -29,9 +27,9 @@ item replace entity @n[tag=wander.hitbox,type=wandering_trader,distance=0..] wea
 item replace entity @n[tag=wander.hitbox,type=wandering_trader,distance=0..] weapon.offhand with milk_bucket[item_model="wander:empty",use_remainder={id:"bucket",count:1,components:{item_model:"wander:empty"}}]
 
 item replace entity @s armor.head with iron_ingot[enchantments={"wander:armor_piercing":1},equippable={slot:"head",asset_id:"saddle",can_be_sheared:false,equip_sound:"intentionally_empty"},unbreakable={}]
-item replace entity @n[tag=wander.hitbox,type=wandering_trader,distance=0..] armor.chest with iron_ingot[enchantments={"wander:trader_resistance":1},equippable={slot:"chest",asset_id:"saddle",can_be_sheared:false,equip_sound:"intentionally_empty"},unbreakable={}]
-item replace entity @n[tag=wander.hitbox,type=wandering_trader,distance=0..] armor.legs with iron_ingot[enchantments={"wander:trader_resistance":1},equippable={slot:"legs",asset_id:"saddle",can_be_sheared:false,equip_sound:"intentionally_empty"},unbreakable={}]
-item replace entity @n[tag=wander.hitbox,type=wandering_trader,distance=0..] armor.feet with iron_ingot[enchantments={"wander:trader_resistance":1},equippable={slot:"feet",asset_id:"saddle",can_be_sheared:false,equip_sound:"intentionally_empty"},unbreakable={}]
+item replace entity @n[tag=wander.hitbox,type=wandering_trader,distance=0..] armor.chest with iron_ingot[enchantments={"wander:trader_resistance":1,"wander:mace_resistance":1},equippable={slot:"chest",asset_id:"saddle",can_be_sheared:false,equip_sound:"intentionally_empty"},unbreakable={}]
+item replace entity @n[tag=wander.hitbox,type=wandering_trader,distance=0..] armor.legs with iron_ingot[enchantments={"wander:trader_resistance":1,"wander:mace_resistance":1},equippable={slot:"legs",asset_id:"saddle",can_be_sheared:false,equip_sound:"intentionally_empty"},unbreakable={}]
+item replace entity @n[tag=wander.hitbox,type=wandering_trader,distance=0..] armor.feet with iron_ingot[enchantments={"wander:trader_resistance":1,"wander:mace_resistance":1},equippable={slot:"feet",asset_id:"saddle",can_be_sheared:false,equip_sound:"intentionally_empty"},unbreakable={}]
 
 
 effect clear @n[tag=wander.hitbox,type=wandering_trader,distance=0..] glowing

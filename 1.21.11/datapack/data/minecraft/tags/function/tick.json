@@ -1,11 +1,4 @@
 {
 	"replace": false,
-	"values": [
-		"milk:tick",
-		"wander:murderer_music/tick",
-		"wander:tick",
-		"wander:tower_api/tick",
-		"animated_java:global/on_tick",
-		"wander:trader_dimension/tick"
-	]
+	"values": ["milk:tick", "wander:murderer_music/tick", "wander:tick", "wander:tower_api/tick", "animated_java:global/on_tick"]
 }

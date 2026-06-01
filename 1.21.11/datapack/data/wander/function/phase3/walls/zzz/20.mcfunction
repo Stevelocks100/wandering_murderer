@@ -1,6 +1,13 @@
 # Generated with MC-Build
 
-particle gust ~ ~ ~ 0 0 0 0 1 force @a[distance=0..100]
-scoreboard players set $strength player_motion.api.launch -18000
-execute at @n[tag=wander.phase3.wall_center] facing entity @s feet rotated ~ 0 positioned ^ ^ ^40 positioned over motion_blocking rotated ~ 30 run function player_motion:api/launch_looking
-scoreboard players set @s wander.launch_cd 5
+particle minecraft:happy_villager ~ ~5 ~ 0.1 3 0.1 1 15 normal @s
+particle minecraft:happy_villager ~ ~15 ~ 0.1 3 0.1 1 15 normal @s
+particle minecraft:happy_villager ~ ~25 ~ 0.1 3 0.1 1 15 normal @s
+particle minecraft:happy_villager ~ ~35 ~ 0.1 3 0.1 1 15 normal @s
+particle minecraft:happy_villager ~ ~45 ~ 0.1 3 0.1 1 15 normal @s
+particle minecraft:happy_villager ~ ~55 ~ 0.1 3 0.1 1 15 normal @s
+particle minecraft:happy_villager ~ ~65 ~ 0.1 3 0.1 1 15 normal @s
+particle minecraft:happy_villager ~ ~75 ~ 0.1 3 0.1 1 15 normal @s
+particle minecraft:happy_villager ~ ~85 ~ 0.1 3 0.1 1 15 normal @s
+particle minecraft:happy_villager ~ ~95 ~ 0.1 3 0.1 1 15 normal @s
+particle minecraft:happy_villager ~ ~105 ~ 0.1 3 0.1 1 15 normal @s

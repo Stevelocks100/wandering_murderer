@@ -1,0 +1,20 @@
+{
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "entity": {
+                    "nbt": "{Tags:[\"wander.placeable_cutout_int\"]}"
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ],
+    "rewards": {
+        "function": "wander:placeable_cutout/break"
+    }
+}

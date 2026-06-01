@@ -5,8 +5,8 @@ scoreboard players set @s wander.amethyst_sword_cd 600
 
 scoreboard players add $resonance wander.amethyst_sword_cd 0
 execute store result score $resonance wander.amethyst_sword_cd run data get entity @s SelectedItem.components."minecraft:enchantments"."wander:resonance"
-scoreboard players set 20 wander.temp 20
-scoreboard players operation $resonance wander.amethyst_sword_cd *= 20 wander.temp
+scoreboard players set 50 wander.temp 50
+scoreboard players operation $resonance wander.amethyst_sword_cd *= 50 wander.temp
 scoreboard players operation @s wander.amethyst_sword_cd -= $resonance wander.amethyst_sword_cd
 
 execute if score spawned wander.data matches 1 run scoreboard players set attack_cd wander.data 200

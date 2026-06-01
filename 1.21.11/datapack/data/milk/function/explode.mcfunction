@@ -6,22 +6,6 @@ function milk:summon_drop
 function milk:summon_drop
 function milk:summon_drop
 function milk:summon_drop
-function milk:summon_drop
-function milk:summon_drop
-function milk:summon_drop
-function milk:summon_drop
-function milk:summon_drop
-function milk:summon_drop
-function milk:summon_drop
-function milk:summon_drop
-function milk:summon_drop
-function milk:summon_drop
-function milk:summon_drop
-function milk:summon_drop
-function milk:summon_drop
-function milk:summon_drop
-function milk:summon_drop
-function milk:summon_drop
 playsound block.glass.break player @a[distance=0..32] ~ ~ ~ 2.0 1.3 0.0
 playsound item.firecharge.use player @a[distance=0..32] ~ ~ ~ 2.0 1.0 0.0
 particle flame ~ ~ ~ 0.5 0.5 0.5 0.3 40 normal @a

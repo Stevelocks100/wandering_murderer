@@ -8,11 +8,10 @@
 			"features": false,
 			"layers": [
 				{
-					"height": 0,
+					"height": 1,
 					"block": "minecraft:barrier"
 				}
-			],
-			"structure_overrides": "minecraft:ancient_cities"
+			]
 		}
 	}
 }
