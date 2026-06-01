@@ -26,6 +26,8 @@ stopsound @a ambient wander:wandering_murderer.ending
 stopsound @a ambient wander:wandering_murderer.slaughterer_ending
 stopsound @a ambient wander:wandering_murderer.phase3_slaughterer_bridge
 
+execute if score spawned wander.data matches 0 store result score spawned wander.data if entity @n[tag=wander.ai]
+
 execute if score spawned wander.data matches 0 run stopsound @a hostile wander:wandering_murderer.phase1
 execute if score spawned wander.data matches 0 run stopsound @a hostile wander:wandering_murderer.phase2
 execute if score spawned wander.data matches 0 run stopsound @a hostile wander:wandering_murderer.phase3

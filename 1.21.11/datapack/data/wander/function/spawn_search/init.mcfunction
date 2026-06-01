@@ -3,7 +3,7 @@
 
 kill @e[tag=wander.potential_spawn]
 kill @e[tag=wander.spawn_pos]
-#function animated_java:wander/remove/all
+#function aj:wander/remove/all
 tag @s add wander.spawn_checking
 tag @s[type=player] add wander.target
 execute store result score @s wander.temp run data get entity @s Rotation[0]

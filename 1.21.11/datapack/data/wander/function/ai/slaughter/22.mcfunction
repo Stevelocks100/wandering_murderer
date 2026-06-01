@@ -14,7 +14,7 @@ data remove entity @s wander_target
 attribute @s movement_speed base set 0.0
 execute if score 22_jump wander.data matches 1 run tag @a remove wander.hit_on_jump
 
-execute if score 22_jump wander.data matches 1 as @n[tag=aj.wander.root] run function animated_java:wander/animations/jump_upward/tween {duration:1,to_frame:0}
+execute if score 22_jump wander.data matches 1 as @n[tag=aj.wander.root] run function aj:wander/animations/jump_upward/tween {duration:1,to_frame:0}
 execute if score 22_jump wander.data matches 9..25 run data modify entity @s Motion[1] set value 2.3d
 
 

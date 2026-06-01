@@ -52,7 +52,7 @@ scoreboard players set not_moving wander.data 0
 
 summon wandering_trader ~ ~ ~ {Tags:["wander.ai","wander","wander.big_jump","wander.jump_landing","wander.slaughterer"],attributes:[{id:"movement_speed",base:0.5},{id:"step_height",base:1.2},{id:"jump_strength",base:0.42},{id:"follow_range",base:128},{id:"fall_damage_multiplier",base:0.4},{id:"water_movement_efficiency",base:1.0},{id:"safe_fall_distance",base:15}],Silent:1b,Invulnerable:1b,Motion:[0.0,-1.5,0.0]}
 summon wandering_trader ~ ~ ~ {Tags:["wander.hitbox","wander"],attributes:[{id:"scale",base:2},{id:"max_health",base:1024}],NoGravity:1b,Health:1024,NoAI:1b,Silent:1b,Team:"wander.nocol"}
-function animated_java:wander/summon {args:{animation:'jump_upward',frame:10,variant:'slaughterer'}}
+function aj:wander/summon {args:{animation:'jump_upward',frame:10,variant:'slaughterer'}}
 
 
 

@@ -22,20 +22,20 @@ function tick {
 
     execute as @a at @s unless dimension wander:pocket run scoreboard players set @s <%prefix%>.chests_opened 0
 
-    execute if predicate {"condition":"minecraft:random_chance","chance":0.005} as @n[tag=<%prefix%>.spawn,distance=0..] at @s unless entity @p[distance=0..10] unless entity @n[tag=aj.wander_chest.root,type=item_display,distance=0..2] run function animated_java:wander_chest/animations/open/play
+    execute if predicate {"condition":"minecraft:random_chance","chance":0.005} as @n[tag=<%prefix%>.spawn,distance=0..] at @s unless entity @p[distance=0..10] unless entity @n[tag=aj.wander_chest.root,type=item_display,distance=0..2] run function aj:wander_chest/animations/open/play
     execute if score bad_omen wander.data matches 1 if predicate {"condition":"minecraft:random_chance","chance":0.04} as @n[tag=<%prefix%>.spawn,distance=0..] at @s unless entity @p[distance=0..10] unless entity @n[tag=aj.wander_chest.root,type=item_display,distance=0..2] run {
         tag @s add <%prefix%>.better_random
-        function animated_java:wander_chest/animations/open/play
+        function aj:wander_chest/animations/open/play
     }
 
     execute unless entity @p[distance=0..] run {
-        function animated_java:wander_chest/remove/all
+        function aj:wander_chest/remove/all
         kill @e[tag=aj.wander_chest.node,distance=0..]
         tp @e[type=item,distance=0..] @n[tag=wander.ai]
     }
     execute as @e[tag=<%prefix%>.spawn,distance=0..] at @s run {
-        execute if entity @p[distance=0..20] unless entity @n[tag=aj.wander_chest.root,type=item_display,distance=0..2] run function animated_java:wander_chest/summon {args:{animation:'idle',start_animation:true}}
-        execute unless entity @p[distance=0..20] if entity @n[tag=aj.wander_chest.root,type=item_display,distance=0..2] as @n[tag=aj.wander_chest.root,type=item_display,distance=0..2] run function animated_java:wander_chest/remove/this
+        execute if entity @p[distance=0..20] unless entity @n[tag=aj.wander_chest.root,type=item_display,distance=0..2] run function aj:wander_chest/summon {args:{animation:'idle',start_animation:true}}
+        execute unless entity @p[distance=0..20] if entity @n[tag=aj.wander_chest.root,type=item_display,distance=0..2] as @n[tag=aj.wander_chest.root,type=item_display,distance=0..2] run function aj:wander_chest/remove/this
     }
     # execute if entity @p[distance=0..] unless entity @n[tag=aj.wander_chest.root,distance=0..] run function spawn_chests
     execute as @e[tag=<%prefix%>.mob,distance=0..] at @s run function chest/mob_tick
@@ -63,9 +63,9 @@ function tick {
 }
 
 function spawn_chests {
-    function animated_java:wander_chest/remove/all
+    function aj:wander_chest/remove/all
     kill @e[tag=aj.wander_chest.node]
-    execute in wander:pocket as @e[tag=<%prefix%>.spawn,distance=0..] at @s run function animated_java:wander_chest/summon {args:{animation:'idle',start_animation:true}}
+    execute in wander:pocket as @e[tag=<%prefix%>.spawn,distance=0..] at @s run function aj:wander_chest/summon {args:{animation:'idle',start_animation:true}}
 }
 
 function leave {
@@ -199,7 +199,7 @@ dir chest {
     }
 
     function escape {
-        function animated_java:wander_chest/variants/freedom/apply
+        function aj:wander_chest/variants/freedom/apply
         scoreboard players set @a[distance=0..5] <%prefix%>.freedom_timer 50
     }
 
@@ -289,7 +289,7 @@ dir scan {
         # spawn the thing at 0,0 but above. play a sound effect.
         # tag all players to make sure they're checked.
         execute in wander:pocket run {
-            execute positioned 0 -30 0 run function animated_java:fine_print/summon {args:{variant:'invisible',start_animation:true,animation:'pocket_enter'}}
+            execute positioned 0 -30 0 run function aj:fine_print/summon {args:{variant:'invisible',start_animation:true,animation:'pocket_enter'}}
             # execute as @n[tag=aj.fine_print.root,distance=0..] run function wander:fine_print/set_teleport_duration {duration:50} 
             tag @a[gamemode=!creative,gamemode=!spectator] add <%prefix%>.must_check
         }
@@ -304,8 +304,8 @@ dir scan {
         execute in wander:pocket run {
             execute as @n[tag=aj.fine_print.root,distance=0..] at @s run {
                 playsound wander:phase3.emerald_hum hostile @a[distance=0..] ~ ~ ~ 20.0 1.0 1.0
-                function animated_java:fine_print/variants/default/apply
-                function animated_java:fine_print/variants/invisible/apply
+                function aj:fine_print/variants/default/apply
+                function aj:fine_print/variants/invisible/apply
                 tag @r[tag=<%prefix%>.must_check,distance=0..] add <%prefix%>.scan_target
                 tag @p[tag=<%prefix%>.scan_target] remove <%prefix%>.must_check
                 execute facing entity @p[tag=<%prefix%>.scan_target,distance=0..] eyes at @p[tag=<%prefix%>.scan_target,distance=0..] positioned over motion_blocking positioned ~ ~20 ~ run tp @s ~ ~ ~ ~ 0
@@ -345,7 +345,7 @@ dir scan {
             playsound wander:phase3.emerald_stop hostile @a[distance=0..] 0 0 0 20.0 1.4 1.0
             tag @a remove <%prefix%>.must_check
             tag @a remove <%prefix%>.scan_target
-            execute as @n[tag=aj.fine_print.root,distance=0..] run function animated_java:fine_print/animations/pocket_leave/play
+            execute as @n[tag=aj.fine_print.root,distance=0..] run function aj:fine_print/animations/pocket_leave/play
         }
         function ../lights/on
     }
@@ -358,7 +358,7 @@ dir scan {
         effect give @s hunger 10 5 false
         playsound minecraft:entity.wandering_trader.no hostile @a[distance=0..] ~ ~20 ~ 10.0 0.6 1.0
         scoreboard players set check_timer <%prefix%> 0
-        execute as @n[tag=aj.fine_print.root,distance=0..] run function animated_java:fine_print/variants/sad_mask/apply
+        execute as @n[tag=aj.fine_print.root,distance=0..] run function aj:fine_print/variants/sad_mask/apply
     }
     
     function light_raycast {
@@ -410,6 +410,6 @@ function chest_interact {
     }
     execute as @e[tag=aj.wander_chest.node.hitbox,distance=0..5] if data entity @s interaction run {
         data remove entity @s interaction
-        execute at @s as @n[tag=aj.wander_chest.root] run function animated_java:wander_chest/animations/open/play
+        execute at @s as @n[tag=aj.wander_chest.root] run function aj:wander_chest/animations/open/play
     }
 }

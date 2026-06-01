@@ -78,7 +78,7 @@ execute if score ai wander.data matches 4..28 if entity @s[nbt={OnGround:1b}] un
 execute if score ai wander.data matches 0..28 if entity @s[nbt={OnGround:1b}] if score daytime wander.data matches -300..0 run function wander:ai/despawn
 execute if score ai wander.data matches 0..28 if score daytime wander.data matches -400..-301 run function wander:ai/despawn
 
-execute if score bad_omen wander.data matches 1 as @n[tag=aj.wander.root] run function wander:ai/slaughter/set_variants
+#execute if score bad_omen wander.data matches 1 as @n[tag=aj.wander.root] run function wander:ai/slaughter/set_variants
 execute unless score bad_omen wander.data matches 1 if score ai wander.data matches 0..28 unless entity @p[tag=wander.potential_target] if entity @s[nbt={OnGround:1b}] run function wander:ai/despawn
 fill ~-5 ~-5 ~-5 ~5 ~5 ~5 air replace nether_portal
 

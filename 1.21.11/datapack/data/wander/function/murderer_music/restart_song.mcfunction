@@ -4,14 +4,13 @@ execute if score current_phase wander.song matches 3 run scoreboard players set 
 execute if score bad_omen wander.data matches 1 if score current_phase wander.song matches 1 run scoreboard players set @s wander.song 548
 execute if score bad_omen wander.data matches 1 if score current_phase wander.song matches 2 run scoreboard players set @s wander.song 549
 execute if score bad_omen wander.data matches 1 if score current_phase wander.song matches 3 run scoreboard players set @s wander.song 548
-
 #stopsound @s * wander:wandering_murderer.slaughterer_intro
 #stopsound @s * wander:wandering_murderer.slaughterer_ending
 
 #i sure hope i dont need this!
-#execute unless score bad_omen wander.data matches 1 if score current_phase wander.song matches 1 run stopsound @s * wander:wandering_murderer.phase1
-#execute unless score bad_omen wander.data matches 1 if score current_phase wander.song matches 2 run stopsound @s * wander:wandering_murderer.phase2
-#execute unless score bad_omen wander.data matches 1 if score current_phase wander.song matches 3 run stopsound @s * wander:wandering_murderer.phase3
+execute unless score bad_omen wander.data matches 1 if score current_phase wander.song matches 1 run stopsound @s * wander:wandering_murderer.phase1
+execute unless score bad_omen wander.data matches 1 if score current_phase wander.song matches 2 run stopsound @s * wander:wandering_murderer.phase2
+execute unless score bad_omen wander.data matches 1 if score current_phase wander.song matches 3 run stopsound @s * wander:wandering_murderer.phase3
 #execute if score bad_omen wander.data matches 1 if score current_phase wander.song matches 1 run stopsound @s * wander:wandering_murderer.phase1_slaughterer
 #execute if score bad_omen wander.data matches 1 if score current_phase wander.song matches 2 run stopsound @s * wander:wandering_murderer.phase2_slaughterer
 #execute if score bad_omen wander.data matches 1 if score current_phase wander.song matches 3 run stopsound @s * wander:wandering_murderer.phase3_slaughterer

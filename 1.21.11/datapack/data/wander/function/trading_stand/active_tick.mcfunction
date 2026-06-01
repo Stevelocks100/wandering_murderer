@@ -1,8 +1,8 @@
-execute if predicate wander:daytime if entity @s[tag=wander.sleeping] as @n[tag=aj.wander.root] run function animated_java:wander/animations/sit_wake/play
+execute if predicate wander:daytime if entity @s[tag=wander.sleeping] as @n[tag=aj.wander.root] run function aj:wander/animations/sit_wake/play
 execute if predicate wander:daytime if entity @s[tag=wander.sleeping] as @e[tag=wander.trading_stand_item,distance=0..5] run function wander:trading_stand/item/day
 execute if predicate wander:daytime if entity @s[tag=wander.sleeping] run tag @s remove wander.sleeping
 
-execute if predicate wander:nighttime if entity @s[tag=!wander.sleeping] as @n[tag=aj.wander.root] run function animated_java:wander/animations/sit_sleep/play
+execute if predicate wander:nighttime if entity @s[tag=!wander.sleeping] as @n[tag=aj.wander.root] run function aj:wander/animations/sit_sleep/play
 execute if predicate wander:nighttime if entity @s[tag=!wander.sleeping] as @e[tag=wander.trading_stand_item,distance=0..5] run function wander:trading_stand/item/night
 
 execute if predicate wander:nighttime if entity @s[tag=!wander.sleeping] run tag @s add wander.sleeping

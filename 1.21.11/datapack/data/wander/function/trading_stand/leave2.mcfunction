@@ -12,7 +12,7 @@ playsound wander:wandering_murderer.bag hostile @a[distance=0..50] ~ ~ ~ 3.0 1.0
 
 execute as @e[tag=wander.trading_stand_item,distance=0..10,type=item_display] at @s run function wander:trading_stand/item/remove
 
-execute as @n[tag=aj.wander.root,distance=0..10] run function animated_java:wander/animations/jump_despawn/tween {duration:6,to_frame:0}
+execute as @n[tag=aj.wander.root,distance=0..10] run function aj:wander/animations/jump_despawn/tween {duration:6,to_frame:0}
 fill ^-7 ^-1 ^-8 ^13 ^5 ^5 air strict
 
 kill @e[tag=wander.stall.sword,distance=0..20]

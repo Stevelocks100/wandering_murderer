@@ -14,7 +14,7 @@ execute if data storage wander:trades main_offers[1] positioned ^ ^1 ^1.5 run fu
 execute if data storage wander:trades main_offers[2] positioned ^1 ^1 ^1.5 run function wander:trading_stand/item/summon with storage wander:trades main_offers[2]
 
 
-function animated_java:wander/summon {args:{animation:'sit',start_animation:true}}
+function aj:wander/summon {args:{animation:'sit',start_animation:true}}
 particle effect ~ ~ ~ 1 1 1 0.01 10 normal @a
 playsound entity.wandering_trader.reappeared hostile @a[distance=0..70] ~ ~ ~ 1.0 0.6 0.3
 

@@ -1,7 +1,7 @@
 
 execute if score jump_tick wander.data matches ..99 run scoreboard players set jump_tick wander.data 100
 scoreboard players add jump_tick wander.data 1
-execute if score jump_tick wander.data matches 101 as @n[tag=aj.wander.root] run function animated_java:wander/animations/jump_upward/tween {to_frame:0,duration:2}
+execute if score jump_tick wander.data matches 101 as @n[tag=aj.wander.root] run function aj:wander/animations/jump_upward/tween {to_frame:0,duration:2}
 
 execute if score jump_tick wander.data matches 113 store result score trader_y wander.temp run data get entity @s Pos[1]
 execute if score jump_tick wander.data matches 113 store result score sword_y wander.temp run data get entity @n[tag=wander.sword_proj_display_landed] Pos[1]

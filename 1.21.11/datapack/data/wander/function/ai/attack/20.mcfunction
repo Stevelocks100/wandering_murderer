@@ -3,7 +3,7 @@ execute if entity @s[nbt={OnGround:1b}] run tag @s remove wander.jump_for_sword
 execute if block ~ ~ ~ #wander:water_blocks run tag @s remove wander.jump_for_sword
 execute if block ~ ~-1 ~ #wander:water_blocks run tag @s remove wander.jump_for_sword
 
-execute if entity @s[tag=wander.threw_sword] run function wander:ai/attack/set_variants
+execute if entity @s[tag=wander.threw_sword] as @n[tag=aj.wander.root,distance=0..10] run function wander:ai/attack/set_variants
 
 
 execute if entity @s[tag=wander.jump_for_sword] run return 0
@@ -28,7 +28,7 @@ execute unless block ~ ~-0.1 ~ #wander:water_blocks unless block ~ ~2.5 ~ #wande
 execute unless block ~ ~-0.1 ~ #wander:water_blocks unless block ~ ~3.5 ~ #wander:can_pass run function wander:ai/animation_macro {move:'sneak_walk',idle:'sneak_idle'}
 
 execute if block ~ ~-0.3 ~ #wander:water_blocks run function wander:ai/animation_macro {move:'swim',idle:'swim_idle'}
-execute if entity @s[tag=wander.threw_sword] as @n[tag=aj.wander.root] run function animated_java:wander/variants/sword_none/apply
+execute if entity @s[tag=wander.threw_sword] as @n[tag=aj.wander.root] run function aj:wander/variants/sword_none/apply
 
 scoreboard players remove punch wander.attack_cooldown 1
 scoreboard players remove sword wander.attack_cooldown 1

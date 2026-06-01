@@ -1,6 +1,0 @@
-{
-	"parent": "animated_java:blueprint/wander/whey",
-	"textures": {
-		"2": "wander:item/whey"
-	}
-}

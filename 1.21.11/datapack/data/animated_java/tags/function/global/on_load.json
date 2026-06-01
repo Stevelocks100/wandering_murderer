@@ -1,4 +1,4 @@
 {
 	"replace": false,
-	"values": ["animated_java:fine_print/on_load", "animated_java:wander_chest/on_load", "animated_java:wander/on_load"]
+	"values": ["aj:fine_print/on_load", "aj:wander_chest/on_load", "aj:wander/on_load"]
 }

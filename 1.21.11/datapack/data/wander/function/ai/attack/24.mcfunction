@@ -7,7 +7,7 @@ execute store result score sword_distance wander.data run function wander:ai/jum
 execute unless entity @n[tag=wander.sword_proj_display_landed] run function wander:ai/pathfind_macro {target:"@n[tag=wander.sword_proj_display]"}
 function wander:ai/pathfind_macro {target:"@n[tag=wander.sword_proj_display_landed]"}
 
-execute if entity @s[tag=wander.threw_sword] run function wander:ai/attack/set_variants
+execute if entity @s[tag=wander.threw_sword] as @n[tag=aj.wander.root,distance=0..10] run function wander:ai/attack/set_variants
 
 scoreboard players add pick_up_sword_timer wander.data 1
 execute if score pick_up_sword_timer wander.data matches 300.. run function wander:ai/jump/pick_up

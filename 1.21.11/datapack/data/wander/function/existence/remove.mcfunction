@@ -10,7 +10,7 @@ stopsound @a * wander:wandering_murderer.phase1
 stopsound @a * wander:wandering_murderer.phase2
 stopsound @a * wander:wandering_murderer.phase3
 
-function animated_java:fine_print/remove/all
+function aj:fine_print/remove/all
 
 execute if score daytime wander.data matches -501 run scoreboard players set bad_omen wander.data 0
 
@@ -27,7 +27,7 @@ kill @e[tag=wander]
 tp @e[tag=wander.despawning] ~ ~-1000 ~
 kill @e[tag=wander.despawning]
 
-function animated_java:wander/remove/all
+function aj:wander/remove/all
 
 #execute if entity @s[type=player] run return 0
 scoreboard players operation new_spawn_time wander.data = timer wander.data

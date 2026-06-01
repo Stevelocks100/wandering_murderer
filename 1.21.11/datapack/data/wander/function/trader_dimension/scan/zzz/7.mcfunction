@@ -6,4 +6,4 @@ playsound wander:phase3.emerald_stop hostile @a[distance=0..] 0 0 0 20.0 1.4 1.0
 playsound wander:phase3.emerald_stop hostile @a[distance=0..] 0 0 0 20.0 1.4 1.0
 tag @a remove wander.trader_dimension.must_check
 tag @a remove wander.trader_dimension.scan_target
-execute as @n[tag=aj.fine_print.root,distance=0..] run function animated_java:fine_print/animations/pocket_leave/play
+execute as @n[tag=aj.fine_print.root,distance=0..] run function aj:fine_print/animations/pocket_leave/play

@@ -11,10 +11,10 @@ rotate @n[tag=wander.cutout,distance=0..0.1,type=item_display,tag=new] ~ 0
 tag @n[tag=wander.cutout,distance=0..0.1,type=item_display,tag=new] remove new
 
 #vanish main
-execute as @n[tag=aj.wander.root] run function animated_java:wander/animations/invisible/play
+execute as @n[tag=aj.wander.root] run function aj:wander/animations/invisible/play
 scoreboard players set ai wander.fine_print 1
 scoreboard players set timer wander.fine_print 10000
-execute as @n[tag=aj.fine_print.root,distance=0..,type=item_display] run function animated_java:fine_print/animations/vanish/tween {frame:19,duration:2}
+execute as @n[tag=aj.fine_print.root,distance=0..,type=item_display] run function aj:fine_print/animations/vanish/tween {frame:19,duration:2}
 
 
 execute unless score ai wander.data matches 21 run playsound minecraft:entity.wandering_trader.disappeared hostile @a[distance=0..32] ~ ~ ~ 2.0 0.5 0.0

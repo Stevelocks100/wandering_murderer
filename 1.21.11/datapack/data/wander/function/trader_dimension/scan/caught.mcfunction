@@ -7,4 +7,4 @@ effect give @s wither 10 3 false
 effect give @s hunger 10 5 false
 playsound minecraft:entity.wandering_trader.no hostile @a[distance=0..] ~ ~20 ~ 10.0 0.6 1.0
 scoreboard players set check_timer wander.trader_dimension 0
-execute as @n[tag=aj.fine_print.root,distance=0..] run function animated_java:fine_print/variants/sad_mask/apply
+execute as @n[tag=aj.fine_print.root,distance=0..] run function aj:fine_print/variants/sad_mask/apply

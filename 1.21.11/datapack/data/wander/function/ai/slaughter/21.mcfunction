@@ -1,6 +1,6 @@
 #invisible code >:3
 
-execute as @n[tag=aj.wander.root] run function animated_java:wander/animations/invisible/play
+execute as @n[tag=aj.wander.root] run function aj:wander/animations/invisible/play
 
 attribute @s movement_speed base set 1.0
 function wander:ai/pathfind_macro {target:'@p[tag=wander.target]'}

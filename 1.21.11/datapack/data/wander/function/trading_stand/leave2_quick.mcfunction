@@ -12,7 +12,7 @@ execute as @a[distance=0..40,tag=wander.near_trading_stand] run function wander:
 
 execute as @e[tag=wander.trading_stand_item,distance=0..10,type=item_display] at @s run function wander:trading_stand/item/remove
 
-execute as @n[tag=aj.wander.root,distance=0..10] run function animated_java:wander/remove/this
+execute as @n[tag=aj.wander.root,distance=0..10] run function aj:wander/remove/this
 fill ^-7 ^-1 ^-8 ^13 ^5 ^5 air strict
 
 kill @e[tag=wander.stall.sword,distance=0..20]

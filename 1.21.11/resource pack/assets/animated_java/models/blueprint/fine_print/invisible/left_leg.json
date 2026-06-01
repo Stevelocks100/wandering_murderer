@@ -1,6 +1,0 @@
-{
-	"parent": "animated_java:blueprint/fine_print/left_leg",
-	"textures": {
-		"3": "animated_java:blueprint/fine_print/invisible"
-	}
-}
