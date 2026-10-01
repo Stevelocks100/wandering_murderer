@@ -80,6 +80,24 @@
     ],
     "preload": true
   },
+  "records.meg": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "wander:records/meg"
+      }
+    ],
+    "preload": true
+  },
+  "records.hmmerald_hmmteramatum": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "wander:records/hmmerald_hmmteramatum"
+      }
+    ],
+    "preload": true
+  },
   "phase3.emerald_stop": {
     "replace": true,
     "sounds": [
