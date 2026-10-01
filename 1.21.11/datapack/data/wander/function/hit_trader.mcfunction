@@ -14,10 +14,10 @@ execute if score random_target wander.temp matches 1..3 run tag @a remove wander
 execute if score random_target wander.temp matches 1..3 run tag @s add wander.target
 
 tag @s add wander.facing
-execute if score random_target wander.temp matches 4..10 as @n[tag=wander.ai] at @s facing entity @p[tag=wander.facing] eyes run tp @s ~ ~ ~ ~ ~
-execute if score random_target wander.temp matches 4..10 as @n[tag=wander.ai] at @s facing entity @p[tag=wander.facing] eyes run tag @s add wander.attack_rotation_override
+execute if score random_target wander.temp matches 4..10 as abb5e532-ba94-447e-8b50-7b463008a14c at @s facing entity @p[tag=wander.facing] eyes run tp @s ~ ~ ~ ~ ~
+execute if score random_target wander.temp matches 4..10 as abb5e532-ba94-447e-8b50-7b463008a14c at @s facing entity @p[tag=wander.facing] eyes run tag @s add wander.attack_rotation_override
 
-execute if score random_target wander.temp matches 4..10 as @n[tag=wander.ai] at @s rotated as @s unless score attack_ai wander.data matches 1.. run function wander:ai/attacks/punch_init
+execute if score random_target wander.temp matches 4..10 as abb5e532-ba94-447e-8b50-7b463008a14c at @s rotated as @s unless score attack_ai wander.data matches 1.. run function wander:ai/attacks/punch_init
 tag @s remove wander.facing
 
 execute unless score ai wander.data matches 20..28 if score ai wander.data matches 0.. run tag @a remove wander.target

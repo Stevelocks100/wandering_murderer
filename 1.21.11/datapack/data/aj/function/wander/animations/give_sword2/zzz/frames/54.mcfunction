@@ -43,8 +43,10 @@ $data merge entity $(leftleg) {transformation: [-1f,0f,0f,0.25f,0f,1f,0f,2.2813f
 $data merge entity $(rightfoot) {transformation: [-1f,0f,0f,-0.2812f,0f,1f,0f,0.1094f,0f,0f,-1f,-0.2578f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(rightlowerleg) {transformation: [-1f,0f,0f,-0.2812f,0f,1f,0f,1.2188f,0f,0f,-1f,-0.1042f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(rightleg) {transformation: [-1f,0f,0f,-0.25f,0f,1f,0f,2.2813f,0f,0f,-1f,-0.0781f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
-$execute unless entity @s[tag=aj.transforms_only] as $(righthand) positioned ^-0.875 ^1.9375 ^-0.0625 rotated ~0 ~0 run function aj:wander/animations/give_sword2/zzz/frames/54_locator_righthand
-data modify storage animated_java:temp entry.data merge value {"cameras":{},"locators":{"soup":{"px":"0.844","py":"1.901","pz":"0.062","ry":"90","rx":"0"},"lefthand":{"px":"0.875","py":"1.875","pz":"-0.125","ry":"0","rx":"0"},"sword":{"px":"-0.797","py":"1.969","pz":"-0.078","ry":"0","rx":"0"},"righthand":{"px":"-0.875","py":"1.938","pz":"-0.063","ry":"0","rx":"0"},"chest":{"px":"-0.375","py":"2.688","pz":"0.375","ry":"0","rx":"0"}}}
+data modify storage animated_java:temp entry.data merge value {"locators":{"soup":{"px":"0.844","py":"1.901","pz":"0.062","ry":"90","rx":"0"},"lefthand":{"px":"0.875","py":"1.875","pz":"-0.125","ry":"0","rx":"0"},"sword":{"px":"-0.797","py":"1.969","pz":"-0.078","ry":"0","rx":"0"},"righthand":{"px":"-0.875","py":"1.938","pz":"-0.063","ry":"0","rx":"0"},"chest":{"px":"-0.375","py":"2.688","pz":"0.375","ry":"0","rx":"0"}}}
+# Data Manager: Prepare for Read / Write
+execute store result storage animated_java:temp args.id int 1 run scoreboard players get @s aj.id
 # Data Manager: Write
 function animated_java:global/data_manager/write with storage animated_java:temp args
+$execute unless entity @s[tag=aj.transforms_only] as $(righthand) positioned ^-0.875 ^1.9375 ^-0.0625 rotated ~0 ~0 run function aj:wander/animations/give_sword2/zzz/frames/54_locator_righthand
 execute unless entity @s[tag=aj.transforms_only] run function aj:wander/variants/sword_none/apply

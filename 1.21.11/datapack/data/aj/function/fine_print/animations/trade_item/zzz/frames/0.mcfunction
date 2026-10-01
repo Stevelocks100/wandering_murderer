@@ -9,10 +9,12 @@ $data merge entity $(green_left_arm) {transformation: [-0.9623f,0.3756f,-0.4147f
 $data merge entity $(torso) {transformation: [-1.1122f,0.0087f,-0.043f,0.0056f,0.0089f,1.1131f,-0.0055f,1.3764f,0.0429f,-0.0058f,-1.1123f,1.2106f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(right_leg) {transformation: [-1.1122f,0.0087f,-0.043f,-0.1357f,0.0089f,1.1131f,-0.0055f,1.4686f,0.0429f,-0.0058f,-1.1123f,1.3201f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(left_leg) {transformation: [-1.1122f,0.0087f,-0.043f,0.2097f,0.0089f,1.1131f,-0.0055f,1.1875f,0.0429f,-0.0058f,-1.1123f,1.3081f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
-execute unless entity @s[tag=aj.transforms_only] positioned ^0.0168050035 ^1.9546894287 ^1.3813883449 rotated ~357.7876643987 ~-0.2822519182 run function aj:fine_print/animations/trade_item/zzz/frames/0_locator_locator
-$execute unless entity @s[tag=aj.transforms_only] as $(hitbox) positioned ^0 ^0.493125 ^1.25 rotated ~357.7876643987 ~-0.2822519182 run function aj:fine_print/animations/trade_item/zzz/frames/0_locator_hitbox
-data modify storage animated_java:temp entry.data merge value {"cameras":{},"locators":{"locator":{"px":"0.017","py":"1.955","pz":"1.381","ry":"357.788","rx":"-0.282"},"hitbox":{"px":"-0","py":"0.493","pz":"1.25","ry":"357.788","rx":"-0.282"}}}
+data modify storage animated_java:temp entry.data merge value {"locators":{"locator":{"px":"0.017","py":"1.955","pz":"1.381","ry":"357.788","rx":"-0.282"},"hitbox":{"px":"-0","py":"0.493","pz":"1.25","ry":"357.788","rx":"-0.282"}}}
+# Data Manager: Prepare for Read / Write
+execute store result storage animated_java:temp args.id int 1 run scoreboard players get @s aj.id
 # Data Manager: Write
 function animated_java:global/data_manager/write with storage animated_java:temp args
+execute unless entity @s[tag=aj.transforms_only] positioned ^0.0168050035 ^1.9546894287 ^1.3813883449 rotated ~357.7876643987 ~-0.2822519182 run function aj:fine_print/animations/trade_item/zzz/frames/0_locator_locator
+$execute unless entity @s[tag=aj.transforms_only] as $(hitbox) positioned ^0 ^0.493125 ^1.25 rotated ~357.7876643987 ~-0.2822519182 run function aj:fine_print/animations/trade_item/zzz/frames/0_locator_hitbox
 execute unless entity @s[tag=aj.transforms_only] run function aj:fine_print/variants/default/apply
 execute unless entity @s[tag=aj.transforms_only] at @s run function aj:fine_print/animations/trade_item/zzz/frames/0_root_function

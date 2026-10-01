@@ -3,5 +3,5 @@ execute positioned ^0.844 ^1.322 ^0.765 rotated ~90 ~-0 run function aj:wander/a
 $execute as $(lefthand) positioned ^0.875 ^1.296 ^0.578 rotated ~0 ~-0 run function aj:wander/animations/drink_potion_quick/zzz/frames/24_locator_lefthand
 $execute as $(sword) positioned ^-0.875 ^1.852 ^4.471 rotated ~0 ~-7.5 run function aj:wander/animations/drink_potion_quick/zzz/frames/24_locator_sword
 $execute as $(righthand) positioned ^-0.875 ^1.371 ^0.815 rotated ~0 ~-7.5 run function aj:wander/animations/drink_potion_quick/zzz/frames/24_locator_righthand
-$execute as $(chest) positioned ^-0.375 ^2.012 ^0.568 rotated ~0 ~35 as @n[tag=wander.ai] at @s rotated as @s run function aj:wander/animations/drink_potion_quick/zzz/frames/24_locator_chest
+$execute as $(chest) positioned ^-0.375 ^2.012 ^0.568 rotated ~0 ~35 as abb5e532-ba94-447e-8b50-7b463008a14c at @s rotated as @s run function aj:wander/animations/drink_potion_quick/zzz/frames/24_locator_chest
 $execute as $(sack) positioned ^-0.062 ^-1.562 ^-0 rotated ~0 ~0 run function aj:wander/animations/drink_potion_quick/zzz/frames/24_locator_sack

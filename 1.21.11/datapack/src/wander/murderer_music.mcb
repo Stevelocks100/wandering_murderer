@@ -1,0 +1,371 @@
+<%%
+
+    prefix = "wander.music"
+    namespace = "wander:music"
+
+    tps = 74
+%%>
+
+function load {
+
+
+    scoreboard objectives add <%prefix%> dummy
+
+    scoreboard objectives add <%prefix%>.tps dummy
+
+    scoreboard objectives add <%prefix%>.time dummy
+    scoreboard objectives add <%prefix%>.current_song dummy
+    scoreboard objectives add <%prefix%>.max_time dummy
+
+    data modify storage <%namespace%> song_data set value []
+    data modify storage <%namespace%> song_data append value {duration:548,sound:"wander:wandering_murderer.phase1"}
+    data modify storage <%namespace%> song_data append value {duration:548,sound:"wander:wandering_murderer.phase2"}
+    data modify storage <%namespace%> song_data append value {duration:411,sound:"wander:wandering_murderer.phase3"}
+
+    data modify storage <%namespace%> song_data append value {duration:548,sound:"wander:wandering_murderer.phase1_slaughterer"}
+    data modify storage <%namespace%> song_data append value {duration:549,sound:"wander:wandering_murderer.phase2_slaughterer"}
+    data modify storage <%namespace%> song_data append value {duration:548,sound:"wander:wandering_murderer.phase3_slaughterer"}
+
+    data modify storage <%namespace%> song_data append value {duration:274,sound:"wander:wandering_murderer.slaughterer_intro"}
+    data modify storage <%namespace%> song_data append value {duration:273,sound:"wander:wandering_murderer.phase3_slaughterer_bridge"}
+
+    data modify storage <%namespace%> song_data append value {duration:172,sound:"wander:wandering_murderer.ending"}
+    data modify storage <%namespace%> song_data append value {duration:172,sound:"wander:wandering_murderer.slaughterer_ending"}
+
+
+    execute unless data storage <%namespace%> per_player run data modify storage <%namespace%> per_player set value []
+}
+
+# smth smth stopwatches. per player thingy
+# probably use wander.music keeping track of the phases. oh wait that's .... ok nvm
+# use wander.music for temp time storage.
+
+# possibly use some TPS calculations to determine whether to play a tick or two early.
+
+function tick {
+    function tps_counter/tick
+
+    execute if score health wander.data > 66%health wander.data run scoreboard players set current_phase <%prefix%> 1
+    execute if score health wander.data <= 66%health wander.data if score health wander.data > 33%health wander.data run scoreboard players set current_phase <%prefix%> 2
+    execute if score health wander.data <= 33%health wander.data run scoreboard players set current_phase <%prefix%> 3
+    execute if score 33%health wander.data matches -1 run scoreboard players set current_phase <%prefix%> 3
+    execute if score ai wander.data matches 30..32 run scoreboard players set current_phase <%prefix%> 1
+
+    execute if score ai wander.data matches -2 run scoreboard players set current_phase <%prefix%> 4
+
+    execute if score do_music milk.settings matches -1 run return 0
+
+    execute if score current_phase <%prefix%> matches 1 run scoreboard players set $music_index <%prefix%> 0
+    execute if score current_phase <%prefix%> matches 2 run scoreboard players set $music_index <%prefix%> 1
+    execute if score current_phase <%prefix%> matches 3 run scoreboard players set $music_index <%prefix%> 2
+    execute if score current_phase <%prefix%> matches 1 if score bad_omen wander.data matches 1 run scoreboard players set $music_index <%prefix%> 3
+    execute if score current_phase <%prefix%> matches 2 if score bad_omen wander.data matches 1 run scoreboard players set $music_index <%prefix%> 4
+    execute if score current_phase <%prefix%> matches 3 if score bad_omen wander.data matches 1 run scoreboard players set $music_index <%prefix%> 5
+
+    execute if score spawned wander.data matches 0 run scoreboard players set $music_index <%prefix%> -1
+    execute if score ai wander.data matches -2 run scoreboard players set $music_index <%prefix%> -1
+
+
+    # $music_index <%prefix%> 7 is bridge, 6 is intro
+
+
+    block {
+        stopsound @a ambient wander:wandering_murderer.slaughterer_intro
+        stopsound @a ambient wander:wandering_murderer.phase1
+        stopsound @a ambient wander:wandering_murderer.phase2
+        stopsound @a ambient wander:wandering_murderer.phase3
+        stopsound @a ambient wander:wandering_murderer.phase1_slaughterer
+        stopsound @a ambient wander:wandering_murderer.phase2_slaughterer
+        stopsound @a ambient wander:wandering_murderer.phase3_slaughterer
+        stopsound @a ambient wander:wandering_murderer.ending
+        stopsound @a ambient wander:wandering_murderer.slaughterer_ending
+        stopsound @a ambient wander:wandering_murderer.phase3_slaughterer_bridge
+    }
+
+    function storage/cycle
+
+    execute if score spawned wander.data matches 1 as @a[x=0,tag=!<%prefix%>] at @s rotated as @s run {
+
+        # execute if score bad_omen wander.data matches 1 if score daytime wander.data matches -1.. run return run tag @s add <%prefix%>
+        execute if predicate {"condition":"minecraft:entity_properties","entity":"this","predicate":{"periodic_tick":2}} \
+        if function wander:murderer_music/can_see run {
+
+            execute if entity @n[tag=aj.wander.root,distance=0..150] if score ai wander.data matches 20..30 unless score ai wander.data matches 29 run tag @s add <%prefix%>
+            scoreboard players operation @s <%prefix%>.current_song = $(music_index) <%prefix%>
+            function storage/create
+        }
+
+
+    }
+
+    execute if score ai wander.data matches -2 as @a[x=0,tag=<%prefix%>,scores={<%prefix%>.current_song=0..}] at @s run function ending
+    execute if score ai wander.data matches 31 as @a[x=0,tag=<%prefix%>,scores={<%prefix%>.current_song=0..}] at @s run function ending
+    execute if score ai wander.data matches 33 as @a[x=0,tag=<%prefix%>,scores={<%prefix%>.current_song=0..}] at @s run function ending
+
+    execute as @a[tag=!<%prefix%>] run scoreboard players set @s <%prefix%>.current_song -1
+    execute as @a[tag=!<%prefix%>] run scoreboard players set @s <%prefix%>.max_time -1
+    execute as @a[tag=<%prefix%>] at @s run function as_player
+
+    execute if score daytime wander.data matches -501 if score spawned wander.data matches 0 as @a[tag=<%prefix%>] run {
+        function storage/remove
+        tag @s remove <%prefix%>
+    }
+    execute if score spawned wander.data matches 0 as @a[tag=<%prefix%>] run function disable_music
+}
+
+function continue_music {
+    execute if entity @n[tag=wander.ai,distance=0..300] run return 1
+    return 0
+}
+
+function ending {
+    execute if score bad_omen wander.data matches 1 run return run function play_song {id:9,override:true}
+    function play_song {id:8,override:true}
+}
+
+
+
+dir tps_counter {
+    function init {
+        scoreboard players set tps <%prefix%>.tps 20
+        scoreboard players set timer1 <%prefix%>.tps 0
+        scoreboard players set timer2 <%prefix%>.tps <%Math.floor(tps / 2)%>
+
+        stopwatch remove <%namespace%>/timer1
+        stopwatch remove <%namespace%>/timer2
+
+        stopwatch create <%namespace%>/timer1
+        stopwatch create <%namespace%>/timer2
+    }
+
+    function tick {
+
+        scoreboard players add timer1 <%prefix%>.tps 1
+        scoreboard players add timer2 <%prefix%>.tps 1
+
+        # execute store result score watch1 <%prefix%>.tps run stopwatch query <%namespace%>/timer1 10
+        # execute store result score watch2 <%prefix%>.tps run stopwatch query <%namespace%>/timer2 10
+
+        execute if score timer1 <%prefix%>.tps matches <%tps%>.. run {
+            stopwatch restart <%namespace%>/timer1
+            scoreboard players set timer1 <%prefix%>.tps 0
+        }
+
+        execute if score timer2 <%prefix%>.tps matches <%tps%>.. run {
+            stopwatch restart <%namespace%>/timer2
+            scoreboard players set timer2 <%prefix%>.tps 0
+        }
+        REPEAT (1,2) as i {
+            execute store result storage <%namespace%> gm.y float 1 run scoreboard players get timer<%i%> <%prefix%>.tps
+            execute store result storage <%namespace%> gm.x float 0.1 run stopwatch query <%namespace%>/timer<%i%> 10
+            
+            data modify storage <%namespace%> gm.decimal set value {}
+            function gm:divide with storage <%namespace%> gm
+            data modify storage <%namespace%> gm.decimal.x set from storage gm:io out
+            function gm:reciprocal with storage <%namespace%> gm.decimal
+            data modify storage <%namespace%> gm.tps_<%i%> set from storage gm:io out
+            
+        }
+        execute if score timer1 <%prefix%>.tps matches <%Math.floor(tps / 2)%>.. run data modify storage <%namespace%> tps set from storage <%namespace%> gm.tps_1
+        execute if score timer2 <%prefix%>.tps matches <%Math.floor(tps / 2)%>.. run data modify storage <%namespace%> tps set from storage <%namespace%> gm.tps_2
+
+        execute store result score tps <%prefix%>.tps run data get storage <%namespace%> tps
+        
+    }
+}
+
+dir storage {
+    function create {
+        function milk:gu/generate
+        # now in storage milk:gu_main out
+        data modify storage <%namespace%> temp set value {id:"a"}
+        data modify storage <%namespace%> temp.id set from storage milk:gu_main out
+        data modify storage <%namespace%> per_player append from storage <%namespace%> temp
+        block { with storage <%namespace%> temp
+            $stopwatch create <%namespace%>/$(id)
+        }
+    }
+
+    function remove {
+        function milk:gu/generate
+        block { with storage milk:gu_main
+            $stopwatch remove <%namespace%>/$(out)
+            $data remove storage <%namespace%> per_player[{id:"$(out)"}]
+        }
+    }
+
+    function reset_stopwatch {
+        function milk:gu/generate
+        block { with storage milk:gu_main
+            $stopwatch restart <%namespace%>/$(out)
+        }
+    }
+
+    function cycle {
+        block { with storage <%namespace%> per_player[0]
+            $execute if entity $(id) run return run {
+                data modify storage <%namespace%> per_player append from storage <%namespace%> per_player[0]
+                data remove storage <%namespace%> per_player[0]
+            }
+            block { with storage <%namespace%> per_player[0]
+                $stopwatch remove <%namespace%>/$(id)
+                $data remove storage <%namespace%> per_player[{id:"$(id)"}]
+            }
+
+        }
+    }
+
+    function has_storage {
+        function milk:gu/generate
+        return run { with storage milk:gu_main
+            $return run execute if data storage <%namespace%> per_player[{id:"$(out)"}]
+        }
+    }
+}
+
+function disable_music {
+    tag @s remove <%prefix%>
+    function storage/remove
+    scoreboard players set @s <%prefix%>.current_song 0
+    # function stop_all_sound
+    
+}
+
+function stop_all_sound {
+    stopsound @s hostile wander:wandering_murderer.slaughterer_intro
+    stopsound @s hostile wander:wandering_murderer.phase1
+    stopsound @s hostile wander:wandering_murderer.phase2
+    stopsound @s hostile wander:wandering_murderer.phase3
+    stopsound @s hostile wander:wandering_murderer.phase1_slaughterer
+    stopsound @s hostile wander:wandering_murderer.phase2_slaughterer
+    stopsound @s hostile wander:wandering_murderer.phase3_slaughterer
+    stopsound @s hostile wander:wandering_murderer.ending
+    stopsound @s hostile wander:wandering_murderer.slaughterer_ending
+    stopsound @s hostile wander:wandering_murderer.phase3_slaughterer_bridge
+}
+
+function as_player {
+    execute unless function wander:murderer_music/storage/has_storage run function storage/create
+
+    execute if score @s <%prefix%>.current_song matches -1 run return 0
+
+    execute unless dimension overworld run return run {
+        function stop_all_sound
+        function disable_music
+    }
+
+    function milk:gu/generate
+    block { with storage milk:gu_main
+        # $(out) is available
+        $execute store result score @s <%prefix%>.time run stopwatch query <%namespace%>/$(out) 20
+
+        
+    }
+    execute if score tps <%prefix%>.tps matches ..18 run scoreboard players remove @s <%prefix%>.max_time 1
+    execute if score @s <%prefix%>.time >= @s <%prefix%>.max_time run {
+
+        execute unless function wander:murderer_music/continue_music run return run function disable_music
+        data modify storage <%namespace%> song.override set value false
+        execute store result storage <%namespace%> song.index int 1 run scoreboard players get @s <%prefix%>.current_song
+        execute if score @s <%prefix%>.current_song matches 1..3 run data modify storage <%namespace%> song.override set value true
+        execute unless score $music_index <%prefix%> matches -1 run return run {
+            
+            execute store result storage <%namespace%> song.id int 1 run scoreboard players get $music_index <%prefix%>
+            function play_song with storage <%namespace%> song
+        }
+        scoreboard players set @s <%prefix%>.current_song -1
+    }
+    execute if score tps <%prefix%>.tps matches ..18 run scoreboard players add @s <%prefix%>.max_time 1
+
+
+}
+
+function override_1 {
+    return 1
+}
+function override_0 {
+    return 0
+}
+
+function play_song {
+    # input:
+    # id - int
+    # override - boolean
+
+    $execute if function wander:murderer_music/override_$(override) run {
+        execute store result storage <%namespace%> song.index int 1 run scoreboard players get @s <%prefix%>.current_song
+        block { with storage <%namespace%> song
+            $block { with storage <%namespace%> song_data[$(index)]
+                $stopsound @s hostile $(sound)
+            }
+        }
+    }
+
+    tag @s add <%prefix%>
+    function storage/reset_stopwatch
+    $scoreboard players set @s <%prefix%>.current_song $(id)
+    $execute store result score @s <%prefix%>.max_time run data get storage <%namespace%> song_data[$(id)].duration
+
+    $block { with storage <%namespace%> song_data[$(id)]
+        $playsound $(sound) hostile @s ~ ~ ~ 0.7 1.0 1.0
+    }
+
+    execute if score @s <%prefix%>.current_song matches 8..9 run function disable_music
+}
+
+
+
+function preload {
+    playsound wander:wandering_murderer.slaughterer_intro ambient @s ~ ~ ~ 0.001 1.0 0.001
+    playsound wander:wandering_murderer.phase1 ambient @s ~ ~ ~ 0.001 1.0 0.001
+    playsound wander:wandering_murderer.phase2 ambient @s ~ ~ ~ 0.001 1.0 0.001
+    playsound wander:wandering_murderer.phase3 ambient @s ~ ~ ~ 0.001 1.0 0.001
+    playsound wander:wandering_murderer.phase1_slaughterer ambient @s ~ ~ ~ 0.001 1.0 0.001
+    playsound wander:wandering_murderer.phase2_slaughterer ambient @s ~ ~ ~ 0.001 1.0 0.001
+    playsound wander:wandering_murderer.phase3_slaughterer ambient @s ~ ~ ~ 0.001 1.0 0.001
+    playsound wander:wandering_murderer.ending ambient @s ~ ~ ~ 0.001 1.0 0.001
+    playsound wander:wandering_murderer.slaughterer_ending ambient @s ~ ~ ~ 0.001 1.0 0.001
+    playsound wander:wandering_murderer.phase3_slaughterer_bridge ambient @s ~ ~ ~ 0.001 1.0 0.001
+
+    stopsound @s ambient wander:wandering_murderer.slaughterer_intro
+    stopsound @s ambient wander:wandering_murderer.phase1
+    stopsound @s ambient wander:wandering_murderer.phase2
+    stopsound @s ambient wander:wandering_murderer.phase3
+    stopsound @s ambient wander:wandering_murderer.phase1_slaughterer
+    stopsound @s ambient wander:wandering_murderer.phase2_slaughterer
+    stopsound @s ambient wander:wandering_murderer.phase3_slaughterer
+    stopsound @s ambient wander:wandering_murderer.ending
+    stopsound @s ambient wander:wandering_murderer.slaughterer_ending
+    stopsound @s ambient wander:wandering_murderer.phase3_slaughterer_bridge
+}
+
+function can_see {
+    
+    execute if score ai wander.data matches 27 run return 0
+    execute if score ai wander.data matches 30 run return 1
+    execute if score bad_omen wander.data matches 1 run return 1
+    execute unless dimension overworld run return 0
+    execute if score spawned wander.data matches 0 run return 0
+    execute if entity @n[tag=wander.ai,type=wandering_trader,distance=0..5] run return 1
+    execute unless entity @n[tag=wander.ai,type=wandering_trader,distance=0..100] run return 0
+    
+    execute summon item_display run {
+        rotate @s facing entity abb5e532-ba94-447e-8b50-7b463008a14c
+        execute store result score desired wander.temp run data get entity @s Rotation[0]
+        kill @s
+        
+    }
+    execute store result score current wander.temp run data get entity @s Rotation[0]
+    execute store result score successful wander.temp run function wander:rotation_threshold {current:'current wander.temp',desired:'desired wander.temp',threshold:80}
+    execute if score successful wander.temp matches 0 run return 0
+
+    execute anchored eyes facing entity abb5e532-ba94-447e-8b50-7b463008a14c eyes run return run {
+
+        execute unless entity @s[distance=0..100] run return 0
+        execute unless block ~ ~ ~ #wander:can_pass run return 0
+        execute positioned ~-2 ~-2 ~-2 if entity @n[tag=wander.ai,type=wandering_trader,dx=3,dy=3,dz=3] run return 1
+
+        execute positioned ^ ^ ^1 run return run function ^0
+    }
+
+}

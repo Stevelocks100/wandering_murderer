@@ -1,0 +1,28 @@
+{
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "a": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "minecraft:milk_bucket",
+                            "minecraft:tnt"
+                        ]
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "milk:milk"
+        ]
+    }
+}

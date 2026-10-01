@@ -1,0 +1,119 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:player_head",
+            "components": {
+                "minecraft:profile": {
+                    "id": [
+                        139050071,
+                        1298612555,
+                        -1552828644,
+                        1172318740
+                    ]
+                }
+            },
+            "count": 1
+        },
+        "title": [
+            "",
+            {
+                "bold": true,
+                "shadow_color": -12961222,
+                "text": "",
+                "extra": [
+                    {
+                        "color": "#00a8db",
+                        "text": "S"
+                    },
+                    {
+                        "color": "#03a4dc",
+                        "text": "t"
+                    },
+                    {
+                        "color": "#079fdc",
+                        "text": "e"
+                    },
+                    {
+                        "color": "#0a9bdd",
+                        "text": "v"
+                    },
+                    {
+                        "color": "#0d96de",
+                        "text": "e"
+                    },
+                    {
+                        "color": "#1092de",
+                        "text": "l"
+                    },
+                    {
+                        "color": "#148ddf",
+                        "text": "o"
+                    },
+                    {
+                        "color": "#1789df",
+                        "text": "c"
+                    },
+                    {
+                        "color": "#1a85e0",
+                        "text": "k"
+                    },
+                    {
+                        "color": "#1d80e1",
+                        "text": "s "
+                    },
+                    {
+                        "color": "#2477e2",
+                        "text": "D"
+                    },
+                    {
+                        "color": "#2773e3",
+                        "text": "a"
+                    },
+                    {
+                        "color": "#2a6fe3",
+                        "text": "t"
+                    },
+                    {
+                        "color": "#2e6ae4",
+                        "text": "a"
+                    },
+                    {
+                        "color": "#3166e4",
+                        "text": "p"
+                    },
+                    {
+                        "color": "#3461e5",
+                        "text": "a"
+                    },
+                    {
+                        "color": "#375de6",
+                        "text": "c"
+                    },
+                    {
+                        "color": "#3b58e6",
+                        "text": "k"
+                    },
+                    {
+                        "color": "#3e54e7",
+                        "text": "s"
+                    }
+                ]
+            }
+        ],
+        "description": "All enabled Stevelocks datapacks :)",
+        "background": "minecraft:block/blue_ice",
+        "frame": "challenge",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:tick"
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ]
+}

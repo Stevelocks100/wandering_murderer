@@ -14,11 +14,11 @@ execute positioned ~ ~-1 ~ if predicate wander:lone_tower positioned ~ ~-1 ~ if 
 
 scoreboard players add lowest_checks wander.temp 1
 
-execute positioned ~1 ~ ~ unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.tower_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.tower_detection","new"]}
-execute positioned ~-1 ~ ~ unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.tower_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.tower_detection","new"]}
-execute positioned ~ ~ ~1 unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.tower_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.tower_detection","new"]}
-execute positioned ~ ~ ~-1 unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.tower_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.tower_detection","new"]}
-execute positioned ~ ~-1 ~ unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.tower_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.tower_detection","new"]}
+execute positioned ~1 ~ ~ unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.tower_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.tower_detection","new","wander.entity"]}
+execute positioned ~-1 ~ ~ unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.tower_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.tower_detection","new","wander.entity"]}
+execute positioned ~ ~ ~1 unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.tower_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.tower_detection","new","wander.entity"]}
+execute positioned ~ ~ ~-1 unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.tower_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.tower_detection","new","wander.entity"]}
+execute positioned ~ ~-1 ~ unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.tower_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.tower_detection","new","wander.entity"]}
 
 
 tag @s remove wander.tower_detection

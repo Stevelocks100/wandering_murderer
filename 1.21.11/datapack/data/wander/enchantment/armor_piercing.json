@@ -21,7 +21,11 @@
             {
                 "effect": {
                     "type": "minecraft:add",
-                    "value": -0.5
+                    "value": {
+                        "type": "minecraft:linear",
+                        "base": -0.5,
+                        "per_level_above_first": -0.2
+                    }
                 }
             }
         ]

@@ -47,7 +47,9 @@ $data merge entity $(sack_top) {transformation: [0f,0f,0f,-0.0625f,0f,0f,0f,-1.5
 $data merge entity $(sack_main) {transformation: [0f,0f,0f,-0.0625f,0f,0f,0f,-1.5625f,0f,0f,0f,0f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(blast_off1) {transformation: [0f,0f,0f,0f,0f,0f,0f,-2.5f,0f,0f,0f,0f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(blast_off2) {transformation: [0f,0f,0f,0f,0f,0f,0f,-2.5f,0f,0f,0f,0f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
-data modify storage animated_java:temp entry.data merge value {"cameras":{},"locators":{"soup":{"px":"1.256","py":"2.012","pz":"1.22","ry":"114.44","rx":"1.108"},"lefthand":{"px":"1.347","py":"1.894","pz":"1.101","ry":"25.111","rx":"-31.2"},"sword":{"px":"-1.216","py":"4.318","pz":"4.231","ry":"356.159","rx":"-38.133"},"righthand":{"px":"-1.41","py":"2.041","pz":"1.337","ry":"356.159","rx":"-38.133"},"chest":{"px":"-0.4","py":"2.2","pz":"0.094","ry":"0.939","rx":"49.046"},"sack":{"px":"-0.062","py":"-1.562","pz":"-0","ry":"0","rx":"0"}}}
+data modify storage animated_java:temp entry.data merge value {"locators":{"soup":{"px":"1.256","py":"2.012","pz":"1.22","ry":"114.44","rx":"1.108"},"lefthand":{"px":"1.347","py":"1.894","pz":"1.101","ry":"25.111","rx":"-31.2"},"sword":{"px":"-1.216","py":"4.318","pz":"4.231","ry":"356.159","rx":"-38.133"},"righthand":{"px":"-1.41","py":"2.041","pz":"1.337","ry":"356.159","rx":"-38.133"},"chest":{"px":"-0.4","py":"2.2","pz":"0.094","ry":"0.939","rx":"49.046"},"sack":{"px":"-0.062","py":"-1.562","pz":"-0","ry":"0","rx":"0"}}}
+# Data Manager: Prepare for Read / Write
+execute store result storage animated_java:temp args.id int 1 run scoreboard players get @s aj.id
 # Data Manager: Write
 function animated_java:global/data_manager/write with storage animated_java:temp args
 execute unless entity @s[tag=aj.transforms_only] unless score ai wander.data matches 33 run function aj:wander/variants/pufferfish/apply

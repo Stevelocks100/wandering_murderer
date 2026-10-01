@@ -37,8 +37,10 @@ $data merge entity $(hugeasssword2) {transformation: [-0.087f,2.9004f,-2.6306f,-
 $data merge entity $(belt) {transformation: [-0.9997f,0.0051f,0.0222f,0.0346f,0.0042f,0.9992f,-0.0408f,1.1804f,-0.0224f,-0.0407f,-0.9989f,-0.6771f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(torn_part) {transformation: [-0.9997f,-0.0055f,0.0226f,-0.0897f,0.0036f,0.9229f,0.3851f,0.886f,-0.0229f,0.385f,-0.9226f,-0.6922f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(lowerbody) {transformation: [-0.9997f,0.0015f,0.0232f,0.0039f,0.0036f,0.996f,0.0897f,0.3867f,-0.0229f,0.0898f,-0.9957f,-0.5937f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
-execute unless entity @s[tag=aj.transforms_only] positioned ^-0.1188264389 ^2.461281726 ^-0.4244802861 rotated ~4.6915099415 ~62.4142208099 run function aj:wander/animations/sit_eat/zzz/frames/156_locator_soup
-data modify storage animated_java:temp entry.data merge value {"cameras":{},"locators":{"soup":{"px":"-0.119","py":"2.461","pz":"-0.424","ry":"4.692","rx":"62.414"},"lefthand":{"px":"0.388","py":"2.403","pz":"-0.189","ry":"208.862","rx":"-25.683"},"sword":{"px":"-0.77","py":"2.801","pz":"-3.984","ry":"176.734","rx":"-4.953"},"righthand":{"px":"-0.561","py":"2.482","pz":"-0.317","ry":"176.734","rx":"-4.953"},"chest":{"px":"-0.381","py":"0.852","pz":"-0.256","ry":"1.274","rx":"-2.336"}}}
+data modify storage animated_java:temp entry.data merge value {"locators":{"soup":{"px":"-0.119","py":"2.461","pz":"-0.424","ry":"4.692","rx":"62.414"},"lefthand":{"px":"0.388","py":"2.403","pz":"-0.189","ry":"208.862","rx":"-25.683"},"sword":{"px":"-0.77","py":"2.801","pz":"-3.984","ry":"176.734","rx":"-4.953"},"righthand":{"px":"-0.561","py":"2.482","pz":"-0.317","ry":"176.734","rx":"-4.953"},"chest":{"px":"-0.381","py":"0.852","pz":"-0.256","ry":"1.274","rx":"-2.336"}}}
+# Data Manager: Prepare for Read / Write
+execute store result storage animated_java:temp args.id int 1 run scoreboard players get @s aj.id
 # Data Manager: Write
 function animated_java:global/data_manager/write with storage animated_java:temp args
+execute unless entity @s[tag=aj.transforms_only] positioned ^-0.1188264389 ^2.461281726 ^-0.4244802861 rotated ~4.6915099415 ~62.4142208099 run function aj:wander/animations/sit_eat/zzz/frames/156_locator_soup
 execute unless entity @s[tag=aj.transforms_only] at @s run function aj:wander/animations/sit_eat/zzz/frames/156_root_function

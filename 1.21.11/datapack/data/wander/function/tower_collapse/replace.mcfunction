@@ -18,4 +18,4 @@ execute if score tower_explosion wander.data matches 1 store result storage wand
 execute if score tower_explosion wander.data matches 1 store result storage wander:temp BlockState.Motion[1] double 0.1 run random value 5..7
 execute if score tower_explosion wander.data matches 1 store result storage wander:temp BlockState.Motion[2] double 0.1 run random value -7..7
 execute align xyz positioned ~0.5 ~ ~0.5 run function wander:tower_collapse/replace2 with storage wander:temp BlockState
-kill @n[tag=wander.get_block]
+kill @n[tag=wander.get_block,distance=0..0.1,type=item_display]

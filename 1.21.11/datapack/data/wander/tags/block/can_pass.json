@@ -544,6 +544,7 @@
         },
         {
             "id":"bush"
-        }
+        },
+        "#replaceable"
     ]
 }

@@ -23,5 +23,5 @@ tag @n[tag=wander.tower_bottom] remove wander.tower_bottom2
 kill @e[tag=wander.tower_bottom2]
 kill @e[tag=wander.tower_checked]
 
-execute at @n[tag=wander.tower_bottom] run summon marker ~ ~ ~ {Tags:["wander.tower_bottom_target"]}
+execute at @n[tag=wander.tower_bottom] run summon marker ~ ~ ~ {Tags:["wander.tower_bottom_target","wander.entity"]}
 tag @e[tag=wander.executor] remove wander.executor

@@ -1,6 +1,6 @@
 scoreboard players set success wander.temp 0
-execute positioned ~ 100 ~ run summon marker ~ ~ ~ {Tags:["wander.trader_pos"]}
-execute at @p[tag=wander.target] positioned ~ 100 ~ run summon marker ~ ~ ~ {Tags:["wander.player_pos"]}
+execute positioned ~ 100 ~ run summon marker ~ ~ ~ {Tags:["wander.trader_pos","wander.entity"]}
+execute at @p[tag=wander.target] positioned ~ 100 ~ run summon marker ~ ~ ~ {Tags:["wander.player_pos","wander.entity"]}
 #execute as @n[tag=wander.trader_pos] at @s if entity @n[tag=wander.player_pos,distance=0..1.8] run 
 scoreboard players set success wander.temp 1
 kill @e[tag=wander.trader_pos]

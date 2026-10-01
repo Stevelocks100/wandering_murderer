@@ -7,6 +7,7 @@ scoreboard players set bad_omen wander.data 0
 bossbar set wander:health max 700
 execute as @a[tag=wander.potential_target,limit=6] run scoreboard players add health wander.data 100
 execute store result score player_count wander.data if entity @a[tag=wander.potential_target]
+execute if score player_count wander.data matches 7.. run scoreboard players add health wander.data 1000
 execute if score player_count wander.data matches 15.. run scoreboard players add health wander.data 1000
 execute if score player_count wander.data matches 25.. run scoreboard players add health wander.data 1000
 

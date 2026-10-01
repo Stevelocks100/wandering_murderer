@@ -47,7 +47,9 @@ $data merge entity $(sack_top) {transformation: [0f,0f,0f,-0.0625f,0f,0f,0f,-1.5
 $data merge entity $(sack_main) {transformation: [0f,0f,0f,-0.0625f,0f,0f,0f,-1.5625f,0f,0f,0f,0f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(blast_off1) {transformation: [0f,0f,0f,0f,0f,0f,0f,-2.5f,0f,0f,0f,0f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(blast_off2) {transformation: [0f,0f,0f,0f,0f,0f,0f,-2.5f,0f,0f,0f,0f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
-data modify storage animated_java:temp entry.data merge value {"cameras":{},"locators":{"soup":{"px":"0.796","py":"2.815","pz":"-0.084","ry":"139.047","rx":"-10.953"},"lefthand":{"px":"0.947","py":"2.759","pz":"-0.188","ry":"47.55","rx":"-7.687"},"sword":{"px":"0.875","py":"5.531","pz":"0.032","ry":"222.095","rx":"-58.219"},"righthand":{"px":"-0.427","py":"2.397","pz":"1.473","ry":"222.095","rx":"-58.219"},"chest":{"px":"-0.155","py":"2.176","pz":"0.028","ry":"346.042","rx":"47.396"},"sack":{"px":"-0.062","py":"-1.562","pz":"-0","ry":"0","rx":"0"}}}
+data modify storage animated_java:temp entry.data merge value {"locators":{"soup":{"px":"0.796","py":"2.815","pz":"-0.084","ry":"139.047","rx":"-10.953"},"lefthand":{"px":"0.947","py":"2.759","pz":"-0.188","ry":"47.55","rx":"-7.687"},"sword":{"px":"0.875","py":"5.531","pz":"0.032","ry":"222.095","rx":"-58.219"},"righthand":{"px":"-0.427","py":"2.397","pz":"1.473","ry":"222.095","rx":"-58.219"},"chest":{"px":"-0.155","py":"2.176","pz":"0.028","ry":"346.042","rx":"47.396"},"sack":{"px":"-0.062","py":"-1.562","pz":"-0","ry":"0","rx":"0"}}}
+# Data Manager: Prepare for Read / Write
+execute store result storage animated_java:temp args.id int 1 run scoreboard players get @s aj.id
 # Data Manager: Write
 function animated_java:global/data_manager/write with storage animated_java:temp args
 execute unless entity @s[tag=aj.transforms_only] unless entity @n[tag=wander.threw_sword] run function aj:wander/variants/sword_back/apply

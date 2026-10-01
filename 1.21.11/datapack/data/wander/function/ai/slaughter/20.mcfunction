@@ -1,6 +1,6 @@
 scoreboard players set daytime wander.data 100000
 
-execute if entity @s[nbt={OnGround:1b}] run tag @s remove wander.big_jump
+execute if entity @s[predicate=wander:on_ground] run tag @s remove wander.big_jump
 execute if block ~ ~ ~ #wander:water_blocks run tag @s remove wander.big_jump
 execute if block ~ ~-1 ~ #wander:water_blocks run tag @s remove wander.big_jump
 
@@ -20,14 +20,14 @@ execute if score trapped_timer wander.data matches 1.. run scoreboard players re
 execute store result score not_trapped wander.data if entity @a[tag=!wander.phase3.trapped,tag=wander.potential_target,distance=0..100]
 # execute store result score nearby_players wander.data if entity @a[tag=wander.potential_target,distance=0..100]
 
-execute in wander:pocket unless entity @p[gamemode=!creative,gamemode=!spectator,distance=0..] in overworld if score 33%health wander.data matches -1 if score trapped_timer wander.data matches 1 if score not_trapped wander.data matches 0 run return run function wander:ai/slaughter/fail_to_kill
+execute in wander:pocket unless entity @p[gamemode=!creative,gamemode=!spectator,x=0] in overworld if score 33%health wander.data matches -1 if score trapped_timer wander.data matches 1 if score not_trapped wander.data matches 0 run return run function wander:ai/slaughter/fail_to_kill
 
-execute unless block ~ ~-0.1 ~ #wander:water_blocks if block ~ ~2.5 ~ #wander:can_pass if block ~ ~3.5 ~ #wander:can_pass run function wander:ai/animation_macro {move:'angry_run_sword',idle:'angry_idle'}
-execute unless block ~ ~-0.1 ~ #wander:water_blocks unless block ~ ~2.5 ~ #wander:can_pass run function wander:ai/animation_macro {move:'sneak_walk',idle:'sneak_idle'}
-execute unless block ~ ~-0.1 ~ #wander:water_blocks unless block ~ ~3.5 ~ #wander:can_pass run function wander:ai/animation_macro {move:'sneak_walk',idle:'sneak_idle'}
-execute if block ~ ~-0.3 ~ #wander:water_blocks run function wander:ai/animation_macro {move:'swim',idle:'swim_idle'}
+execute unless block ~ ~-0.1 ~ #wander:water_blocks if block ~ ~2.5 ~ #wander:can_pass if block ~ ~3.5 ~ #wander:can_pass run function wander:ai/anim_states/angry_sword
+execute unless block ~ ~-0.1 ~ #wander:water_blocks unless block ~ ~2.5 ~ #wander:can_pass run function wander:ai/anim_states/sneak
+execute unless block ~ ~-0.1 ~ #wander:water_blocks unless block ~ ~3.5 ~ #wander:can_pass run function wander:ai/anim_states/sneak
+execute if block ~ ~-0.3 ~ #wander:water_blocks run function wander:ai/anim_states/swim
 
-execute if score health wander.data <= 33%health wander.data run function wander:ai/slaughter/phase3
+execute if score health wander.data <= 33%health wander.data unless score health wander.data matches ..0 run function wander:ai/slaughter/phase3
 
 execute if score 33%health wander.data matches -1 if score health wander.data matches ..300 unless entity @n[tag=wander.phase3.wall2] \
 if loaded ~-40 ~ ~-40 \
@@ -52,8 +52,8 @@ execute if predicate {"condition":"minecraft:random_chance","chance":0.08} unles
 scoreboard players remove attack_cd wander.data 1
 
 function wander:ai/pathfind_macro {target:'@p[tag=wander.target]'}
-execute unless entity @n[tag=wander.phase3.wall_center,distance=0..50,type=marker] run function wander:ai/pathfind_macro {target:'@n[tag=wander.phase3.wall_center,distance=0..,type=marker]'}
-execute unless entity @n[tag=wander.jimmy,distance=0..40,type=marker] run function wander:ai/pathfind_macro {target:'@n[tag=wander.jimmy,distance=0..,type=marker]'}
+execute unless entity @n[tag=wander.phase3.wall_center,distance=0..50,type=marker] run function wander:ai/pathfind_macro {target:'@n[tag=wander.phase3.wall_center,x=0,type=marker]'}
+execute unless entity @n[tag=wander.jimmy,distance=0..40,type=marker] run function wander:ai/pathfind_macro {target:'@n[tag=wander.jimmy,x=0,type=marker]'}
 
 attribute @s movement_speed base set 1.35
 
@@ -90,14 +90,14 @@ fill ~-3 ~-3 ~-3 ~3 ~3 ~3 air replace fire
 execute if entity @n[type=#wander:scares_traders,distance=0..10] run function wander:ai/attacks/throw_whey_init
 
 #data modify entity @s NoAI set value 0b
-execute if function wander:ai/underground/underground_check unless score player_height wander.temp matches -5..5 if entity @s[nbt={OnGround:1b}] run function wander:ai/slaughter/vanish
+execute if function wander:ai/underground/underground_check unless score player_height wander.temp matches -5..5 if entity @s[predicate=wander:on_ground] run function wander:ai/slaughter/vanish
 
 execute if entity @p[tag=wander.target,distance=100..] run tag @p[tag=wander.target] remove wander.target
 
 execute if score @s wander.motion1 matches 0 positioned ~ ~1 ~ unless entity @p[tag=wander.target,distance=0..2.6] run scoreboard players add not_moving wander.data 1
 execute unless score @s wander.motion1 matches 0 if score not_moving wander.data matches 1.. run scoreboard players remove not_moving wander.data 2
 
-execute if function wander:ai/attack/moving_piston_check/init unless score @s wander.motion1 matches 0 run scoreboard players add not_moving wander.data 20
+execute if predicate {"condition":"minecraft:entity_properties","entity":"this","predicate":{"periodic_tick":3}} if function wander:ai/attack/moving_piston_check/init unless score @s wander.motion1 matches 0 run scoreboard players add not_moving wander.data 20
 
 execute if score not_moving wander.data matches 70.. run function wander:ai/slaughter/vanish
 execute unless entity @p[tag=wander.potential_target,distance=0..10000] run scoreboard players set not_moving wander.data 0

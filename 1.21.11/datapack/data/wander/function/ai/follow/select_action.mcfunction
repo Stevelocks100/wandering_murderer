@@ -1,7 +1,7 @@
 #1-5 = stew
 #3-6 = sucker punch
 #4-6 = abduct
-tp @n[tag=aj.wander.root] ~ ~ ~ facing entity @p[tag=wander.target]
+tp @n[tag=aj.wander.root,type=item_display] ~ ~ ~ facing entity @p[tag=wander.target]
 data modify entity @s NoAI set value 1b
 execute if score @p[tag=wander.target] wander.encounters matches ..1 run scoreboard players set random_action wander.temp 1
 execute if score @p[tag=wander.target] wander.encounters matches 2 store result score random_action wander.temp run random value 1..2

@@ -1,0 +1,1 @@
+{"criteria":{"a":{"trigger": "minecraft:using_item","conditions":{"item":{"items": "compass","components":{"minecraft:item_model": "wander:clock"}}}}},"requirements": [["a"]],"rewards":{"function": "wander:clock/get_days"}}

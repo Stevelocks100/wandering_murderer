@@ -15,7 +15,7 @@
         },
         "title": "Barbarian Pickle",
         "description": {
-            "text": "Main Animator\nMacarena Man\nSFX Man"
+            "text": "Main Animator\nMacarena Man"
         },
         "frame": "task",
         "show_toast": false,

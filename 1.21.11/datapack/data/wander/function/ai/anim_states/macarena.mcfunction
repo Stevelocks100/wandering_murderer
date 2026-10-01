@@ -1,0 +1,1 @@
+execute as @n[tag=aj.wander.root,type=item_display] unless entity @s[tag=aj.wander.animation.macarena.playing] run function aj:wander/animations/macarena/tween {to_frame:0,duration:2}

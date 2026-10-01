@@ -1,7 +1,7 @@
 {
 	"meta": {
 		"format": "animated-java:format/blueprint",
-		"format_version": "1.10.0-beta.6",
+		"format_version": "1.10.0",
 		"uuid": "56fe79f0-477e-e73d-19d7-589152cc9277",
 		"save_location": "/Users/School/Library/Application Support/minecraft/1.21.11/saves/week3 testing/datapacks/wanderingmurderer/ajrigs/wander.ajblueprint",
 		"last_used_blueprint_id": "aj:wander"
@@ -17,7 +17,8 @@
 		"display_item": "minecraft:emerald",
 		"resource_pack": "/Users/School/Library/Application Support/minecraft/1.21.11/resourcepacks/wanderingmurderer",
 		"data_pack": "/Users/School/Library/Application Support/minecraft/1.21.11/saves/week3 testing/datapacks/wanderingmurderer",
-		"on_post_tick_function": "execute if score bad_omen wander.data matches 1 run function wander:ai/slaughter/set_variants\n"
+		"on_post_tick_function": "execute if score bad_omen wander.data matches 1 run function wander:ai/slaughter/set_variants\n",
+		"json_file": "/Users/School/Downloads/a.json"
 	},
 	"elements": [
 		{
@@ -8484,6 +8485,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -8510,6 +8514,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -8538,6 +8545,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -8564,6 +8574,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -8593,6 +8606,9 @@
 				"variants": {},
 				"default": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -8619,6 +8635,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -8648,9 +8667,13 @@
 				"variants": {},
 				"default": {
 					"override_brightness": true,
-					"brightness_override": 15,
-					"inherit_settings": true
+					"inherit_settings": true,
+					"sky_brightness": 15,
+					"block_brightness": 15
 				}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -8679,6 +8702,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -8705,6 +8731,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -8733,6 +8762,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -8759,6 +8791,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -8787,6 +8822,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -8813,6 +8851,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -8841,6 +8882,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -8867,6 +8911,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -8895,6 +8942,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -8921,6 +8971,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -8949,6 +9002,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -8975,6 +9031,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -9003,6 +9062,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -9029,6 +9091,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -9057,6 +9122,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -9083,6 +9151,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -9111,6 +9182,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -9137,6 +9211,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -9165,6 +9242,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -9191,6 +9271,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -9219,6 +9302,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -9245,6 +9331,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -9273,6 +9362,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -9299,6 +9391,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -9327,6 +9422,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -9353,6 +9451,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -9381,6 +9482,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -9408,6 +9512,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -9434,6 +9541,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -9463,6 +9573,9 @@
 				"default": {},
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -9489,6 +9602,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -9517,6 +9633,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -9543,6 +9662,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -9571,6 +9693,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -9597,6 +9722,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -9625,6 +9753,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -9651,6 +9782,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -9679,6 +9813,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -9705,6 +9842,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -9733,6 +9873,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -9759,6 +9902,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -9787,6 +9933,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -9813,6 +9962,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -9841,6 +9993,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -9867,6 +10022,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -9895,6 +10053,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -9921,6 +10082,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -9949,6 +10113,9 @@
 			"configs": {
 				"variants": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -9975,6 +10142,9 @@
 			"onSummonFunction": "",
 			"configs": {
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -10005,6 +10175,9 @@
 					"3dc634cb-43e0-0112-a265-f9a13451eb06": {}
 				},
 				"default": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -10040,6 +10213,9 @@
 				},
 				"default": {}
 			},
+			"itemModelProperties": {
+				"tints": []
+			},
 			"children": [],
 			"reset": false,
 			"shade": true,
@@ -10073,6 +10249,9 @@
 					}
 				},
 				"default": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -80075,7 +80254,7 @@
 									"x": "0",
 									"y": "0",
 									"z": "0",
-									"function": "tag @n[tag=wander.ai] add wander.giving_sword",
+									"function": "tag abb5e532-ba94-447e-8b50-7b463008a14c add wander.giving_sword",
 									"execute_condition": "",
 									"repeat": false,
 									"repeat_frequency": 1
@@ -81950,7 +82129,7 @@
 									"x": "0",
 									"y": "0",
 									"z": "0",
-									"function": "tag @n[tag=wander.ai] add wander.sword_taken",
+									"function": "tag abb5e532-ba94-447e-8b50-7b463008a14c add wander.sword_taken",
 									"execute_condition": "",
 									"repeat": false,
 									"repeat_frequency": 1
@@ -137614,7 +137793,7 @@
 									"y": "0",
 									"z": "0",
 									"function": "function wander:ai/drink_potion",
-									"execute_condition": "as @n[tag=wander.ai] at @s rotated as @s",
+									"execute_condition": "as abb5e532-ba94-447e-8b50-7b463008a14c at @s rotated as @s",
 									"repeat": false,
 									"repeat_frequency": 1
 								}
@@ -139429,7 +139608,7 @@
 									"y": "0",
 									"z": "0",
 									"function": "function wander:ai/drink_potion",
-									"execute_condition": "as @n[tag=wander.ai] at @s rotated as @s",
+									"execute_condition": "as abb5e532-ba94-447e-8b50-7b463008a14c at @s rotated as @s",
 									"repeat": false,
 									"repeat_frequency": 1
 								}
@@ -141850,7 +142029,7 @@
 							"data_points": [
 								{
 									"function": "function wander:ai/jump_vanish",
-									"execute_condition": "as @n[tag=wander.ai] at @s rotated as @s",
+									"execute_condition": "as abb5e532-ba94-447e-8b50-7b463008a14c at @s rotated as @s",
 									"repeat": false,
 									"repeat_frequency": 1
 								}
@@ -141883,7 +142062,7 @@
 							"channel": "function",
 							"data_points": [
 								{
-									"function": "function animated_java:wander/remove/this",
+									"function": "function aj:wander/remove/this",
 									"execute_condition": "",
 									"repeat": false,
 									"repeat_frequency": 1
@@ -192526,7 +192705,7 @@
 							"channel": "function",
 							"data_points": [
 								{
-									"function": "execute if predicate {\"condition\":\"minecraft:random_chance\",\"chance\":0.05} run function animated_java:wander/animations/sit_eat/play",
+									"function": "execute if predicate {\"condition\":\"minecraft:random_chance\",\"chance\":0.05} run function aj:wander/animations/sit_eat/play",
 									"execute_condition": "",
 									"repeat": false,
 									"repeat_frequency": 1
@@ -193339,7 +193518,7 @@
 							"channel": "function",
 							"data_points": [
 								{
-									"function": "function animated_java:wander/animations/sit/play",
+									"function": "function aj:wander/animations/sit/play",
 									"execute_condition": "",
 									"repeat": false,
 									"repeat_frequency": 1
@@ -195255,7 +195434,7 @@
 							"channel": "function",
 							"data_points": [
 								{
-									"function": "function animated_java:wander/animations/sit/play",
+									"function": "function aj:wander/animations/sit/play",
 									"execute_condition": "",
 									"repeat": false,
 									"repeat_frequency": 1
@@ -196104,7 +196283,7 @@
 							"channel": "function",
 							"data_points": [
 								{
-									"function": "function animated_java:wander/animations/sit/play",
+									"function": "function aj:wander/animations/sit/play",
 									"execute_condition": "",
 									"repeat": false,
 									"repeat_frequency": 1
@@ -198714,7 +198893,7 @@
 							"channel": "function",
 							"data_points": [
 								{
-									"function": "function animated_java:wander/animations/sit/play",
+									"function": "function aj:wander/animations/sit/play",
 									"execute_condition": "",
 									"repeat": false,
 									"repeat_frequency": 1

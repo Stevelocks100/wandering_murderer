@@ -1,7 +1,7 @@
 {
 	"meta": {
 		"format": "animated-java:format/blueprint",
-		"format_version": "1.10.0-beta.6",
+		"format_version": "1.10.0",
 		"uuid": "4e76e55c-d8ca-f02a-241b-42cf801f122e",
 		"save_location": "/Users/School/Library/Application Support/minecraft/1.21.11/saves/week3 testing/datapacks/wanderingmurderer/ajrigs/wander_chest.ajblueprint",
 		"last_used_blueprint_id": "aj:wander_chest"
@@ -645,16 +645,20 @@
 					"on_apply_function": "",
 					"billboard": "vertical",
 					"override_brightness": false,
-					"brightness_override": 0,
 					"enchanted": false,
 					"glowing": false,
 					"override_glow_color": false,
 					"glow_color": "#ffffff",
 					"invisible": false,
 					"shadow_radius": 0,
-					"shadow_strength": 1
+					"shadow_strength": 1,
+					"sky_brightness": 0,
+					"block_brightness": 0
 				},
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -685,16 +689,20 @@
 					"on_apply_function": "",
 					"billboard": "vertical",
 					"override_brightness": false,
-					"brightness_override": 0,
 					"enchanted": false,
 					"glowing": false,
 					"override_glow_color": false,
 					"glow_color": "#ffffff",
 					"invisible": false,
 					"shadow_radius": 0,
-					"shadow_strength": 1
+					"shadow_strength": 1,
+					"sky_brightness": 0,
+					"block_brightness": 0
 				},
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -725,16 +733,20 @@
 					"on_apply_function": "",
 					"billboard": "vertical",
 					"override_brightness": false,
-					"brightness_override": 0,
 					"enchanted": false,
 					"glowing": false,
 					"override_glow_color": false,
 					"glow_color": "#ffffff",
 					"invisible": false,
 					"shadow_radius": 0,
-					"shadow_strength": 1
+					"shadow_strength": 1,
+					"sky_brightness": 0,
+					"block_brightness": 0
 				},
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -765,16 +777,20 @@
 					"on_apply_function": "",
 					"billboard": "vertical",
 					"override_brightness": true,
-					"brightness_override": 15,
 					"enchanted": false,
 					"glowing": false,
 					"override_glow_color": false,
 					"glow_color": "#ffffff",
 					"invisible": false,
 					"shadow_radius": 0,
-					"shadow_strength": 1
+					"shadow_strength": 1,
+					"sky_brightness": 15,
+					"block_brightness": 15
 				},
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -1562,7 +1578,7 @@
 							"channel": "function",
 							"data_points": [
 								{
-									"function": "function animated_java:wander_chest/animations/idle/play",
+									"function": "function aj:wander_chest/animations/idle/play",
 									"execute_condition": "",
 									"repeat": false,
 									"repeat_frequency": 1

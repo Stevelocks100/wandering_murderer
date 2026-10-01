@@ -1,6 +1,7 @@
 {
 	"replace": false,
 	"values": [
+		"aj_data_manager_patch:tick",
 		"animated_java:global/data_manager/on_tick",
 		"milk:tick",
 		"wander:murderer_music/tick",

@@ -1,4 +1,4 @@
 # Generated with MC-Build
 
-execute in wander:pocket run function wander:trader_dimension/scan/zzz/7
+execute in wander:pocket run function wander:trader_dimension/scan/zzz/5
 function wander:trader_dimension/lights/on

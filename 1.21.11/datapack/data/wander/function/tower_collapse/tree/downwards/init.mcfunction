@@ -5,7 +5,7 @@ kill @e[tag=wander.tower_bottom2]
 kill @e[tag=wander.tower_bottom]
 kill @e[tag=wander.tower_bottom_target]
 kill @e[tag=wander.tower_checked]
-execute align y run summon marker ~ ~-0.5 ~ {Tags:["wander.tower_detection"]}
+execute align y run summon marker ~ ~-0.5 ~ {Tags:["wander.tower_detection","wander.entity"]}
 
 #execute align y unless block ~ ~-0.5 ~ #wander:air_blocks run summon marker ~ ~-0.5 ~ {Tags:["wander.tower_detection"]}
 #execute align y if block ~ ~-0.5 ~ #wander:air_blocks run summon marker ~ ~-1.5 ~ {Tags:["wander.tower_detection"]}

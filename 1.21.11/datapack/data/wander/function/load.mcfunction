@@ -1,9 +1,24 @@
+## WANDER UUIDS
+
+## AI:
+# abb5e532-ba94-447e-8b50-7b463008a14c
+# replaced all @n[tag=wander.ai]
+# [I;-1414142670,-1164688258,-1957659834,805871948]
+
+## HITBOX:
+# 272f8e76-f6fe-4b87-a609-8fcf54a8cb1f
+# replaced all @n[tag=wander.hitbox,type=wandering_trader,x=0]
+# [I;657428086,-151106681,-1509322801,1420348191]
+
+
 scoreboard objectives add wander.data dummy
 scoreboard objectives add wander.motion1 dummy
 scoreboard objectives add wander.motion2 dummy
 scoreboard objectives add wander.grow dummy
 scoreboard objectives add wander.attack_cooldown dummy
 scoreboard players set 6 wander.data 6
+scoreboard players set 10 wander.data 10
+
 scoreboard players set -1 wander.data -1
 scoreboard players set 360 wander.data 360
 scoreboard players set 24k wander.data 24000
@@ -22,8 +37,18 @@ scoreboard objectives add wander.rotation_velocity dummy
 scoreboard objectives add wander.quaternion dummy
 scoreboard objectives add wander.amethyst_sword_cd dummy
 scoreboard objectives add wander.whey dummy
+scoreboard objectives add wander.shift_spam dummy
+scoreboard objectives add wander.placed_armor_stand minecraft.used:minecraft.armor_stand
+
+scoreboard players set pickle_magic wander.data 0
+execute if function wander:magic_integration/magic_installed run scoreboard players set pickle_magic wander.data 1
+
+execute unless score daytime wander.data = daytime wander.data run scoreboard players set daytime wander.data -501
+
 execute unless data storage wander:trades offers run function wander:trading_stand/create_trades
 scoreboard players add trading_stand_found wander.data 0
+
+scoreboard objectives add wander.player_not_moving dummy
 #bossbar remove wander:health
 bossbar add wander:health {"font":"wander:default","text":"\uFFF1"}
 bossbar set wander:health players @s
@@ -57,9 +82,15 @@ function wander:phase3/load
 
 function wander:fine_print/load
 
-function wander:murderer_music/preload_schedule
 execute in wander:pocket run forceload add -80 -80 80 80
 
 function wander:trader_dimension/load
 
 function wander:jukebox_animation/load
+
+function wander:murderer_music/load
+
+function wander:lazy_tick
+
+function wander:spawning/load
+

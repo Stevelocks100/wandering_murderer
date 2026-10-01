@@ -1,4 +1,3 @@
 # Generated with MC-Build
 
-data remove entity @s interaction
-execute at @s as @n[tag=aj.wander_chest.root] run function aj:wander_chest/animations/open/play
+execute in wander:pocket as @a[scores={wander.trader_dimension.chests_opened=8..}] at @s run function wander:trader_dimension/chest/escape

@@ -1,4 +1,4 @@
-summon item_display ~ ~ ~ {Tags:["wander.bag_vehicle"]}
+summon item_display ~ ~ ~ {Tags:["wander.bag_vehicle","wander.entity"]}
 ride @n[tag=wander.bag_target] mount @n[tag=wander.bag_vehicle]
 tag @n[tag=wander.bag_target] remove wander.bag_target
 data modify storage wander:temp bag.entity set from entity @n[tag=wander.bag_vehicle] Passengers[0]

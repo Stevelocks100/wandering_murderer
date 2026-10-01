@@ -1,0 +1,3 @@
+execute as @n[type=item,nbt={Item:{id:"minecraft:stick",components:{"minecraft:custom_data":{wander:{spawn_wanderer:1b}}}},Age:0s},x=0] at @s run function wander:existence/summon_fishing
+execute unless score timer wander.data matches 2495..2505 run return run data modify entity @n[type=item,nbt={Item:{id:"minecraft:stick",components:{"minecraft:custom_data":{wander:{spawn_wanderer:1b}}}},Age:0s},x=0] Item set value {id:"cod",count:1}
+kill @n[type=item,nbt={Item:{id:"minecraft:stick",components:{"minecraft:custom_data":{wander:{spawn_wanderer:1b}}}},Age:0s},x=0]

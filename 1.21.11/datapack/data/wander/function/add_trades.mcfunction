@@ -44,17 +44,17 @@ data modify storage wander:trades offers append value {weight:5,offer_item:\
 
 data modify storage wander:trades offers append value {weight:8,offer_item:\
 {id: "minecraft:golden_apple", count: 1, components: {"minecraft:lore": ["trust me bro"], "minecraft:item_name": "Emerald Apple", "minecraft:item_model": "wander:emerald_apple", "minecraft:consumable": {consume_seconds: 2.0f, on_consume_effects: [{type: "minecraft:apply_effects", effects: [{show_icon: 1b, id: "minecraft:instant_health", duration: 1, amplifier: 1b}, {amplifier: 1b, id: "minecraft:absorption", show_icon: 1b, duration: 500}]}]}}}\
-,cost:10,cost_type:"emerald",item_name:"Emerald Apple",max_amount:32}
+,cost:9,cost_type:"emerald",item_name:"Emerald Apple",max_amount:32}
 
-data modify storage wander:trades offers append value {weight:5,offer_item:\
+data modify storage wander:trades offers append value {weight:6,offer_item:\
 {id: "minecraft:bundle", count: 1, components: {"minecraft:bundle_contents": [{id: "minecraft:water_bucket", count: 1}], "minecraft:custom_data": {mystery: 1b}}}\
 ,cost:6,cost_type:"diamond",item_name:"Mystery Bundle",max_amount:2}
 
-data modify storage wander:trades offers append value {weight:8,offer_item:\
+data modify storage wander:trades offers append value {weight:6,offer_item:\
 {id: "minecraft:bundle", count: 1, components: {"minecraft:bundle_contents": [{id: "minecraft:iron_helmet", count: 1},{id: "minecraft:iron_chestplate", count: 1},{id: "minecraft:iron_leggings", count: 1},{id: "minecraft:iron_boots", count: 1}]}}\
 ,cost:48,cost_type:"copper",item_name:"Iron Armor",max_amount:2}
 
-data modify storage wander:trades offers append value {weight:8,offer_item:\
+data modify storage wander:trades offers append value {weight:6,offer_item:\
 {id: "minecraft:cake", count: 1}\
 ,cost:5,cost_type:"gold",item_name:"Cake",max_amount:5}
 
@@ -65,3 +65,8 @@ data modify storage wander:trades offers append value {weight:5,offer_item:\
 data modify storage wander:trades offers append value {weight:3,offer_item:\
 {id: "minecraft:beetroot_soup", count: 1, components: {"minecraft:lore": [{italic: 0b, text: "Shift drop Molotov with crate in offhand"}, {italic: 0b, text: "Shift right click to throw entire crate"}], "minecraft:rarity": "rare", "minecraft:item_name": {italic: 0b, text: "Milktail Crate"}, "minecraft:item_model": "wander:crates/milk_crate4", "minecraft:consumable": {sound: "minecraft:intentionally_empty", consume_seconds: 1.0E8f, has_consume_particles: 0b}, "minecraft:custom_data": {crate: 1b, bottles: 4b}, "!minecraft:food": {}}}\
 ,cost:38,cost_type:"copper",item_name:"Milktail Crate",max_amount:2}
+
+
+data modify storage wander:trades offers append value {weight:2,offer_item:\
+{id: "minecraft:armor_stand", count: 1, components: {"minecraft:item_model":"wander:cutout","minecraft:item_name":"Wandering Murderer Cutout","minecraft:lore":["for all the superfans out there"],"minecraft:entity_data":{id:"armor_stand",Invulnerable:true,Invisible:true,NoGravity:true,Tags:["wander.placeable_cutout_stand"]}}}\
+,cost:10,cost_type:"diamond",item_name:"Wandering Cutout",max_amount:1}

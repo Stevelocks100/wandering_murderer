@@ -1,7 +1,7 @@
 
 execute if score jump_tick wander.data matches ..99 run scoreboard players set jump_tick wander.data 100
 scoreboard players add jump_tick wander.data 1
-execute if score jump_tick wander.data matches 101 as @n[tag=aj.wander.root] run function aj:wander/animations/jump_upward/tween {to_frame:0,duration:2}
+execute if score jump_tick wander.data matches 101 as @n[tag=aj.wander.root,type=item_display] run function aj:wander/animations/jump_upward/tween {to_frame:0,duration:2}
 
 execute if score jump_tick wander.data matches 113 store result score trader_y wander.temp run data get entity @s Pos[1]
 execute if score jump_tick wander.data matches 113 store result score sword_y wander.temp run data get entity @n[tag=wander.sword_proj_display_landed] Pos[1]
@@ -12,5 +12,5 @@ execute if entity @n[tag=wander.sword_proj_display_landed,distance=0..6] run fun
 execute if score jump_tick wander.data matches 113 run function wander:ai/jump/move_upward with storage wander:temp jump
 
 
-execute if score jump_tick wander.data matches 116.. if entity @s[nbt={OnGround:1b}] run function wander:ai/jump/pick_up
-execute if score jump_tick wander.data matches 116.. if entity @s[nbt={OnGround:1b}] run scoreboard players set jump_tick wander.data -12
+execute if score jump_tick wander.data matches 116.. if entity @s[predicate=wander:on_ground] run function wander:ai/jump/pick_up
+execute if score jump_tick wander.data matches 116.. if entity @s[predicate=wander:on_ground] run scoreboard players set jump_tick wander.data -12

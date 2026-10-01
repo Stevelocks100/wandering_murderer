@@ -1,0 +1,1 @@
+execute as @a[distance=0.1..20,tag=hasMagic] at @s run function wander:magic_integration/cast_silence_as_player

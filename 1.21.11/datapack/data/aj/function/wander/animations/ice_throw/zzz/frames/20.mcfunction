@@ -43,8 +43,10 @@ $data merge entity $(leftleg) {transformation: [-0.9852f,0.0615f,0.1598f,0.104f,
 $data merge entity $(rightfoot) {transformation: [-0.6077f,-0.0803f,0.7901f,-0.3146f,0.4488f,0.786f,0.4251f,0.4435f,-0.6552f,0.613f,-0.4416f,0.9708f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(rightlowerleg) {transformation: [-0.6077f,-0.0803f,0.7901f,-0.5251f,0.4488f,0.786f,0.4251f,1.2502f,-0.6552f,0.613f,-0.4416f,1.7187f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(rightleg) {transformation: [-0.6093f,0.1387f,0.7807f,-0.379f,0.4479f,0.8727f,0.1945f,2.1584f,-0.6543f,0.4682f,-0.5939f,2.2521f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
-$execute unless entity @s[tag=aj.transforms_only] as $(righthand) positioned ^-1.8969971867 ^4.6930334796 ^2.6028211761 rotated ~326.9058214741 ~-1.7872831258 run function aj:wander/animations/ice_throw/zzz/frames/20_locator_righthand
-data modify storage animated_java:temp entry.data merge value {"cameras":{},"locators":{"soup":{"px":"0.564","py":"1.784","pz":"4.297","ry":"180.459","rx":"41.822"},"lefthand":{"px":"0.752","py":"1.8","pz":"4.325","ry":"86.336","rx":"4.594"},"sword":{"px":"0.115","py":"4.808","pz":"5.691","ry":"326.906","rx":"-1.787"},"righthand":{"px":"-1.897","py":"4.693","pz":"2.603","ry":"326.906","rx":"-1.787"},"chest":{"px":"-0.708","py":"2.356","pz":"2.638","ry":"38.111","rx":"31.862"}}}
+data modify storage animated_java:temp entry.data merge value {"locators":{"soup":{"px":"0.564","py":"1.784","pz":"4.297","ry":"180.459","rx":"41.822"},"lefthand":{"px":"0.752","py":"1.8","pz":"4.325","ry":"86.336","rx":"4.594"},"sword":{"px":"0.115","py":"4.808","pz":"5.691","ry":"326.906","rx":"-1.787"},"righthand":{"px":"-1.897","py":"4.693","pz":"2.603","ry":"326.906","rx":"-1.787"},"chest":{"px":"-0.708","py":"2.356","pz":"2.638","ry":"38.111","rx":"31.862"}}}
+# Data Manager: Prepare for Read / Write
+execute store result storage animated_java:temp args.id int 1 run scoreboard players get @s aj.id
 # Data Manager: Write
 function animated_java:global/data_manager/write with storage animated_java:temp args
+$execute unless entity @s[tag=aj.transforms_only] as $(righthand) positioned ^-1.8969971867 ^4.6930334796 ^2.6028211761 rotated ~326.9058214741 ~-1.7872831258 run function aj:wander/animations/ice_throw/zzz/frames/20_locator_righthand
 execute unless entity @s[tag=aj.transforms_only] run function aj:wander/variants/item_off/apply

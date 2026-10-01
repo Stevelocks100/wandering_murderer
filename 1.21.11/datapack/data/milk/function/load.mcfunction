@@ -22,9 +22,12 @@ scoreboard players add do_stand milk.settings 0
 execute if score do_stand milk.settings matches 0 run scoreboard players set do_stand milk.settings 1
 scoreboard players add do_slaughterer milk.settings 0
 execute if score do_slaughterer milk.settings matches 0 run scoreboard players set do_slaughterer milk.settings 1
+scoreboard players add do_egg_steal milk.settings 0
+execute if score do_egg_steal milk.settings matches 0 run scoreboard players set do_egg_steal milk.settings 1
 
 
 
 
 
 function milk:gu/zzz/load
+function milk:lazy_tick

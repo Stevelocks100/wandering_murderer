@@ -1,6 +1,12 @@
-scoreboard players remove @s wander.song 1
+# Generated with MC-Build
 
-
-execute unless score ai wander.data matches 29.. if score @s wander.song matches -2 if score bad_omen wander.data matches 1 if score current_phase wander.song matches 1 run return run function wander:murderer_music/slaughterer_intro
-execute if score @s wander.song matches ..0 unless score current_phase wander.song matches 4 at @s run function wander:murderer_music/restart_song
-
+# input:
+# id - int
+# override - boolean
+$execute if function wander:murderer_music/override_$(override) run function wander:murderer_music/zzz/8
+tag @s add wander.music
+function wander:murderer_music/storage/reset_stopwatch
+$scoreboard players set @s wander.music.current_song $(id)
+$execute store result score @s wander.music.max_time run data get storage wander:music song_data[$(id)].duration
+$function wander:murderer_music/zzz/11 with storage wander:music song_data[$(id)]
+execute if score @s wander.music.current_song matches 8..9 run function wander:murderer_music/disable_music

@@ -2,6 +2,7 @@
 	"replace": false,
 	"values": [
 		"animated_java:global/on_load",
+		"gm:zzz/load",
 		"milk:load",
 		"player_motion:internal/technical/load",
 		"wander:load",

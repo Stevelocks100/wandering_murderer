@@ -43,6 +43,8 @@ $data merge entity $(leftleg) {transformation: [-1f,0f,0f,0.25f,0f,0.9693f,-0.24
 $data merge entity $(rightfoot) {transformation: [-1f,0f,0f,-0.2812f,0f,0.8013f,0.5983f,0.4831f,0f,0.5983f,-0.8013f,-0.9949f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(rightlowerleg) {transformation: [-1f,0f,0f,-0.2812f,0f,0.7407f,0.6719f,1.2015f,0f,0.6719f,-0.7407f,-0.1357f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(rightleg) {transformation: [-1f,0f,0f,-0.25f,0f,0.9812f,-0.1929f,2.2491f,0f,-0.1929f,-0.9812f,-0.3151f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
-data modify storage animated_java:temp entry.data merge value {"cameras":{},"locators":{"soup":{"px":"0.493","py":"4.529","pz":"-0.226","ry":"83.387","rx":"21.566"},"lefthand":{"px":"0.489","py":"4.663","pz":"-0.089","ry":"188.615","rx":"33.606"},"sword":{"px":"1.866","py":"4.467","pz":"1.876","ry":"296.287","rx":"-7.835"},"righthand":{"px":"-1.41","py":"3.965","pz":"0.258","ry":"296.287","rx":"-7.835"},"chest":{"px":"-0.375","py":"2.746","pz":"0.12","ry":"0","rx":"-10.626"}}}
+data modify storage animated_java:temp entry.data merge value {"locators":{"soup":{"px":"0.493","py":"4.529","pz":"-0.226","ry":"83.387","rx":"21.566"},"lefthand":{"px":"0.489","py":"4.663","pz":"-0.089","ry":"188.615","rx":"33.606"},"sword":{"px":"1.866","py":"4.467","pz":"1.876","ry":"296.287","rx":"-7.835"},"righthand":{"px":"-1.41","py":"3.965","pz":"0.258","ry":"296.287","rx":"-7.835"},"chest":{"px":"-0.375","py":"2.746","pz":"0.12","ry":"0","rx":"-10.626"}}}
+# Data Manager: Prepare for Read / Write
+execute store result storage animated_java:temp args.id int 1 run scoreboard players get @s aj.id
 # Data Manager: Write
 function animated_java:global/data_manager/write with storage animated_java:temp args

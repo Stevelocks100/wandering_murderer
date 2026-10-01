@@ -1,0 +1,304 @@
+# for spawning him and replacing old confusing ahh code.
+
+<%%
+    prefix = "wander.spawn"
+%%>
+function load {
+    scoreboard objectives add <%prefix%> dummy
+    scoreboard objectives add <%prefix%>.spawn_score dummy
+}
+
+function tick {
+    # should only run if daytime >= 1
+
+
+    # wander timer
+    execute if score spawned wander.data matches 0 run function not_spawned_tick
+    execute if score spawned wander.data matches 1 run function spawned_tick
+
+    execute as @a[tag=wander.potential_target,x=0] at @s unless predicate {"condition":"minecraft:entity_properties","entity":"this","predicate":{"movement":{"speed":{"min":0.2}}}} run scoreboard players add @s wander.player_not_moving 1
+    execute as @a[tag=wander.potential_target,x=0] at @s unless score @s wander.player_not_moving matches ..-1 if predicate {"condition":"minecraft:entity_properties","entity":"this","predicate":{"movement":{"speed":{"min":0.2}}}} run scoreboard players set @s wander.player_not_moving 0
+
+
+}
+
+function not_spawned_tick {
+
+
+    execute if score timer wander.data matches ..-10000 run scoreboard players set timer wander.data -500
+    execute if score new_spawn_time wander.data matches ..-10000 run scoreboard players set new_spawn_time wander.data 3000
+
+    execute if score timer wander.data matches 50000.. run scoreboard players set timer wander.data 4000
+    execute if score new_spawn_time wander.data matches 50000.. run scoreboard players set new_spawn_time wander.data 5000
+
+    scoreboard players set spawn_search_method wander.data 1
+    scoreboard players add timer wander.data 1
+    execute in overworld unless entity @p[x=0,tag=wander.potential_target] in wander:pocket if entity @p[x=0] run scoreboard players add timer wander.data 4
+    execute as @a[tag=wander.potential_target,x=0,scores={wander.player_not_moving=100..}] run scoreboard players add timer wander.data 2
+
+
+    
+
+    # creating spawn positions. no clue why this is so spread out from the actual spawning.
+    execute if score timer wander.data > new_spawn_time wander.data if score timer wander.data matches 4000.. run {
+
+        execute if score trying_to_spawn wander.data matches 1 run return 0
+        function wander:spawning/select_spawn
+        execute if score trying_to_spawn wander.data matches 0 run scoreboard players remove timer wander.data 1000
+        # if can't spawn, don't try to spawn yet.
+
+    }
+
+    execute if score trying_to_spawn wander.data matches 1 as @n[tag=wander.spawn_pos,type=item_display,x=0] at @s run {
+
+        # if not spawned, go do spawning related stuff.
+        # spawn_check: 1 = shouldn't spawn. 0 = can spawn.
+        scoreboard players set spawn_check wander.temp 0
+        execute as @n[tag=wander.spawn_pos,type=item_display,x=0] at @s if entity @p[tag=wander.potential_target,distance=0..10] run return run scoreboard players set spawn_check wander.temp 1
+
+        # facing check sets "spawn_check wander.temp" to 1 if the player is looking at the spawn point.
+        # for the facing check, it checks all players, and sets to 1 if ANY player is looking.
+
+        # target facing check does the same, but only for the target.
+        
+        execute as @a[tag=wander.potential_target,distance=0..40] at @s facing entity @n[tag=wander.spawn_pos,x=0,type=item_display] feet run function facing_check
+
+        # if not spawned, if nobody looking, at spawn point, spawn it in.
+        # apparently rotation here doesn't do crap so i removed it.
+        execute if score spawn_check wander.temp matches 0 as @n[tag=wander.spawn_pos,x=0,type=item_display] at @s run function wander:existence/summon
+        
+
+    }
+
+
+    
+
+
+
+}
+
+function spawned_tick {
+    scoreboard players set trying_to_spawn wander.data 0
+    execute if score ai wander.data matches 4..28 run scoreboard players remove timer wander.data 1
+    
+}
+
+function select_spawn {
+
+    # spawn search method:
+    # 1 = actually trying to spawn, so make it far-ish away.
+    # 2 = already exists, so sneaking up on players
+
+    scoreboard players set trying_to_spawn wander.data 0
+    # choose a target
+    function find_target
+
+    # make sure select spawn cannot run again, UNLESS no spawn has appeared
+    execute as @p[tag=wander.target,x=0] at @s rotated as @s run function find_positions
+
+    execute if entity @n[tag=wander.spawn_pos,x=0,type=item_display] run {
+        scoreboard players set trying_to_spawn wander.data 1
+    }
+}
+function find_positions {
+    function raycast/init
+
+    # [tag=wander.potential_spawn,x=0,type=item_display]
+
+    # next, trim down the spawn points for the perfect™ distance.
+    # if within 10 blocks or outside 40 blocks, remove.
+
+    # if there's entities within 23 to 28 blocks, remove everything outside that.
+    # for spawn search method 1, choose random from here.
+    # for spawn search method 2, do none of this, and simply choose the nearest that's further than 8 blocks away.
+
+    execute if score spawn_search_method wander.data matches 1 run {
+        kill @e[tag=wander.potential_spawn,type=item_display,distance=..10]
+        kill @e[tag=wander.potential_spawn,type=item_display,distance=40..]
+        execute if entity @n[tag=wander.potential_spawn,type=item_display,distance=23..28] run {
+            kill @e[tag=wander.potential_spawn,type=item_display,distance=..23]
+            kill @e[tag=wander.potential_spawn,type=item_display,distance=28..]
+        }
+
+        execute as @n[tag=wander.potential_spawn,sort=random,x=0,type=item_display] run tag @s add wander.spawn_pos
+    }
+
+    execute if score spawn_search_method wander.data matches 2 as @n[tag=wander.potential_spawn,distance=8..] run tag @s add wander.spawn_pos
+
+
+    tag @n[tag=wander.spawn_pos,x=0,type=item_display] remove wander.potential_spawn
+    kill @e[tag=wander.potential_spawn,x=0,type=item_display]
+}
+
+function find_target {
+
+    # tag @a remove wander.target
+    # tag @a[tag=!wander.potential_target,tag=wander.new_target] remove wander.new_target
+    tag @a[tag=!wander.potential_target,tag=wander.new_target] remove wander.new_target
+    tag @a[tag=!wander.potential_target,tag=wander.target] remove wander.target
+    tag @a[tag=wander.new_target] add wander.target
+
+    # gotta account for SOME of the code (not all lmao) using wander.new_target
+    # instead of wander.target
+
+    # already have a target.
+    execute if entity @p[tag=wander.target] run return run {
+        execute store result score new_target_count <%prefix%> if entity @a[tag=wander.target]
+        execute if score new_target_count <%prefix%> matches 1 run return 0
+
+        # now we assume there is more than one "new target"
+        tag @a[tag=wander.target] add wander.new_target
+
+        tag @r[tag=wander.new_target] add wander.target
+        tag @a remove wander.new_target
+    }
+    
+    # now checking for players that are alone, are AFK, and/or with the lowest amount of encounters.
+
+    # all of these should be done on a scale of 0-10.
+    scoreboard players set @a <%prefix%>.spawn_score -1
+    execute as @a[tag=wander.potential_target,x=0] at @s run {
+
+        scoreboard players set @s <%prefix%>.spawn_score 0
+
+
+        scoreboard players set #encounter_count <%prefix%> 10
+        scoreboard players operation #encounter_count <%prefix%> -= @s wander.encounters
+        execute if score #encounter_count <%prefix%> matches ..-1 run scoreboard players set #encounter_count <%prefix%> 0
+        execute if score #encounter_count <%prefix%> matches 11.. run scoreboard players set #encounter_count <%prefix%> 10
+
+        # depending on encounters, ranging from 0 to 10. 10 points for 0 encounters, 0 points for 10+ encounters
+
+        # wander.player_not_moving=300..
+        # score 500 = 10 (aka divide by 50), and lower will just be closer to 0
+        scoreboard players operation #afk_timer <%prefix%> = @s wander.player_not_moving
+        scoreboard players set 50 <%prefix%> 50
+        scoreboard players operation #afk_timer <%prefix%> /= 50 <%prefix%>
+        execute if score #afk_timer <%prefix%> matches ..-1 run scoreboard players set #afk_timer <%prefix%> 0
+        execute if score #afk_timer <%prefix%> matches 11.. run scoreboard players set #afk_timer <%prefix%> 10
+
+
+        # and now for the loneliest player. it's probably good to first check if they are above ground/near ground (which could mean in a house)
+        scoreboard players set #lonely <%prefix%> 0
+        execute unless entity @p[tag=wander.potential_target,distance=0.1..10] run scoreboard players add #lonely <%prefix%> 2
+        execute unless entity @p[tag=wander.potential_target,distance=0.1..20] run scoreboard players add #lonely <%prefix%> 2
+        execute unless entity @p[tag=wander.potential_target,distance=0.1..30] run scoreboard players add #lonely <%prefix%> 2
+        execute unless entity @p[tag=wander.potential_target,distance=0.1..40] run scoreboard players add #lonely <%prefix%> 2
+        execute unless entity @p[tag=wander.potential_target,distance=0.1..50] run scoreboard players add #lonely <%prefix%> 2
+        # so max here is 10 currently. I feel like this should have a bit of priority so let's go to 20.
+        execute if function wander:spawning/is_near_surface run scoreboard players add #lonely <%prefix%> 3
+        execute if function wander:spawning/is_on_surface run scoreboard players add #lonely <%prefix%> 7
+        # is player is in a cave, it's a lower value. especially low when with other people.
+
+        scoreboard players operation @s <%prefix%>.spawn_score += #encounter_count <%prefix%>
+        scoreboard players operation @s <%prefix%>.spawn_score += #afk_timer <%prefix%>
+        scoreboard players operation @s <%prefix%>.spawn_score += #lonely <%prefix%>
+
+    }
+    # now we have a buncha values.
+    scoreboard players set highest_score <%prefix%>.spawn_score -999
+    execute as @a[scores={<%prefix%>.spawn_score=0..},x=0,tag=wander.potential_target] run scoreboard players operation highest_score <%prefix%>.spawn_score > @s <%prefix%>.spawn_score
+
+    execute as @a[scores={<%prefix%>.spawn_score=0..},x=0,tag=wander.potential_target] if score @s <%prefix%>.spawn_score = highest_score <%prefix%>.spawn_score run tag @s add wander.new_target
+
+
+    tag @r[tag=wander.new_target] add wander.target
+    tag @a remove wander.new_target
+
+
+
+    # only select one.
+
+    
+}
+function is_on_surface {
+    execute unless entity @s run return 0
+    # must run as an entity please
+    return run execute positioned over motion_blocking_no_leaves if entity @s[distance=0..0.5]
+}
+function is_near_surface {
+    execute unless entity @s run return 0
+    # must run as an entity please
+    return run execute positioned over motion_blocking_no_leaves if entity @s[distance=0..10]
+}
+
+dir raycast {
+    function init {
+
+        kill @e[tag=wander.potential_spawn,x=0,type=item_display]
+        # do the rest of the recursion agony.
+        # repeat for 5° increments (aka 72 times)
+        # 30 blocks away, positioned 2 blocks above surface no leaves.
+        # first check if it is within player LOS (120 fov). if not, continue.
+        # do a raycast to find the first position that is blocked from player sight (aka block raycast)
+        # make sure this position isn't somewhere that's on water/underwater
+        # this is where a potential spawn marker will appear.
+
+        execute positioned ~ ~2 ~ run {
+            scoreboard players set #rotation <%prefix%> 72
+
+            execute summon item_display run {
+                data merge entity @s {Tags:["<%prefix%>.spawn_center"]}
+                rotate @s ~ ~
+            }
+
+            execute rotated 0 0 as @n[distance=0..0.1,type=item_display,tag=<%prefix%>.spawn_center] run {
+                function find_blocked
+                scoreboard players remove #rotation <%prefix%> 1
+
+                execute if score #rotation <%prefix%> matches 1.. rotated ~5 0 run function ^0
+                kill @s
+            }
+
+
+        }
+        
+    }
+
+    function find_blocked {
+        execute positioned ^ ^ ^30 positioned over motion_blocking_no_leaves positioned ~ ~2 ~ facing entity @s feet run {
+            execute if entity @s[distance=0..4] run return 0
+
+            execute unless block ~ ~ ~ #wander:can_pass run return run function hit
+
+            execute positioned ^ ^ ^0.5 run function ^0
+        }
+    }
+
+    function hit {
+        # already facing target, at the spawn spot, as the target
+
+
+        execute store result score current wander.temp run data get entity @s Rotation[0]
+        
+        execute positioned ^ ^ ^-2 align xyz positioned ~0.5 ~ ~0.5 positioned over motion_blocking_no_leaves summon item_display run {
+            data merge entity @s {Tags:["wander.potential_spawn","wander.entity"]}
+            rotate @s ~180 ~
+            execute store result score desired wander.temp run data get entity @s Rotation[0]
+            execute store result score success wander.temp run function wander:rotation_threshold {current:"current wander.temp",desired:"desired wander.temp",threshold:"120"}
+            
+            execute if score success wander.temp matches 1 run return run kill @s
+            execute unless predicate wander:enough_height run return run kill @s
+
+            rotate @s ~ ~
+
+        }
+    }
+}
+
+function facing_check {
+    execute rotated ~ 0 summon item_display run function wander:temp_rotation_entity
+    execute store result score @s wander.temp run data get entity @s Rotation[0]
+
+    execute store result score successful wander.temp run function wander:rotation_threshold {current:"@s wander.temp",desired:"desired wander.temp",threshold:"70"}
+    execute if score successful wander.temp matches 1 run scoreboard players set spawn_check wander.temp 1
+
+}
+function facing_check_target {
+    execute rotated ~ 0 summon item_display run function wander:temp_rotation_entity
+    execute store result score @s wander.temp run data get entity @s Rotation[0]
+
+    execute store result score successful wander.temp run function wander:rotation_threshold {current:"@s wander.temp",desired:"desired wander.temp",threshold:"120"}
+    scoreboard players operation spawn_check wander.temp = successful wander.temp
+
+}

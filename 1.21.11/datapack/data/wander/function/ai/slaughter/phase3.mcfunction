@@ -10,7 +10,7 @@ scoreboard players set start_phase3 wander.data 1
 bossbar set wander:health max 600
 scoreboard players set health wander.data 600
 
-scoreboard players set current_phase wander.song 3
+scoreboard players set current_phase wander.music 3
 
 #execute as @a[distance=0..100] run function wander:murderer_music/restart_song
 
@@ -18,6 +18,6 @@ function wander:ai/slaughter/vanish
 
 advancement grant @a[distance=0..80] only wander:story/one_attempt
 
-execute as @a[scores={wander.song=0..}] at @s run function wander:murderer_music/phase3_bridge
+execute as @a[scores={wander.music.current_song=0..}] at @s run function wander:murderer_music/play_song {id:7,override:true}
 
 #function wander:fine_print/remove

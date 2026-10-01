@@ -14,36 +14,42 @@ function load {
 
 function tick {
 
-    execute as @a[tag=<%prefix%>.leaving] at @s if entity @n[tag=wander.ai] run {
-        tag @n[tag=wander.ai] remove wander.force_kidnap
+    execute as @a[tag=<%prefix%>.leaving] at @s if entity abb5e532-ba94-447e-8b50-7b463008a14c run {
+        tag abb5e532-ba94-447e-8b50-7b463008a14c remove wander.force_kidnap
         tag @s remove <%prefix%>.leaving
     }
     execute if score daytime wander.data matches -501 run tag @a[tag=<%prefix%>.leaving] remove <%prefix%>.leaving
 
     execute as @a at @s unless dimension wander:pocket run scoreboard players set @s <%prefix%>.chests_opened 0
 
-    execute if predicate {"condition":"minecraft:random_chance","chance":0.005} as @n[tag=<%prefix%>.spawn,distance=0..] at @s unless entity @p[distance=0..10] unless entity @n[tag=aj.wander_chest.root,type=item_display,distance=0..2] run function aj:wander_chest/animations/open/play
-    execute if score bad_omen wander.data matches 1 if predicate {"condition":"minecraft:random_chance","chance":0.04} as @n[tag=<%prefix%>.spawn,distance=0..] at @s unless entity @p[distance=0..10] unless entity @n[tag=aj.wander_chest.root,type=item_display,distance=0..2] run {
+    execute if predicate {"condition":"minecraft:random_chance","chance":0.005} as @n[tag=<%prefix%>.spawn,x=0] at @s unless entity @p[distance=0..10] unless entity @n[tag=aj.wander_chest.root,type=item_display,distance=0..2] run function aj:wander_chest/animations/open/play
+    execute if score bad_omen wander.data matches 1 if predicate {"condition":"minecraft:random_chance","chance":0.04} as @n[tag=<%prefix%>.spawn,x=0] at @s unless entity @p[distance=0..10] unless entity @n[tag=aj.wander_chest.root,type=item_display,distance=0..2] run {
         tag @s add <%prefix%>.better_random
         function aj:wander_chest/animations/open/play
     }
 
-    execute unless entity @p[distance=0..] run {
+    execute unless entity @p[x=0] run {
         function aj:wander_chest/remove/all
-        kill @e[tag=aj.wander_chest.node,distance=0..]
-        tp @e[type=item,distance=0..] @n[tag=wander.ai]
+        kill @e[tag=aj.wander_chest.node,x=0]
+        tp @e[type=item,x=0] abb5e532-ba94-447e-8b50-7b463008a14c
     }
-    execute as @e[tag=<%prefix%>.spawn,distance=0..] at @s run {
+    execute as @e[tag=<%prefix%>.spawn,x=0] at @s run {
         execute if entity @p[distance=0..20] unless entity @n[tag=aj.wander_chest.root,type=item_display,distance=0..2] run function aj:wander_chest/summon {args:{animation:'idle',start_animation:true}}
         execute unless entity @p[distance=0..20] if entity @n[tag=aj.wander_chest.root,type=item_display,distance=0..2] as @n[tag=aj.wander_chest.root,type=item_display,distance=0..2] run function aj:wander_chest/remove/this
     }
-    # execute if entity @p[distance=0..] unless entity @n[tag=aj.wander_chest.root,distance=0..] run function spawn_chests
-    execute as @e[tag=<%prefix%>.mob,distance=0..] at @s run function chest/mob_tick
+    # execute if entity @p[x=0] unless entity @n[tag=aj.wander_chest.root,x=0] run function spawn_chests
+    execute as @e[tag=<%prefix%>.mob,x=0] at @s run function chest/mob_tick
     execute as @e[tag=aj.wander_chest.node.hitbox,scores={<%prefix%>.cooldown=1..}] at @s run {
         scoreboard players remove @s <%prefix%>.cooldown 1
         execute if score @s <%prefix%>.cooldown matches 1 run data merge entity @s {width:1.125,height:1.125}
     } 
-    execute as @a[distance=0..] at @s run {
+    execute as @a[x=0] at @s run {
+
+        execute if predicate {"condition":"minecraft:entity_properties","entity":"this","predicate":{"location":{"position":{"y":{"max":-70}}}}} run {
+            tp @s ~ -50 ~
+            effect give @s resistance 20 60 true
+        }
+        
         attribute @s minecraft:block_interaction_range modifier add wander:pocket -10 add_multiplied_total
         # execute if predicate {"condition":"minecraft:all_of","terms":[{"condition":"minecraft:random_chance","chance":0.3},{"condition":"minecraft:entity_properties","entity":"this","predicate":{"periodic_tick":500}}]} run playsound wander:pocket.ambience hostile @s ~ ~ ~ 0.8 1.0 1.0
         scoreboard players remove @s[scores={<%prefix%>.freedom_timer=1..}] <%prefix%>.freedom_timer 1
@@ -56,7 +62,7 @@ function tick {
         tag @s remove <%prefix%>.must_check
     }
 
-    execute unless entity @n[tag=aj.fine_print.root,distance=0..] if entity @n[tag=<%prefix%>.light,distance=0..] run function scan/remove_light
+    execute unless entity @n[tag=aj.fine_print.root,x=0] if entity @n[tag=<%prefix%>.light,x=0] run function scan/remove_light
 
 
 
@@ -65,7 +71,7 @@ function tick {
 function spawn_chests {
     function aj:wander_chest/remove/all
     kill @e[tag=aj.wander_chest.node]
-    execute in wander:pocket as @e[tag=<%prefix%>.spawn,distance=0..] at @s run function aj:wander_chest/summon {args:{animation:'idle',start_animation:true}}
+    execute in wander:pocket as @e[tag=<%prefix%>.spawn,x=0] at @s run function aj:wander_chest/summon {args:{animation:'idle',start_animation:true}}
 }
 
 function leave {
@@ -244,11 +250,11 @@ dir scan {
     function init {
         execute if score scan_active <%prefix%> matches 1 run return 0
         scoreboard players set scan_active <%prefix%> 1
-        stopsound @a[distance=0..] ambient
-        playsound wander:phase3.emerald_stop hostile @a[distance=0..] ~ ~ ~ 20.0 0.7 1.0
-        playsound wander:phase3.emerald_stop hostile @a[distance=0..] ~ ~ ~ 20.0 0.7 1.0
-        playsound wander:phase3.emerald_stop hostile @a[distance=0..] ~ ~ ~ 20.0 0.7 1.0
-        playsound wander:phase3.emerald_stop hostile @a[distance=0..] ~ ~ ~ 20.0 0.7 1.0
+        stopsound @a[x=0] ambient
+        playsound wander:phase3.emerald_stop hostile @a[x=0] ~ ~ ~ 20.0 0.7 1.0
+        playsound wander:phase3.emerald_stop hostile @a[x=0] ~ ~ ~ 20.0 0.7 1.0
+        playsound wander:phase3.emerald_stop hostile @a[x=0] ~ ~ ~ 20.0 0.7 1.0
+        playsound wander:phase3.emerald_stop hostile @a[x=0] ~ ~ ~ 20.0 0.7 1.0
         # function wander:fine_print/set_teleport_duration {duration:50}
         function ../lights/off
 
@@ -269,14 +275,14 @@ dir scan {
             scoreboard players set 20 <%prefix%> 20
             scoreboard players operation scan_ticks <%prefix%> %= 20 <%prefix%>
 
-            execute if score scan_timer <%prefix%> matches 218 as @a[distance=0..] at @s run playsound wander:pocket.tick hostile @s ~ ~ ~ 1.0 1.0 1.0
+            execute if score scan_timer <%prefix%> matches 218 as @a[x=0] at @s run playsound wander:pocket.tick hostile @s ~ ~ ~ 1.0 1.0 1.0
 
-            execute if score scan_seconds <%prefix%> matches 7.. if score scan_ticks <%prefix%> matches 0 as @a[distance=0..] at @s run playsound wander:pocket.tick hostile @s ~ ~ ~ 1.0 0.86 1.0
-            execute if score scan_seconds <%prefix%> matches 4..6 if score scan_ticks <%prefix%> matches 0 as @a[distance=0..] at @s run playsound wander:pocket.tick hostile @s ~ ~ ~ 1.0 0.7 1.0
-            execute if score scan_seconds <%prefix%> matches 0..3 if score scan_ticks <%prefix%> matches 0 as @a[distance=0..] at @s run playsound wander:pocket.tick hostile @s ~ ~ ~ 1.0 0.5 1.0
-            title @a[distance=0..] times 0 20 1
-            title @a[distance=0..] actionbar ["",{color:"dark_red",text:"Find cover in ",extra:[{score:{name:"scan_seconds",objective:"<%prefix%>"}}," seconds."]}]
-            execute unless score scan_timer <%prefix%> matches 1.. run title @a[distance=0..] actionbar ["",{color:"dark_red",text:"Hide."}]
+            execute if score scan_seconds <%prefix%> matches 7.. if score scan_ticks <%prefix%> matches 0 as @a[x=0] at @s run playsound wander:pocket.tick hostile @s ~ ~ ~ 1.0 0.86 1.0
+            execute if score scan_seconds <%prefix%> matches 4..6 if score scan_ticks <%prefix%> matches 0 as @a[x=0] at @s run playsound wander:pocket.tick hostile @s ~ ~ ~ 1.0 0.7 1.0
+            execute if score scan_seconds <%prefix%> matches 0..3 if score scan_ticks <%prefix%> matches 0 as @a[x=0] at @s run playsound wander:pocket.tick hostile @s ~ ~ ~ 1.0 0.5 1.0
+            title @a[x=0] times 0 20 1
+            title @a[x=0] actionbar ["",{color:"dark_red",text:"Find cover in ",extra:[{score:{name:"scan_seconds",objective:"<%prefix%>"}}," seconds."]}]
+            execute unless score scan_timer <%prefix%> matches 1.. run title @a[x=0] actionbar ["",{color:"dark_red",text:"Hide."}]
 
         }
         execute if score scan_timer <%prefix%> matches 1.. run return run schedule function 1 1t
@@ -290,8 +296,8 @@ dir scan {
         # tag all players to make sure they're checked.
         execute in wander:pocket run {
             execute positioned 0 -30 0 run function aj:fine_print/summon {args:{variant:'invisible',start_animation:true,animation:'pocket_enter'}}
-            # execute as @n[tag=aj.fine_print.root,distance=0..] run function wander:fine_print/set_teleport_duration {duration:50} 
-            tag @a[gamemode=!creative,gamemode=!spectator] add <%prefix%>.must_check
+            # execute as @n[tag=aj.fine_print.root,x=0] run function wander:fine_print/set_teleport_duration {duration:50} 
+            tag @a[gamemode=!creative,gamemode=!spectator,x=0] add <%prefix%>.must_check
         }
         schedule function 3 3s
     }
@@ -302,36 +308,39 @@ dir scan {
         # after checking, give player special tag, where if they are exposed with that tag, they get "must check" again
 
         execute in wander:pocket run {
-            execute as @n[tag=aj.fine_print.root,distance=0..] at @s run {
-                playsound wander:phase3.emerald_hum hostile @a[distance=0..] ~ ~ ~ 20.0 1.0 1.0
+            execute as @n[tag=aj.fine_print.root,x=0] at @s run {
+                playsound wander:phase3.emerald_hum hostile @a[x=0] ~ ~ ~ 20.0 1.0 1.0
                 function aj:fine_print/variants/default/apply
                 function aj:fine_print/variants/invisible/apply
-                tag @r[tag=<%prefix%>.must_check,distance=0..] add <%prefix%>.scan_target
+                tag @r[tag=<%prefix%>.must_check,x=0] add <%prefix%>.scan_target
                 tag @p[tag=<%prefix%>.scan_target] remove <%prefix%>.must_check
-                execute facing entity @p[tag=<%prefix%>.scan_target,distance=0..] eyes at @p[tag=<%prefix%>.scan_target,distance=0..] positioned over motion_blocking positioned ~ ~20 ~ run tp @s ~ ~ ~ ~ 0
+                execute facing entity @p[tag=<%prefix%>.scan_target,x=0] eyes at @p[tag=<%prefix%>.scan_target,x=0] positioned over motion_blocking positioned ~ ~20 ~ run tp @s ~ ~ ~ ~ 0
             }
             scoreboard players set check_timer <%prefix%> 40
-            schedule 3s replace {
-                execute in wander:pocket run {
-                    # checking
-                    execute as @n[tag=aj.fine_print.root,distance=0..] at @s run function light_raycast
-                    execute as @a[tag=<%prefix%>.scan_target] at @s if predicate {"condition":"minecraft:location_check","predicate":{"can_see_sky":true}} run function caught
-                    scoreboard players remove check_timer <%prefix%> 1
-                    execute if score check_timer <%prefix%> matches 1.. run return run schedule function ^0 1t
-
-                    # checking done
-                    execute as @n[tag=aj.fine_print.root,distance=0..] at @s run function remove_light
-                    tag @a[tag=<%prefix%>.scan_target] remove <%prefix%>.scan_target
-
-                    # find a new player
-                    execute if entity @p[tag=<%prefix%>.must_check,distance=0..] run return run schedule function 3 1s
-                    
-                    # no players left to check
-                    schedule function end 1s
-                }
-            }
+            schedule function 4 3s
         }
 
+    }
+
+    function 4 {
+        execute in wander:pocket run {
+            # checking
+            execute as @n[tag=aj.fine_print.root,x=0] at @s run function light_raycast
+            execute as @a[tag=<%prefix%>.scan_target] at @s if predicate {"condition":"minecraft:location_check","predicate":{"can_see_sky":true}} run function caught
+            scoreboard players remove check_timer <%prefix%> 1
+            execute if score check_timer <%prefix%> matches 1.. run return run schedule function 4 1t
+            # checking done
+            execute as @n[tag=aj.fine_print.root,x=0] at @s run function remove_light
+            
+            tag @a[tag=<%prefix%>.scan_target] remove <%prefix%>.scan_target
+            
+            # find a new player
+
+            execute if entity @p[tag=<%prefix%>.must_check,x=0] run return run schedule function 3 1s
+            
+            # no players left to check
+            schedule function end 1s
+        }
     }
 
 
@@ -340,42 +349,42 @@ dir scan {
         
         execute in wander:pocket run {
             scoreboard players set scan_active <%prefix%> 0
-            playsound wander:phase3.emerald_stop hostile @a[distance=0..] 0 0 0 20.0 1.4 1.0
-            playsound wander:phase3.emerald_stop hostile @a[distance=0..] 0 0 0 20.0 1.4 1.0
-            playsound wander:phase3.emerald_stop hostile @a[distance=0..] 0 0 0 20.0 1.4 1.0
+            playsound wander:phase3.emerald_stop hostile @a[x=0] 0 0 0 20.0 1.4 1.0
+            playsound wander:phase3.emerald_stop hostile @a[x=0] 0 0 0 20.0 1.4 1.0
+            playsound wander:phase3.emerald_stop hostile @a[x=0] 0 0 0 20.0 1.4 1.0
             tag @a remove <%prefix%>.must_check
             tag @a remove <%prefix%>.scan_target
-            execute as @n[tag=aj.fine_print.root,distance=0..] run function aj:fine_print/animations/pocket_leave/play
+            execute as @n[tag=aj.fine_print.root,x=0] run function aj:fine_print/animations/pocket_leave/play
         }
         function ../lights/on
     }
 
     function caught {
-        playsound wander:fine_print.hit_item hostile @a[distance=0..] ~ ~ ~ 10 0.7 0.5
+        playsound wander:fine_print.hit_item hostile @a[x=0] ~ ~ ~ 10 0.7 0.5
         particle minecraft:totem_of_undying ~ ~1 ~ 0 0 0 0.3 40 normal @a
         particle minecraft:gust ~ ~1 ~ 0 0 0 0.0 1 normal @a
         effect give @s wither 10 3 false
         effect give @s hunger 10 5 false
-        playsound minecraft:entity.wandering_trader.no hostile @a[distance=0..] ~ ~20 ~ 10.0 0.6 1.0
+        playsound minecraft:entity.wandering_trader.no hostile @a[x=0] ~ ~20 ~ 10.0 0.6 1.0
         scoreboard players set check_timer <%prefix%> 0
-        execute as @n[tag=aj.fine_print.root,distance=0..] run function aj:fine_print/variants/sad_mask/apply
+        execute as @n[tag=aj.fine_print.root,x=0] run function aj:fine_print/variants/sad_mask/apply
     }
     
     function light_raycast {
-        execute as @e[tag=<%prefix%>.light,distance=0..] at @s if block ~ ~ ~ light run setblock ~ ~ ~ air strict
-        kill @e[tag=<%prefix%>.light,distance=0..]
+        execute as @e[tag=<%prefix%>.light,x=0] at @s if block ~ ~ ~ light run setblock ~ ~ ~ air strict
+        kill @e[tag=<%prefix%>.light,x=0]
         execute if block ~ ~ ~ air run {
 
             summon marker ~ ~ ~ {Tags:["<%prefix%>.light"]}
             execute positioned ~ ~-1 ~ if block ~ ~ ~ air if entity @s[distance=0..30] run function ^0
         }
-        execute as @e[tag=<%prefix%>.light,distance=0..] at @s if block ~ ~ ~ air run setblock ~ ~ ~ light strict
+        execute as @e[tag=<%prefix%>.light,x=0] at @s if block ~ ~ ~ air run setblock ~ ~ ~ light strict
         
     }
 
     function remove_light {
-        execute as @e[tag=<%prefix%>.light,distance=0..] at @s if block ~ ~ ~ light run setblock ~ ~ ~ air strict
-        kill @e[tag=<%prefix%>.light,distance=0..]
+        execute as @e[tag=<%prefix%>.light,x=0] at @s if block ~ ~ ~ light run setblock ~ ~ ~ air strict
+        kill @e[tag=<%prefix%>.light,x=0]
         
     }
 }

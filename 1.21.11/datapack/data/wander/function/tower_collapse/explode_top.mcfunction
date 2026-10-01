@@ -4,7 +4,7 @@ playsound entity.zombie.break_wooden_door block @a[distance=0..16] ~ ~-2 ~ 1.0 0
 
 execute if score do_griefing milk.settings matches -1 run return 0
 
-summon marker ~ ~ ~ {Tags:["wander.temp"]}
+summon marker ~ ~ ~ {Tags:["wander.temp","wander.entity"]}
 execute as @n[tag=wander.temp] store result score current_y wander.temp run data get entity @s Pos[1]
 kill @n[tag=wander.temp]
 scoreboard players set desired_y wander.temp -999

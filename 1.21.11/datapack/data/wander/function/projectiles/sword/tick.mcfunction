@@ -6,7 +6,7 @@ execute unless entity @n[tag=wander.sword_proj_direction,distance=0..0.1] on pas
 
 
 kill @n[tag=wander.sword_proj_direction]
-summon marker ~ ~ ~ {Tags:["wander.sword_proj_direction"]}
+summon marker ~ ~ ~ {Tags:["wander.sword_proj_direction","wander.entity"]}
 
 #execute if entity @s[nbt={inGround:1b}] on passengers run kill @s
 execute if entity @s[nbt={inGround:1b}] run playsound minecraft:item.trident.return hostile @a[distance=0..32] ~ ~ ~ 2.0 0.7 0.0
@@ -22,8 +22,8 @@ execute if entity @s[nbt={inGround:1b}] unless entity @s[tag=wander.sword_proj_d
 #execute if entity @s[nbt={inGround:1b}] on passengers run data modify entity @s transformation.translation set value [0.0d,0.0d,0.0d]
 execute if entity @s[nbt={inGround:1b}] run stopsound @a[distance=0..32] * entity.arrow.hit
 execute if entity @s[nbt={inGround:1b}] run kill @n[tag=wander.sword_proj_direction]
-execute if entity @s[nbt={inGround:1b}] as @e[type=!#milk:command_entities,type=!wandering_trader,type=!player,distance=0..3] run damage @s 8 wander:gilded_emerald_cleaver_wander by @n[tag=wander.ai]
-execute if entity @s[nbt={inGround:1b}] as @a[tag=wander.potential_target,distance=0..3] run damage @s 8 wander:gilded_emerald_cleaver_wander by @n[tag=wander.ai]
+execute if entity @s[nbt={inGround:1b}] as @e[type=!#milk:command_entities,type=!wandering_trader,type=!player,distance=0..3] run damage @s 8 wander:gilded_emerald_cleaver_wander by abb5e532-ba94-447e-8b50-7b463008a14c
+execute if entity @s[nbt={inGround:1b}] as @a[tag=wander.potential_target,distance=0..3] run damage @s 8 wander:gilded_emerald_cleaver_wander by abb5e532-ba94-447e-8b50-7b463008a14c
 
 execute if entity @s[nbt={inGround:1b}] run kill @s
 

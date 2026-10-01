@@ -4,10 +4,10 @@ execute positioned ~ ~1 ~ as @a[distance=0..2.5] run tag @s add wander.do_damage
 execute as @a[distance=0..2.5] run tag @s add wander.do_damage
 execute positioned ~ ~1.5 ~ as @a[distance=0..1.5] run tag @s add wander.do_damage
 
-execute positioned ~ ~1.5 ~ as @n[type=happy_ghast,distance=0..8] run damage @s 6 wander:gilded_emerald_cleaver_wander by @n[tag=wander.ai]
+execute positioned ~ ~1.5 ~ as @n[type=happy_ghast,distance=0..8] run damage @s 6 wander:gilded_emerald_cleaver_wander by abb5e532-ba94-447e-8b50-7b463008a14c
 
-execute at @n[tag=wander.ai] rotated as @n[tag=wander.ai] rotated ~ 0 positioned ^ ^ ^1 as @a[distance=0..3] run tag @s add wander.do_damage
-execute as @a[tag=wander.do_damage] run damage @s 9 wander:gilded_emerald_cleaver_wander by @n[tag=wander.ai]
+execute at abb5e532-ba94-447e-8b50-7b463008a14c rotated as abb5e532-ba94-447e-8b50-7b463008a14c rotated ~ 0 positioned ^ ^ ^1 as @a[distance=0..3] run tag @s add wander.do_damage
+execute as @a[tag=wander.do_damage] run damage @s 9 wander:gilded_emerald_cleaver_wander by abb5e532-ba94-447e-8b50-7b463008a14c
 
 tag @a[tag=wander.do_damage] remove wander.do_damage
 

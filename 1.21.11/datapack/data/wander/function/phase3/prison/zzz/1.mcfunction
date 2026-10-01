@@ -5,5 +5,5 @@ execute unless predicate {"condition":"minecraft:entity_properties","entity":"th
 execute on passengers if entity @s[type=slime] store result score prison_health wander.temp run data get entity @s Health
 execute unless score @s wander.phase3.health_old = prison_health wander.temp run playsound block.amethyst_block.break hostile @a[distance=0..64] ~ ~ ~ 3.0 0.7 0.0
 execute unless score @s wander.phase3.health_old = prison_health wander.temp run particle item{item:{id:"iron_ingot",components:{"minecraft:item_model":"wander:emerald_prison"}}} ~ ~ ~ 0.3 0.3 0.3 0.2 40 force @a[distance=0..64]
-execute if score prison_health wander.temp matches ..970 on passengers if entity @s[type=player] run function wander:phase3/prison/destroy_nearest
+execute if score prison_health wander.temp matches ..990 on passengers if entity @s[type=player] run function wander:phase3/prison/destroy_nearest
 scoreboard players operation @s wander.phase3.health_old = prison_health wander.temp

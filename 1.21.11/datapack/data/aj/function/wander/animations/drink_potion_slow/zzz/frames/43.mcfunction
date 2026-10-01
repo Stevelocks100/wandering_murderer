@@ -40,7 +40,9 @@ $data merge entity $(lowerbody) {transformation: [-1f,0f,0f,0.0039f,0f,0.999f,0.
 $data merge entity $(rightfoot) {transformation: [-1f,0f,0f,-0.2812f,0f,1f,0f,0.1719f,0f,0f,-1f,-0.2578f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(rightlowerleg) {transformation: [-1f,0f,0f,-0.2812f,0f,1f,0f,1.2813f,0f,0f,-1f,-0.1042f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(rightleg) {transformation: [-1f,0f,0f,-0.25f,0f,1f,0f,2.3438f,0f,0f,-1f,-0.0781f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
-$execute unless entity @s[tag=aj.transforms_only] as $(chest) positioned ^-0.375 ^2.7373267979 ^0.3933046296 rotated ~0 ~2.5 as @n[tag=wander.ai] at @s rotated as @s run function aj:wander/animations/drink_potion_slow/zzz/frames/43_locator_chest
-data modify storage animated_java:temp entry.data merge value {"cameras":{},"locators":{"soup":{"px":"0.844","py":"1.965","pz":"0.046","ry":"90","rx":"0"},"lefthand":{"px":"0.875","py":"1.947","pz":"-0.142","ry":"0","rx":"2.5"},"sword":{"px":"-0.875","py":"1.846","pz":"3.607","ry":"0","rx":"2.5"},"righthand":{"px":"-0.875","py":"2.007","pz":"-0.076","ry":"0","rx":"2.5"},"chest":{"px":"-0.375","py":"2.737","pz":"0.393","ry":"0","rx":"2.5"}}}
+data modify storage animated_java:temp entry.data merge value {"locators":{"soup":{"px":"0.844","py":"1.965","pz":"0.046","ry":"90","rx":"0"},"lefthand":{"px":"0.875","py":"1.947","pz":"-0.142","ry":"0","rx":"2.5"},"sword":{"px":"-0.875","py":"1.846","pz":"3.607","ry":"0","rx":"2.5"},"righthand":{"px":"-0.875","py":"2.007","pz":"-0.076","ry":"0","rx":"2.5"},"chest":{"px":"-0.375","py":"2.737","pz":"0.393","ry":"0","rx":"2.5"}}}
+# Data Manager: Prepare for Read / Write
+execute store result storage animated_java:temp args.id int 1 run scoreboard players get @s aj.id
 # Data Manager: Write
 function animated_java:global/data_manager/write with storage animated_java:temp args
+$execute unless entity @s[tag=aj.transforms_only] as $(chest) positioned ^-0.375 ^2.7373267979 ^0.3933046296 rotated ~0 ~2.5 as abb5e532-ba94-447e-8b50-7b463008a14c at @s rotated as @s run function aj:wander/animations/drink_potion_slow/zzz/frames/43_locator_chest

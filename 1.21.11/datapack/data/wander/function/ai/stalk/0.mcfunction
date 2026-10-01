@@ -1,5 +1,5 @@
-execute unless block ~ ~ ~ #wander:water_blocks run function wander:ai/animation_macro {move:'sneak_walk',idle:'sneak_idle'}
-execute if block ~ ~ ~ #wander:water_blocks run function wander:ai/animation_macro {move:'swim',idle:'swim_idle'}
+execute unless block ~ ~ ~ #wander:water_blocks run function wander:ai/anim_states/sneak
+execute if block ~ ~ ~ #wander:water_blocks run function wander:ai/anim_states/swim
 
 execute if data entity @s wander_target run attribute @s movement_speed base set 1.0
 execute unless data entity @s wander_target run attribute @s movement_speed base set 0.0
@@ -8,13 +8,15 @@ execute if function wander:ai/stalk/is_target_looking run attribute @s movement_
 
 
 execute unless entity @p[tag=wander.target,distance=0..30] unless function wander:ai/stalk/is_target_looking run scoreboard players set spawn_search_method wander.data 2
-execute unless entity @p[tag=wander.target,distance=0..30] unless function wander:ai/stalk/is_target_looking as @p[tag=wander.target] at @s run function wander:spawn_search/init
+execute unless entity @p[tag=wander.target,distance=0..30] unless function wander:ai/stalk/is_target_looking as @p[tag=wander.target] at @s rotated as @s run function wander:spawning/find_positions
 execute if entity @n[tag=wander.spawn_pos] run function wander:ai/pathfind_macro {target:'@n[tag=wander.spawn_pos]'}
 execute if entity @n[tag=wander.spawn_pos,distance=0..2] at @n[tag=wander.spawn_pos] run tp @s ~ ~ ~ ~ ~
 execute if entity @n[tag=wander.spawn_pos,distance=0..2] run kill @n[tag=wander.spawn_pos]
 
 execute if data entity @s wander_target run scoreboard players set 0.impatient wander.data 0
 execute unless data entity @s wander_target if entity @p[tag=wander.target,distance=0..30] unless function wander:ai/stalk/is_target_looking run scoreboard players add 0.impatient wander.data 1
+execute unless data entity @s wander_target if entity @p[tag=wander.target,distance=0..30,scores={wander.player_not_moving=200..}] unless function wander:ai/stalk/is_target_looking run scoreboard players add 0.impatient wander.data 1
+
 execute unless data entity @s wander_target if entity @p[tag=wander.target,distance=0..15] unless function wander:ai/stalk/is_target_looking run scoreboard players set ai wander.data 5
 
 execute if score 0.impatient wander.data matches 300.. if entity @p[tag=wander.target,distance=0..30] run scoreboard players set ai wander.data 5

@@ -1,8 +1,8 @@
 scoreboard players set ai wander.data -1
-execute store result score 0.attack_chance wander.encounters run random value 0..15
+execute store result score 0.attack_chance wander.encounters run random value 0..8
 scoreboard players set timer wander.data 200
 
 execute if entity @s[tag=wander.force_attack] run return run function wander:ai/to_attack
 
-execute if score @s wander.encounters <= 0.attack_chance wander.encounters as @n[tag=wander.ai] at @s rotated as @s run function wander:ai/stalk/drink_potion
+execute if score @s wander.encounters <= 0.attack_chance wander.encounters as abb5e532-ba94-447e-8b50-7b463008a14c at @s rotated as @s run function wander:ai/stalk/drink_potion
 execute if score @s wander.encounters > 0.attack_chance wander.encounters run function wander:ai/to_attack

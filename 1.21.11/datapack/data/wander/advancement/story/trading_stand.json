@@ -28,5 +28,11 @@
         [
             "a"
         ]
-    ]
+    ],
+    "rewards": {
+        "recipes": [
+            "wander:clock/clock1",
+            "wander:clock/clock2"
+        ]
+    }
 }

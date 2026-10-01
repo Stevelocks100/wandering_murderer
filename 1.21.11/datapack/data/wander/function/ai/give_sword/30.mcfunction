@@ -1,7 +1,13 @@
-execute unless block ~ ~ ~ #wander:water_blocks run function wander:ai/animation_macro {idle:'angry_idle',move:'angry_run'}
-execute if block ~ ~ ~ #wander:water_blocks run function wander:ai/animation_macro {idle:'swim_idle',move:'swim'}
 
-#execute if score bad_omen wander.data matches 1 as @n[tag=aj.wander.root] run function wander:ai/slaughter/set_variants
+schedule function wander:place_dimension 15s
+
+execute unless block ~ ~ ~ #wander:water_blocks run function wander:ai/anim_states/angry_no_sword
+execute if block ~ ~ ~ #wander:water_blocks run function wander:ai/anim_states/swim
+
+#execute if score bad_omen wander.data matches 1 as @n[tag=aj.wander.root,type=item_display] run function wander:ai/slaughter/set_variants
+
+
+execute if entity @p[tag=wander.potential_target] run scoreboard players set 30.no_player wander.data 0
 
 execute unless entity @p[tag=wander.potential_target] run scoreboard players add 30.no_player wander.data 1
 execute if score 30.no_player wander.data matches 200.. run function wander:ai/despawn

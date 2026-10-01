@@ -33,4 +33,4 @@ tag @s add wander.current_entity
 kill @e[tag=wander.trading_stand_spawn,tag=!wander.current_entity,distance=0..0.5]
 tag @s add wander.current_entity
 
-execute as @n[tag=wander.head_collection_location,distance=0..20] at @s rotated as @s run function wander:head_collection
+execute as @n[tag=wander.head_collection_location,distance=0..20] at @s rotated as @s run function wander:trading_stand/head_collection

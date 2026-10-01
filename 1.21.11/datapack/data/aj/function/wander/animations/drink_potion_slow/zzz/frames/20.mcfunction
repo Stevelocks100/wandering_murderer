@@ -43,7 +43,9 @@ $data merge entity $(leftleg) {transformation: [-1f,0f,0f,0.25f,0f,0.9995f,-0.03
 $data merge entity $(rightfoot) {transformation: [-1f,0f,0f,-0.2812f,0f,0.9998f,0.0219f,0.1629f,0f,0.0219f,-0.9998f,-0.288f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(rightlowerleg) {transformation: [-1f,0f,0f,-0.2812f,0f,1f,0f,1.2722f,0f,0f,-1f,-0.1314f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(rightleg) {transformation: [-1f,0f,0f,-0.25f,0f,1f,0f,2.3347f,0f,0f,-1f,-0.1054f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
-$execute unless entity @s[tag=aj.transforms_only] as $(chest) positioned ^-0.375 ^2.7753197381 ^0.3267667153 rotated ~0 ~-5.5177166524 run function aj:wander/animations/drink_potion_slow/zzz/frames/20_locator_chest
-data modify storage animated_java:temp entry.data merge value {"cameras":{},"locators":{"soup":{"px":"0.485","py":"4.625","pz":"0.259","ry":"85.524","rx":"22.079"},"lefthand":{"px":"0.491","py":"4.723","pz":"0.423","ry":"184.059","rx":"20.095"},"sword":{"px":"1.852","py":"4.321","pz":"2.261","ry":"297.227","rx":"-5.448"},"righthand":{"px":"-1.412","py":"3.971","pz":"0.581","ry":"297.227","rx":"-5.448"},"chest":{"px":"-0.375","py":"2.775","pz":"0.327","ry":"0","rx":"-5.518"}}}
+data modify storage animated_java:temp entry.data merge value {"locators":{"soup":{"px":"0.485","py":"4.625","pz":"0.259","ry":"85.524","rx":"22.079"},"lefthand":{"px":"0.491","py":"4.723","pz":"0.423","ry":"184.059","rx":"20.095"},"sword":{"px":"1.852","py":"4.321","pz":"2.261","ry":"297.227","rx":"-5.448"},"righthand":{"px":"-1.412","py":"3.971","pz":"0.581","ry":"297.227","rx":"-5.448"},"chest":{"px":"-0.375","py":"2.775","pz":"0.327","ry":"0","rx":"-5.518"}}}
+# Data Manager: Prepare for Read / Write
+execute store result storage animated_java:temp args.id int 1 run scoreboard players get @s aj.id
 # Data Manager: Write
 function animated_java:global/data_manager/write with storage animated_java:temp args
+$execute unless entity @s[tag=aj.transforms_only] as $(chest) positioned ^-0.375 ^2.7753197381 ^0.3267667153 rotated ~0 ~-5.5177166524 run function aj:wander/animations/drink_potion_slow/zzz/frames/20_locator_chest

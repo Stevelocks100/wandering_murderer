@@ -12,7 +12,7 @@ function animated_java:global/data_manager/read with storage animated_java:temp 
 data modify storage animated_java:temp entry.data.uuids append from storage animated_java:gu out
 data modify storage animated_java:temp entry.data.root_uuid set from storage animated_java:gu out
 data modify storage animated_java:temp entry.data.blueprint_id set value "aj:wander_chest"
-data modify storage animated_java:temp entry.data.rig_hash set value "c28898401a25770b4a5e349a4c4dd1b560c2280d96f913e1a6d35a7f2b467906"
+data modify storage animated_java:temp entry.data.rig_hash set value "8b488adf21525bafdad6b8e489ee6862aed5b3d65c59a2fd9284b800debd35e1"
 tp @s ~ ~ ~ ~ ~
 summon minecraft:interaction ^0 ^-0.125 ^0 {Tags:["","aj.global.bone.root.child","aj.global.bone.root.child.locator","aj.global.bone.root.decendant","aj.global.bone.root.decendant.locator","aj.global.bone.root.tree","aj.global.entity","aj.global.locator","aj.global.node","aj.global.node.hitbox","aj.new","aj.wander_chest.bone.root.child","aj.wander_chest.bone.root.child.locator","aj.wander_chest.bone.root.decendant","aj.wander_chest.bone.root.decendant.locator","aj.wander_chest.bone.root.tree","aj.wander_chest.entity","aj.wander_chest.locator","aj.wander_chest.locator.hitbox","aj.wander_chest.node","aj.wander_chest.node.hitbox"]}
 execute as @n[ type=minecraft:interaction, tag=aj.wander_chest.locator.hitbox, tag=aj.new, distance=..2 ] run function aj:wander_chest/zzz/summon/as_locator/hitbox
@@ -44,4 +44,3 @@ execute on passengers run data modify entity @s teleport_duration set value 1
 function aj:wander_chest/zzz/summon/zzz/1 with storage animated_java:temp entry.data.locators.hitbox
 tag @s remove aj.new
 execute on passengers run tag @s remove aj.new
-execute on passengers run ride @s dismount

@@ -1,2 +1,2 @@
-function wander:ai/animation_macro {move:'angry_run',idle:'angry_idle'}
+function wander:ai/anim_states/angry_no_sword
 attribute @s movement_speed base set 0

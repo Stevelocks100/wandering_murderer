@@ -1,11 +1,11 @@
 execute if entity @n[tag=wander.jenga_checked,distance=0..0.2] run kill
 execute if entity @n[tag=wander.jenga_checked,distance=0..0.2] run return 0
 execute store result score tower_collapse_count wander.temp if entity @n[tag=wander.tower_collapse]
-execute if score tower_collapse_count wander.temp matches ..200 positioned ~1 ~ ~ unless block ~ ~ ~ #wander:can_pass run summon marker ~ ~ ~ {Tags:["wander.tower_collapse"]}
-execute if score tower_collapse_count wander.temp matches ..200 positioned ~-1 ~ ~ unless block ~ ~ ~ #wander:can_pass run summon marker ~ ~ ~ {Tags:["wander.tower_collapse"]}
-execute positioned ~ ~1 ~ unless block ~ ~ ~ #wander:can_pass run summon marker ~ ~ ~ {Tags:["wander.tower_collapse"]}
-execute if score tower_collapse_count wander.temp matches ..200 positioned ~ ~ ~1 unless block ~ ~ ~ #wander:can_pass run summon marker ~ ~ ~ {Tags:["wander.tower_collapse"]}
-execute if score tower_collapse_count wander.temp matches ..200 positioned ~ ~ ~-1 unless block ~ ~ ~ #wander:can_pass run summon marker ~ ~ ~ {Tags:["wander.tower_collapse"]}
+execute if score tower_collapse_count wander.temp matches ..200 positioned ~1 ~ ~ unless block ~ ~ ~ #wander:can_pass run summon marker ~ ~ ~ {Tags:["wander.tower_collapse","wander.entity"]}
+execute if score tower_collapse_count wander.temp matches ..200 positioned ~-1 ~ ~ unless block ~ ~ ~ #wander:can_pass run summon marker ~ ~ ~ {Tags:["wander.tower_collapse","wander.entity"]}
+execute positioned ~ ~1 ~ unless block ~ ~ ~ #wander:can_pass run summon marker ~ ~ ~ {Tags:["wander.tower_collapse","wander.entity"]}
+execute if score tower_collapse_count wander.temp matches ..200 positioned ~ ~ ~1 unless block ~ ~ ~ #wander:can_pass run summon marker ~ ~ ~ {Tags:["wander.tower_collapse","wander.entity"]}
+execute if score tower_collapse_count wander.temp matches ..200 positioned ~ ~ ~-1 unless block ~ ~ ~ #wander:can_pass run summon marker ~ ~ ~ {Tags:["wander.tower_collapse","wander.entity"]}
 
 scoreboard players add max_jenga wander.temp 1
 

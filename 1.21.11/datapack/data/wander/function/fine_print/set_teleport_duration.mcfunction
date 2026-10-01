@@ -1,7 +1,15 @@
 # Generated with MC-Build
 
-execute store result storage animated_java:temp args.id int 1 run scoreboard players get @s aj.id
-function animated_java:global/data_manager/read with storage animated_java:temp args
-data modify storage wander:fine_print macro.teleport set from storage animated_java:temp entry.data.uuids_by_name
-$data modify storage wander:fine_print macro.teleport.duration set value $(duration)
-function wander:fine_print/zzz/17 with storage wander:fine_print macro.teleport
+# function wander:temp_data_manager
+# data modify storage wander:fine_print macro.teleport set from storage wander:fine_print temp_entry.data.uuids_by_name
+# $data modify storage wander:fine_print macro.teleport.duration set value $(duration)
+$function aj:fine_print/as_node {name:"item_display",command:"data modify entity @s teleport_duration set value $(duration)"}
+$function aj:fine_print/as_node {name:"mas",command:"data modify entity @s teleport_duration set value $(duration)"}
+$function aj:fine_print/as_node {name:"head",command:"data modify entity @s teleport_duration set value $(duration)"}
+$function aj:fine_print/as_node {name:"right_arm",command:"data modify entity @s teleport_duration set value $(duration)"}
+$function aj:fine_print/as_node {name:"left_arm",command:"data modify entity @s teleport_duration set value $(duration)"}
+$function aj:fine_print/as_node {name:"green_right_arm",command:"data modify entity @s teleport_duration set value $(duration)"}
+$function aj:fine_print/as_node {name:"green_left_arm",command:"data modify entity @s teleport_duration set value $(duration)"}
+$function aj:fine_print/as_node {name:"torso",command:"data modify entity @s teleport_duration set value $(duration)"}
+$function aj:fine_print/as_node {name:"right_leg",command:"data modify entity @s teleport_duration set value $(duration)"}
+$function aj:fine_print/as_node {name:"left_leg",command:"data modify entity @s teleport_duration set value $(duration)"}

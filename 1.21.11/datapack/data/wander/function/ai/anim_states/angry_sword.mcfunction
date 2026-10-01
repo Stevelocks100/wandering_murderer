@@ -1,0 +1,3 @@
+# {move:'angry_run_sword',idle:'angry_idle'}
+execute if score @s wander.motion1 matches 1 as @n[tag=aj.wander.root,type=item_display] unless entity @s[tag=aj.wander.animation.angry_run_sword.playing] run function aj:wander/animations/angry_run_sword/tween {to_frame:0,duration:2}
+execute if score @s wander.motion1 matches 0 as @n[tag=aj.wander.root,type=item_display] unless entity @s[tag=aj.wander.animation.angry_idle.playing] run function aj:wander/animations/angry_idle/tween {to_frame:0,duration:2}

@@ -2,4 +2,4 @@
 execute if entity @s[tag=aj.wander_chest.animation.idle.playing] run function aj:wander_chest/animations/idle/zzz/on_tick
 execute if entity @s[tag=aj.wander_chest.animation.open.playing] run function aj:wander_chest/animations/open/zzz/on_tick
 function aj:wander_chest/root/on_tick/transform_floating_entities
-function aj:wander_chest/root/zzz/0 with storage animated_java:temp entry.data.uuids_by_name
+execute on passengers run rotate @s ~ ~

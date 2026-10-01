@@ -37,7 +37,9 @@ $data merge entity $(hugeasssword2) {transformation: [3.4339f,1.8804f,0.114f,-0.
 $data merge entity $(belt) {transformation: [-0.3343f,0.3458f,-0.8767f,-0.0112f,0.3257f,0.9153f,0.2368f,1.1347f,0.8844f,-0.2064f,-0.4186f,-0.6877f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(torn_part) {transformation: [-0.7329f,0.2101f,-0.6471f,-0.1605f,-0.0861f,0.9149f,0.3945f,0.8765f,0.6749f,0.3449f,-0.6524f,-0.5651f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(lowerbody) {transformation: [-0.7329f,0.0057f,-0.6803f,0.0039f,-0.0861f,0.9911f,0.1011f,0.3867f,0.6749f,0.1327f,-0.7259f,-0.5937f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
-data modify storage animated_java:temp entry.data merge value {"cameras":{},"locators":{"soup":{"px":"1.712","py":"0.579","pz":"-1.799","ry":"356.397","rx":"12.715"},"lefthand":{"px":"1.652","py":"0.459","pz":"-1.839","ry":"287.629","rx":"-57.982"},"sword":{"px":"2.975","py":"-0.434","pz":"-0.135","ry":"267.222","rx":"12.215"},"righthand":{"px":"-0.625","py":"0.346","pz":"0.039","ry":"267.222","rx":"12.215"},"chest":{"px":"0.099","py":"0.85","pz":"-0.084","ry":"295.524","rx":"13.7"}}}
+data modify storage animated_java:temp entry.data merge value {"locators":{"soup":{"px":"1.712","py":"0.579","pz":"-1.799","ry":"356.397","rx":"12.715"},"lefthand":{"px":"1.652","py":"0.459","pz":"-1.839","ry":"287.629","rx":"-57.982"},"sword":{"px":"2.975","py":"-0.434","pz":"-0.135","ry":"267.222","rx":"12.215"},"righthand":{"px":"-0.625","py":"0.346","pz":"0.039","ry":"267.222","rx":"12.215"},"chest":{"px":"0.099","py":"0.85","pz":"-0.084","ry":"295.524","rx":"13.7"}}}
+# Data Manager: Prepare for Read / Write
+execute store result storage animated_java:temp args.id int 1 run scoreboard players get @s aj.id
 # Data Manager: Write
 function animated_java:global/data_manager/write with storage animated_java:temp args
 execute unless entity @s[tag=aj.transforms_only] run function aj:wander/variants/soup_on/apply

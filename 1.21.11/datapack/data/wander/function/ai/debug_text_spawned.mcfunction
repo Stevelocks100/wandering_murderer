@@ -26,11 +26,11 @@ execute if score ai wander.data matches 0 run data modify storage wander:temp de
 execute if score ai wander.data matches 0 run data modify storage wander:temp debug append value {underlined:true,score:{name:"0.impatient",objective:"wander.data"}}
 execute if score ai wander.data matches 0 run data modify storage wander:temp debug append value " < 300"
 
-execute if score ai wander.data matches 0 if data entity @n[tag=wander.ai,type=wandering_trader,distance=0..] wander_target run data modify storage wander:temp debug append value ", Moving"
+execute if score ai wander.data matches 0 if data entity @n[tag=wander.ai,type=wandering_trader,x=0] wander_target run data modify storage wander:temp debug append value ", Moving"
 
 
 scoreboard players set looked_at wander.data 0
-execute at @n[tag=wander.ai] if function wander:ai/stalk/is_target_looking run scoreboard players set looked_at wander.data 1
+execute at abb5e532-ba94-447e-8b50-7b463008a14c if function wander:ai/stalk/is_target_looking run scoreboard players set looked_at wander.data 1
 
 execute if score ai wander.data matches 0 run data modify storage wander:temp debug append value ", Facing: "
 execute if score ai wander.data matches 0 run data modify storage wander:temp debug append value {underlined:true,score:{name:"looked_at",objective:"wander.data"}}
@@ -39,14 +39,14 @@ execute if score ai wander.data matches 0 run data modify storage wander:temp de
 execute if score ai wander.data matches 1 run data modify storage wander:temp debug append value ", Standoff: "
 execute if score ai wander.data matches 1 run data modify storage wander:temp debug append value {underlined:true,score:{name:"standoff",objective:"wander.data"}}
 
-execute if score ai wander.data matches 20..26 if entity @n[tag=wander.ai,type=wandering_trader,distance=0..,tag=wander.force_kidnap] run data modify storage wander:temp debug append value ", Kidnap"
+execute if score ai wander.data matches 20..26 if entity @n[tag=wander.ai,type=wandering_trader,x=0,tag=wander.force_kidnap] run data modify storage wander:temp debug append value ", Kidnap"
 
 execute if score @s wander.song matches 0.. run data modify storage wander:temp debug append value ", Phase: "
 execute if score @s wander.song matches 0.. run data modify storage wander:temp debug append value {underlined:true,score:{name:"current_phase",objective:"wander.song"}}
 
 
-execute if entity @n[tag=wander.gunpowder,type=armor_stand,distance=0..] if score ai wander.data matches 20..21 run data modify storage wander:temp debug append value ", Gunpowder: "
-execute if entity @n[tag=wander.gunpowder,type=armor_stand,distance=0..] if score ai wander.data matches 20..21 run data modify storage wander:temp debug append value {underlined:true,score:{name:"gunpowder_count",objective:"wander.data"}}
+execute if entity @n[tag=wander.gunpowder,type=armor_stand,x=0] if score ai wander.data matches 20..21 run data modify storage wander:temp debug append value ", Gunpowder: "
+execute if entity @n[tag=wander.gunpowder,type=armor_stand,x=0] if score ai wander.data matches 20..21 run data modify storage wander:temp debug append value {underlined:true,score:{name:"gunpowder_count",objective:"wander.data"}}
 
 
 execute if score ai wander.data matches 21 unless score bad_omen wander.data matches 1 run data modify storage wander:temp debug append value ", Swipes: "
@@ -80,9 +80,9 @@ execute if score ai wander.data matches 22 run data modify storage wander:temp d
 
 
 
-execute at @n[tag=wander.ai] run particle minecraft:witch ~ ~10 ~ 0.5 2 0.5 0 10 force @s[distance=0..100]
-data modify storage wander:temp destination.x set from entity @n[tag=wander.ai,type=wandering_trader,distance=0..] wander_target[0]
-data modify storage wander:temp destination.y set from entity @n[tag=wander.ai,type=wandering_trader,distance=0..] wander_target[1]
-data modify storage wander:temp destination.z set from entity @n[tag=wander.ai,type=wandering_trader,distance=0..] wander_target[2]
+execute at abb5e532-ba94-447e-8b50-7b463008a14c run particle minecraft:witch ~ ~10 ~ 0.5 2 0.5 0 10 force @s[distance=0..100]
+data modify storage wander:temp destination.x set from entity @n[tag=wander.ai,type=wandering_trader,x=0] wander_target[0]
+data modify storage wander:temp destination.y set from entity @n[tag=wander.ai,type=wandering_trader,x=0] wander_target[1]
+data modify storage wander:temp destination.z set from entity @n[tag=wander.ai,type=wandering_trader,x=0] wander_target[2]
 
-execute if data entity @n[tag=wander.ai,type=wandering_trader,distance=0..] wander_target run function wander:ai/debug_text_spawned_target with storage wander:temp destination
+execute if data entity @n[tag=wander.ai,type=wandering_trader,x=0] wander_target run function wander:ai/debug_text_spawned_target with storage wander:temp destination

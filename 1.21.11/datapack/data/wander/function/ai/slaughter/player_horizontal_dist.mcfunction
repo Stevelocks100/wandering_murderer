@@ -1,5 +1,5 @@
-execute store result score wander_x wander.temp run data get entity @n[tag=wander.ai] Pos[0] 1
-execute store result score wander_z wander.temp run data get entity @n[tag=wander.ai] Pos[2] 1
+execute store result score wander_x wander.temp run data get entity abb5e532-ba94-447e-8b50-7b463008a14c Pos[0] 1
+execute store result score wander_z wander.temp run data get entity abb5e532-ba94-447e-8b50-7b463008a14c Pos[2] 1
 
 execute store result score player_x wander.temp run data get entity @p[tag=wander.target] Pos[0] 1
 execute store result score player_z wander.temp run data get entity @p[tag=wander.target] Pos[2] 1

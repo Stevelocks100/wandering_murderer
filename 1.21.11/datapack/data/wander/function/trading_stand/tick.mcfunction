@@ -1,9 +1,14 @@
 execute if score trading_stand_found wander.data matches 1 unless entity @s[tag=wander.trading_stand_found] run return run function wander:trading_stand/abandoned
-execute if score trading_stand_found wander.data matches 0 run tag @s add wander.trading_stand_found
+execute if score trading_stand_found wander.data matches 0 run function wander:trading_stand/register_stand
+
+
+
 scoreboard players set trading_stand_found wander.data 1
 execute as @a[distance=0..20,tag=!wander.near_trading_stand] at @s run function wander:trading_stand/nearby
 execute as @a[tag=wander.near_trading_stand] at @s unless entity @n[tag=wander.trading_stand_spawn,distance=0..21] run function wander:trading_stand/far_away
 kill @e[type=tnt,distance=0..25,nbt={fuse:1s}]
+
+execute as @a[tag=wander.near_trading_stand] at @s run function wander:trading_stand/shift_spam
 
 execute as @e[type=!#milk:command_entities,distance=0..22,type=!wandering_trader,type=!villager,type=!trader_llama] at @s run function wander:trading_stand/push_mob_away
 

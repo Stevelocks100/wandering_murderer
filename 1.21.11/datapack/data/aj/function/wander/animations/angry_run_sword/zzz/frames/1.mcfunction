@@ -43,7 +43,9 @@ $data merge entity $(leftleg) {transformation: [-0.9948f,-0.093f,-0.042f,0.2897f
 $data merge entity $(rightfoot) {transformation: [-0.9698f,0.0599f,0.2365f,-0.4656f,0.1513f,0.9083f,0.3901f,0.3806f,-0.1914f,0.4141f,-0.8899f,-0.7528f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(rightlowerleg) {transformation: [-0.9698f,0.0599f,0.2365f,-0.4354f,0.1513f,0.9083f,0.3901f,1.3283f,-0.1914f,0.4141f,-0.8899f,-0.1567f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(rightleg) {transformation: [-0.9188f,0.2447f,0.3097f,-0.1659f,0.2044f,0.9662f,-0.157f,2.2908f,-0.3376f,-0.0809f,-0.9378f,-0.1627f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
-data modify storage animated_java:temp entry.data merge value {"cameras":{},"locators":{"soup":{"px":"-1.085","py":"3.057","pz":"0.943","ry":"183.157","rx":"-15.99"},"lefthand":{"px":"-1.148","py":"2.878","pz":"0.92","ry":"325.823","rx":"-70.181"},"sword":{"px":"-0.773","py":"6.774","pz":"1.882","ry":"326.385","rx":"-73.904"},"righthand":{"px":"-1.339","py":"3.231","pz":"1.03","ry":"326.385","rx":"-73.904"},"chest":{"px":"-0.336","py":"2.492","pz":"0.017","ry":"36.041","rx":"43.948"}}}
+data modify storage animated_java:temp entry.data merge value {"locators":{"soup":{"px":"-1.085","py":"3.057","pz":"0.943","ry":"183.157","rx":"-15.99"},"lefthand":{"px":"-1.148","py":"2.878","pz":"0.92","ry":"325.823","rx":"-70.181"},"sword":{"px":"-0.773","py":"6.774","pz":"1.882","ry":"326.385","rx":"-73.904"},"righthand":{"px":"-1.339","py":"3.231","pz":"1.03","ry":"326.385","rx":"-73.904"},"chest":{"px":"-0.336","py":"2.492","pz":"0.017","ry":"36.041","rx":"43.948"}}}
+# Data Manager: Prepare for Read / Write
+execute store result storage animated_java:temp args.id int 1 run scoreboard players get @s aj.id
 # Data Manager: Write
 function animated_java:global/data_manager/write with storage animated_java:temp args
 execute unless entity @s[tag=aj.transforms_only] if score bad_omen wander.data matches 1 run function aj:wander/variants/sword_hand_slaughter/apply

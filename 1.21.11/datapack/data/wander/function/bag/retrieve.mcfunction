@@ -5,7 +5,7 @@ execute if items entity @s weapon.mainhand *[item_model="wander:bag"] run tag @s
 tag @s[tag=!wander.mainhand_bag] add wander.offhand_bag
 
 execute rotated as @s positioned 0.0 0.0 0.0 positioned ^ ^ ^1.4 summon marker run function wander:bag/get_motion
-summon item_display ~ ~ ~ {Tags:["wander.temp_bag"]}
+summon item_display ~ ~ ~ {Tags:["wander.temp_bag","wander.entity"]}
 execute if entity @s[tag=wander.mainhand_bag] run item replace entity @n[tag=wander.temp_bag,distance=0..0.1,type=item_display] contents from entity @s weapon.mainhand
 execute if entity @s[tag=wander.offhand_bag] run item replace entity @n[tag=wander.temp_bag,distance=0..0.1,type=item_display] contents from entity @s weapon.offhand
 

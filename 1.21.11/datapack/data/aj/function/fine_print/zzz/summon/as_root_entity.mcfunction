@@ -12,7 +12,7 @@ function animated_java:global/data_manager/read with storage animated_java:temp 
 data modify storage animated_java:temp entry.data.uuids append from storage animated_java:gu out
 data modify storage animated_java:temp entry.data.root_uuid set from storage animated_java:gu out
 data modify storage animated_java:temp entry.data.blueprint_id set value "aj:fine_print"
-data modify storage animated_java:temp entry.data.rig_hash set value "7d92ea1725dec7b316c53fe0fbf00c51ae781685b7b254f25109a91b069a648d"
+data modify storage animated_java:temp entry.data.rig_hash set value "07e9a6186503000e59f6257e28d1af2d8140e51cf0eddfabe7ba67f4072688a2"
 tp @s ~ ~ ~ ~ ~
 summon minecraft:interaction ^0 ^0 ^0 {Tags:["","aj.fine_print.bone.root.child","aj.fine_print.bone.root.child.locator","aj.fine_print.bone.root.decendant","aj.fine_print.bone.root.decendant.locator","aj.fine_print.bone.root.tree","aj.fine_print.entity","aj.fine_print.locator","aj.fine_print.locator.hitbox","aj.fine_print.node","aj.fine_print.node.hitbox","aj.global.bone.root.child","aj.global.bone.root.child.locator","aj.global.bone.root.decendant","aj.global.bone.root.decendant.locator","aj.global.bone.root.tree","aj.global.entity","aj.global.locator","aj.global.node","aj.global.node.hitbox","aj.new"]}
 execute as @n[ type=minecraft:interaction, tag=aj.fine_print.locator.hitbox, tag=aj.new, distance=..5 ] run function aj:fine_print/zzz/summon/as_locator/hitbox

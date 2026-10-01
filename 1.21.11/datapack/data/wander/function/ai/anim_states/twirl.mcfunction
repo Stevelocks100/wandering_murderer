@@ -1,0 +1,1 @@
+execute as @n[tag=aj.wander.root,type=item_display] unless entity @s[tag=aj.wander.animation.twirl.playing] run function aj:wander/animations/twirl/tween {to_frame:0,duration:2}

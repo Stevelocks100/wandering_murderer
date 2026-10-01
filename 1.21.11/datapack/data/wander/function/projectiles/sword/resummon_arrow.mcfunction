@@ -1,4 +1,4 @@
-summon arrow ~ ~ ~ {Tags:["wander.sword_proj","new","wander.sword_proj_dont_explode"],item:{id:"minecraft:milk_bucket",count:1,components:{"item_model":"wander:empty"}},SoundEvent:"minecraft:intentionally_empty"}
+summon arrow ~ ~ ~ {Tags:["wander.sword_proj","new","wander.sword_proj_dont_explode","wander.entity"],item:{id:"minecraft:milk_bucket",count:1,components:{"item_model":"wander:empty"}},SoundEvent:"minecraft:intentionally_empty"}
 ride @s mount @n[tag=wander.sword_proj,tag=new]
 execute unless data entity @s data.Motion run tag @n[tag=wander.sword_proj,tag=new] remove new
 tag @s remove wander.sword_proj_display_landed

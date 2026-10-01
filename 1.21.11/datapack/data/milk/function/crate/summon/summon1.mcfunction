@@ -8,3 +8,5 @@ kill @n[tag=wander.temp]
 function milk:crate/summon/summon2 with storage milk:temp
 
 scoreboard players set @s milk.dropped 0
+
+execute unless score crate_count milk.temp matches 1.. run function milk:milk_schedule

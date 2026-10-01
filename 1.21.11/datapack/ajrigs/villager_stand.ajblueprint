@@ -1,7 +1,7 @@
 {
 	"meta": {
 		"format": "animated-java:format/blueprint",
-		"format_version": "1.10.0-beta.6",
+		"format_version": "1.10.0",
 		"uuid": "0a36dc87-a61f-4601-4897-a7449cd3f7e7",
 		"save_location": "/Users/School/Library/Application Support/minecraft/1.21.11/saves/week3 testing/datapacks/wanderingmurderer/ajrigs/villager_stand.ajblueprint",
 		"last_used_blueprint_id": "aj:fine_print"
@@ -17,7 +17,8 @@
 		"resource_pack": "/Users/School/Library/Application Support/minecraft/1.21.11/resourcepacks/wanderingmurderer",
 		"data_pack": "/Users/School/Library/Application Support/minecraft/1.21.11/saves/week3 testing/datapacks/wanderingmurderer",
 		"on_remove_function": "tag @a remove wander.fine_print.target",
-		"teleportation_duration": 4
+		"teleportation_duration": 4,
+		"use_entity_stacking": false
 	},
 	"elements": [
 		{
@@ -1065,6 +1066,7 @@
 			"rotation": [7.5, 0, 0],
 			"pivotOffset": [0, 0, 0],
 			"scale": [1, 1, 1],
+			"color": 8,
 			"visibility": true,
 			"locked": false,
 			"export": true,
@@ -1076,14 +1078,15 @@
 					"on_apply_function": "",
 					"billboard": "fixed",
 					"override_brightness": true,
-					"brightness_override": 15,
 					"enchanted": false,
 					"glowing": false,
 					"override_glow_color": false,
 					"glow_color": "#ffffff",
 					"invisible": false,
 					"shadow_radius": 0,
-					"shadow_strength": 1
+					"shadow_strength": 1,
+					"sky_brightness": 15,
+					"block_brightness": 15
 				},
 				"variants": {}
 			},
@@ -1144,16 +1147,20 @@
 					"on_apply_function": "",
 					"billboard": "fixed",
 					"override_brightness": true,
-					"brightness_override": 15,
 					"enchanted": false,
 					"glowing": false,
 					"override_glow_color": false,
 					"glow_color": "#ffffff",
 					"invisible": false,
 					"shadow_radius": 0,
-					"shadow_strength": 1
+					"shadow_strength": 1,
+					"sky_brightness": 15,
+					"block_brightness": 15
 				},
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -1184,16 +1191,20 @@
 					"on_apply_function": "",
 					"billboard": "fixed",
 					"override_brightness": true,
-					"brightness_override": 15,
 					"enchanted": false,
 					"glowing": false,
 					"override_glow_color": false,
 					"glow_color": "#ffffff",
 					"invisible": false,
 					"shadow_radius": 0,
-					"shadow_strength": 1
+					"shadow_strength": 1,
+					"sky_brightness": 15,
+					"block_brightness": 15
 				},
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -1224,16 +1235,20 @@
 					"on_apply_function": "",
 					"billboard": "fixed",
 					"override_brightness": true,
-					"brightness_override": 15,
 					"enchanted": false,
 					"glowing": false,
 					"override_glow_color": false,
 					"glow_color": "#ffffff",
 					"invisible": false,
 					"shadow_radius": 0,
-					"shadow_strength": 1
+					"shadow_strength": 1,
+					"sky_brightness": 15,
+					"block_brightness": 15
 				},
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -1264,16 +1279,20 @@
 					"on_apply_function": "",
 					"billboard": "fixed",
 					"override_brightness": true,
-					"brightness_override": 15,
 					"enchanted": false,
 					"glowing": false,
 					"override_glow_color": false,
 					"glow_color": "#ffffff",
 					"invisible": false,
 					"shadow_radius": 0,
-					"shadow_strength": 1
+					"shadow_strength": 1,
+					"sky_brightness": 15,
+					"block_brightness": 15
 				},
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -1304,16 +1323,20 @@
 					"on_apply_function": "",
 					"billboard": "fixed",
 					"override_brightness": true,
-					"brightness_override": 15,
 					"enchanted": false,
 					"glowing": false,
 					"override_glow_color": false,
 					"glow_color": "#ffffff",
 					"invisible": false,
 					"shadow_radius": 0,
-					"shadow_strength": 1
+					"shadow_strength": 1,
+					"sky_brightness": 15,
+					"block_brightness": 15
 				},
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -1344,16 +1367,20 @@
 					"on_apply_function": "",
 					"billboard": "fixed",
 					"override_brightness": true,
-					"brightness_override": 15,
 					"enchanted": false,
 					"glowing": false,
 					"override_glow_color": false,
 					"glow_color": "#ffffff",
 					"invisible": false,
 					"shadow_radius": 0,
-					"shadow_strength": 1
+					"shadow_strength": 1,
+					"sky_brightness": 15,
+					"block_brightness": 15
 				},
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -1384,16 +1411,20 @@
 					"on_apply_function": "",
 					"billboard": "fixed",
 					"override_brightness": true,
-					"brightness_override": 15,
 					"enchanted": false,
 					"glowing": false,
 					"override_glow_color": false,
 					"glow_color": "#ffffff",
 					"invisible": false,
 					"shadow_radius": 0,
-					"shadow_strength": 1
+					"shadow_strength": 1,
+					"sky_brightness": 15,
+					"block_brightness": 15
 				},
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -1424,16 +1455,20 @@
 					"on_apply_function": "",
 					"billboard": "fixed",
 					"override_brightness": true,
-					"brightness_override": 15,
 					"enchanted": false,
 					"glowing": false,
 					"override_glow_color": false,
 					"glow_color": "#ffffff",
 					"invisible": false,
 					"shadow_radius": 0,
-					"shadow_strength": 1
+					"shadow_strength": 1,
+					"sky_brightness": 15,
+					"block_brightness": 15
 				},
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -1464,16 +1499,20 @@
 					"on_apply_function": "",
 					"billboard": "fixed",
 					"override_brightness": true,
-					"brightness_override": 15,
 					"enchanted": false,
 					"glowing": false,
 					"override_glow_color": false,
 					"glow_color": "#ffffff",
 					"invisible": false,
 					"shadow_radius": 0,
-					"shadow_strength": 1
+					"shadow_strength": 1,
+					"sky_brightness": 15,
+					"block_brightness": 15
 				},
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -1504,16 +1543,20 @@
 					"on_apply_function": "",
 					"billboard": "fixed",
 					"override_brightness": true,
-					"brightness_override": 15,
 					"enchanted": false,
 					"glowing": false,
 					"override_glow_color": false,
 					"glow_color": "#ffffff",
 					"invisible": false,
 					"shadow_radius": 0,
-					"shadow_strength": 1
+					"shadow_strength": 1,
+					"sky_brightness": 15,
+					"block_brightness": 15
 				},
 				"variants": {}
+			},
+			"itemModelProperties": {
+				"tints": []
 			},
 			"children": [],
 			"reset": false,
@@ -2850,7 +2893,7 @@
 							"channel": "function",
 							"data_points": [
 								{
-									"function": "function animated_java:fine_print/animations/loop/play",
+									"function": "function aj:fine_print/animations/loop/play",
 									"execute_condition": "",
 									"repeat": false,
 									"repeat_frequency": 1
@@ -4858,7 +4901,7 @@
 							"channel": "function",
 							"data_points": [
 								{
-									"function": "function animated_java:fine_print/remove/this",
+									"function": "function aj:fine_print/remove/this",
 									"execute_condition": "if entity @s[tag=wander.fine_print.despawn]",
 									"repeat": false,
 									"repeat_frequency": 1
@@ -6203,12 +6246,12 @@
 							"channel": "rotation",
 							"data_points": [
 								{
-									"x": "-12.5",
+									"x": "2.5",
 									"y": "0",
 									"z": "0"
 								}
 							],
-							"uuid": "58804379-b369-9a02-8884-3aa978fc33ed",
+							"uuid": "6119a7d7-527d-b226-21b6-6abca95335ab",
 							"time": 0,
 							"color": -1,
 							"interpolation": "linear",
@@ -6224,7 +6267,7 @@
 									"z": "-1"
 								}
 							],
-							"uuid": "8f3ce308-9079-b687-f336-e67ecf3cda5a",
+							"uuid": "226587f2-3f7b-3abe-e7dd-c1eaa369c70c",
 							"time": 0,
 							"color": -1,
 							"interpolation": "linear",
@@ -7853,7 +7896,7 @@
 							"channel": "position",
 							"data_points": [
 								{
-									"x": "-2",
+									"x": "1",
 									"y": "0",
 									"z": "2"
 								}
@@ -7869,12 +7912,12 @@
 							"channel": "position",
 							"data_points": [
 								{
-									"x": "-2",
+									"x": "1",
 									"y": "0",
 									"z": "2"
 								}
 							],
-							"uuid": "586d7afc-3ef2-47ec-647c-c36c93253a4a",
+							"uuid": "e1a899d9-8e5b-0ad0-c747-a5adeac16b36",
 							"time": 3.05,
 							"color": -1,
 							"interpolation": "catmullrom",
@@ -8178,7 +8221,7 @@
 							"channel": "function",
 							"data_points": [
 								{
-									"function": "function animated_java:fine_print/remove/this",
+									"function": "function aj:fine_print/remove/this",
 									"execute_condition": "",
 									"repeat": false,
 									"repeat_frequency": 1
@@ -8254,6 +8297,23 @@
 							],
 							"uuid": "86695bdc-c78f-22a5-5651-58cd0497c0e1",
 							"time": 4.65,
+							"color": -1,
+							"interpolation": "linear",
+							"easing": "linear",
+							"easingArgs": []
+						},
+						{
+							"channel": "function",
+							"data_points": [
+								{
+									"function": "function aj:fine_print/remove/this",
+									"execute_condition": "",
+									"repeat": false,
+									"repeat_frequency": 1
+								}
+							],
+							"uuid": "085fcab5-a7b4-5d23-aba0-fd5b15018192",
+							"time": 6.15,
 							"color": -1,
 							"interpolation": "linear",
 							"easing": "linear",
@@ -10020,7 +10080,7 @@
 							"channel": "function",
 							"data_points": [
 								{
-									"function": "playsound wander:fine_print.item_transform hostile @a[distance=0..] 0 -30 0 10.0 0.6 1.0",
+									"function": "playsound wander:fine_print.item_transform hostile @a[x=0] 0 -30 0 10.0 0.6 1.0",
 									"execute_condition": "",
 									"repeat": false,
 									"repeat_frequency": 1
@@ -10037,7 +10097,7 @@
 							"channel": "function",
 							"data_points": [
 								{
-									"function": "playsound minecraft:entity.wandering_trader.reappeared hostile @a[distance=0..] 0 -30 0 10.0 0.6 1.0",
+									"function": "playsound minecraft:entity.wandering_trader.reappeared hostile @a[x=0] 0 -30 0 10.0 0.6 1.0",
 									"execute_condition": "",
 									"repeat": false,
 									"repeat_frequency": 1
@@ -10410,7 +10470,7 @@
 							"channel": "function",
 							"data_points": [
 								{
-									"function": "function animated_java:fine_print/remove/this",
+									"function": "function aj:fine_print/remove/this",
 									"execute_condition": "",
 									"repeat": false,
 									"repeat_frequency": 1
@@ -10427,7 +10487,7 @@
 							"channel": "function",
 							"data_points": [
 								{
-									"function": "playsound wander:fine_print.item_transform hostile @a[distance=0..] 0 -30 0 10.0 0.6 1.0",
+									"function": "playsound wander:fine_print.item_transform hostile @a[x=0] 0 -30 0 10.0 0.6 1.0",
 									"execute_condition": "",
 									"repeat": false,
 									"repeat_frequency": 1
@@ -10444,7 +10504,7 @@
 							"channel": "function",
 							"data_points": [
 								{
-									"function": "playsound minecraft:entity.wandering_trader.yes hostile @a[distance=0..] 0 -30 0 10.0 0.6 1.0",
+									"function": "playsound minecraft:entity.wandering_trader.yes hostile @a[x=0] 0 -30 0 10.0 0.6 1.0",
 									"execute_condition": "",
 									"repeat": false,
 									"repeat_frequency": 1

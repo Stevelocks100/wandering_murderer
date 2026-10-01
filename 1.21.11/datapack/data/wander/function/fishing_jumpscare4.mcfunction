@@ -1,0 +1,1 @@
+scoreboard players set fishing_spawn wander.data 0

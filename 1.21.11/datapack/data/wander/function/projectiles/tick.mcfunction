@@ -1,6 +1,5 @@
 #sword
 
-execute as @e[tag=wander.ice_proj] at @s run function wander:projectiles/ice/tick
-execute as @e[tag=wander.sword_proj] at @s run function wander:projectiles/sword/tick
-execute if entity @n[tag=wander.gunpowder_proj] unless entity @n[tag=wander.gunpowder] run function wander:gunpowder/tick
-execute if entity @n[tag=wander.gunpowder] run function wander:gunpowder/tick
+execute if score ice_projectile_count wander.data matches 1.. if entity @s[tag=wander.ice_proj] run function wander:projectiles/ice/tick
+execute if score sword_projectile_count wander.data matches 1.. if entity @s[tag=wander.sword_proj] run function wander:projectiles/sword/tick
+

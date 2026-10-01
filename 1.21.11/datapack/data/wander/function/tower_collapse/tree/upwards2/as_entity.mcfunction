@@ -10,11 +10,11 @@ execute if predicate wander:lone_tower run return 0
 
 scoreboard players add highest_checks wander.temp 1
 
-execute positioned ~1 ~ ~ unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.collapse_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.collapse_detection","new"]}
-execute positioned ~-1 ~ ~ unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.collapse_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.collapse_detection","new"]}
-execute positioned ~ ~ ~1 unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.collapse_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.collapse_detection","new"]}
-execute positioned ~ ~ ~-1 unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.collapse_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.collapse_detection","new"]}
-execute positioned ~ ~1 ~ unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.collapse_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.collapse_detection","new"]}
+execute positioned ~1 ~ ~ unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.collapse_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.collapse_detection","new","wander.entity"]}
+execute positioned ~-1 ~ ~ unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.collapse_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.collapse_detection","new","wander.entity"]}
+execute positioned ~ ~ ~1 unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.collapse_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.collapse_detection","new","wander.entity"]}
+execute positioned ~ ~ ~-1 unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.collapse_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.collapse_detection","new","wander.entity"]}
+execute positioned ~ ~1 ~ unless block ~ ~ ~ #wander:can_pass unless entity @n[tag=wander.collapse_checked,distance=0..0.1] run summon marker ~ ~ ~ {Tags:["wander.collapse_detection","new","wander.entity"]}
 
 
 tag @s remove wander.collapse_detection

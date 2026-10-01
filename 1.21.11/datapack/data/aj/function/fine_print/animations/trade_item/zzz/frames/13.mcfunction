@@ -9,6 +9,8 @@ $data merge entity $(green_left_arm) {transformation: [-0.9572f,-0.3111f,-0.4101
 $data merge entity $(torso) {transformation: [-1.086f,-0.0129f,-0.0408f,-0.0016f,0.0087f,0.9478f,-0.5319f,1.3292f,0.0419f,-0.5318f,-0.9469f,0.0393f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(right_leg) {transformation: [-1.086f,-0.023f,-0.0361f,-0.1423f,0.0087f,0.7785f,-0.7584f,1.267f,0.0419f,-0.7581f,-0.7777f,0.107f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(left_leg) {transformation: [-1.086f,-0.023f,-0.0361f,0.1993f,0.0087f,0.7785f,-0.7584f,1.3295f,0.0419f,-0.7581f,-0.7777f,0.1355f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
-data modify storage animated_java:temp entry.data merge value {"cameras":{},"locators":{"locator":{"px":"-0.002","py":"1.904","pz":"-0.089","ry":"357.532","rx":"-29.302"},"hitbox":{"px":"-0","py":"0.493","pz":"0.255","ry":"357.691","rx":"-12.188"}}}
+data modify storage animated_java:temp entry.data merge value {"locators":{"locator":{"px":"-0.002","py":"1.904","pz":"-0.089","ry":"357.532","rx":"-29.302"},"hitbox":{"px":"-0","py":"0.493","pz":"0.255","ry":"357.691","rx":"-12.188"}}}
+# Data Manager: Prepare for Read / Write
+execute store result storage animated_java:temp args.id int 1 run scoreboard players get @s aj.id
 # Data Manager: Write
 function animated_java:global/data_manager/write with storage animated_java:temp args

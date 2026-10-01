@@ -11,5 +11,6 @@ execute on passengers if score @s milk.temp matches 2 run data modify entity @s 
 execute on passengers if score @s milk.temp matches 3 run data modify entity @s item.components."minecraft:item_model" set value "wander:splash3"
 execute on passengers if score @s milk.temp matches 4 run data modify entity @s item.components."minecraft:item_model" set value "wander:splash4"
 
-execute store result score random milk.puddle run random value 1..7
-execute if score do_fire_spawning milk.settings matches 1 if score random milk.puddle matches 3 run setblock ~ ~ ~ fire keep
+execute if score do_fire_spawning milk.settings matches 1 if predicate {"condition":"minecraft:random_chance","chance":0.1428571429} run setblock ~ ~ ~ fire keep
+
+execute unless score puddle_count milk.temp matches 1.. run function milk:puddle_schedule

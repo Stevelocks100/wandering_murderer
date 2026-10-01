@@ -6,3 +6,5 @@ execute store result storage milk:temp motion.translation double 0.0001 run rand
 execute store result storage milk:temp motion.size double 0.01 run random value 150..300
 
 function milk:summon_drop2 with storage milk:temp motion
+
+execute unless score droplet_count milk.temp matches 1.. run function milk:puddle_schedule

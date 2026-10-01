@@ -37,7 +37,9 @@ $data merge entity $(hugeasssword2) {transformation: [3.4953f,1.7662f,-0.0597f,-
 $data merge entity $(belt) {transformation: [-0.3428f,0.2934f,-0.8924f,-0.0226f,0.2719f,0.9403f,0.2047f,1.1417f,0.8992f,-0.1725f,-0.4021f,-0.681f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(torn_part) {transformation: [-0.7076f,0.2184f,-0.6721f,-0.1615f,-0.0873f,0.9168f,0.3898f,0.8759f,0.7013f,0.3344f,-0.6296f,-0.5605f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(lowerbody) {transformation: [-0.7076f,0.0062f,-0.7066f,0.0039f,-0.0873f,0.9915f,0.0961f,0.3867f,0.7013f,0.1296f,-0.701f,-0.5937f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
-data modify storage animated_java:temp entry.data merge value {"cameras":{},"locators":{"soup":{"px":"1.502","py":"0.37","pz":"-2.089","ry":"110.355","rx":"51.303"},"lefthand":{"px":"1.477","py":"0.368","pz":"-2.121","ry":"355.364","rx":"18.882"},"sword":{"px":"3.016","py":"-0.331","pz":"-0.198","ry":"266.068","rx":"9.898"},"righthand":{"px":"-0.608","py":"0.303","pz":"0.051","ry":"266.068","rx":"9.898"},"chest":{"px":"0.109","py":"0.84","pz":"-0.09","ry":"294.255","rx":"11.812"}}}
+data modify storage animated_java:temp entry.data merge value {"locators":{"soup":{"px":"1.502","py":"0.37","pz":"-2.089","ry":"110.355","rx":"51.303"},"lefthand":{"px":"1.477","py":"0.368","pz":"-2.121","ry":"355.364","rx":"18.882"},"sword":{"px":"3.016","py":"-0.331","pz":"-0.198","ry":"266.068","rx":"9.898"},"righthand":{"px":"-0.608","py":"0.303","pz":"0.051","ry":"266.068","rx":"9.898"},"chest":{"px":"0.109","py":"0.84","pz":"-0.09","ry":"294.255","rx":"11.812"}}}
+# Data Manager: Prepare for Read / Write
+execute store result storage animated_java:temp args.id int 1 run scoreboard players get @s aj.id
 # Data Manager: Write
 function animated_java:global/data_manager/write with storage animated_java:temp args
 execute unless entity @s[tag=aj.transforms_only] run function aj:wander/variants/item_off/apply

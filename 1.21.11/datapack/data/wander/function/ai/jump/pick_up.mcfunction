@@ -1,6 +1,6 @@
 scoreboard players set ai wander.data 20
 kill @n[tag=wander.sword_proj_display_landed]
 scoreboard players set jump_tick wander.data -12
-execute as @n[tag=aj.wander.root] run function aj:wander/variants/sword_hand/apply
+execute as @n[tag=aj.wander.root,type=item_display] run function aj:wander/variants/sword_hand/apply
 tag @s remove wander.threw_sword
 scoreboard players set break_out wander.data 0

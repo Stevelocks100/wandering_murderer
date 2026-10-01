@@ -3,7 +3,10 @@ scoreboard players add @s wander.killed_trader 1
 execute if score do_spawning milk.settings matches -1 run return 0
 
 execute if score do_slaughterer milk.settings matches 1 if predicate {"condition":"minecraft:entity_properties","entity":"this","predicate":{"effects":{"minecraft:bad_omen":{}}}} rotated ~ 0 positioned ^ ^20 ^6 if predicate wander:enough_height run return run function wander:existence/summon_slaughterer
-execute if score daytime wander.data matches 1.. rotated ~ 0 positioned ^ ^20 ^6 if predicate wander:enough_height run function wander:existence/summon_revenge
+
+execute if predicate {"condition":"minecraft:random_chance","chance":0.33} if score daytime wander.data matches 1.. rotated ~ 0 positioned ^ ^20 ^-8 if predicate wander:enough_height run scoreboard players set quiet_spawn wander.data 1
+execute if score daytime wander.data matches 1.. rotated ~ 0 if score quiet_spawn wander.data matches 1 positioned ^ ^ ^-8 if predicate wander:enough_height positioned over motion_blocking_no_leaves run function wander:existence/summon_revenge
+execute if score daytime wander.data matches 1.. rotated ~ 0 unless score quiet_spawn wander.data matches 1 positioned ^ ^20 ^6 if predicate wander:enough_height run function wander:existence/summon_revenge
 
 
 execute if score daytime wander.data matches -500.. run return 0

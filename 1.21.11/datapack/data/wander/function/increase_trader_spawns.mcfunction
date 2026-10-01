@@ -1,0 +1,5 @@
+execute if predicate {"condition":"minecraft:time_check","value":{"min":1000,"max":12000},"period":24000,clock:"minecraft:overworld"} run scoreboard players add random_trader wander.data 1
+execute if score daytime wander.data matches 100.. if predicate {"condition":"minecraft:time_check","value":{"min":1000,"max":12000},"period":24000,clock:"minecraft:overworld"} run scoreboard players add random_trader wander.data 10
+execute if score daytime wander.data matches -50..6 as @e[type=wandering_trader,tag=wander.increased_spawn] store result entity @s DespawnDelay int 1 run random value 5..60
+execute if score random_trader wander.data matches 40000.. run scoreboard players set random_trader wander.data 0
+execute if score random_trader wander.data matches 8 if predicate [{"condition":"minecraft:random_chance","chance":0.07},{"condition":"minecraft:time_check","value":{"min":1000,"max":12000},"period":24000,clock:"minecraft:overworld"}] as @r[gamemode=!spectator] at @s run function wander:summon_regular_trader_random

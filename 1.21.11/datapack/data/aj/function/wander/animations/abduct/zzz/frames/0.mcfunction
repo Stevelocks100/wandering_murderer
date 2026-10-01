@@ -47,7 +47,9 @@ $data merge entity $(sack_top) {transformation: [-0.04f,0f,0f,-0.0625f,0f,0.1f,0
 $data merge entity $(sack_main) {transformation: [-0.0583f,0f,0f,-0.0625f,0f,0.0583f,0f,-1.4875f,0f,0f,-0.0583f,0f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(blast_off1) {transformation: [0f,0f,0f,0f,0f,0f,0f,-2.5f,0f,0f,0f,0f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(blast_off2) {transformation: [0f,0f,0f,0f,0f,0f,0f,-2.5f,0f,0f,0f,0f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
-data modify storage animated_java:temp entry.data merge value {"cameras":{},"locators":{"soup":{"px":"0.306","py":"2.993","pz":"2.991","ry":"43.177","rx":"36.549"},"lefthand":{"px":"0.48","py":"2.935","pz":"3.044","ry":"108.273","rx":"-29.599"},"sword":{"px":"-4.391","py":"2.924","pz":"0.278","ry":"61.651","rx":"-17.763"},"righthand":{"px":"-1.3","py":"1.799","pz":"-1.389","ry":"61.651","rx":"-17.763"},"chest":{"px":"-0.49","py":"1.755","pz":"-0.107","ry":"56.5","rx":"50.038"},"sack":{"px":"-0.056","py":"-1.45","pz":"-0","ry":"0","rx":"0"}}}
+data modify storage animated_java:temp entry.data merge value {"locators":{"soup":{"px":"0.306","py":"2.993","pz":"2.991","ry":"43.177","rx":"36.549"},"lefthand":{"px":"0.48","py":"2.935","pz":"3.044","ry":"108.273","rx":"-29.599"},"sword":{"px":"-4.391","py":"2.924","pz":"0.278","ry":"61.651","rx":"-17.763"},"righthand":{"px":"-1.3","py":"1.799","pz":"-1.389","ry":"61.651","rx":"-17.763"},"chest":{"px":"-0.49","py":"1.755","pz":"-0.107","ry":"56.5","rx":"50.038"},"sack":{"px":"-0.056","py":"-1.45","pz":"-0","ry":"0","rx":"0"}}}
+# Data Manager: Prepare for Read / Write
+execute store result storage animated_java:temp args.id int 1 run scoreboard players get @s aj.id
 # Data Manager: Write
 function animated_java:global/data_manager/write with storage animated_java:temp args
 execute unless entity @s[tag=aj.transforms_only] run function aj:wander/variants/item_off/apply

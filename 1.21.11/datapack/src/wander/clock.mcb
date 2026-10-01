@@ -1,0 +1,234 @@
+<%%
+    prefix = "wander.clock"
+%%>
+
+function give {
+    block { with storage wander:temp
+        $give @s compass[custom_name={text:"Wander Pocket Watch",italic:false},item_model="wander:clock",item_name="Wander Pocket Watch",lodestone_tracker={target:{dimension:"minecraft:overworld",pos:$(stand_pos)},tracked:false},enchantment_glint_override=false,consumable={animation:"none",consume_seconds:99999999,has_consume_particles:false,sound:"intentionally_empty"}]
+    }
+}
+
+function get_days {
+    advancement revoke @s only wander:clock/get_days
+    
+
+    scoreboard players operation clock_time wander.data = trading_duration wander.data
+    scoreboard players add clock_time wander.data 24000
+    scoreboard players set 24000 wander.data 24000
+
+    scoreboard players operation clock_time wander.data /= 24000 wander.data
+
+    execute if score clock_time wander.data matches 8.. run scoreboard players set clock_time wander.data 7
+    execute if score clock_time wander.data matches ..-1 run scoreboard players set clock_time wander.data 0
+
+    execute if items entity @s weapon.mainhand compass[item_model="wander:clock"] run item modify entity @s weapon.mainhand {"function":"minecraft:set_custom_model_data","floats":{"values":[{"type":"minecraft:score","target":{"type":"minecraft:fixed","name":"clock_time"},"score":"wander.data","scale":1}],"mode":"replace_all"}}
+    execute if items entity @s weapon.offhand compass[item_model="wander:clock"] run item modify entity @s weapon.offhand {"function":"minecraft:set_custom_model_data","floats":{"values":[{"type":"minecraft:score","target":{"type":"minecraft:fixed","name":"clock_time"},"score":"wander.data","scale":1}],"mode":"replace_all"}}
+
+    # scoreboard players add clock_time wander.data 1
+    title @s times 0 40 20
+    execute if score clock_time wander.data matches 8.. run return run title @s actionbar ["More than 7 days until he shows up"]
+    execute if score clock_time wander.data matches 0 run return run title @s actionbar ["He is here."]
+
+    execute if score clock_time wander.data matches 1 run return run title @s actionbar [{score:{name:"clock_time",objective:"wander.data"}}," day until he shows up"]
+    title @s actionbar [{score:{name:"clock_time",objective:"wander.data"}}," days until he shows up"]
+}
+
+advancement get_days {
+	"criteria": {
+		"a": {
+			"trigger": "minecraft:using_item",
+			"conditions": {
+				"item": {
+					"items": "compass",
+					"components": {
+						"minecraft:item_model": "wander:clock"
+					}
+				}
+			}
+		}
+	},
+	"requirements": [
+		[
+			"a"
+		]
+	],
+	"rewards": {
+		"function": "wander:clock/get_days"
+	}
+}
+
+
+
+recipe clock1 {
+	"type": "minecraft:crafting_shaped",
+	"group": "wander:clock",
+	"category": "building",
+	"pattern": [
+		"ele",
+		"ece",
+		"eee"
+	],
+	"key": {
+		"e": [
+			"emerald"
+		],
+		"c": [
+			"minecraft:compass"
+		],
+		"l": [
+			"minecraft:clock"
+		]
+	},
+	"result": {
+        "id": "minecraft:compass",
+        "components": {
+            "minecraft:custom_name": {
+                "text": "Wander Pocket Watch",
+                "italic": false
+            },
+            "minecraft:item_model": "wander:clock",
+            "minecraft:item_name": "Wander Pocket Watch",
+            "minecraft:lodestone_tracker": {
+                "target": {
+                    "dimension": "minecraft:overworld",
+                    "pos": [
+                        99999999,
+                        99999999,
+                        99999999
+                    ]
+                },
+                "tracked": false
+            },
+            "minecraft:enchantment_glint_override": false,
+            "minecraft:consumable": {
+                "animation": "none",
+                "consume_seconds": 99999999,
+                "has_consume_particles": false,
+                "sound": "intentionally_empty"
+            }
+        }
+    }
+}
+
+recipe clock2 {
+	"type": "minecraft:crafting_shaped",
+	"group": "wander:clock",
+	"category": "building",
+	"pattern": [
+		"ece",
+		"ele",
+		"eee"
+	],
+	"key": {
+		"e": [
+			"emerald"
+		],
+		"c": [
+			"minecraft:compass"
+		],
+		"l": [
+			"minecraft:clock"
+		]
+	},
+	"result": {
+        "id": "minecraft:compass",
+        "components": {
+            "minecraft:custom_name": {
+                "text": "Wander Pocket Watch",
+                "italic": false
+            },
+            "minecraft:item_model": "wander:clock",
+            "minecraft:item_name": "Wander Pocket Watch",
+            "minecraft:lodestone_tracker": {
+                "target": {
+                    "dimension": "minecraft:overworld",
+                    "pos": [
+                        99999999,
+                        99999999,
+                        99999999
+                    ]
+                },
+                "tracked": false
+            },
+            "minecraft:enchantment_glint_override": false,
+            "minecraft:consumable": {
+                "animation": "none",
+                "consume_seconds": 99999999,
+                "has_consume_particles": false,
+                "sound": "intentionally_empty"
+            }
+        }
+    }
+}
+
+advancement set_location {
+	"criteria": {
+		"a": {
+			"trigger": "minecraft:tick",
+			"conditions": {
+				"player": {
+					"equipment": {
+						"mainhand": {
+							"items": "compass",
+							"components": {
+								"minecraft:lodestone_tracker": {
+									"target": {
+										"pos": [
+											99999999,
+											99999999,
+											99999999
+										],
+										"dimension": "minecraft:overworld"
+									},
+									"tracked": false
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"b": {
+			"trigger": "minecraft:tick",
+			"conditions": {
+				"player": {
+					"equipment": {
+						"offhand": {
+							"items": "compass",
+							"components": {
+								"minecraft:lodestone_tracker": {
+									"target": {
+										"pos": [
+											99999999,
+											99999999,
+											99999999
+										],
+										"dimension": "minecraft:overworld"
+									},
+									"tracked": false
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"requirements": [
+		[
+			"a",
+			"b"
+		]
+	],
+	"rewards": {
+		"function": "wander:clock/set_location"
+	}
+}
+
+function set_location {
+    advancement revoke @s only wander:clock/set_location
+    block { with storage wander:temp
+        $execute if items entity @s weapon.mainhand compass[item_model="wander:clock"] run item modify entity @s weapon.mainhand {"function":"minecraft:set_components","components":{"minecraft:lodestone_tracker":{"target":{"pos":$(stand_pos),"dimension":"minecraft:overworld"},"tracked":false}}}
+        $execute if items entity @s weapon.offhand compass[item_model="wander:clock"] run item modify entity @s weapon.offhand {"function":"minecraft:set_components","components":{"minecraft:lodestone_tracker":{"target":{"pos":$(stand_pos),"dimension":"minecraft:overworld"},"tracked":false}}}
+    }
+}

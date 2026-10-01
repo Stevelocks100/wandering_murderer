@@ -47,7 +47,9 @@ $data merge entity $(sack_top) {transformation: [0f,0f,0f,-0.0625f,0f,0f,0f,-1.5
 $data merge entity $(sack_main) {transformation: [0f,0f,0f,-0.0625f,0f,0f,0f,-1.5625f,0f,0f,0f,0f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(blast_off1) {transformation: [0f,0f,0f,0f,0f,0f,0f,-2.5f,0f,0f,0f,0f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(blast_off2) {transformation: [0f,0f,0f,0f,0f,0f,0f,-2.5f,0f,0f,0f,0f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
-data modify storage animated_java:temp entry.data merge value {"cameras":{},"locators":{"soup":{"px":"-1.152","py":"2.981","pz":"0.692","ry":"186.437","rx":"-10.245"},"lefthand":{"px":"-1.218","py":"2.802","pz":"0.684","ry":"314.465","rx":"-73.649"},"sword":{"px":"-1.008","py":"6.647","pz":"1.753","ry":"341.651","rx":"-72.444"},"righthand":{"px":"-1.358","py":"3.131","pz":"0.697","ry":"341.651","rx":"-72.444"},"chest":{"px":"-0.247","py":"2.415","pz":"-0.045","ry":"47.297","rx":"41.629"},"sack":{"px":"-0.062","py":"-1.562","pz":"-0","ry":"0","rx":"0"}}}
+data modify storage animated_java:temp entry.data merge value {"locators":{"soup":{"px":"-1.152","py":"2.981","pz":"0.692","ry":"186.437","rx":"-10.245"},"lefthand":{"px":"-1.218","py":"2.802","pz":"0.684","ry":"314.465","rx":"-73.649"},"sword":{"px":"-1.008","py":"6.647","pz":"1.753","ry":"341.651","rx":"-72.444"},"righthand":{"px":"-1.358","py":"3.131","pz":"0.697","ry":"341.651","rx":"-72.444"},"chest":{"px":"-0.247","py":"2.415","pz":"-0.045","ry":"47.297","rx":"41.629"},"sack":{"px":"-0.062","py":"-1.562","pz":"-0","ry":"0","rx":"0"}}}
+# Data Manager: Prepare for Read / Write
+execute store result storage animated_java:temp args.id int 1 run scoreboard players get @s aj.id
 # Data Manager: Write
 function animated_java:global/data_manager/write with storage animated_java:temp args
 execute unless entity @s[tag=aj.transforms_only] unless score bad_omen wander.data matches 1 run function aj:wander/variants/sword_hand/apply

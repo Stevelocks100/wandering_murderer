@@ -43,7 +43,9 @@ $data merge entity $(leftleg) {transformation: [-0.4625f,-0.5918f,-0.6602f,0.25f
 $data merge entity $(rightfoot) {transformation: [-0.0446f,-0.9782f,0.2029f,0.0472f,-0.9594f,0.0986f,0.2641f,0.1979f,-0.2784f,-0.1829f,-0.9429f,-0.0443f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(rightlowerleg) {transformation: [-0.0446f,-0.9782f,0.2029f,-1.0692f,-0.9594f,0.0986f,0.2641f,0.2667f,-0.2784f,-0.1829f,-0.9429f,-0.1023f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
 $data merge entity $(rightleg) {transformation: [-0.1777f,0.7805f,0.5994f,-0.25f,-0.914f,0.0948f,-0.3945f,0.4063f,-0.3647f,-0.618f,0.6965f,-0.7656f,0f,0f,0f,1f],start_interpolation: 0,interpolation_duration: 1}
-data modify storage animated_java:temp entry.data merge value {"cameras":{},"locators":{"soup":{"px":"0.329","py":"0.432","pz":"0.227","ry":"169.862","rx":"43.408"},"lefthand":{"px":"0.492","py":"0.368","pz":"0.304","ry":"102.372","rx":"-22.034"},"sword":{"px":"2.81","py":"1.735","pz":"0.306","ry":"272.442","rx":"-22.771"},"righthand":{"px":"-0.587","py":"0.308","pz":"0.161","ry":"272.442","rx":"-22.771"},"chest":{"px":"-0.375","py":"0.713","pz":"-0.298","ry":"0","rx":"15"}}}
+data modify storage animated_java:temp entry.data merge value {"locators":{"soup":{"px":"0.329","py":"0.432","pz":"0.227","ry":"169.862","rx":"43.408"},"lefthand":{"px":"0.492","py":"0.368","pz":"0.304","ry":"102.372","rx":"-22.034"},"sword":{"px":"2.81","py":"1.735","pz":"0.306","ry":"272.442","rx":"-22.771"},"righthand":{"px":"-0.587","py":"0.308","pz":"0.161","ry":"272.442","rx":"-22.771"},"chest":{"px":"-0.375","py":"0.713","pz":"-0.298","ry":"0","rx":"15"}}}
+# Data Manager: Prepare for Read / Write
+execute store result storage animated_java:temp args.id int 1 run scoreboard players get @s aj.id
 # Data Manager: Write
 function animated_java:global/data_manager/write with storage animated_java:temp args
 execute unless entity @s[tag=aj.transforms_only] run function aj:wander/variants/sword_none/apply

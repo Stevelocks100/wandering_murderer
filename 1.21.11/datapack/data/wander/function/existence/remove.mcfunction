@@ -14,12 +14,12 @@ function aj:fine_print/remove/all
 
 execute if score daytime wander.data matches -501 run scoreboard players set bad_omen wander.data 0
 
-summon marker ~ ~ ~ {Tags:["wander.no_credit"]}
-damage @n[tag=wander.hitbox,type=wandering_trader,distance=0..] 1 mob_attack by @n[tag=wander.no_credit]
-damage @n[tag=wander.ai] 1 mob_attack by @n[tag=wander.no_credit]
+summon marker ~ ~ ~ {Tags:["wander.no_credit","wander.entity"]}
+damage 272f8e76-f6fe-4b87-a609-8fcf54a8cb1f 1 mob_attack by @n[tag=wander.no_credit]
+damage abb5e532-ba94-447e-8b50-7b463008a14c 1 mob_attack by @n[tag=wander.no_credit]
 kill @e[tag=wander.no_credit]
-tag @n[tag=wander.hitbox,type=wandering_trader,distance=0..] add wander.despawning
-tag @n[tag=wander.hitbox,type=wandering_trader,distance=0..] remove wander.hitbox
+tag 272f8e76-f6fe-4b87-a609-8fcf54a8cb1f add wander.despawning
+tag 272f8e76-f6fe-4b87-a609-8fcf54a8cb1f remove wander.hitbox
 scoreboard players add @p[tag=wander.target] wander.encounters 1
 kill @n[tag=wander.sword_int]
 tp @e[tag=wander] ~ ~-1000 ~
@@ -31,7 +31,7 @@ function aj:wander/remove/all
 
 #execute if entity @s[type=player] run return 0
 scoreboard players operation new_spawn_time wander.data = timer wander.data
-execute store result score new_random_time wander.data run random value 4000..12000
+execute store result score new_random_time wander.data run random value 3000..8000
 scoreboard players operation new_spawn_time wander.data += new_random_time wander.data
 #execute if score new_spawn_time wander.data < timer wander.data run scoreboard players add new_spawn_time wander.data 1000
 #execute if score new_spawn_time wander.data < timer wander.data run scoreboard players add new_spawn_time wander.data 1000
