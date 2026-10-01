@@ -19,6 +19,7 @@ kill @e[x=0,type=item_display,tag=wander.spawn.spawn_center]
 execute if score spawned wander.data matches 1 run kill @e[tag=wander.spawn_pos,x=0,type=item_display]
 # removes the target of a jump if no trader.
 execute unless score spawned wander.data matches 1 run kill @n[tag=wander.jump_target,x=0,type=marker]
+kill @e[type=item_display,tag=wander.sandbag_display,x=0,predicate=!wander:is_mounted]
 
 execute store result score ice_projectile_count wander.data if entity @e[tag=wander.ice_proj,x=0]
 execute store result score sword_projectile_count wander.data if entity @e[tag=wander.sword_proj,x=0]
