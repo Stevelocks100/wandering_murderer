@@ -27,3 +27,5 @@ execute if function wander:spawning/is_on_surface run scoreboard players add #lo
 scoreboard players operation @s wander.spawn.spawn_score += #encounter_count wander.spawn
 scoreboard players operation @s wander.spawn.spawn_score += #afk_timer wander.spawn
 scoreboard players operation @s wander.spawn.spawn_score += #lonely wander.spawn
+scoreboard players set #2 wander.spawn.spawn_score 2
+execute if function wander:spawning/is_far_from_surface run scoreboard players set @s wander.spawn.spawn_score 0

@@ -16,6 +16,7 @@ execute as @a[tag=wander.potential_target,x=0] at @s run function wander:spawnin
 # now we have a buncha values.
 scoreboard players set highest_score wander.spawn.spawn_score -999
 execute as @a[scores={wander.spawn.spawn_score=0..},x=0,tag=wander.potential_target] run scoreboard players operation highest_score wander.spawn.spawn_score > @s wander.spawn.spawn_score
+execute if score highest_score wander.spawn.spawn_score matches ..2 run return 0
 execute as @a[scores={wander.spawn.spawn_score=0..},x=0,tag=wander.potential_target] if score @s wander.spawn.spawn_score = highest_score wander.spawn.spawn_score run tag @s add wander.new_target
 tag @r[tag=wander.new_target] add wander.target
 tag @a remove wander.new_target

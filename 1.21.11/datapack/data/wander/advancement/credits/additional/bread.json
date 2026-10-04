@@ -15,7 +15,7 @@
         },
         "title": "The Bread Giver",
         "description": {
-            "text": "Bossbar Designer"
+            "text": "Bossbar Designer\nSpawn Egg Designer"
         },
         "frame": "task",
         "show_toast": false,

@@ -193,12 +193,15 @@ function find_target {
         scoreboard players operation @s <%prefix%>.spawn_score += #encounter_count <%prefix%>
         scoreboard players operation @s <%prefix%>.spawn_score += #afk_timer <%prefix%>
         scoreboard players operation @s <%prefix%>.spawn_score += #lonely <%prefix%>
+        
+        scoreboard players set #2 <%prefix%>.spawn_score 2
+        execute if function wander:spawning/is_far_from_surface run scoreboard players set @s <%prefix%>.spawn_score 0
 
     }
     # now we have a buncha values.
     scoreboard players set highest_score <%prefix%>.spawn_score -999
     execute as @a[scores={<%prefix%>.spawn_score=0..},x=0,tag=wander.potential_target] run scoreboard players operation highest_score <%prefix%>.spawn_score > @s <%prefix%>.spawn_score
-
+    execute if score highest_score <%prefix%>.spawn_score matches ..2 run return 0
     execute as @a[scores={<%prefix%>.spawn_score=0..},x=0,tag=wander.potential_target] if score @s <%prefix%>.spawn_score = highest_score <%prefix%>.spawn_score run tag @s add wander.new_target
 
 
@@ -215,6 +218,12 @@ function is_on_surface {
     execute unless entity @s run return 0
     # must run as an entity please
     return run execute positioned over motion_blocking_no_leaves if entity @s[distance=0..0.5]
+}
+
+function is_far_from_surface {
+    execute unless entity @s run return 0
+    # must run as an entity please
+    return run execute positioned over motion_blocking_no_leaves if entity @s[distance=20..]
 }
 function is_near_surface {
     execute unless entity @s run return 0
