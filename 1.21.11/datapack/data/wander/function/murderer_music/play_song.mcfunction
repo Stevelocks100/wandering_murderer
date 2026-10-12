@@ -3,6 +3,7 @@
 # input:
 # id - int
 # override - boolean
+execute unless function wander:murderer_music/storage/has_storage run function wander:murderer_music/storage/create
 $execute if function wander:murderer_music/override_$(override) run function wander:murderer_music/zzz/8
 tag @s add wander.music
 function wander:murderer_music/storage/reset_stopwatch

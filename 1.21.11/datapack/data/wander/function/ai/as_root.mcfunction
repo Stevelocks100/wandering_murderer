@@ -129,7 +129,7 @@ bossbar set wander:health visible true
 execute unless score ai wander.data matches 6..28 run bossbar set wander:health players @s
 execute unless score daytime wander.data matches 1.. run bossbar set wander:health players @s
 
-execute if score ai wander.data matches 6..28 if score daytime wander.data matches 1.. run bossbar set wander:health players @a[tag=wander.music]
+execute if score ai wander.data matches 6..28 if score daytime wander.data matches 1.. run bossbar set wander:health players @a[tag=wander.music,distance=0..300]
 execute store result bossbar wander:health value run scoreboard players get health wander.data
 
 execute if score health wander.data <= 66%health wander.data if score ai wander.data matches 20..25 run function wander:fine_print/tick

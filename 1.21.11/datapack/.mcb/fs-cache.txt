@@ -116,7 +116,7 @@ data/wander/function/murderer_music/zzz/10.mcfunction:6e51258d16f6629fb631e7099e
 data/wander/function/murderer_music/zzz/9.mcfunction:6d2dfa14a77abe83266db0e3fc6e58a0779e3e42
 data/wander/function/murderer_music/zzz/8.mcfunction:5b504f2cd12f2d59c4fd47e8a132cf1e02ba73a1
 data/wander/function/murderer_music/zzz/11.mcfunction:83e0d6e9e94a6b0897650ced2c52787aaad22840
-data/wander/function/murderer_music/play_song.mcfunction:901f65e53f9b62526aa87837246b65397e5291d9
+data/wander/function/murderer_music/play_song.mcfunction:36b51e0e34638c16b5422785a10d3519d433cdc9
 data/wander/function/murderer_music/preload.mcfunction:8cb8b35513ca44b4dcffe3d41d77a0c7dfc650a8
 data/wander/function/murderer_music/zzz/12.mcfunction:375148118a26d676e471210afaf8c38f54628eb1
 data/wander/function/murderer_music/zzz/13.mcfunction:cd0f029f1d610121da568f5a1b02f0431da5068c

@@ -292,6 +292,8 @@ function play_song {
     # id - int
     # override - boolean
 
+    execute unless function wander:murderer_music/storage/has_storage run function storage/create
+
     $execute if function wander:murderer_music/override_$(override) run {
         execute store result storage <%namespace%> song.index int 1 run scoreboard players get @s <%prefix%>.current_song
         block { with storage <%namespace%> song
