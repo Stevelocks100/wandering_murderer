@@ -7,9 +7,10 @@ execute store result score target_count wander.data if entity @a[tag=wander.targ
 execute if score target_count wander.data matches 2.. run tag @r[tag=wander.target] remove wander.target
 tag @a remove wander.potential_target
 tag @a[gamemode=!creative,gamemode=!spectator] add wander.potential_target
+execute as @a at @s unless dimension minecraft:overworld run tag @s remove wander.potential_target
 tag @a[tag=wander.target,tag=!wander.potential_target] remove wander.target
 tag @a[scores={wander.attack_cooldown=1..}] remove wander.target
-execute as @a at @s unless dimension minecraft:overworld run tag @s remove wander.potential_target
+
 tag @a[tag=wander.phase3.trapped] remove wander.potential_target
 
 
