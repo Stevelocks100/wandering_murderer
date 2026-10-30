@@ -1,0 +1,1 @@
+$execute store result storage wander:temp macro.uuid int 1 run data get storage wander:trades weighted_offers[$(random_index)].uuid

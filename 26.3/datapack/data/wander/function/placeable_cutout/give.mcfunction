@@ -1,0 +1,1 @@
+give @s armor_stand[item_model="wander:cutout",item_name="Wandering Murderer Cutout",lore=["for all the superfans out there"],entity_data={id:"armor_stand",Invulnerable:true,Invisible:true,NoGravity:true,Tags:["wander.placeable_cutout_stand"]}]

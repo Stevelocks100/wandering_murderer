@@ -1,0 +1,15 @@
+{
+    "criteria": {
+        "a": {
+            "trigger": "tick"
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ],
+    "rewards": {
+        "function": "wander:test"
+    }
+}

@@ -1,0 +1,7 @@
+{
+	"credit": "Made with Animated Java (https://github.com/Animated-Java/animated-java) via Blockbench",
+	"parent": "aj:blueprint/wander/suspicious_stew/blank_slot",
+	"textures": {
+		"slot_blank_slot": "minecraft:item/suspicious_stew"
+	}
+}

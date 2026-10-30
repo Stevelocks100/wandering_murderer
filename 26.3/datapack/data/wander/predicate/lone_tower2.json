@@ -1,0 +1,53 @@
+{
+    "type": "minecraft:all_of",
+    "terms": [
+        {
+            "type": "minecraft:inverted",
+            "term": {
+                "type": "minecraft:location_check",
+                "offsetX": 1,
+                "predicate": {
+                    "block": {
+                        "blocks": "#wander:can_pass"
+                    }
+                }
+            }
+        },
+        {
+            "type": "minecraft:inverted",
+            "term": {
+                "type": "minecraft:location_check",
+                "offsetX": -1,
+                "predicate": {
+                    "block": {
+                        "blocks": "#wander:can_pass"
+                    }
+                }
+            }
+        },
+        {
+            "type": "minecraft:inverted",
+            "term": {
+                "type": "minecraft:location_check",
+                "offsetZ": 1,
+                "predicate": {
+                    "block": {
+                        "blocks": "#wander:can_pass"
+                    }
+                }
+            }
+        },
+        {
+            "type": "minecraft:inverted",
+            "term": {
+                "type": "minecraft:location_check",
+                "offsetZ": -1,
+                "predicate": {
+                    "block": {
+                        "blocks": "#wander:can_pass"
+                    }
+                }
+            }
+        }
+    ]
+}

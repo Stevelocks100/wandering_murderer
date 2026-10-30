@@ -1,0 +1,71 @@
+{
+    "note": "this hooks into the normal minecraft fishing behaviour, by adding a condition to see if wandering murderer has spawned.",
+    "type": "minecraft:fishing",
+    "pools": [
+        {
+            "entries": [
+                {
+                    "type": "minecraft:alternatives",
+                    "children": [
+                        {
+                            "type": "minecraft:item",
+                            "name": "stick",
+                            "modifier": [
+                                {
+                                    "type": "minecraft:set_custom_data",
+                                    "tag": "{wander:{spawn_wanderer:1b}}"
+                                }
+                            ],
+                            "condition": {
+                                "type": "minecraft:all_of",
+                                "terms": [
+                                    {
+                                        "type": "location_check",
+                                        "predicate": {
+                                            "dimension": "minecraft:overworld"
+                                        }
+                                    },
+                                    {
+                                        "type": "minecraft:int_value_check",
+                                        "value": {
+                                            "type": "minecraft:score",
+                                            "target": {
+                                                "type": "minecraft:fixed",
+                                                "name": "daytime"
+                                            },
+                                            "score": "wander.data"
+                                        },
+                                        "test": {
+                                            "min": 10
+                                        }
+                                    },
+                                    {
+                                        "type": "minecraft:int_value_check",
+                                        "value": {
+                                            "type": "minecraft:score",
+                                            "target": {
+                                                "type": "minecraft:fixed",
+                                                "name": "spawned"
+                                            },
+                                            "score": "wander.data"
+                                        },
+                                        "test": 0
+                                    },
+                                    {
+                                        "type": "minecraft:random_chance",
+                                        "chance": 0.33
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "minecraft:loot_table",
+                            "value": "minecraft:gameplay/fishing/fish"
+                        }
+                    ]
+                }
+            ],
+            "rolls": 1
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:fishing_rod_hooked",
+            "conditions": {
+                "item": {
+                    "items": "minecraft:stick",
+                    "components": {
+                        "minecraft:custom_data": "{wander:{spawn_wanderer:1b}}"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ],
+    "rewards": {
+        "function": "wander:fishing_jumpscare"
+    }
+}

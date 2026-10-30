@@ -1,0 +1,20 @@
+
+scoreboard players add @s wander.killed_trader 1
+execute if score do_spawning milk.settings matches -1 run return 0
+
+execute if score do_slaughterer milk.settings matches 1 if predicate {"type":"minecraft:entity_properties","entity":"this","predicate":{"effects":{"minecraft:bad_omen":{}}}} rotated ~ 0 positioned ^ ^20 ^6 if predicate wander:enough_height run return run function wander:existence/summon_slaughterer
+
+execute if predicate {"type":"minecraft:random_chance","chance":0.33} if score daytime wander.data matches 1.. rotated ~ 0 positioned ^ ^20 ^-8 if predicate wander:enough_height run scoreboard players set quiet_spawn wander.data 1
+execute if score daytime wander.data matches 1.. rotated ~ 0 if score quiet_spawn wander.data matches 1 positioned ^ ^ ^-8 if predicate wander:enough_height positioned over motion_blocking_no_leaves run function wander:existence/summon_revenge
+execute if score daytime wander.data matches 1.. rotated ~ 0 unless score quiet_spawn wander.data matches 1 positioned ^ ^20 ^6 if predicate wander:enough_height run function wander:existence/summon_revenge
+
+
+execute if score daytime wander.data matches -500.. run return 0
+#execute if predicate {"type":"minecraft:random_chance","chance":0.50} run return 0
+
+
+execute unless score @s wander.killed_trader matches 2.. unless score defeated wander.data matches 1 run return run tellraw @a[distance=0..20] ["",{color:"dark_red",italic:true,text:"<???> \"I would recommend not doing that again, ",extra:[{selector:"@s"},".\""]}]
+execute unless score @s wander.killed_trader matches 2.. if score defeated wander.data matches 1 run return run tellraw @a[distance=0..20] ["",{color:"dark_red",italic:true,text:"<Wandering Murderer> \"I would recommend not doing that again, ",extra:[{selector:"@s"},".\""]}]
+
+function wander:initiate
+playsound entity.lightning_bolt.thunder player @a ^ ^ ^100 100000000 0.8 1.0

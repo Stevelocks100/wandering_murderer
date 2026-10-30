@@ -1,0 +1,73 @@
+{
+    "targets": {
+        "final": {},
+        "matrices": {
+            "height": 4,
+            "width": 9,
+            "persistent": true
+        },
+        "temp": {}
+    },
+    "passes": [
+        {
+            "vertex_shader": "core/screenquad",
+            "fragment_shader": "wander:post/save_matrices",
+            "inputs": [
+                {
+                    "target": "minecraft:main",
+                    "sampler_name": "In"
+                }
+            ],
+            "output": "matrices"
+        },
+        {
+            "vertex_shader": "core/screenquad",
+            "fragment_shader": "wander:post/remove_matrices",
+            "inputs": [
+                {
+                    "target": "minecraft:main",
+                    "sampler_name": "In"
+                }
+            ],
+            "output": "final"
+        },
+        {
+            "vertex_shader": "wander:post/normal/darkness",
+            "fragment_shader": "wander:post/normal/darkness",
+            "inputs": [
+                {
+                    "target": "final",
+                    "sampler_name": "In"
+                },
+                {
+                    "target": "minecraft:main",
+                    "sampler_name": "Depth",
+                    "use_depth_buffer": true
+                },
+                {
+                    "target": "matrices",
+                    "sampler_name": "Mat"
+                },
+                {
+                    "location": "wander:lut",
+                    "height": 4096,
+                    "width": 4096,
+                    "sampler_name": "LUT",
+                    "bilinear": true
+                }
+            ],
+            "output": "temp"
+        },
+        {
+            "vertex_shader": "core/screenquad",
+            "fragment_shader": "wander:post/blit",
+            "inputs": [
+                {
+                    "target": "temp",
+                    "sampler_name": "In"
+                }
+            ],
+            "output": "minecraft:main"
+        }
+    ]
+}

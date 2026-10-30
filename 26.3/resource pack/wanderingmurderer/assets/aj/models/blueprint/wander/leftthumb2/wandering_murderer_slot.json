@@ -1,0 +1,50 @@
+{
+	"credit": "Made with Animated Java (https://github.com/Animated-Java/animated-java) via Blockbench",
+	"textures": {
+		"particle": "minecraft:item/pufferfish",
+		"slot_wandering_murderer_slot": "aj:blueprint/wander/wandering_murderer"
+	},
+	"display": {
+		"head": {
+			"rotation": [0, 180, 0]
+		}
+	},
+	"elements": [
+		{
+			"from": [7, 5.42388, 6.61732],
+			"to": [9, 8.42388, 8.61732],
+			"rotation": {
+				"x": -22.5,
+				"y": 0,
+				"z": 0,
+				"origin": [8, 7.92388, 7.61732]
+			},
+			"faces": {
+				"north": {
+					"uv": [6.875, 9.9375, 7, 10.125],
+					"texture": "#slot_wandering_murderer_slot"
+				},
+				"east": {
+					"uv": [3.8125, 10.875, 3.9375, 11.0625],
+					"texture": "#slot_wandering_murderer_slot"
+				},
+				"south": {
+					"uv": [1.9375, 11.5625, 2.0625, 11.75],
+					"texture": "#slot_wandering_murderer_slot"
+				},
+				"west": {
+					"uv": [2.4375, 11.5625, 2.5625, 11.75],
+					"texture": "#slot_wandering_murderer_slot"
+				},
+				"up": {
+					"uv": [11.75, 5.0625, 11.625, 4.9375],
+					"texture": "#slot_wandering_murderer_slot"
+				},
+				"down": {
+					"uv": [11.75, 5.0625, 11.625, 5.1875],
+					"texture": "#slot_wandering_murderer_slot"
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:div",
+    "left": 1,
+    "right": {
+        "type": "minecraft:div",
+        "left": {
+            "type": "minecraft:storage",
+            "storage": "wander:music",
+            "path": "gm.stopwatch"
+        },
+        "right": {
+            "type": "minecraft:storage",
+            "storage": "wander:music",
+            "path": "gm.scoreboard"
+        }
+    }
+}

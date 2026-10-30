@@ -1,0 +1,7 @@
+{
+	"credit": "Made with Animated Java (https://github.com/Animated-Java/animated-java) via Blockbench",
+	"parent": "aj:blueprint/fine_print/mas/neutralmask_slot",
+	"textures": {
+		"slot_neutralmask_slot": "aj:blueprint/fine_print/sadmask"
+	}
+}

@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+        "type_specific/player": {
+            "stats": [],
+            "looking_at": {
+                "entity_type": "minecraft:villager",
+                "stepping_on": {
+                    "block": {
+                        "blocks": "minecraft:emerald_block"
+                    }
+                }
+            },
+            "input": {
+                "forward": true,
+                "backward": true,
+                "left": true,
+                "right": true,
+                "jump": true,
+                "sneak": true,
+                "sprint": true
+            }
+        }
+    }
+}

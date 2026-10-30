@@ -1,0 +1,50 @@
+{
+    "type": "minecraft:multi_action",
+    "title": "Wandering Murderer Datapack",
+    "body": [
+        {
+            "type": "minecraft:plain_message",
+            "contents": "Adds a horrifying(ly buff) wandering trader to haunt your world!\nOh and exploding milk I guess.",
+            "width": 300
+        },
+        {
+            "type": "minecraft:plain_message",
+            "contents": {
+                "text": "v4.3\nBy Stevelocks",
+                "color": "gray"
+            },
+            "width": 300
+        }
+    ],
+    "actions": [
+        {
+            "label": "Website",
+            "action": {
+                "type": "open_url",
+                "url": "https://https://modrinth.com/datapack/wandering-murder/"
+            }
+        },
+        {
+            "label": "Issues",
+            "action": {
+                "type": "open_url",
+                "url": "https://github.com/Stevelocks100/wandering_murderer/issues"
+            }
+        },
+        {
+            "label": "Config...",
+            "action": {
+                "type": "minecraft:run_command",
+                "command": "function milk:settings"
+            }
+        }
+    ],
+    "exit_action": {
+        "label": {
+            "translate": "gui.back"
+        },
+        "width": 200
+    },
+    "can_close_with_escape": true,
+    "pause": true
+}

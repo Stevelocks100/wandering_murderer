@@ -1,0 +1,48 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:player_head",
+            "components": {
+                "minecraft:profile": {
+                    "id": [
+                        1676846984,
+                        -298760938,
+                        -1243345894,
+                        -1823701043
+                    ]
+                }
+            }
+        },
+        "title": "SidedNewt",
+        "description": {
+            "text": "Whey\nClock\nTrading Stand Builder"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "parent": "wander:credits/additional/root",
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:tick",
+            "conditions": {
+                "player": {
+                    "type": "entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "type_specific/player": {
+                            "advancements": {
+                                "wander:story/kill_murderer": true
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ]
+}

@@ -1,0 +1,11 @@
+execute positioned ~-5 ~ ~ run function wander:ai/sided/break_oak/y
+execute positioned ~-4 ~ ~ run function wander:ai/sided/break_oak/y
+execute positioned ~-3 ~ ~ run function wander:ai/sided/break_oak/y
+execute positioned ~-2 ~ ~ run function wander:ai/sided/break_oak/y
+execute positioned ~-1 ~ ~ run function wander:ai/sided/break_oak/y
+execute positioned ~ ~ ~ run function wander:ai/sided/break_oak/y
+execute positioned ~1 ~ ~ run function wander:ai/sided/break_oak/y
+execute positioned ~2 ~ ~ run function wander:ai/sided/break_oak/y
+execute positioned ~3 ~ ~ run function wander:ai/sided/break_oak/y
+execute positioned ~4 ~ ~ run function wander:ai/sided/break_oak/y
+execute positioned ~5 ~ ~ run function wander:ai/sided/break_oak/y

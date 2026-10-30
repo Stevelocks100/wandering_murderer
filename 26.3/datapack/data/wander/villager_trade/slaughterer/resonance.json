@@ -1,0 +1,57 @@
+{
+    "additional_wants": {
+        "id": "minecraft:book",
+        "count": 2
+    },
+    "gives": {
+        "id": "minecraft:enchanted_book",
+        "components": {
+            "minecraft:stored_enchantments": {
+                "wander:resonance": 1
+            }
+        },
+        "count": 1
+    },
+    "max_uses": 4,
+    "reputation_discount": 0.05,
+    "wants": {
+        "id": "minecraft:emerald",
+        "count": 46
+    },
+    "merchant_predicate": {
+        "type": "minecraft:all_of",
+        "terms": [
+            {
+                "type": "minecraft:inverted",
+                "term": {
+                    "type": "minecraft:int_value_check",
+                    "value": {
+                        "type": "minecraft:score",
+                        "target": {
+                            "type": "minecraft:fixed",
+                            "name": "defeated"
+                        },
+                        "score": "wander.data"
+                    },
+                    "test": 0
+                }
+            },
+            {
+                "type": "minecraft:random_chance",
+                "chance": 0.3
+            },
+            {
+                "type": "minecraft:int_value_check",
+                "value": {
+                    "type": "minecraft:score",
+                    "target": {
+                        "type": "minecraft:fixed",
+                        "name": "slaughterer_defeated"
+                    },
+                    "score": "wander.data"
+                },
+                "test": 1
+            }
+        ]
+    }
+}

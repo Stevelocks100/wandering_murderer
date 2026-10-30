@@ -1,0 +1,1 @@
+{"criteria":{"a":{"trigger": "minecraft:player_interacted_with_entity","conditions":{"entity":{"type": "entity_properties","entity": "this","predicate":{"entity_tags":{"all_of": ["aj.wander_chest.node.hitbox"]}}}}}},"requirements": [["a"]],"rewards":{"function": "wander:trader_dimension/chest_interact"}}

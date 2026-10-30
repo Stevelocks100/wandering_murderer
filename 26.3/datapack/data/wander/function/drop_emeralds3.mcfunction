@@ -1,0 +1,1 @@
+$summon item ~ ~ ~ {Motion:[$(x)d,$(y)d,$(z)d],PickupDelay:40s,Item:{id:"emerald",count:1},Age:-1000s}

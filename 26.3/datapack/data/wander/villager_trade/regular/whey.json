@@ -1,0 +1,57 @@
+{
+    "gives": {
+        "id": "minecraft:beetroot_soup",
+        "components": {
+            "item_model": "wander:whey",
+            "item_name": {
+                "text": "Whey Protein Powder",
+                "italic": false
+            },
+            "!minecraft:food": {},
+            "!minecraft:use_remainder": {},
+            "consumable": {
+                "consume_seconds": 3
+            },
+            "custom_data": {
+                "whey": true
+            },
+            "lore": [
+                {
+                    "text": "Power comes without consequence.",
+                    "italic": true
+                }
+            ]
+        },
+        "count": 1
+    },
+    "max_uses": 3,
+    "reputation_discount": 0.05,
+    "wants": {
+        "id": "minecraft:emerald",
+        "count": 21
+    },
+    "merchant_predicate": {
+        "type": "minecraft:all_of",
+        "terms": [
+            {
+                "type": "minecraft:inverted",
+                "term": {
+                    "type": "minecraft:int_value_check",
+                    "value": {
+                        "type": "minecraft:score",
+                        "target": {
+                            "type": "minecraft:fixed",
+                            "name": "defeated"
+                        },
+                        "score": "wander.data"
+                    },
+                    "test": 0
+                }
+            },
+            {
+                "type": "minecraft:random_chance",
+                "chance": 0.5
+            }
+        ]
+    }
+}

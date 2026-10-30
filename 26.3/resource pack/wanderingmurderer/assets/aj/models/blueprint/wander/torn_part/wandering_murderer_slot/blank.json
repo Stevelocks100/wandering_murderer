@@ -1,0 +1,7 @@
+{
+	"credit": "Made with Animated Java (https://github.com/Animated-Java/animated-java) via Blockbench",
+	"parent": "aj:blueprint/wander/torn_part/wandering_murderer_slot",
+	"textures": {
+		"slot_wandering_murderer_slot": "aj:blueprint/wander/blank"
+	}
+}

@@ -1,0 +1,3 @@
+# {move:'sneak_walk',idle:'sneak_idle'}
+execute if score @s wander.motion1 matches 1 as @n[tag=aj.wander.root,type=item_display] unless entity @s[tag=aj.wander.animation.sneak_walk.playing] run function aj:wander/animations/sneak_walk/tween {to_frame:0,duration:2}
+execute if score @s wander.motion1 matches 0 as @n[tag=aj.wander.root,type=item_display] unless entity @s[tag=aj.wander.animation.sneak_idle.playing] run function aj:wander/animations/sneak_idle/tween {to_frame:0,duration:2}

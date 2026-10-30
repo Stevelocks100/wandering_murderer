@@ -1,0 +1,42 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:dirt_path",
+            "count": 1
+        },
+        "title": "The Travelling Merchant",
+        "description": "Find the Wandering Murderer's Trading Stand",
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "parent": "wander:story/root",
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "type": "entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "location": {
+                            "structures": "wander:trading_stand"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "wander:clock/clock1",
+            "wander:clock/clock2"
+        ]
+    }
+}

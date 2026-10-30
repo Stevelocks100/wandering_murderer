@@ -1,0 +1,7 @@
+{
+	"credit": "Made with Animated Java (https://github.com/Animated-Java/animated-java) via Blockbench",
+	"parent": "aj:blueprint/wander/log/blank2_slot",
+	"textures": {
+		"slot_blank2_slot": "aj:blueprint/wander/blasting_off2"
+	}
+}

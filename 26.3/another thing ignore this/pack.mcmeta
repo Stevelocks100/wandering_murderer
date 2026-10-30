@@ -1,0 +1,19 @@
+{
+	"pack": {
+		"description": [
+			"",
+			{
+				"text": "Milkman's",
+				"bold": true,
+				"color": "gold"
+			},
+			{
+				"text": " post effects",
+				"bold": true,
+				"color": "blue"
+			}
+		],
+		"min_format": 97,
+		"max_format": 97
+	}
+}

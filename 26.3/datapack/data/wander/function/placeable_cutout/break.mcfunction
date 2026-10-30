@@ -1,0 +1,2 @@
+advancement revoke @s only wander:hit_placeable_cutout
+execute as @e[tag=wander.placeable_cutout_int,distance=0..8] if data entity @s attack at @s on vehicle run function wander:placeable_cutout/break2

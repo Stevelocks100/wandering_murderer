@@ -1,0 +1,1 @@
+return run execute if data entity @s attributes[{id:"minecraft:gravity"}].modifiers[{id:"wander:whey"}]

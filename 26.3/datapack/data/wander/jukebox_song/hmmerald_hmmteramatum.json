@@ -1,0 +1,8 @@
+{
+	"comparator_output": 6,
+	"description": "Hmmerald Hmmteramatum - Villager",
+	"length_in_seconds": 90,
+	"sound_event": {
+		"sound_id": "wander:records.hmmerald_hmmteramatum"
+	}
+}

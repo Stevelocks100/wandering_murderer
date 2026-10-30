@@ -1,0 +1,2 @@
+# {move:'gangnamstyle',idle:'gangnamstyle'}
+execute as @n[tag=aj.wander.root,type=item_display] unless entity @s[tag=aj.wander.animation.gangnamstyle.playing] run function aj:wander/animations/gangnamstyle/tween {to_frame:0,duration:2}

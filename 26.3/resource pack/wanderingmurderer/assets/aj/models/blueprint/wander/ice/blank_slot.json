@@ -1,0 +1,50 @@
+{
+	"credit": "Made with Animated Java (https://github.com/Animated-Java/animated-java) via Blockbench",
+	"textures": {
+		"particle": "minecraft:item/pufferfish",
+		"slot_blank_slot": "aj:blueprint/wander/blank"
+	},
+	"display": {
+		"head": {
+			"rotation": [0, 180, 0]
+		}
+	},
+	"elements": [
+		{
+			"from": [5, 5, 5],
+			"to": [11, 11, 11],
+			"rotation": {
+				"x": 0,
+				"y": 0,
+				"z": 0,
+				"origin": [10, 5, 6]
+			},
+			"faces": {
+				"north": {
+					"uv": [16, 0, 0, 16],
+					"texture": "#slot_blank_slot"
+				},
+				"east": {
+					"uv": [16, 0, 0, 16],
+					"texture": "#slot_blank_slot"
+				},
+				"south": {
+					"uv": [16, 0, 0, 16],
+					"texture": "#slot_blank_slot"
+				},
+				"west": {
+					"uv": [16, 0, 0, 16],
+					"texture": "#slot_blank_slot"
+				},
+				"up": {
+					"uv": [16, 0, 0, 16],
+					"texture": "#slot_blank_slot"
+				},
+				"down": {
+					"uv": [16, 0, 0, 16],
+					"texture": "#slot_blank_slot"
+				}
+			}
+		}
+	]
+}

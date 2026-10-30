@@ -1,0 +1,46 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:music_disc_cat",
+            "components": {
+                "minecraft:item_model": "wander:music_disc_emerald_ultimatum"
+            }
+        },
+        "title": "Finally... I have them all",
+        "description": "Collect the 3 music discs from the Wandering Murderer",
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "parent": "wander:story/root",
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "components": {
+                            "minecraft:item_model": "wander:music_disc_paramnesia"
+                        }
+                    },
+                    {
+                        "components": {
+                            "minecraft:item_model": "wander:music_disc_emerald_ultimatum"
+                        }
+                    },
+                    {
+                        "components": {
+                            "minecraft:item_model": "wander:music_disc_amethyst_altercation"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ]
+}

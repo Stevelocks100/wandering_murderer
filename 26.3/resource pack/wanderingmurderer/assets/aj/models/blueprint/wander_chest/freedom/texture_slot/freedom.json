@@ -1,0 +1,7 @@
+{
+	"credit": "Made with Animated Java (https://github.com/Animated-Java/animated-java) via Blockbench",
+	"parent": "aj:blueprint/wander_chest/freedom/texture_slot",
+	"textures": {
+		"slot_texture_slot": "aj:blueprint/wander_chest/freedom"
+	}
+}

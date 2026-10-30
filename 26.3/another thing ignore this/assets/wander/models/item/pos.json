@@ -1,0 +1,18 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made by Openvoxel Studios",
+	"textures": {
+		"0": "wander:item/pos",
+		"particle": "wander:item/pos"
+	},
+	"elements": [
+		{
+			"from": [7.5, 8, 7.5],
+			"to": [8.5, 8, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7.5, 8, 0]},
+			"faces": {
+				"up": {"uv": [2, 2, 14, 14], "texture": "#0", "tintindex": 0}
+			}
+		}
+	]
+}

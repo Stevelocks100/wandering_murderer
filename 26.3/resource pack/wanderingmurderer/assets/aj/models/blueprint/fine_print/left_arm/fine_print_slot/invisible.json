@@ -1,0 +1,7 @@
+{
+	"credit": "Made with Animated Java (https://github.com/Animated-Java/animated-java) via Blockbench",
+	"parent": "aj:blueprint/fine_print/left_arm/fine_print_slot",
+	"textures": {
+		"slot_fine_print_slot": "aj:blueprint/fine_print/invisible"
+	}
+}

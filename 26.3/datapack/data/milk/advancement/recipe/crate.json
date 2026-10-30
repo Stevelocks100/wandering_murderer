@@ -1,0 +1,32 @@
+{
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "a": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "#minecraft:wool"
+                    },
+                    {
+                        "items": "stick"
+                    }
+                    ,
+                    {
+                        "items": "raw_copper"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "milk:crate"
+        ]
+    }
+}

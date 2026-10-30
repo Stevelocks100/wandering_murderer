@@ -1,0 +1,25 @@
+{
+    "criteria": {
+        "a": {
+            "trigger": "minecraft:using_item",
+            "conditions": {
+                "item": {
+                    "components": {
+                        "minecraft:custom_data": {
+                            "crate": true,
+                            "bottles": 1
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "a"
+        ]
+    ],
+    "rewards": {
+        "function": "milk:crate/throw_crate"
+    }
+}

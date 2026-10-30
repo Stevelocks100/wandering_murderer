@@ -1,0 +1,30 @@
+{
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "a": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:phantom_membrane"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        },
+        "a2": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:redstone"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "rewards": {
+        "recipes": [
+            "milk:paramnesia"
+        ]
+    }
+}

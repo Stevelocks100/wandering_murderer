@@ -1,0 +1,100 @@
+{
+    "type": "minecraft:any_of",
+    "terms": [
+        {
+            "type": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+                "flags": {
+                    "is_sneaking": true
+                },
+                "equipment": {
+                    "offhand": {
+                        "components": {
+                            "minecraft:custom_data": {
+                                "crate": true,
+                                "bottles": 0
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "type": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+                "flags": {
+                    "is_sneaking": true
+                },
+                "equipment": {
+                    "offhand": {
+                        "components": {
+                            "minecraft:custom_data": {
+                                "crate": true,
+                                "bottles": 1
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "type": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+                "flags": {
+                    "is_sneaking": true
+                },
+                "equipment": {
+                    "offhand": {
+                        "components": {
+                            "minecraft:custom_data": {
+                                "crate": true,
+                                "bottles": 2
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "type": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+                "flags": {
+                    "is_sneaking": true
+                },
+                "equipment": {
+                    "offhand": {
+                        "components": {
+                            "minecraft:custom_data": {
+                                "crate": true,
+                                "bottles": 3
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "type": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+                "flags": {
+                    "is_sneaking": true
+                },
+                "equipment": {
+                    "offhand": {
+                        "components": {
+                            "minecraft:custom_data": {
+                                "crate": true,
+                                "bottles": 4
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

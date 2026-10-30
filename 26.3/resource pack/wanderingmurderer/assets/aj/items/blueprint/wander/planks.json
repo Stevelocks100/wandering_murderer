@@ -1,0 +1,26 @@
+{
+	"model": {
+		"type": "minecraft:select",
+		"property": "minecraft:custom_model_data",
+		"index": 3,
+		"cases": [
+			{
+				"when": "oak_planks",
+				"model": {
+					"type": "minecraft:model",
+					"model": "aj:blueprint/wander/planks/blank3_slot/oak_planks",
+					"tints": [
+						{"type": "minecraft:dye", "default": [1, 1, 1]}
+					]
+				}
+			}
+		],
+		"fallback": {
+			"type": "minecraft:model",
+			"model": "aj:blueprint/wander/planks/blank3_slot",
+			"tints": [
+				{"type": "minecraft:dye", "default": [1, 1, 1]}
+			]
+		}
+	}
+}

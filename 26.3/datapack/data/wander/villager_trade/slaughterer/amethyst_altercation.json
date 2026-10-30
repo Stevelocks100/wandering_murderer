@@ -1,0 +1,52 @@
+{
+    "gives": {
+        "id": "minecraft:music_disc_cat",
+        "components": {
+            "minecraft:item_model": "wander:music_disc_amethyst_altercation",
+            "minecraft:jukebox_playable": "wander:amethyst_altercation"
+        },
+        "count": 1
+    },
+    "max_uses": 1,
+    "reputation_discount": 0.05,
+    "wants": {
+        "id": "minecraft:emerald",
+        "count": 20
+    },
+    "merchant_predicate": {
+        "type": "minecraft:all_of",
+        "terms": [
+            {
+                "type": "minecraft:inverted",
+                "term": {
+                    "type": "minecraft:int_value_check",
+                    "value": {
+                        "type": "minecraft:score",
+                        "target": {
+                            "type": "minecraft:fixed",
+                            "name": "defeated"
+                        },
+                        "score": "wander.data"
+                    },
+                    "test": 0
+                }
+            },
+            {
+                "type": "minecraft:random_chance",
+                "chance": 0.85
+            },
+            {
+                "type": "minecraft:int_value_check",
+                "value": {
+                    "type": "minecraft:score",
+                    "target": {
+                        "type": "minecraft:fixed",
+                        "name": "slaughterer_defeated"
+                    },
+                    "score": "wander.data"
+                },
+                "test": 1
+            }
+        ]
+    }
+}

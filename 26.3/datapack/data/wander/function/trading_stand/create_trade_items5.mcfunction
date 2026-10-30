@@ -1,0 +1,1 @@
+$execute store result storage wander:temp macro.random_index int 1 run random value 0..$(list_length)

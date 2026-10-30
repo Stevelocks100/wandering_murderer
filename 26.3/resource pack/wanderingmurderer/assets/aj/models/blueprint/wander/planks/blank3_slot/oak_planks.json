@@ -1,0 +1,7 @@
+{
+	"credit": "Made with Animated Java (https://github.com/Animated-Java/animated-java) via Blockbench",
+	"parent": "aj:blueprint/wander/planks/blank3_slot",
+	"textures": {
+		"slot_blank3_slot": "minecraft:block/oak_planks"
+	}
+}

@@ -1,0 +1,4 @@
+{
+	"replace": false,
+	"values": ["aj:fine_print/on_load", "aj:wander_chest/on_load", "aj:wander/on_load"]
+}

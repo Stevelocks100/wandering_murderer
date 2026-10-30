@@ -1,0 +1,50 @@
+{
+	"credit": "Made with Animated Java (https://github.com/Animated-Java/animated-java) via Blockbench",
+	"textures": {
+		"particle": "minecraft:item/pufferfish",
+		"slot_fine_print_slot": "aj:blueprint/fine_print/fine_print"
+	},
+	"display": {
+		"head": {
+			"rotation": [0, 180, 0]
+		}
+	},
+	"elements": [
+		{
+			"from": [2.5, 6, 6],
+			"to": [9, 10, 10],
+			"rotation": {
+				"x": 0,
+				"y": 0,
+				"z": 0,
+				"origin": [3, 8, 9]
+			},
+			"faces": {
+				"north": {
+					"uv": [9.5, 2, 11.25, 3],
+					"texture": "#slot_fine_print_slot"
+				},
+				"east": {
+					"uv": [12, 1, 13, 2],
+					"texture": "#slot_fine_print_slot"
+				},
+				"south": {
+					"uv": [9.5, 3, 11.25, 4],
+					"texture": "#slot_fine_print_slot"
+				},
+				"west": {
+					"uv": [12, 2, 13, 3],
+					"texture": "#slot_fine_print_slot"
+				},
+				"up": {
+					"uv": [11, 10.5, 9.25, 9.5],
+					"texture": "#slot_fine_print_slot"
+				},
+				"down": {
+					"uv": [3.25, 10, 1.5, 11],
+					"texture": "#slot_fine_print_slot"
+				}
+			}
+		}
+	]
+}
