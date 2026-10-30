@@ -81,7 +81,7 @@ data/wander/function/jukebox_animation/zzz/2.mcfunction:091c819a4d521953e64bc2c3
 data/wander/function/jukebox_animation/should_stop_music.mcfunction:93d68be6ba0acec7fc89839f5c949ea0a5ab9e7f
 data/wander/function/murderer_music/load.mcfunction:af4f45e23ba66c97ed559d0cb4e0cca33021ba6f
 data/wander/function/murderer_music/zzz/0.mcfunction:5aff5b6d42712ed342e8ee2f79544373bc1df089
-data/wander/function/murderer_music/zzz/2.mcfunction:ffd9e44efe5e98bd9fa7dbf3ada9597879533abd
+data/wander/function/murderer_music/zzz/2.mcfunction:646d118f98a705db55f5e17ef4d2c682f1232db4
 data/wander/function/murderer_music/zzz/1.mcfunction:6aea4cf50f45bc4074c8ced86f6a24317437bc6e
 data/wander/function/murderer_music/zzz/3.mcfunction:872df73b342827981dca423eddbbf9715f8d62d5
 data/wander/function/murderer_music/tick.mcfunction:c897302fe3509317c109ad3c11d04903eab2d8c0

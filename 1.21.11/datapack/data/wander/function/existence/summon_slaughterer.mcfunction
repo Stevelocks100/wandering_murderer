@@ -12,6 +12,9 @@ scoreboard players set health wander.data 600
 scoreboard players set @a wander.encounters 0
 
 
+scoreboard players set ai wander.data 20
+scoreboard players set spawned wander.data 1
+
 execute store result score health_mult wander.data if entity @a[tag=wander.potential_target]
 scoreboard players set additional_health wander.temp 150
 scoreboard players operation health_mult wander.data *= additional_health wander.temp
@@ -56,7 +59,7 @@ function aj:wander/summon {args:{animation:'jump_upward',frame:10,variant:'slaug
 
 
 
-scoreboard players set ai wander.data 20
+
 execute if entity @s[tag=wander.spawn_pos] run kill @s
 
 execute as @a[distance=0..150] at @s run function wander:murderer_music/play_song {id:6,override:true}

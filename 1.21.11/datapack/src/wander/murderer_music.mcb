@@ -91,7 +91,7 @@ function tick {
         if function wander:murderer_music/can_see run {
 
             execute if entity @n[tag=aj.wander.root,distance=0..150] if score ai wander.data matches 20..30 unless score ai wander.data matches 29 run tag @s add <%prefix%>
-            scoreboard players operation @s <%prefix%>.current_song = $(music_index) <%prefix%>
+            scoreboard players operation @s <%prefix%>.current_song = $music_index <%prefix%>
             function storage/create
         }
 
