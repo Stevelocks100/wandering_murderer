@@ -34,7 +34,8 @@
 			"loop": {
 				"sound_id": "wander:pocket.ambience"
 			}
-		}
+		},
+		"minecraft:visual/ambient_light_color": "#0a0a0a"
 
 	},
 	"cardinal_light": "default",
